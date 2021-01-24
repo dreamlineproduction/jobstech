@@ -9381,6 +9381,8 @@ a.arrow-up::after {
     height: 34px;
     padding: 7px 15px 8px;
     background-color: #28a745 !important;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .gnav-header .search-button-wrapper .btn-primary.search-mobile {

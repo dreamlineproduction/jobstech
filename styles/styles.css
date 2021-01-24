@@ -875,7 +875,7 @@ height: 16px;
    background: url(../img/srch.png) no-repeat;
 
 }*/
-.main .input-group{
+.main .input-group {
    width: 430px !important;
 }
 .input-group-append{
@@ -1472,7 +1472,7 @@ li.flyout-mega>a:hover +.flyout-mega-wrap{
    .flyout-left>ul{
    right: 100%;
 }
- }
+ 
 @media (max-width:767px){
 
 
@@ -2087,7 +2087,7 @@ audio.embed-responsive {
    position: absolute;
    width: 16px;
    height: 16px;
-   left: -1px;
+   left: 0px;
    top: 2.5px;
    margin-left: -20px;
    padding-left: 3px;
@@ -2114,8 +2114,8 @@ audio.embed-responsive {
 }
 
 .checkbox-success input[type="checkbox"]:checked + span::before {
-   background-color: #00a64b;
-   border-color: #00a64b;
+   background-color: #96b2ff;
+   border-color: #96b2ff;
 }
 
 .checkbox-success input[type="checkbox"]:checked + span::after {
@@ -2156,7 +2156,7 @@ audio.embed-responsive {
 }
 
 .checkcontainer input:checked ~ .checkmark {
-  background-color: #00a64b;
+   background-color: #96b2ff;
 }
 
 .checkmark:after {
@@ -2171,7 +2171,7 @@ audio.embed-responsive {
 
 .checkcontainer .checkmark:after {
   top:4px;
-  left:5px;
+  left:4px;
   width:8px;
   height:8px;
   border-radius: 50%;
@@ -2698,7 +2698,7 @@ max-height: auto;
 }
 }
 
-=
+
 /**  Medium Devices (Tablets, 768px and up) **/
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -3388,11 +3388,7 @@ color:#00B22D;
 
 }
 
-.order-page .order-review-box {
 
-/*background:green;*/
-
-}
 
 .insert-message-box {
 
@@ -3605,10 +3601,7 @@ padding:12px;
 
 /** Post Request Styles **/
 
-.post-request-radio .custom-control.custom-radio {
 
-
-}
 
 .form-curb input {
 
@@ -3883,7 +3876,7 @@ display: none;
 }
 
 #seller-vacation-div {
-   background:#fcfc8e3;
+   background:#fcfc8e;
    border:1px solid;
    padding:12px 20px 20px 20px;
 }
@@ -3894,9 +3887,10 @@ display: none;
 }
 
 /** Log Out Page **/
-.logout-image{
-   background:#fcfc8e3;
+.logout-image {
+   background:#fcfc8e;
 }
+
 /*** Proposals extras ***/
 .border-1 {
    border: 1px solid #E1E3DF;
@@ -4457,20 +4451,20 @@ footer a:hover{
 }
 
 .cookies_footer{
-  position: fixed;
-  bottom: 0%;
-  left: -0%;
-  margin:20px;
-  font-family:Montserrat-Light;
-  z-index: 5000;
-  width: 35%;
-  background: #fff;
-  color: black;
-  font-size: 15px;
-  margin-top:10px;
-  padding: 15px 0;
-  box-shadow: 1px 1px 2px 1px #ccc !important;
-  border-radius: 4px;   
+   position: fixed;
+   bottom: 0%;
+   left: 25%;
+   margin: auto;
+   font-family: Montserrat-Light;
+   z-index: 5000;
+   width: 50%;
+   background: #ffffff;
+   color: black;
+   font-size: 15px;
+   margin-top: 10px;
+   padding: 15px 0;
+   box-shadow: 0 0 4px 0 rgba(0,0,0,.08), 0 2px 4px 0 rgba(0,0,0,.12);
+   border-radius: 0;
 }
 
 .cookies_footer p a{ color:red; }

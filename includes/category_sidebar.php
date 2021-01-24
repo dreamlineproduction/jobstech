@@ -65,9 +65,9 @@
 <?php include("$dir/includes/comp/currency_converter.php"); ?>
 
 
-<div class="card border-success mb-3">
-  <div class="card-header bg-success">
-    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> h5 text-white"><?= $lang['sidebar']['categories']; ?></h3>
+<div class="card border-gray mb-3">
+  <div class="card-header bg-white">
+    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> h5 text-dark"><?= $lang['sidebar']['categories']; ?></h3>
   </div>
   <div class="card-body">
     <ul class="nav flex-column" id="proposal_category">
@@ -88,7 +88,7 @@
             if($cat_id == @$_SESSION['cat_id']){ echo "active"; }
             if($cat_id == @$child_parent_id){ echo "active"; }
             ?>">     
-        <a href="<?= $site_url; ?>/categories/<?= $cat_url; ?>" class="text-success"> <?= $cat_title; ?></a> 
+        <a href="<?= $site_url; ?>/categories/<?= $cat_url; ?>" class="text-dark"> <?= $cat_title; ?></a> 
         <a class="h5 text-success float-right" data-toggle="collapse" data-target="#cat_<?= $cat_id; ?>">
         <i class="fa fa-arrow-circle-down"></i>
         </a>
@@ -116,7 +116,7 @@
     </ul>
   </div>
 </div>
-<div class="card border-success mb-3">
+<div class="card border-gray mb-3">
   <div class="card-body pb-2 pt-2">
     <ul class="nav flex-column">
       <li class="nav-item checkbox checkbox-success">
@@ -130,7 +130,7 @@
   </div>
 </div>
 
-<div class="card border-success mb-3">
+<div class="card border-gray mb-3">
   <div class="card-body pb-2 pt-3 <?=($lang_dir == "right" ? 'text-right':'')?>">
     <ul class="nav flex-column">
       <li class="nav-item checkbox checkbox-success">
@@ -144,9 +144,9 @@
   </div>
 </div>
 
-<div class="card border-success mb-3">
-  <div class="card-header bg-success">
-    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-white h5"><?= $lang['sidebar']['sort_by']['title']; ?></h3>
+<div class="card border-gray mb-3">
+  <div class="card-header bg-white">
+    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-dark h5"><?= $lang['sidebar']['sort_by']['title']; ?></h3>
   </div>
   <div class="card-body">
     <label class="checkcontainer"><?= $lang['sidebar']['sort_by']['new']; ?>
@@ -162,9 +162,9 @@
 </div>
 
 
-<div class="card border-success mb-3">
-  <div class="card-header bg-success">
-    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-white h5"><?= $lang["sidebar"]["seller_country"]; ?></h3>
+<div class="card border-gray mb-3">
+  <div class="card-header bg-white">
+    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-dark h5"><?= $lang["sidebar"]["seller_country"]; ?></h3>
     <button class="btn btn-secondary btn-sm <?=($lang_dir == "right" ? 'float-left':'float-right')?> clear_seller_country clearlink" onclick="clearCountry()">
       <?= $lang['sidebar']['clear_filter']; ?>
     </button>
@@ -198,9 +198,9 @@
 </div>
 
 
-<div class="card border-success mb-3 seller-cities d-none">
-  <div class="card-header bg-success">
-    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-white h5"><?= $lang["sidebar"]["seller_city"]; ?></h3>
+<div class="card border-gray mb-3 seller-cities d-none">
+  <div class="card-header bg-white">
+    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-dark h5"><?= $lang["sidebar"]["seller_city"]; ?></h3>
     <button class="btn btn-secondary btn-sm <?=($lang_dir == "right" ? 'float-left':'float-right')?> clear_seller_city clearlink" onclick="clearCity()">
       <?= $lang['sidebar']['clear_filter']; ?>
     </button>
@@ -235,9 +235,9 @@
 </div>
 
 
-<div class="card border-success mb-3">
-  <div class="card-header bg-success">
-    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-white h5"><?= $lang['sidebar']['delivery_time']; ?></h3>
+<div class="card border-gray mb-3">
+  <div class="card-header bg-white">
+    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-dark h5"><?= $lang['sidebar']['delivery_time']; ?></h3>
     <button class="btn btn-secondary btn-sm <?=($lang_dir == "right" ? 'float-left':'float-right')?> clear_delivery_time clearlink" onclick="clearDelivery()">
     <i class="fa fa-times-circle"></i> Clear Filter
     </button>
@@ -267,9 +267,9 @@
     </ul>
   </div>
 </div>
-<div class="card border-success mb-3">
-  <div class="card-header bg-success">
-    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-white h5"><?= $lang['sidebar']['seller_level']; ?></h3>
+<div class="card border-gray mb-3">
+  <div class="card-header bg-white">
+    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-dark h5"><?= $lang['sidebar']['seller_level']; ?></h3>
     <button class="btn btn-secondary btn-sm <?=($lang_dir == "right" ? 'float-left':'float-right')?> clear_seller_level clearlink" onclick="clearLevel()">
     <i class="fa fa-times-circle"></i> Clear Filter
     </button>
@@ -299,9 +299,9 @@
     </ul>
   </div>
 </div>
-<div class="card border-success mb-3">
-  <div class="card-header bg-success">
-    <h2 class="float-left text-white h5"><?= $lang['sidebar']['seller_lang']; ?></h2>
+<div class="card border-gray mb-3">
+  <div class="card-header bg-white">
+    <h2 class="float-left text-dark h5"><?= $lang['sidebar']['seller_lang']; ?></h2>
     <button class="btn btn-secondary btn-sm <?=($lang_dir == "right" ? 'float-left':'float-right')?> clear_seller_language clearlink" onclick="clearLanguage()">
       <i class="fa fa-times-circle"></i> Clear Filter
     </button>

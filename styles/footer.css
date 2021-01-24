@@ -1,0 +1,16 @@
+.cookies_footer {
+    position: fixed;
+    bottom: 0%;
+    left: 25%;
+    margin: auto;
+    font-family: Montserrat-Light;
+    z-index: 5000;
+    width: 50%;
+    background: #ffffff;
+    color: black;
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 15px 0;
+    box-shadow: none;
+    border-radius: 0;
+}

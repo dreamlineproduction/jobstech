@@ -12,7 +12,7 @@ $slide_image = $row_slides->slide_image;
 ?>
 <!-- start main -->
 <div id="demo1" class="main carousel">
-  <ul class="carousel-indicators">
+  <!-- <ul class="carousel-indicators">
     <li data-target="#demo1" data-slide-to="0" class="active"></li>
     <?php
       $count_slides = $db->count("home_section_slider");
@@ -23,7 +23,7 @@ $slide_image = $row_slides->slide_image;
     ?>
     <li data-target="#demo1" data-slide-to="<?= $i; ?>"></li>
     <?php } ?>
-  </ul>
+  </ul> -->
   <div class="carousel-inner">
     <div class="carousel-caption">
       <h1><?= $section_heading; ?></h1>
@@ -65,13 +65,13 @@ $slide_image = $row_slides->slide_image;
     <?php } ?>
   </div>
   
-  <a class="carousel-control-prev" href="#demo1" data-slide="prev" style="width: 6%; opacity: 1;">
+  <!-- <a class="carousel-control-prev" href="#demo1" data-slide="prev" style="width: 6%; opacity: 1;">
     <i class="fa fa-arrow-circle-o-left fa-3x"></i>
   </a>
 
   <a class="carousel-control-next" href="#demo1" data-slide="next" style="width: 6%; opacity: 1;">
     <i class="fa fa-arrow-circle-o-right fa-3x"></i>
-  </a>
+  </a> -->
 
 </div>
 <!-- end main -->

@@ -80,7 +80,7 @@
 </head>
 <body class="bg-white is-responsive">
 <?php require_once("../includes/header.php"); ?>
-<div class="container-fluid mt-5">
+<div class="container mt-5">
   <!-- Container start -->
   <div class="row">
     <div class="col-md-12">
