@@ -10493,7 +10493,7 @@ body.is-global-nav #new-seller-header {
     }
     .is-responsive .gnav-header #gigtodo-logo {
         width: 20px;
-        margin: 0 18px;
+        margin: 0 -19px;
         margin-right: 0px;
     }
     .is-responsive .search-browse-wrapper {
@@ -10779,7 +10779,7 @@ body.is-global-nav #new-seller-header {
 @media screen and (max-width: 420px) {
     .gigtodo-logo-svg-logged-in .mobile {
         margin-top: -4px;
-        margin-left: -9px;
+        margin-left: 51px;
         display: unset !important;
     }
     .gnav-header #mobilemenu {

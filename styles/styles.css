@@ -1621,7 +1621,7 @@ a.toggle-menu {
       display: none;
    }*/
     #demo1 .carousel-item img:not(.srch2) {
-        height: 62vh;
+        height: 22vh;
         width: auto;
     }
     #demo1 .carousel-item video:not(.srch2) {
