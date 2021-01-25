@@ -12,7 +12,7 @@ $slide_image = $row_slides->slide_image;
 ?>
 <!-- start main -->
 <div id="demo1" class="main carousel">
-  <!-- <ul class="carousel-indicators">
+    <!-- <ul class="carousel-indicators">
     <li data-target="#demo1" data-slide-to="0" class="active"></li>
     <?php
       $count_slides = $db->count("home_section_slider");
@@ -24,26 +24,28 @@ $slide_image = $row_slides->slide_image;
     <li data-target="#demo1" data-slide-to="<?= $i; ?>"></li>
     <?php } ?>
   </ul> -->
-  <div class="carousel-inner">
-    <div class="carousel-caption">
-      <h1><?= $section_heading; ?></h1>
-      <h5><?= $section_short_heading; ?></h5>
-      <div class="row justify-content-center">
-        <div class="col-md-5 col-11">
-          <form action="" method="post">
-            <div class="input-group space20">
-              <input type="text" name="search_query" class="form-control" value="<?= @$_SESSION["search_query"]; ?>" placeholder="<?= $lang['search']['placeholder']; ?>">
-              <div class="input-group-append move-icon-up">
-                <button name="search" type="submit" class="search_button">
-                    <img src="images/srch2.png" class="srch2">
-                </button>
-              </div>
+    <div class="carousel-inner">
+        <div class="carousel-caption">
+            <h1><?= $section_heading; ?></h1>
+            <h5><?= $section_short_heading; ?></h5>
+            <div class="row justify-content-left">
+                <div class="col-md-5 col-11">
+                    <form action="" method="post">
+                        <div class="input-group space20">
+                            <input type="text" name="search_query" class="form-control"
+                                value="<?= @$_SESSION["search_query"]; ?>"
+                                placeholder="<?= $lang['search']['placeholder']; ?>">
+                            <div class="input-group-append move-icon-up">
+                                <button name="search" type="submit" class="search_button">
+                                    <img src="images/srch2.png" class="srch2">
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-          </form>
         </div>
-      </div>
-    </div>
-    <?php
+        <?php
       $i = 0;
       $get_slides = $db->query("select * from home_section_slider");
       while($row_slides = $get_slides->fetch()){
@@ -51,21 +53,21 @@ $slide_image = $row_slides->slide_image;
       $s_extension = pathinfo($slide_image, PATHINFO_EXTENSION);
       $i++;
       ?>
-    <div class="carousel-item <?= ($i == 1 ? "active" : "") ?>">
-      <!-- <img src="<?= $slide_image; ?>"> -->
-        <?php if($s_extension == "mp4" or $s_extension == "webm" or $s_extension == "ogg"){ ?>
-          <video class="img-fluid w-100" controls muted <?= ($i == 1 ? "autoplay" : "") ?>>
-            <source src="<?= $slide_image; ?>" type="video/mp4">
-          </video>
-        <?php }else{ ?>
+        <div class="carousel-item <?= ($i == 1 ? "active" : "") ?>">
+            <!-- <img src="<?= $slide_image; ?>"> -->
+            <?php if($s_extension == "mp4" or $s_extension == "webm" or $s_extension == "ogg"){ ?>
+            <video class="img-fluid w-100" controls muted <?= ($i == 1 ? "autoplay" : "") ?>>
+                <source src="<?= $slide_image; ?>" type="video/mp4">
+            </video>
+            <?php }else{ ?>
             <img src="<?= $slide_image; ?>">
-        <?php } ?>
+            <?php } ?>
 
+        </div>
+        <?php } ?>
     </div>
-    <?php } ?>
-  </div>
-  
-  <!-- <a class="carousel-control-prev" href="#demo1" data-slide="prev" style="width: 6%; opacity: 1;">
+
+    <!-- <a class="carousel-control-prev" href="#demo1" data-slide="prev" style="width: 6%; opacity: 1;">
     <i class="fa fa-arrow-circle-o-left fa-3x"></i>
   </a>
 
@@ -77,12 +79,15 @@ $slide_image = $row_slides->slide_image;
 <!-- end main -->
 <!-- start market -->
 <div class="container mb-5 cards" style="max-width: 1360px !important;">
-  <div class="row">
-    <div class="col-md-12">
-      <h1 class="mt-5 mb-1 <?=($lang_dir == "right" ? 'text-right':'')?>"><?= $lang['home']['cards']['title']; ?></h1>
-      <p class="subHeading mb-4 <?=($lang_dir == "right" ? 'text-right':'')?>"><?= $lang['home']['cards']['desc']; ?></p>
-      <div class="owl-carousel home-cards-carousel owl-theme"><!--- owl-carousel home-cards-carousel Starts --->
-        <?php
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="mt-5 mb-1 <?=($lang_dir == "right" ? 'text-right':'')?>"><?= $lang['home']['cards']['title']; ?>
+            </h1>
+            <p class="subHeading mb-4 <?=($lang_dir == "right" ? 'text-right':'')?>">
+                <?= $lang['home']['cards']['desc']; ?></p>
+            <div class="owl-carousel home-cards-carousel owl-theme">
+                <!--- owl-carousel home-cards-carousel Starts --->
+                <?php
           $get_cards = $db->select("home_cards",array("language_id" => $siteLanguage));
           while($row_cards = $get_cards->fetch()){
           $card_id = $row_cards->card_id;
@@ -91,30 +96,31 @@ $slide_image = $row_slides->slide_image;
           $card_image = getImageUrl("home_cards",$row_cards->card_image); 
           $card_link = $row_cards->card_link;
         ?>
-        <div class="card-box">
-          <div>
-            <a href="<?= $card_link; ?>" class="subcategory">
-              <h4><small><?= $card_desc; ?></small><?= $card_title; ?></h4>
-              <picture>
-                <img src="<?= $card_image; ?>">
-              </picture>
-            </a>
-          </div>
+                <div class="card-box">
+                    <div>
+                        <a href="<?= $card_link; ?>" class="subcategory">
+                            <h4><small><?= $card_desc; ?></small><?= $card_title; ?></h4>
+                            <picture>
+                                <img src="<?= $card_image; ?>">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+            <!--- owl-carousel home-cards-carousel Ends --->
         </div>
-        <?php } ?>
-      </div><!--- owl-carousel home-cards-carousel Ends --->
     </div>
-  </div>
 </div>
 <!-- start market -->
 <section class="market">
-<div class="container" style="max-width: 1360px !important;">
-  <div class="row">
-    <div class="col-md-12">
-      <h2><?= $lang['home']['categories']['title']; ?></h2>
-      <h4><?= $lang['home']['categories']['desc']; ?></h4>
-      <div class="row space80">
-        <?php
+    <div class="container" style="max-width: 1360px !important;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2><?= $lang['home']['categories']['title']; ?></h2>
+                <h4><?= $lang['home']['categories']['desc']; ?></h4>
+                <div class="row space80">
+                    <?php
           $get_categories = $db->query("select * from categories where cat_featured='yes' ".($lang_dir == "right" ? 'order by 1 DESC LIMIT 4,4':' LIMIT 0,4')."");
           while($row_categories = $get_categories->fetch()){
           $cat_id = $row_categories->cat_id;
@@ -125,20 +131,20 @@ $slide_image = $row_slides->slide_image;
           $row_meta = $get_meta->fetch();
           $cat_title = $row_meta->cat_title;
         ?>
-        <div class="col-md-3 col-6">
-          <a href="categories/<?= $cat_url; ?>">
-            <div class="grn_box">
-              <img src="<?= $cat_image; ?>" class="mx-auto d-block">
-              <p><?= $cat_title; ?></p>
-            </div>
-          </a>
-        </div>
-        <?php } ?>
-      </div>
-      <div class="space80 hidden-xs"></div>
-      <div class="space20 visible-xs"></div>
-      <div class="row space80">
-        <?php
+                    <div class="col-md-3 col-6">
+                        <a href="categories/<?= $cat_url; ?>">
+                            <div class="grn_box">
+                                <img src="<?= $cat_image; ?>" class="mx-auto d-block">
+                                <p><?= $cat_title; ?></p>
+                            </div>
+                        </a>
+                    </div>
+                    <?php } ?>
+                </div>
+                <div class="space80 hidden-xs"></div>
+                <div class="space20 visible-xs"></div>
+                <div class="row space80">
+                    <?php
           $get_categories = $db->query("select * from categories where cat_featured='yes' ".($lang_dir == "right" ? 'order by 1 DESC LIMIT 0,4':' LIMIT 4,4')."");
           while($row_categories = $get_categories->fetch()){
           $cat_id = $row_categories->cat_id;
@@ -149,27 +155,27 @@ $slide_image = $row_slides->slide_image;
           $row_meta = $get_meta->fetch();
           $cat_title = $row_meta->cat_title;
         ?>
-        <div class="col-md-3 col-6">
-          <a href="categories/<?= $cat_url; ?>">
-            <div class="grn_box">
-              <img src="<?= $cat_image; ?>" class="mx-auto d-block" />
-              <p><?= $cat_title; ?></p>
-            </div>
-          </a>
-        </div>
-        <?php } ?>
-      </div>
+                    <div class="col-md-3 col-6">
+                        <a href="categories/<?= $cat_url; ?>">
+                            <div class="grn_box">
+                                <img src="<?= $cat_image; ?>" class="mx-auto d-block" />
+                                <p><?= $cat_title; ?></p>
+                            </div>
+                        </a>
+                    </div>
+                    <?php } ?>
+                </div>
 
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </section>
 <!-- end market -->
 <!-- start timer -->
 <section class="timer">
-<div class="container" style="max-width: 1335px !important;">
-  <div class="row">
-    <?php
+    <div class="container" style="max-width: 1335px !important;">
+        <div class="row">
+            <?php
       $get_boxes = $db->query("select * from section_boxes where language_id='$siteLanguage' LIMIT 0,1");
       while($row_boxes = $get_boxes->fetch()){
       $box_id = $row_boxes->box_id;
@@ -177,19 +183,19 @@ $slide_image = $row_slides->slide_image;
       $box_desc = $row_boxes->box_desc;
       $box_image = getImageUrl("section_boxes",$row_boxes->box_image);
       ?>
-    <div class="col-md-4 pad0">
-      <div class="box">
-        <h5><?= $box_title; ?></h5>
-        <p><?= $box_desc; ?></p>
-      </div>
-    </div>
-    <div class="col-md-4 pad0">
-      <div class="blu_box">
-        <img src="<?= $box_image; ?>" class="img-fluid mx-auto d-block">
-      </div>
-    </div>
-    <?php } ?>
-    <?php
+            <div class="col-md-4 pad0">
+                <div class="box">
+                    <h5><?= $box_title; ?></h5>
+                    <p><?= $box_desc; ?></p>
+                </div>
+            </div>
+            <div class="col-md-4 pad0">
+                <div class="blu_box">
+                    <img src="<?= $box_image; ?>" class="img-fluid mx-auto d-block">
+                </div>
+            </div>
+            <?php } ?>
+            <?php
       $get_boxes = $db->query("select * from section_boxes where language_id='$siteLanguage' LIMIT 1,100");
       while($row_boxes = $get_boxes->fetch()){
       $box_id = $row_boxes->box_id;
@@ -197,41 +203,41 @@ $slide_image = $row_slides->slide_image;
       $box_desc = $row_boxes->box_desc;
       $box_image = getImageUrl("section_boxes",$row_boxes->box_image);
       ?>
-    <div class="col-md-4 pad0">
-      <div class="box">
-        <h5><?= $box_title; ?></h5>
-        <p><?= $box_desc; ?></p>
-      </div>
+            <div class="col-md-4 pad0">
+                <div class="box">
+                    <h5><?= $box_title; ?></h5>
+                    <p><?= $box_desc; ?></p>
+                </div>
+            </div>
+            <div class="col-md-4 pad0">
+                <div class="blu_box1">
+                    <img src="<?= $box_image; ?>" class="img-fluid mx-auto d-block">
+                </div>
+            </div>
+            <?php } ?>
+        </div>
     </div>
-    <div class="col-md-4 pad0">
-      <div class="blu_box1">
-        <img src="<?= $box_image; ?>" class="img-fluid mx-auto d-block">
-      </div>
-    </div>
-    <?php } ?>
-  </div>
-</div>
 </section>
 <!-- end timer -->
 <!-- start top -->
 <section class="top mb-0">
-  <div class="container" style="max-width: 1360px !important;">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="text-center"><?= $lang['home']['proposals']['title']; ?></h1>
-        <h4 class="text-center"><?= $lang['home']['proposals']['desc']; ?></h4>
-        <?php 
+    <div class="container" style="max-width: 1360px !important;">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center"><?= $lang['home']['proposals']['title']; ?></h1>
+                <h4 class="text-center"><?= $lang['home']['proposals']['desc']; ?></h4>
+                <?php 
           $get_proposals = $db->query("select * from proposals where proposal_featured='yes' AND proposal_status='active'");
           $count_proposals = $get_proposals->rowCount();
           if($count_proposals > 1){
           ?>
-        <span class="pull-right text-success"><a href="featured_proposals">View More</a></span>
-        <?php } ?>
-        <div class="mt-5">
-          <!--- home-featured-carousel Starts --->
-          <div class="row">
-            <!--- row Starts -->
-            <?php
+                <span class="pull-right text-success"><a href="featured_proposals">View More</a></span>
+                <?php } ?>
+                <div class="mt-5">
+                    <!--- home-featured-carousel Starts --->
+                    <div class="row">
+                        <!--- row Starts -->
+                        <?php
               $get_proposals = $db->query("select * from proposals where proposal_featured='yes' AND proposal_status='active' LIMIT 0,10");
               while($row_proposals = $get_proposals->fetch()){
               $proposal_id = $row_proposals->proposal_id;
@@ -275,55 +281,62 @@ $slide_image = $row_slides->slide_image;
               $total = array_sum($proposal_reviews);
               @$average_rating = $total/count($proposal_reviews);
             ?>
-            <div class="col-xl-2dot4 col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4">
-              <?php require("includes/proposals.php"); ?>
+                        <div class="col-xl-2dot4 col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4">
+                            <?php require("includes/proposals.php"); ?>
+                        </div>
+                        <?php } ?>
+                    </div>
+                    <!--- row Ends -->
+                </div>
+                <!--- home-featured-carousel Ends --->
             </div>
-            <?php } ?>
-          </div>
-          <!--- row Ends -->
-        </div><!--- home-featured-carousel Ends --->
-      </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <script>
+$(document).ready(function() {
 
-$(document).ready(function(){
+    var slider = $('#demo1').carousel({
+        interval: 4000
+    });
 
-  var slider = $('#demo1').carousel({
-    interval: 4000
-  });
+    var active = $(".carousel-item.active").find("video");
+    var active_length = active.length;
 
-  var active = $(".carousel-item.active").find("video");
-  var active_length = active.length;
-
-  if(active_length == 1){
-    slider.carousel('pause');
-    console.log('paused');
-    $(".carousel-indicators").css({"bottom": "90px"});
-  }
-
-  $("#demo1").on('slide.bs.carousel', function(event){
-    var eq = event.to;
-    // console.log(event.from);
-    // console.log(event.to);
-    var video = $(event.relatedTarget).find("video");
-    if(video.length == 1){
+    if (active_length == 1) {
         slider.carousel('pause');
         console.log('paused');
-        $(".carousel-indicators").css({"bottom": "90px"});
-        video.trigger('play');
-    }else{
-      $(".carousel-indicators").css({"bottom": "20px"});
+        $(".carousel-indicators").css({
+            "bottom": "90px"
+        });
     }
-  });
 
-  $('video').on('ended',function(){
-    slider.carousel({'pause': false});
-    console.log('started');
-  });
+    $("#demo1").on('slide.bs.carousel', function(event) {
+        var eq = event.to;
+        // console.log(event.from);
+        // console.log(event.to);
+        var video = $(event.relatedTarget).find("video");
+        if (video.length == 1) {
+            slider.carousel('pause');
+            console.log('paused');
+            $(".carousel-indicators").css({
+                "bottom": "90px"
+            });
+            video.trigger('play');
+        } else {
+            $(".carousel-indicators").css({
+                "bottom": "20px"
+            });
+        }
+    });
+
+    $('video').on('ended', function() {
+        slider.carousel({
+            'pause': false
+        });
+        console.log('started');
+    });
 
 });
-
 </script>
