@@ -54,7 +54,7 @@
     background: #f9f9f8;
     margin-top: -17px;
     padding: 6px 10px;
-    padding-left:40px !important;
+    padding-left: 40px !important;
     margin-left: 0;
     height: 34px;
     font-size: 13px;
@@ -64,7 +64,6 @@
     background-color: #fff !important;
     /*box-shadow: inset 0 1px 2px #E9E9E8, 0 0 0 1000px #fbfbfa inset;*/
 }
-
 
 .ui-toolkit .animated {
     -webkit-animation-duration: 0.3s;
@@ -78,7 +77,6 @@
     -o-animation-fill-mode: both;
     animation-fill-mode: both;
 }
-
 
 .ui-toolkit *,
 .ui-toolkit *:before,
@@ -107,7 +105,6 @@
     max-width: 1380px;
     margin: 0 auto;
 }
-
 
 .ui-toolkit body {
     color: #222;
@@ -438,10 +435,8 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
     -webkit-font-smoothing: antialiased;
 }
 
-
 .ui-toolkit h3,
 .ui-toolkit .h3 {
- 
     -webkit-font-smoothing: antialiased;
 }
 
@@ -569,8 +564,6 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
     }
 }
 
-
-
 @media only screen and (min-width: 640px) {
     .ui-toolkit [class*='col-xs-'],
     .ui-toolkit [class*='col-sm-'],
@@ -670,8 +663,6 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
         width: 100%;
     }
 }
-
-
 
 @media only screen and (min-width: 900px) {
     .ui-toolkit .col-lg-1 {
@@ -985,11 +976,8 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
     }
 }
 
-
 .ui-toolkit .btn {
- 
     font-size: 14px;
- 
 }
 
 .ui-toolkit .btn-secondary:active,
@@ -1230,8 +1218,6 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
 .ui-toolkit .btn-transparent.is-disabled .ss-icon {
     color: #757575;
 }
-
-
 
 .ui-toolkit .btn-transaction {
     background-color: #222;
@@ -1600,28 +1586,24 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
     .ui-toolkit .btn-group-md {
         white-space: nowrap;
     }
-    
 }
 
 @media only screen and (min-width: 900px) {
     .ui-toolkit .btn-group-lg {
         white-space: nowrap;
     }
-   
 }
 
 @media only screen and (min-width: 1200px) {
     .ui-toolkit .btn-group-xl {
         white-space: nowrap;
     }
-    
 }
 
 @media only screen and (min-width: 1400px) {
     .ui-toolkit .btn-group-tv {
         white-space: nowrap;
     }
-   
 }
 
 .ui-toolkit .btn-prepend {
@@ -1647,7 +1629,6 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
     font-size: 14px;
     line-height: 1.4;
 }
-
 
 .ui-toolkit a:focus,
 .ui-toolkit .text-link-primary:focus {
@@ -1746,8 +1727,8 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
 
 .ui-toolkit .card {
     border-radius: 3px;
-    border: 1px solid #E1E3DF;
-    border-bottom-color: #CBCCC9;
+    border: 1px solid #ffffff00;
+    border-bottom-color: #cbccc900;
     width: 100%;
 }
 
@@ -1769,7 +1750,6 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
 .ui-toolkit .card.is-selected .card-actions .ss-icon:not(.text-yellow) {
     color: #F56400;
 }
-
 
 .ui-toolkit .card-body {
     border-top-right-radius: 2px;
@@ -2541,7 +2521,7 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
 }
 
 @media only screen and (min-width: 280px) and (max-width: 479px) {
-/*    .is-responsive .gnav-header .loggedInLogo {
+    /*    .is-responsive .gnav-header .loggedInLogo {
         margin: 0px !important;
         width: 8px !important;
         cursor: pointer;
@@ -2558,7 +2538,7 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
         margin: 0 -1px;
     }
     .search-bar-panel {
-    top: 79%;
+        top: 79%;
     }
 }
 
@@ -2573,7 +2553,7 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
         margin: 0 -12px;
     }
     .search-bar-panel {
-    top: 79%;
+        top: 79%;
     }
 }
 
@@ -3533,22 +3513,19 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
     vertical-align: middle;
 }
 
-
 .ui-toolkit #gigtodo-modal-container .gigtodo-icon {
     width: 24px;
     height: 24px;
 }
 
 .ui-toolkit .center-icon {
-
-margin-top: -20px;
-margin-right: 10px;
-display: inline-block;
-fill: currentColor;
-height: 24px;
-vertical-align: middle;
-width: 24px;
-
+    margin-top: -20px;
+    margin-right: 10px;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    vertical-align: middle;
+    width: 24px;
 }
 
 .ui-toolkit .gigtodo-icon svg {
@@ -3562,7 +3539,7 @@ width: 24px;
 
 .ui-toolkit .gigtodo-icon.icon-smaller {
     top: -2px;
-    position: relative;    
+    position: relative;
     height: 20px !important;
     width: 20px !important;
 }
@@ -3686,7 +3663,6 @@ width: 24px;
     .ui-toolkit .order-sm-neg1 {
         order: -1 !important;
     }
-
     .ui-toolkit .flex-direction-row-sm {
         flex-direction: row !important;
     }
@@ -4248,7 +4224,6 @@ screen and (orientation: landscape) and (min-device-height: 680px) {
 .ui-toolkit .text-largest {
     font-size: 128.57%;
 }
-
 
 .ui-toolkit .rounded {
     border-radius: 3px;
@@ -8177,7 +8152,6 @@ html:hover [class^="gnav-"] {
     -ms-zoom: 1;
 }
 
-
 .gnav-header .sub-nav.sub-nav-wide.sub-nav-wide {
     max-width: 450px;
     width: 100%;
@@ -8848,7 +8822,6 @@ html:hover [class^="gnav-"] {
     visibility: visible;
 }
 
-
 a.arrow::after {
     border-style: solid;
     border-color: #888 transparent;
@@ -8965,8 +8938,6 @@ a.arrow-up::after {
     text-indent: -10000em;
     overflow: hidden;
 }
-
-
 
 .gnav-header .nav-link,
 .ui-toolkit .gnav-header .nav-link {
@@ -10059,7 +10030,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 }
 
 .gnav-header .register-link a,
-.gnav-header .sign-in-link a{
+.gnav-header .sign-in-link a {
     height: auto;
     margin-top: 23px;
     margin-right: 18px;
@@ -10075,8 +10046,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     color: #E55400;
 }
 
-
-.gnav-header .logged-in-link .menuItem{
+.gnav-header .logged-in-link .menuItem {
     height: auto;
     margin-top: 23px;
     margin-right: 18px;
@@ -10252,11 +10222,9 @@ body.is-global-nav #new-seller-header {
     .is-responsive .gigtodo-logo-svg-logged-in .mobile {
         display: none;
     }
-
     .is-responsive .gigtodo-logo-svg-logged-in .mobile-full {
         display: none;
     }
-    
 }
 
 .gigtodo-logo-svg-logged-in .text-logo {
@@ -10268,29 +10236,25 @@ body.is-global-nav #new-seller-header {
 }
 
 @media screen and (min-width: 901px) {
-    .gigtodo-logo-svg-logged-in .desktop{
-       margin-top: 21px;
+    .gigtodo-logo-svg-logged-in .desktop {
+        margin-top: 21px;
     }
 }
 
-
 @media screen and (max-width: 1024px) {
-    .gigtodo-logo-svg-logged-in .desktop{
-       display: none;
+    .gigtodo-logo-svg-logged-in .desktop {
+        display: none;
     }
-    .gigtodo-logo-svg-logged-in .mobile{
+    .gigtodo-logo-svg-logged-in .mobile {
         margin-top: 18px;
         margin-left: -9px;
         display: unset !important;
     }
-    
-    .gigtodo-logo-svg-logged-in .mobile-full{
+    .gigtodo-logo-svg-logged-in .mobile-full {
         margin-top: 18px;
         margin-left: 20px;
-       display: unset !important;
+        display: unset !important;
     }
-
-
 }
 
 .is-responsive.is-signed-in .gnav-header #gigtodo-logo.gigtodo-logo-svg a:before {
@@ -10344,7 +10308,7 @@ body.is-global-nav #new-seller-header {
     transform: translateY(-50%);
 }
 
-.gnav-header .has-svg-icons .user-nav{
+.gnav-header .has-svg-icons .user-nav {
     position: relative;
 }
 
@@ -10356,14 +10320,12 @@ body.is-global-nav #new-seller-header {
     width: 9px;
 }
 
-
 .sub-nav.user.has-svg-icons .profile-link .gigtodo-icon {
     color: #ccc;
     height: 14px;
     width: 12px;
     margin-left: 8px;
 }
-
 
 .cnav-header .close .gigtodo-icon {
     position: relative;
@@ -10379,8 +10341,6 @@ body.is-global-nav #new-seller-header {
     top: 50%;
     transform: translateY(-50%);
 }
-
-
 
 @media screen and (max-width: 1050px) {
     .is-responsive .gnav-header {
@@ -10403,13 +10363,9 @@ body.is-global-nav #new-seller-header {
         font-size: 14px;
         padding: 0 12px;
     }
-
-    .logged-in-link .dropdown-menu{
-
-    margin-left: -100px;
-
-    }   
-
+    .logged-in-link .dropdown-menu {
+        margin-left: -100px;
+    }
     .is-responsive .nav-link .nav-icon {
         float: left;
         top: 50%;
@@ -10443,11 +10399,9 @@ body.is-global-nav #new-seller-header {
     .is-responsive .gnav-header .account-nav>li:before {
         content: none;
     }
-
     .is-responsive .gnav-header .account-nav .count {
-    margin-top: -6px;
+        margin-top: -6px;
     }
-
     .is-responsive .gnav-header .text-link {
         display: inline;
         clear: none;
@@ -10498,23 +10452,21 @@ body.is-global-nav #new-seller-header {
         margin-right: 7px;
     }
     .is-responsive .gnav-header .register-link a,
-    .is-responsive .gnav-header .sign-in-link a ,
+    .is-responsive .gnav-header .sign-in-link a,
     .is-responsive .gnav-header .logged-in-link .menuItem {
         height: auto;
         padding: 8px;
     }
 }
 
-
 @media screen and (max-width: 1024px) {
-
     .is-responsive .apply-nav-height,
     .is-responsive .apply-nav-height>li>.nav-link,
     .is-responsive .apply-nav-height>li>a,
     .is-responsive .apply-nav-height.gnav-header-inner {
         height: 60px;
     }
-     .mobile-catnav-trigger.tablet-catnav-enabled.left {
+    .mobile-catnav-trigger.tablet-catnav-enabled.left {
         right: 33px;
     }
     .is-responsive .apply-nav-height.search-mobile,
@@ -10529,27 +10481,20 @@ body.is-global-nav #new-seller-header {
     }
     .is-responsive .gnav-header .register-link a,
     .is-responsive .gnav-header .sign-in-link a,
-    .is-responsive .gnav-header .logged-in-link .menuItem{
+    .is-responsive .gnav-header .logged-in-link .menuItem {
         line-height: 15px;
         margin-top: 13px;
     }
-
-    .is-responsive .gnav-header .logged-in-link .menuItem.user{
-
-    margin-top: 8px !important;
-
+    .is-responsive .gnav-header .logged-in-link .menuItem.user {
+        margin-top: 8px !important;
     }
-
-    .is-responsive .gnav-header .logged-in-link .menuItem .name{
-
-    display: none;
-
+    .is-responsive .gnav-header .logged-in-link .menuItem .name {
+        display: none;
     }
-
     .is-responsive .gnav-header #gigtodo-logo {
         width: 20px;
         margin: 0 18px;
-        margin-right:0px;
+        margin-right: 0px;
     }
     .is-responsive .search-browse-wrapper {
         display: block;
@@ -10832,24 +10777,20 @@ body.is-global-nav #new-seller-header {
 }
 
 @media screen and (max-width: 420px) {
-    .gigtodo-logo-svg-logged-in .mobile{
+    .gigtodo-logo-svg-logged-in .mobile {
         margin-top: -4px;
         margin-left: -9px;
         display: unset !important;
     }
-
-    .gnav-header #mobilemenu{
-    
+    .gnav-header #mobilemenu {
         margin-left: -6px;
-
     }
-
     .gigtodo-logo-svg-logged-in .mobile-full {
         margin-top: 0px;
         margin-left: 25px;
         display: unset !important;
     }
-    .is-responsive .gnav-header .loggedInLogo{
+    .is-responsive .gnav-header .loggedInLogo {
         /*margin: 0px !important;
         margin-right: 2px !important;
         width: 8px !important;
@@ -10872,7 +10813,6 @@ body.is-global-nav #new-seller-header {
         line-height: 18px;
         padding-bottom: 10px;
     }
-    
     .is-responsive.is-signed-in .gnav-header #gigtodo-logo a:before {
         font-family: "SSEtsy";
         font-style: normal;
@@ -10901,15 +10841,12 @@ body.is-global-nav #new-seller-header {
         margin-top: 5px;
         height: auto;
     }
-
     .is-responsive .gnav-header .account-nav .logged-in-link .menuItem.user {
-    margin-top: 1px !important;
+        margin-top: 1px !important;
     }
-
     .is-responsive .gnav-header .account-nav .logged-in-link .menuItem.heart {
-    display: none !important;
+        display: none !important;
     }
-
     .is-responsive .gnav-header #gigtodo-logo a {
         margin-top: 5px;
     }
@@ -11228,7 +11165,7 @@ body.is-global-nav #new-seller-header {
         display: none !important;
     }
     .is-responsive .gnav-header .account-nav .logged-in-link .menuItem.heart {
-    display: none !important;
+        display: none !important;
     }
 }
 
@@ -11272,7 +11209,6 @@ body.is-global-nav #new-seller-header {
     .mobile-catnav-trigger.tablet-catnav-enabled {
         display: block !important;
     }
-
 }
 
 @media only screen and (min-width: 640px) {
@@ -11281,7 +11217,6 @@ body.is-global-nav #new-seller-header {
         max-width: 40%;
     }
 }
-
 
 button.show-discount,
 #conversation-overlay.overlay .btn-link,
@@ -11417,10 +11352,12 @@ a.text-orange.text-orange:active,
     text-decoration: underline !important;
 }
 
+
 /*.sign-in-link a:hover {
     color: #222 !important;
 }
 */
+
 .cat-nav a:not(:hover):not(:focus):not(:active),
 .vesta-hero a:not(:hover):not(:focus):not(:active),
 .ui-toolkit .v2-listing-card a:not(:hover):not(:focus):not(:active),
@@ -11582,13 +11519,15 @@ a.close.ss-delete:hover {
     color: #FFF;
 }
 
+
 /*.gnav-header .sign-in-link a {
     color: #222 !important;
 }
 */
+
 .gnav-header .sign-in-link a:hover {
-   background: #fff;
-    border:1px solid #28a745;
+    background: #fff;
+    border: 1px solid #28a745;
     color: #28a745;
 }
 
@@ -11690,6 +11629,6 @@ a.close.ss-delete:hover {
     border-radius: 100px !important;
 }
 
-.gigtodo-icon.hamburger-icon.nav-icon{
+.gigtodo-icon.hamburger-icon.nav-icon {
     cursor: pointer;
 }
