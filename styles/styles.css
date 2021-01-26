@@ -1,5 +1,6 @@
 @charset "utf-8";
-@font-face {
+
+/* @font-face {
     src: url(../fonts/Brandon_reg.otf);
     font-family: 'Brandon_reg';
 }
@@ -16,12 +17,12 @@
 
 @font-face {
     src: url(../fonts/Montserrat-SemiBold.otf);
-    font-family: 'Montserrat-SemiBold';
+    font-family: 'Archivo', sans-serif;
 }
 
 @font-face {
     src: url(../fonts/Montserrat-Light.otf);
-    font-family: 'Montserrat-Light';
+    font-family: 'Archivo', sans-serif;
 }
 
 @font-face {
@@ -74,7 +75,7 @@
     font-weight: 700;
     font-style: normal;
     font-stretch: normal;
-}
+} */
 
 body {
     margin: 0px;
@@ -82,7 +83,7 @@ body {
     background: #fff;
     height: 100%;
     width: 100%;
-    font-family: "Graphik Webfont", -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", "Segoe UI", "Helvetica", Arial, sans-serif;
+    font-family: 'Archivo', sans-serif;
     color: #000;
     font-weight: 400;
     overflow-x: hidden;
@@ -112,7 +113,7 @@ html {
     border: 1px solid #ccc;
     position: fixed;
     font-weight: bold;
-    font-family: 'Montserrat-Light';
+    font-family: 'Archivo', sans-serif;
     letter-spacing: 2px;
     z-index: 9997;
     text-decoration: none;
@@ -361,7 +362,7 @@ header .dropdown-menu {
 .logo {
     color: #28a745;
     font-size: 31.18px;
-    font-family: 'Mosk-Thin-100';
+    font-family: 'Archivo', sans-serif;
     padding-top: 10px;
 }
 
@@ -787,7 +788,7 @@ header hr {
 #demo1 h5 {
     font-size: 19px;
     color: #fff;
-    font-family: 'Montserrat-Light';
+    font-family: 'Archivo', sans-serif;
     text-align: left;
     margin-top: 10px;
 }
@@ -901,21 +902,21 @@ border-bottom: 1px solid #ccc;
     font-size: 29.1px;
     color: #1a1e31;
     text-align: center;
-    font-family: 'Montserrat-SemiBold';
+    font-family: 'Archivo', sans-serif;
 }
 
 .market h4,
 .top h4 {
     font-size: 16px;
     color: #6d6e71;
-    font-family: 'Montserrat-Light';
+    font-family: 'Archivo', sans-serif;
     text-align: center;
 }
 
 .market p {
     font-size: 14px;
     color: #414042;
-    font-family: 'Montserrat-Light';
+    font-family: 'Archivo', sans-serif;
     text-align: center;
     margin-top: 40px;
 }
@@ -1126,7 +1127,7 @@ border-bottom: 1px solid #ccc;
 .btn_view {
     font-size: 10.56px;
     color: #28a745;
-    font-family: 'Montserrat-Regular';
+    font-family: 'Archivo', sans-serif;
     text-transform: uppercase;
     margin: 0 auto;
     display: block;
@@ -1787,7 +1788,7 @@ a.toggle-menu {
 
 #demo3 p {
     font-size: 19px;
-    font-family: 'Montserrat-Light';
+    font-family: 'Archivo', sans-serif;
 }
 
 .carousel-indicators {
@@ -3611,7 +3612,7 @@ input:checked+.slider:before {
 .tabs .tab-header {
     padding: 0.8rem 1.2rem;
     font-size: 17px;
-    font-family: "Montserrat-Light";
+    font-family: 'Archivo', sans-serif;
 }
 
 .tabs .tab .tab-body {
@@ -3635,7 +3636,7 @@ input:checked+.slider:before {
 
 .faqs .tabs .tab .tab-header {
     font-size: 17px;
-    font-family: "Montserrat-Light";
+    font-family: 'Archivo', sans-serif;
     font-weight: 400;
     display: block;
     padding: 15px 15px;
@@ -3691,7 +3692,7 @@ input:checked+.slider:before {
 /*** New Styles ***/
 
 .card_user {
-    font-family: 'Montserrat-Regular';
+    font-family: 'Archivo', sans-serif;
     border: 1px solid #d2d6da;
     text-align: center;
 }
@@ -3733,7 +3734,7 @@ input:checked+.slider:before {
 }
 
 .buy_head {
-    font-family: 'Montserrat-Regular';
+    font-family: 'Archivo', sans-serif;
     font-size: 19px;
     color: #1a1e31;
     margin-bottom: 20px;
@@ -3767,7 +3768,7 @@ input:checked+.slider:before {
 }
 
 .table thead th {
-    font-family: 'Montserrat-Light';
+    font-family: 'Archivo', sans-serif;
     border-bottom: none;
     font-size: 14px;
     color: #a7a9ac;
@@ -4075,13 +4076,13 @@ input:checked+.slider:before {
 footer h3 {
     color: #fff;
     font-size: 14px;
-    font-family: 'Montserrat-Regular';
+    font-family: 'Archivo', sans-serif;
 }
 
 footer ul li a {
     color: #bdbfc4;
     font-size: 13px;
-    font-family: 'Montserrat-Light';
+    font-family: 'Archivo', sans-serif;
 }
 
 footer ul li {
@@ -4091,7 +4092,7 @@ footer ul li {
 footer h5 {
     color: #fff;
     font-size: 14px;
-    font-family: 'Montserrat-Regular';
+    font-family: 'Archivo', sans-serif;
 }
 
 footer a:hover {
@@ -4115,13 +4116,13 @@ footer a:hover {
 .cookies_footer {
     position: fixed;
     bottom: 0%;
-    left: 25%;
+    left: 0;
     margin: auto;
-    font-family: Montserrat-Light;
+    font-family: 'Archivo', sans-serif;
     z-index: 5000;
-    width: 50%;
-    background: #ffffff;
-    color: black;
+    width: 100%;
+    background: #000000;
+    color: white;
     font-size: 15px;
     margin-top: 10px;
     padding: 15px 0;
@@ -4212,7 +4213,7 @@ footer a:hover {
     margin: 20px;
     margin-top: 0px;
     border-radius: 4px;
-    font-family: Montserrat-Light;
+    font-family: 'Archivo', sans-serif;
     box-shadow: 1px 1px 2px 1px #ccc !important;
     border-bottom: 0px;
 }
