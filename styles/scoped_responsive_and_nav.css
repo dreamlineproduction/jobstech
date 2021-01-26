@@ -9311,7 +9311,7 @@ a.arrow-up::after {
 .gnav-header .search-nav {
     position: relative;
     float: left;
-    width: 35%;
+    width: 48%;
 }
 
 .gnav-header #search-query.close-icon-experiment {
