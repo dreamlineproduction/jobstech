@@ -57,7 +57,7 @@ $lang["menu"]["logout"] = "Logout";
 
 
 /// Buttons
-$lang["search"]["placeholder"] = "Find Services";
+$lang["search"]["placeholder"] = "Search design my logo";
 $lang["search"]["button"] = "Search";
 $lang["view_all"] = "VIEW ALL";
 $lang["see_all"] = "See All";
@@ -772,7 +772,7 @@ $lang['coupon_code']['expired']= "Your Coupon Code Is Expired. ";
 $lang['coupon_code']['not_apply']= " Your coupon code does not apply to proposal/service in your cart.";
 $lang['coupon_code']['already_used']= "Your Coupon Code Is Already Used.";
 
-/// Purchases 
+/// Purchases
 $lang['purchases']['no_purchases'] = "You have no purchases to display.";
 
 
@@ -803,7 +803,8 @@ $lang['buying_orders']['no_cancelled'] = "No proposals/services have been cancel
 /// View Proposals Page
 
 $lang['view_proposals']['vacation_mode'] = "Vacation Mode";
-$lang['view_proposals']['admin_pause_proposal'] = "Unfortunately we paused this proposal from our end. Clicking on ‘ok’ will send the proposal to us to re-check and potentially approve. Sorry for the inconvenience.";
+$lang['view_proposals']['admin_pause_proposal'] = "Unfortunately we paused this proposal from our end. Clicking on ‘ok’
+will send the proposal to us to re-check and potentially approve. Sorry for the inconvenience.";
 
 
 /// Create Coupon Page
@@ -824,10 +825,12 @@ $lang['tabs']['submit_for_approval'] = "Submit For Approval";
 
 $lang['edit_proposal']['instant_delivery']['title'] = "Instant Delivery";
 $lang['edit_proposal']['instant_delivery']['enable'] = "Enable Instant Delivery:";
-$lang['edit_proposal']['instant_delivery']['alert1'] = "With this, any item uploaded on here will be available for instant download after purchase.";
+$lang['edit_proposal']['instant_delivery']['alert1'] = "With this, any item uploaded on here will be available for
+instant download after purchase.";
 $lang['edit_proposal']['instant_delivery']['alert2'] = "
-   <p class='mb-1'>Accepted Files: jpeg, jpg, gif, png, tif, avi, mpeg, mpg, mov, rm, 3gp, flv, mp4, zip, rar, mp3, wav, docx, csv, xls, pptx, pdf, txt</p>
-   <p class='mb-0'>Max Upload Size: 100mb</p>
+<p class='mb-1'>Accepted Files: jpeg, jpg, gif, png, tif, avi, mpeg, mpg, mov, rm, 3gp, flv, mp4, zip, rar, mp3, wav,
+    docx, csv, xls, pptx, pdf, txt</p>
+<p class='mb-0'>Max Upload Size: 100mb</p>
 ";
 
 $lang['edit_proposal']['pricing']['warning1'] = "If you want to use packages, you need to set this field value to 0.";
@@ -859,7 +862,8 @@ $lang['order_details']['total'] = "Total";
 $lang['order_details']['description'] = "Description";
 
 
-$lang['order_details']['order_not_started'] = "Buyer Hasn't Started The Order Yet. Buyer Will Have To Reply To This Order So It Get Started.";
+$lang['order_details']['order_not_started'] = "Buyer Hasn't Started The Order Yet. Buyer Will Have To Reply To This
+Order So It Get Started.";
 
 $lang['order_details']['tip_given'] = "You have given {amount} tip to seller. ";
 
@@ -912,14 +916,17 @@ $lang['post_request']['heading_3'] = "What is your budget for this service? (Opt
 
 $lang['post_request']['column_1']['title'] = "Define in Detail";
 $lang['post_request']['column_1']['desc'] = "Include all the necessary details needed to complete your request.";
-$lang['post_request']['column_1']['example'] = "<b>For example:</b> if you are looking for a logo, you can specify your company name, business type, preferred color, etc.";
+$lang['post_request']['column_1']['example'] = "<b>For example:</b> if you are looking for a logo, you can specify your
+company name, business type, preferred color, etc.";
 
 $lang['post_request']['column_2']['title'] = "Refine your Request";
 $lang['post_request']['column_2']['desc'] = "Choose the category and subcategory that best fits your request.";
-$lang['post_request']['column_2']['example'] = "<b>For example:</b> if you are looking for a logo, you should choose 'Logo Design' within the 'Graphics & Design' category.";
+$lang['post_request']['column_2']['example'] = "<b>For example:</b> if you are looking for a logo, you should choose
+'Logo Design' within the 'Graphics & Design' category.";
 
 $lang['post_request']['column_3']['title'] = "Set a Delivery Time";
-$lang['post_request']['column_3']['desc'] = "This is the amount of time the seller has to work on your order. Please note that a request for faster delivery may impact the price.";
+$lang['post_request']['column_3']['desc'] = "This is the amount of time the seller has to work on your order. Please
+note that a request for faster delivery may impact the price.";
 
 $lang['post_request']['column_4']['title'] = "Set Your Budget";
 $lang['post_request']['column_4']['desc'] = "Enter an amount you are willing to spend for this service.";
@@ -955,7 +962,7 @@ $lang['single_ticket']['reply_to_admin'] = "Reply To Admin";
 $lang['single_ticket']["can't_send"] = "You Can't Send Message Now Because Ticket status is closed now.";
 
 
-/// Gigtodo Notifier Plugin 
+/// Gigtodo Notifier Plugin
 
 /// Inbox
 $lang['notifier_plugin']['new_message'] = "$site_name - You've received a message from {seller_user_name}";
@@ -968,7 +975,8 @@ $lang['notifier_plugin']['payout_delcined'] = "$site_name - Your payout withdraw
 /// Requests
 $lang['notifier_plugin']['request_approved'] = "$site_name - Admin Has approved your request. Thanks for posting.";
 
-$lang['notifier_plugin']['request_unapproved'] = "$site_name - Admin Has unapproved your request. Please submit a valid request.";
+$lang['notifier_plugin']['request_unapproved'] = "$site_name - Admin Has unapproved your request. Please submit a valid
+request.";
 
 
 /// Proposals
@@ -982,7 +990,8 @@ $lang['notifier_plugin']['proposal_modification'] = "$site_name - Admin Has Sent
 /// Order
 $lang['notifier_plugin']['new_order'] = "$site_name - Congrats! You just received an order from {seller_user_name}";
 
-$lang['notifier_plugin']['order_message'] = "$site_name - {seller_user_name} has sent you a message on order #{order_number}";
+$lang['notifier_plugin']['order_message'] = "$site_name - {seller_user_name} has sent you a message on order
+#{order_number}";
 
 $lang['notifier_plugin']['order_tip'] = "$site_name: Congrats! {buyer_user_name} just issued you a tip.";
 
@@ -994,7 +1003,8 @@ $lang['notifier_plugin']['order_review'] = "";
 
 
 /// Ticket
-$lang['notifier_plugin']['ticket_reply'] = "$site_name - We just responded to your ticket #{number}. please login to your portal and respond.";
+$lang['notifier_plugin']['ticket_reply'] = "$site_name - We just responded to your ticket #{number}. please login to
+your portal and respond.";
 
 
 // $lang['notifier_plugin']['payout_approved'] = "";

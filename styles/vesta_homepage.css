@@ -18,8 +18,9 @@
 }
 
 .cat-nav .top-nav-item a:hover {
-    color:black;
+    color: #595959;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .cat-nav .top-nav-item.active {
@@ -39,11 +40,8 @@
     border-bottom: 3px solid #98012E;
 }
 
-
-.cat-nav .top-nav-item.main a{
-
-color: white;
-
+.cat-nav .top-nav-item.main a {
+    color: white;
 }
 
 .cat-nav .top-nav-item.underlined-promo-item:hover {
@@ -73,33 +71,22 @@ color: white;
     border-bottom-left-radius: 3px;
 }
 
-.cat-nav .sub-nav-container aside h4{
-
-font-size: 1.3rem;
-
+.cat-nav .sub-nav-container aside h4 {
+    font-size: 1.3rem;
 }
 
-.cat-nav .sub-nav-container aside a:hover{
-
-background: #f7f7f4;
-
+.cat-nav .sub-nav-container aside a:hover {
+    background: #f7f7f4;
 }
 
-.cat-nav .sub-nav-container aside:last-child a:hover{
-
-color: black;
-
-text-decoration: underline;
-
+.cat-nav .sub-nav-container aside:last-child a:hover {
+    color: black;
+    text-decoration: underline;
 }
 
 .cat-nav .sub-nav-container ul li a:hover {
-
-text-decoration: underline;
-
+    text-decoration: underline;
 }
-
-
 
 @charset "utf-8";
 @-webkit-keyframes pop {

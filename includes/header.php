@@ -57,85 +57,92 @@ $site_border_color = $row_general_settings->site_border_color;
 <link href="<?= $site_url; ?>/styles/vesta_homepage.css" rel="stylesheet">
 
 <div id="gnav-header" class="gnav-header global-nav clear gnav-3">
-  <header id="gnav-header-inner" class="gnav-header-inner clear apply-nav-height col-group has-svg-icons body-max-width">
-    <div class="col-xs-12">
-      <div id="gigtodo-logo" class="apply-nav-height gigtodo-logo-svg gigtodo-logo-svg-logged-in <?php if(isset($_SESSION["seller_user_name"])){echo"loggedInLogo";} ?>">
-        <a href="<?= $site_url; ?>">
-          <?php if($site_logo_type == "image"){ ?>
-            <img class="desktop" src="<?= $site_logo_image; ?>" width="150">
-          <?php }else{ ?>
-            <span class="desktop text-logo"><?= $site_logo_text; ?></span>
-          <?php } ?>
-          <?php if($enable_mobile_logo == 1){ ?>
-            <img class="mobile" src="<?= $site_mobile_logo; ?>" height="25">
-          <?php } ?>
-        </a>
-      </div>
-      <button id="mobilemenu" class="unstyled-button mobile-catnav-trigger apply-nav-height icon-b-1 tablet-catnav-enabled <?= ($enable_mobile_logo == 0)?"left":""; ?>">
-        <span class="screen-reader-only"></span>
-        <div class="text-gray-lighter text-body-larger">
-          <span class="gigtodo-icon hamburger-icon nav-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M20,6H4A1,1,0,1,1,4,4H20A1,1,0,0,1,20,6Z" />
-              <path d="M20,13H4a1,1,0,0,1,0-2H20A1,1,0,0,1,20,13Z" />
-              <path d="M20,20H4a1,1,0,0,1,0-2H20A1,1,0,0,1,20,20Z" />
-            </svg>
-          </span>
-        </div>
-      </button>
-      <div class="catnav-search-bar search-browse-wrapper with-catnav">
-        <div class="search-browse-inner">
-          <form id="gnav-search" class="search-nav expanded-search apply-nav-height" method="post">
-            <div class="gnav-search-inner clearable">
-              <label for="search-query" class="screen-reader-only">Search for items</label>
-              <div class="search-input-wrapper text-field-wrapper">
-                <input id="search-query" class="rounded" name="search_query"
-                  placeholder="<?= $lang['search']['placeholder']; ?>" value="<?= @$_SESSION["search_query"]; ?>"  autocomplete="off">
-              </div>
-              <div class="search-button-wrapper hide">
-                <button class="btn btn-primary" style="color:#FFF;background-color: <?php echo $site_color;?>" name="search" type="submit" value="Search">
-                  <?= $lang['search']['button']; ?>
-                </button>
-              </div>
+    <header id="gnav-header-inner"
+        class="gnav-header-inner clear apply-nav-height col-group has-svg-icons body-max-width">
+        <div class="col-xs-12">
+            <div id="gigtodo-logo"
+                class="apply-nav-height gigtodo-logo-svg gigtodo-logo-svg-logged-in <?php if(isset($_SESSION["seller_user_name"])){echo"loggedInLogo";} ?>">
+                <a href="<?= $site_url; ?>">
+                    <?php if($site_logo_type == "image"){ ?>
+                    <img class="desktop" src="<?= $site_logo_image; ?>" width="150">
+                    <?php }else{ ?>
+                    <span class="desktop text-logo"><?= $site_logo_text; ?></span>
+                    <?php } ?>
+                    <?php if($enable_mobile_logo == 1){ ?>
+                    <img class="mobile" src="<?= $site_mobile_logo; ?>" height="25">
+                    <?php } ?>
+                </a>
             </div>
-            <ul class="search-bar-panel d-none"></ul>
-          </form>
-        </div>
-      </div>
-      <?php
+            <button id="mobilemenu"
+                class="unstyled-button mobile-catnav-trigger apply-nav-height icon-b-1 tablet-catnav-enabled <?= ($enable_mobile_logo == 0)?"left":""; ?>">
+                <span class="screen-reader-only"></span>
+                <div class="text-gray-lighter text-body-larger">
+                    <span class="gigtodo-icon hamburger-icon nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20,6H4A1,1,0,1,1,4,4H20A1,1,0,0,1,20,6Z" />
+                            <path d="M20,13H4a1,1,0,0,1,0-2H20A1,1,0,0,1,20,13Z" />
+                            <path d="M20,20H4a1,1,0,0,1,0-2H20A1,1,0,0,1,20,20Z" />
+                        </svg>
+                    </span>
+                </div>
+            </button>
+            <div class="catnav-search-bar search-browse-wrapper with-catnav">
+                <div class="search-browse-inner">
+                    <form id="gnav-search" class="search-nav expanded-search apply-nav-height" method="post">
+                        <div class="gnav-search-inner clearable">
+                            <label for="search-query" class="screen-reader-only">Search for items</label>
+                            <div class="search-input-wrapper text-field-wrapper">
+                                <input id="search-query" class="rounded" name="search_query"
+                                    placeholder="<?= $lang['search']['placeholder']; ?>"
+                                    value="<?= @$_SESSION["search_query"]; ?>" autocomplete="off">
+                            </div>
+                            <div class="search-button-wrapper hide">
+                                <button class="btn btn-primary"
+                                    style="color:#FFF;background-color: <?php echo $site_color;?>" name="search"
+                                    type="submit" value="Search">
+                                    <?= $lang['search']['button']; ?>
+                                </button>
+                            </div>
+                        </div>
+                        <ul class="search-bar-panel d-none"></ul>
+                    </form>
+                </div>
+            </div>
+            <?php
       if (isset($_POST['search'])) {
         $search_query = $input->post('search_query');
         $_SESSION['search_query'] = $search_query;
         echo "<script>window.open('$site_url/search.php','_self')</script>";
       }
       ?>
-      <ul class="account-nav apply-nav-height">
-        <?php if (!isset($_SESSION["seller_user_name"])){ ?>
-        <li class="register-link">
+            <ul class="account-nav apply-nav-height">
+                <?php if (!isset($_SESSION["seller_user_name"])){ ?>
+                <!-- <li class="register-link">
             <a href="<?= $site_url; ?>/freelancers"><?= $lang['freelancers_menu']; ?></a>
-        </li>
-        <li class="sell-on-gigtodo-link d-none d-lg-block">
-          <a href="#" data-toggle="modal" data-target="#register-modal">
-            <span class="sell-copy"><?= $lang['become_seller']; ?></span>
-            <span class="sell-copy short"><?= $lang['become_seller']; ?></span>
-          </a>
-        </li>
-        <li class="register-link">
-          <a href="#" data-toggle="modal" data-target="#login-modal"><?= $lang['sign_in']; ?></a>
-        </li>
-        <li class="sign-in-link mr-lg-0 mr-3">
-          <a href="#" class="btn btn_join" style="color: white;background-color: <?php echo $site_color;?>" data-toggle="modal" data-target="#register-modal">
-          <?php if ($deviceType == "phone") { echo $lang['mobile_join_now']; } else { echo $lang['join_now']; } ?>
-          </a>
-        </li>
-        <?php 
+        </li> -->
+                <li class="sell-on-gigtodo-link d-none d-lg-block">
+                    <a href="#" data-toggle="modal" data-target="#register-modal">
+                        <span class="sell-copy"><?= $lang['become_seller']; ?></span>
+                        <span class="sell-copy short"><?= $lang['become_seller']; ?></span>
+                    </a>
+                </li>
+                <li class="register-link">
+                    <a href="#" data-toggle="modal" data-target="#login-modal"><?= $lang['sign_in']; ?></a>
+                </li>
+                <li class="sign-in-link mr-lg-0 mr-3">
+                    <a href="#" class="btn btn_join" style="color: white;background-color: <?php echo $site_color;?>"
+                        data-toggle="modal" data-target="#register-modal">
+                        <?php if ($deviceType == "phone") { echo $lang['mobile_join_now']; } else { echo $lang['join_now']; } ?>
+                    </a>
+                </li>
+                <?php 
         }else{
           require_once("comp/UserMenu.php");
         }
         ?>
-      </ul>
-    </div>
-  </header>
+            </ul>
+        </div>
+    </header>
 </div>
 
 <div class="clearfix"></div>
@@ -145,7 +152,7 @@ $site_border_color = $row_general_settings->site_border_color;
 <?php if(isset($_GET['not_available'])) { ?>
 <!-- Alert to show wrong url or unregistered account end -->
 <div class="alert alert-danger text-center mb-0 h6">
-  <?= $lang['not_availble']; ?>
+    <?= $lang['not_availble']; ?>
 </div>
 <?php } ?>
 
@@ -154,37 +161,38 @@ $site_border_color = $row_general_settings->site_border_color;
   if($seller_verification != "ok"){
 ?>
 <div class="alert alert-warning clearfix activate-email-class mb-0">
-  <div class="float-left mt-2">
-    <i style="font-size: 125%;" class="fa fa-exclamation-circle"></i> 
-    <?php
+    <div class="float-left mt-2">
+        <i style="font-size: 125%;" class="fa fa-exclamation-circle"></i>
+        <?php
       $message = $lang['popup']['email_confirm']['text'];
       $message = str_replace('{seller_email}', $seller_email, $message);
       $message = str_replace('{link}', "$site_url/customer_support", $message);
       echo $message;
       ?>
-  </div>
-  <div class="float-right">
-    <button id="send-email" class="btn btn-success btn-sm float-right text-white"><?= $lang["popup"]["email_confirm"]['button']; ?></button>
-  </div>
+    </div>
+    <div class="float-right">
+        <button id="send-email"
+            class="btn btn-success btn-sm float-right text-white"><?= $lang["popup"]["email_confirm"]['button']; ?></button>
+    </div>
 </div>
 <script>
-  $(document).ready(function(){
-    $("#send-email").click(function(){
-      $("#wait").addClass('loader');
-      $.ajax({
-        method: "POST",
-        url: "<?= $site_url; ?>/includes/send_email",
-        success:function(){
-          $("#wait").removeClass('loader');
-          $("#send-email").html("Resend Email");
-          swal({
-            type: 'success',
-            text: '<?= $lang['alert']['confirmation_email']; ?>',
-          });
-        }
-      });
+$(document).ready(function() {
+    $("#send-email").click(function() {
+        $("#wait").addClass('loader');
+        $.ajax({
+            method: "POST",
+            url: "<?= $site_url; ?>/includes/send_email",
+            success: function() {
+                $("#wait").removeClass('loader');
+                $("#send-email").html("Resend Email");
+                swal({
+                    type: 'success',
+                    text: '<?= $lang['alert']['confirmation_email']; ?>',
+                });
+            }
+        });
     });
-  });
+});
 </script>
 <?php  } } ?>
 

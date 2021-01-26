@@ -172,52 +172,32 @@ $slide_image = $row_slides->slide_image;
 </section>
 <!-- end market -->
 <!-- start timer -->
-<section class="timer">
-    <div class="container" style="max-width: 1335px !important;">
-        <div class="row">
-            <?php
-      $get_boxes = $db->query("select * from section_boxes where language_id='$siteLanguage' LIMIT 0,1");
-      while($row_boxes = $get_boxes->fetch()){
-      $box_id = $row_boxes->box_id;
-      $box_title = $row_boxes->box_title;
-      $box_desc = $row_boxes->box_desc;
-      $box_image = getImageUrl("section_boxes",$row_boxes->box_image);
-      ?>
-            <div class="col-md-4 pad0">
-                <div class="box">
-                    <h5><?= $box_title; ?></h5>
-                    <p><?= $box_desc; ?></p>
+
+<section>
+
+    <div class="get-started-box">
+
+        <div class="container">
+            <div class="row">
+                <img src="images/man-transparent.png" width="350px">
+                <h1>Find the <em>talent</em> needed to</h1>
+                <h1> get your business growing.</h1>
+
+
+                <div>
+                    <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#register-modal">
+                        Join Now </a>
                 </div>
             </div>
-            <div class="col-md-4 pad0">
-                <div class="blu_box">
-                    <img src="<?= $box_image; ?>" class="img-fluid mx-auto d-block">
-                </div>
-            </div>
-            <?php } ?>
-            <?php
-      $get_boxes = $db->query("select * from section_boxes where language_id='$siteLanguage' LIMIT 1,100");
-      while($row_boxes = $get_boxes->fetch()){
-      $box_id = $row_boxes->box_id;
-      $box_title = $row_boxes->box_title;
-      $box_desc = $row_boxes->box_desc;
-      $box_image = getImageUrl("section_boxes",$row_boxes->box_image);
-      ?>
-            <div class="col-md-4 pad0">
-                <div class="box">
-                    <h5><?= $box_title; ?></h5>
-                    <p><?= $box_desc; ?></p>
-                </div>
-            </div>
-            <div class="col-md-4 pad0">
-                <div class="blu_box1">
-                    <img src="<?= $box_image; ?>" class="img-fluid mx-auto d-block">
-                </div>
-            </div>
-            <?php } ?>
+
         </div>
     </div>
+
+
 </section>
+
+
+
 <!-- end timer -->
 <!-- start top -->
 <section class="top mb-0">

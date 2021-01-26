@@ -79,6 +79,40 @@
     animation-fill-mode: both;
 }
 
+.get-started-box .row {
+    max-width: 830px;
+}
+
+.get-started-box {
+    width: 1200px;
+    margin: auto;
+    padding: 120px 96px;
+    background-color: #B6B7B9;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.get-started-box .btn {
+    padding: 20px;
+    margin-top: 40px;
+    width: 180px;
+}
+
+.get-started-box img {
+    position: absolute;
+    right: 0;
+    top: -30px;
+    width: 350px;
+}
+
+.get-started-box h1 {
+    font-size: 50px !important;
+}
+
 .ui-toolkit *,
 .ui-toolkit *:before,
 .ui-toolkit *:after {
@@ -447,7 +481,7 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
 .ui-toolkit .h2,
 .ui-toolkit h3,
 .ui-toolkit .h3 {
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .ui-toolkit h1.normalize,
@@ -11351,6 +11385,7 @@ a.text-orange.text-orange:active,
 .gnav-header .register-link a:hover {
     color: #595959 !important;
     text-decoration: underline !important;
+    font-weight: 600;
 }
 
 
@@ -11420,6 +11455,7 @@ a.close.ss-delete:not(:hover):not(:focus):not(:active),
 .group-listing-recent-members p a:not(:hover):not(:focus):not(:active),
 .btn-image-manager:not(:hover):not(:focus):not(:active) {
     text-decoration: none !important;
+    font-weight: 600;
 }
 
 .subnav-text-link:hover,
