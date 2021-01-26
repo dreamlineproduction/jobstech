@@ -80,10 +80,10 @@ $slide_image = $row_slides->slide_image;
 <!-- start market -->
 <div class="container mb-5 cards" style="max-width: 1360px !important;">
     <div class="row">
-        <div class="col-md-12">
-            <h1 class="mt-5 mb-1 <?=($lang_dir == "right" ? 'text-right':'')?>"><?= $lang['home']['cards']['title']; ?>
+        <div class="col-md-12 text-center">
+            <h1 class="mt-5 mb-3 <?=($lang_dir == "right" ? 'text-right':'')?>"><?= $lang['home']['cards']['title']; ?>
             </h1>
-            <p class="subHeading mb-4 <?=($lang_dir == "right" ? 'text-right':'')?>">
+            <p class="subHeading mb-5 <?=($lang_dir == "right" ? 'text-right':'')?>">
                 <?= $lang['home']['cards']['desc']; ?></p>
             <div class="owl-carousel home-cards-carousel owl-theme">
                 <!--- owl-carousel home-cards-carousel Starts --->
@@ -180,8 +180,8 @@ $slide_image = $row_slides->slide_image;
         <div class="container">
             <div class="row">
                 <img src="images/man-transparent.png" width="350px">
-                <h1>Find the <em>talent</em> needed to</h1>
-                <h1> get your business growing.</h1>
+                <h1>Find the <em>talent</em> needed to
+                 get your business growing.</h1>
 
 
                 <div>

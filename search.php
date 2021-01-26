@@ -15,7 +15,8 @@
     <meta name="description" content="<?= $site_desc; ?>">
     <meta name="keywords" content="<?= $site_keywords; ?>">
     <meta name="author" content="<?= $site_author; ?>">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="styles/bootstrap.css" rel="stylesheet">
     <link href="styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
     <link href="styles/styles.css" rel="stylesheet">
