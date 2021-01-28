@@ -180,13 +180,12 @@ $slide_image = $row_slides->slide_image;
         <div class="container">
             <div class="row">
                 <img src="images/man-transparent.png" width="350px">
-                <h1>Find the <em>talent</em> needed to
-                 get your business growing.</h1>
+                <h1><?= $lang["findtalent"] ?> </h1>
 
 
                 <div>
                     <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#register-modal">
-                        Join Now </a>
+                        <?= $lang['findtalentbtn']; ?> </a>
                 </div>
             </div>
 
