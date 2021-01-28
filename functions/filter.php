@@ -332,10 +332,10 @@ function get_proposals($filter_type){
    $show_favorite_class = "proposal-unfavorite";
    }
    ?>
-   <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
-      <?php require("$dir/includes/proposals.php"); ?>
-   </div>
-   <?php 
+<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-3">
+    <?php require("$dir/includes/proposals.php"); ?>
+</div>
+<?php 
    }
 
 }

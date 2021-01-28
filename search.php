@@ -43,16 +43,16 @@
                 <div class="col-md-12">
                     <center>
                         <h1><?= $lang['search']['title']; ?></h1>
-                        <p class="lead pb-5"> "<?= @$_SESSION["search_query"]; ?>" </p>
+                        <p class="lead pb-2"> "<?= @$_SESSION["search_query"]; ?>" </p>
                     </center>
+
+                    <?php require_once("includes/search_sidebar.php");?>
                     <hr>
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col-lg-3 col-md-4 col-sm-12 <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
-                    <?php require_once("includes/search_sidebar.php");?>
-                </div>
-                <div class="col-lg-9 col-md-8 col-sm-12 <?=($lang_dir == "right" ? 'order-1 order-sm-2':'')?>">
+
+                <div class="col-lg-12 col-md-8 col-sm-12 <?=($lang_dir == "right" ? 'order-1 order-sm-2':'')?>">
                     <div class="row flex-wrap proposals" id="search_proposals">
                         <?php get_search_proposals(); ?>
                     </div>
