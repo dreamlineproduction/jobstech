@@ -4,16 +4,16 @@ $lang["welcome"] = "Welcome";
 
 // User Logged Out Menu Items
 $lang["freelancers_menu"] = "Freelancers";
-$lang["become_seller"] = "Станете продавач";
-$lang["sign_in"] = "Впиши се";
-$lang["join_now"] = "Присъедини се сега";
-$lang["mobile_join_now"] = "Присъединяване";
-$lang['no_results'] = "Няма намерени резултати.";
+$lang["become_seller"] = "Become a Seller";
+$lang["sign_in"] = "Sign In";
+$lang["join_now"] = "Join Now";
+$lang["mobile_join_now"] = "Join";
+$lang['no_results'] = "No Results Found.";
 
-$lang['more'] = "| Повече ▼";
+$lang['more'] = "More";
 
 // User Logged In Menu Items
-$lang["menu"]["dashboard"] = "Табло";
+$lang["menu"]["dashboard"] = "Dashboard";
 $lang["menu"]["notifications"] = "Notifications";
 $lang["menu"]["messages"] = "Messages";
 $lang["menu"]["favorites"] = "Favorites";
@@ -33,49 +33,49 @@ $lang["menu"]["requests"] = "Requests";
 $lang["menu"]["post_request"] = "Post A Request";
 $lang["menu"]["manage_requests"] = "Manage Requests";
 $lang["menu"]["contacts"] = "Contacts";
-$lang["menu"]["my_buyers"] = "Моите купувачи";
-$lang["menu"]["my_sellers"] = "Моите продавачи";
-$lang["menu"]["my_referrals"] = "Моите препоръки";
-$lang["menu"]["user_referrals"] = "Потребителски препоръки";
-$lang["menu"]["proposal_referrals"] = "Препоръки за предложения";
-$lang["menu"]["inbox"] = "Входящи";
-$lang["menu"]["notifications"] = "Известия";
-$lang["menu"]["inbox_messages"] = "Входящи съобщения";
-$lang["menu"]["my_profile"] = "Моят профил";
-$lang["menu"]["settings"] = "Настройки";
-$lang["menu"]["profile_settings"] = "Настройки на профила";
-$lang["menu"]["account_settings"] = "Настройки на профила";
+$lang["menu"]["my_buyers"] = "My Buyers";
+$lang["menu"]["my_sellers"] = "My Sellers";
+$lang["menu"]["my_referrals"] = "My Referrals";
+$lang["menu"]["user_referrals"] = "User Referrals";
+$lang["menu"]["proposal_referrals"] = "Proposal Referrals";
+$lang["menu"]["inbox"] = "Inbox";
+$lang["menu"]["notifications"] = "Notifications";
+$lang["menu"]["inbox_messages"] = "Inbox Messages";
+$lang["menu"]["my_profile"] = "My Profile";
+$lang["menu"]["settings"] = "Settings";
+$lang["menu"]["profile_settings"] = "Profile Settings";
+$lang["menu"]["account_settings"] = "Account Settings";
 
 $lang["menu"]["customer_support"] = "Customer Support";
-$lang["menu"]["support_new"] = "Нов билет";
-$lang["menu"]["my_tickets"] = "Моите билети";
+$lang["menu"]["support_new"] = "New Ticket";
+$lang["menu"]["my_tickets"] = "My Tickets";
 
-$lang["menu"]["logout"] = "Излез от профила си";
+$lang["menu"]["logout"] = "Logout";
 
 /// Mobile Menu
 
 
 
 /// Buttons
-$lang["search"]["placeholder"] = "Търсене дизайн моето лого";
+$lang["search"]["placeholder"] = "Search design my logo";
 $lang["search"]["button"] = "Search";
 $lang["view_all"] = "VIEW ALL";
 $lang["see_all"] = "See All";
 
 /// Login & Register Modals
-$lang["modals"]["login"]["title"] = "Влезте в профила си";
+$lang["modals"]["login"]["title"] = "Login To Your Account";
 $lang["modals"]["login"]["or"] = "OR";
-$lang["modals"]["login"]['not_registerd'] = "Не е регистриран?";
-$lang["modals"]["login"]['forgot_password'] = "Забравена парола?";
-$lang["modals"]["register"]["title"] = "Регистриран акаунт";
-$lang["modals"]["register"]["already_account"] = "Вече имате акаунт?";
-$lang["modals"]["register"]["or"] = "или се регистрирайте с:";
-$lang["modals"]["register"]["login"] = "Влез Сега";
+$lang["modals"]["login"]['not_registerd'] = "Not Registered?";
+$lang["modals"]["login"]['forgot_password'] = "Forgot Password?";
+$lang["modals"]["register"]["title"] = "Register Account";
+$lang["modals"]["register"]["already_account"] = "Already Have An Account?";
+$lang["modals"]["register"]["or"] = "or, register with either:";
+$lang["modals"]["register"]["login"] = "Login Now";
 
 $lang["modals"]["forgot"]["title"] = "Forgot Password";
-$lang["modals"]["forgot"]["desc"] = "Въведете вашия имейл, за да получите връзка за нулиране на парола.";
-$lang["modals"]["forgot"]["not_member_yer"] = "Все още не сте член?";
-$lang["modals"]["forgot"]["join_now"] = "Присъедини се сега.";
+$lang["modals"]["forgot"]["desc"] = "Enter your email to receive a password reset link.";
+$lang["modals"]["forgot"]["not_member_yer"] = "Not A Member Yet?";
+$lang["modals"]["forgot"]["join_now"] = "Join Now.";
 
 /// 404 Not Available
 $lang['not_availble'] = "<i class='fa fa-exclamation-circle'></i> The page or user you searched for is no longer available.";
@@ -112,8 +112,8 @@ $lang["sidebar"]["start_selling"]["desc"] = "Sell your services to millions of p
 $lang["sidebar"]["start_selling"]["button"] = "GET STARTED";
 
 /// User Logged Out Home Headings & Descriptions
-$lang["home"]["cards"]["title"] = "Популярни професионални услуги";
-$lang["home"]["cards"]["desc"] = "Завършете проекта си навреме от висококвалифицирани професионалисти";
+$lang["home"]["cards"]["title"] = "Popular Professional Services";
+$lang["home"]["cards"]["desc"] = "Get your project done on time by highly skilled professionals";
 $lang["home"]["categories"]["title"] = "Explore the Marketplace";
 $lang["home"]["categories"]["desc"] = "Get inspired to build your business";
 $lang["home"]["proposals"]["title"] = "Top Featured Proposals/Services";
@@ -136,32 +136,32 @@ $lang["user_home"]["recent_requests"] = "Recent Buyer Requests";
 $lang["user_home"]["no_recent_requests"] = "<i class='fa fa-frown-o'></i> No requests that matches any of your proposals/services yet!";
 
 /// Proposals
-$lang['proposals']['online'] = "на линия";
-$lang['proposals']['starting_at'] = "ЗАПОЧВА В";
-$lang['proposals']['video'] = "Това предложение позволява видео сесии";
-$lang['proposals']['instant_delivery'] = "Показване на предложения за незабавна доставка.";
+$lang['proposals']['online'] = "online";
+$lang['proposals']['starting_at'] = "STARTING AT";
+$lang['proposals']['video'] = "This proposal allows video sessions";
+$lang['proposals']['instant_delivery'] = "Instant Delivery After Order.";
 
 
 /// Filter Sidebar
 $lang["sidebar"]["instant_delivery"] = "Show Instant Delivery Proposals";
-$lang["sidebar"]["online_sellers"] = "Покажете онлайн продавачи";
+$lang["sidebar"]["online_sellers"] = "Show Online Sellers";
 
-$lang["sidebar"]["sort_by"]["title"] = "Сортирай по";
-$lang["sidebar"]["sort_by"]["new"] = "Ново";
-$lang["sidebar"]["sort_by"]["old"] = "Стар";
+$lang["sidebar"]["sort_by"]["title"] = "Sort By";
+$lang["sidebar"]["sort_by"]["new"] = "New";
+$lang["sidebar"]["sort_by"]["old"] = "Old";
 
-$lang["sidebar"]["seller_location"] = "Местоположение на продавача";
-$lang["sidebar"]["seller_country"] = "Страна на продавача";
-$lang["sidebar"]["seller_city"] = "Град на продавача";
+$lang["sidebar"]["seller_location"] = "Seller Location";
+$lang["sidebar"]["seller_country"] = "Seller Country";
+$lang["sidebar"]["seller_city"] = "Seller City";
 
 
-$lang["sidebar"]["change_currency"] = "Промяна на валутата";
+$lang["sidebar"]["change_currency"] = "Change Currency";
 $lang["sidebar"]["categories"] = "Categories";
-$lang["sidebar"]["delivery_time"] = "Време за доставка";
-$lang["sidebar"]["seller_skill"] = "Умение на продавача";
-$lang["sidebar"]["seller_level"] = "Ниво на продавача";
-$lang["sidebar"]["seller_lang"] = "Продавач Ланг";
-$lang["sidebar"]["clear_filter"] = "<i class='fa fa-times-circle'></i> Изчистване на филтъра";
+$lang["sidebar"]["delivery_time"] = "Delivery Time";
+$lang["sidebar"]["seller_skill"] = "Seller Skill";
+$lang["sidebar"]["seller_level"] = "Seller Level";
+$lang["sidebar"]["seller_lang"] = "Seller Lang";
+$lang["sidebar"]["clear_filter"] = "<i class='fa fa-times-circle'></i> Clear Filter";
 
 
 /// Freelancers Page 
@@ -173,7 +173,7 @@ $lang['freelancers']['no_results'] = "We haven't found any freelancers matching 
 
 /// Proposals Display Pages
 
-$lang['search']['title'] = "Резултати от търсенето";
+$lang['search']['title'] = "Search Results";
 $lang['search']['no_results'] = "We haven't found any proposals/services matching that search.";
 
 $lang['category']['no_results'] = "No proposals/services to Show in this Category Yet.";
@@ -194,8 +194,8 @@ $lang['tag_proposals']['no_results'] = "No Proposals to Show in this Tag Yet.";
 
 
 /// Pagination
-$lang["pagination"]['first_page'] = "Първа страница";
-$lang["pagination"]['last_page'] = "Последна страница";
+$lang["pagination"]['first_page'] = "First Page";
+$lang["pagination"]['last_page'] = "Last Page";
 
 //// How It Works Page
 $lang["how_it_works"]['title'] = "How Our Platform Works";
@@ -424,19 +424,19 @@ $lang["blog"]['desc'] = "Secure, innovative and user friendly platform for buyin
 
 /// Input Labels
 
-$lang['label']['full_name'] = "Пълно име";
+$lang['label']['full_name'] = "Full Name";
 $lang['label']['username'] = "Username";
-$lang['label']['email'] = "електронна поща";
-$lang['label']['phone'] = "Телефон не ";
+$lang['label']['email'] = "Email";
+$lang['label']['phone'] = "Phone No ";
 
-$lang['label']['phone_optional'] = "<span class='text-success'>(По желание)</span>";
-$lang['label']['phone_required'] = "<span class='text-success'>(Задължително)</span>";
+$lang['label']['phone_optional'] = "<span class='text-success'>(Optional)</span>";
+$lang['label']['phone_required'] = "<span class='text-success'>(Required)</span>";
 
-$lang['label']['password'] = "Парола";
-$lang['label']['password_confirm'] = "Потвърди парола";
+$lang['label']['password'] = "Password";
+$lang['label']['password_confirm'] = "Confirm Password:";
 
-$lang['label']['enter_new_pass'] = "Въведете нова парола";
-$lang['label']['confirm_new_pass'] = "Потвърждение на новата парола";
+$lang['label']['enter_new_pass'] = "Enter New Password";
+$lang['label']['confirm_new_pass'] = "Confirm New Password";
 
 $lang['label']['coupon_title'] = "Coupon Title :";
 $lang['label']['coupon_price'] = "Coupon Price :";
@@ -536,7 +536,7 @@ $lang['note']['wallet_address'] = "! Warning You Only Need To Enter Your Bitcoin
 
 /// Warnings
 
-$lang['warning']['no_spaces'] = "(Разрешени са само букви, цифри и долни черти.)";
+$lang['warning']['no_spaces'] = "(Only letters, numbers and underscores are allowed.)";
 
 $lang['warning']['note'] = "Note: You will not be able to change username once your account has been created.";
 $lang['warning']['username_already'] = "This username has already been taken. Please try another one.";
