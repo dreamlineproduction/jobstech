@@ -51,7 +51,7 @@ Please confirm your email to use this feature.
 }else{
 ?>
 
-<div class="container-fluid mt-5 mb-5">
+<div class="container mt-5 mb-5">
   <h1 class="mb-5">
     <i class="fa fa-plus-circle" aria-hidden="true">
     </i>
@@ -81,11 +81,11 @@ Please confirm your email to use this feature.
         <div class="card-body">
           <form method="post" enctype="multipart/form-data">
             <div class="row row-1">
-              <div class="col-md-2 d-md-block d-none">
-                <!--<i class="fa fa-pencil-square-o fa-4x text-success"></i>-->
+              <!-- <div class="col-md-2 d-md-block d-none">
+                
                 <img style="position:relative; top: -12px; left:15px;" width="64" src="../images/comp/book.png">
-              </div>
-              <div class="col-md-10 col-sm-12">
+              </div> -->
+              <div class="col-md-12 col-sm-12">
                 <div class="row">
                   <div class="col-xl-9 col-lg-12">
                     <div class="form-group">
@@ -107,13 +107,13 @@ Please confirm your email to use this feature.
             </div>
             <div class="row-2">
               <hr class="card-hr">
-              <h5 class="mb-5"><?= $lang['post_request']['heading_1']; ?></h5>
+              <h5 class="mb-3"><?= $lang['post_request']['heading_1']; ?></h5>
               <div class="row mb-2 ">
-                <div class="col-md-2 d-md-block d-none">
-                  <!-- <i class="fa fa-folder-open fa-4x text-success"></i> -->
+                <!-- <div class="col-md-2 d-md-block d-none">
+                  <i class="fa fa-folder-open fa-4x text-success"></i>
                   <img style="position:relative; top: -12px; left:15px;" src="../images/comp/folder.png">
-                </div>
-                <div class="col-md-10 col-sm-12">
+                </div> -->
+                <div class="col-md-12 col-sm-12">
                   <div class="row">
                     <div class="col-xl-4 col-md-6 mb-2">
                       <select class="form-control" name="cat_id" id="category" required="">
@@ -149,11 +149,11 @@ Please confirm your email to use this feature.
               <hr class="card-hr">
               <h5 class="mb-4"> <?= $lang['post_request']['heading_2']; ?> </h5>
               <div class="row mb-4">
-                <div class="col-md-1 d-md-block d-none">
-                  <!--<i class="fa fa-clock-o fa-4x text-success "></i>-->
+                <!-- <div class="col-md-1 d-md-block d-none">
+                  <i class="fa fa-clock-o fa-4x text-success "></i>
                   <img style="position:relative; left:15px;" src="../images/comp/timetable.png">
-                </div>
-                <div class="col-md-11 col-sm-12 mt-3 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div> -->
+                <div class="col-md-12 col-sm-12 mt-3 ">
                   <?php
       						$get_delivery_times = $db->select("delivery_times");
       						while($row_delivery_times = $get_delivery_times->fetch()){
@@ -173,11 +173,11 @@ Please confirm your email to use this feature.
               <hr class="card-hr">
               <h5 class="mb-4"> <?= $lang['post_request']['heading_3']; ?></h5>
               <div class="row">
-                <div class="col-md-1 d-md-block d-none">
-                  <!--<i class="fa fa-money fa-4x text-success fa-work"></i>-->
+                <!-- <div class="col-md-1 d-md-block d-none">
+                  <i class="fa fa-money fa-4x text-success fa-work"></i>
                   <img style="position:relative; left:15px;" src="../images/comp/budget.png">
-                </div>
-                <div class="col-md-6 col-sm-12 offset-md-1 mt-3">
+                </div> -->
+                <div class="col-md-12 col-sm-12  mt-3">
                   <div class="input-group form-curb">
                     <span class="input-group-addon font-weight-bold" > 
                       <?= $s_currency; ?> 

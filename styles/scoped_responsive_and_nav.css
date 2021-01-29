@@ -11510,6 +11510,7 @@ a.pill:hover,
 .tt-hover-t:hover,
 a.close.ss-delete:hover {
     text-decoration: none !important;
+    font-weight: 600;
 }
 
 .order-details-footer {

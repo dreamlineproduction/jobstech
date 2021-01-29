@@ -59,7 +59,7 @@
   </head>
 <body class="is-responsive">
   <?php require_once("../includes/user_header.php"); ?>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row buyer-requests">
       <div class="col-md-12 mt-5">
         <h1 class="col-md-9 float-left">

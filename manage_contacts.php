@@ -49,7 +49,7 @@ $login_seller_id = $row_login_seller->seller_id;
 
 <?php require_once("includes/user_header.php"); ?>
 
-<div class="container-fluid">
+<div class="container">
 
 <div class="row">
 

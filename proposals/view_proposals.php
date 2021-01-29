@@ -66,7 +66,7 @@ if(!isset($_GET['paused']) and !isset($_GET['pending']) and !isset($_GET['modifi
 }
 
 ?>
-<div class="container-fluid view-proposals"><!-- container-fluid view-proposals Starts -->
+<div class="container view-proposals"><!-- container-fluid view-proposals Starts -->
 <div class="row"><!-- row Starts -->
 <div class="col-md-12 mt-5 mb-3"><!-- col-md-12 mt-5 mb-3 Starts -->
         <h1 class="pull-left"><?= $lang["titles"]["view_proposals"]; ?></h1>
