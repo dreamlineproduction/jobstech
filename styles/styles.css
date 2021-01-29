@@ -2242,7 +2242,7 @@ audio.embed-responsive {
 
 .add-new-proposal:before {
     content: '+';
-    background-color: #78cdd2;
+    background-color: #484848;
     color: #fff;
     font-size: 48px;
     font-weight: 400;
@@ -2417,9 +2417,9 @@ audio.embed-responsive {
     background: url(../images/user-background.jpg);
     color: white;
     min-height: 310px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
 }
 
 .user-header .btn-edit {

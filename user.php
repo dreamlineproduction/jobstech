@@ -80,10 +80,10 @@ if($count_seller == 0){
       <div class="row">
         <div class="col-md-12">
           <div class="card mt-4 mb-4 rounded-0">
-            <div class="card-body">
-              <h2>
+            <div class="card-body pl-0">
+              <h4>
                 <?= str_replace('{user_name}',$get_seller_user_name,$lang['user_profile']['user_proposals']); ?>
-              </h2>
+              </h4>
             </div>
           </div>
         </div>
