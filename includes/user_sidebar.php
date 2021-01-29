@@ -2,11 +2,11 @@
 
 	<div class="card-body"><!-- card-body Starts -->
 
-		<h3><?= $lang['user_profile']['description']; ?></h3>
-		<p><?= $seller_about; ?></p>
+		<h4><?= $lang['user_profile']['description']; ?></h4>
+		<p class="text-justify"><?= $seller_about; ?></p>
 
 		<hr class="card-hr">
-		<h3 class="float-left"><?= $lang['user_profile']['languages']; ?></h3>
+		<h4 class="float-left"><?= $lang['user_profile']['languages']; ?></h4>
 
 		<?php if(isset($_SESSION['seller_user_name'])){ ?>
 
@@ -188,7 +188,7 @@
 
 		<hr class="card-hr">
 
-		<h3 class="float-left"><?= $lang['user_profile']['skills']; ?></h3>
+		<h4 class="float-left"><?= $lang['user_profile']['skills']; ?></h4>
 
 		<?php if(isset($_SESSION['seller_user_name'])){ ?>
 

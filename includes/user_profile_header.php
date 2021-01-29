@@ -45,6 +45,8 @@ $count_proposals = $db->count("proposals",["proposal_seller_id" => $seller_id,"p
   <a href="settings?profile_settings" class="btn btn-edit btn-success" ><i class="fa fa-pencil"></i> Edit&nbsp;</a>    
   <?php } ?>
   <?php } ?>
+
+  <div class="container">
   <div class="profile-image float-lg-left flaot-md-left float-none mr-4">
     <?php if(!empty($seller_image)){ ?>
       <img src="<?= $seller_image; ?>" class="rounded-circle">
@@ -61,6 +63,8 @@ $count_proposals = $db->count("proposals",["proposal_seller_id" => $seller_id,"p
       <img src="images/level_badge_3.png" class="level_badge">
     <?php } ?>
   </div>
+  </div>
+
   <div class="content-bar mt-3">
     <h1> Hi, I'm <?= ucfirst($seller_user_name); ?> </h1>
     <span class="headline">
@@ -106,7 +110,10 @@ $count_proposals = $db->count("proposals",["proposal_seller_id" => $seller_id,"p
 
 </div>
 
+
+
 <div class="col-md-12 user-status" >
+<div class="container">
   <ul>
     <li>
     <i class="fa fa-user"></i>
@@ -125,4 +132,5 @@ $count_proposals = $db->count("proposals",["proposal_seller_id" => $seller_id,"p
     </li>
     <?php } ?>
   </ul>
+</div>
 </div>

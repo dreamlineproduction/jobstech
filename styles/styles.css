@@ -2416,6 +2416,10 @@ audio.embed-responsive {
 .user-header {
     background: url(../images/user-background.jpg);
     color: white;
+    min-height: 310px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .user-header .btn-edit {
@@ -2448,7 +2452,7 @@ audio.embed-responsive {
 
 .content-bar .star-rating {
     font-size: 20px;
-    color: yellow;
+    color: #ffc107;
 }
 
 .content-bar .user-is-online {
