@@ -49,8 +49,8 @@ body {
 }
 
 .freelancerBox .tagline li {
-    /*display:inline-block;*/
-    margin-right: 5px;
+    display:inline-block;
+    margin-right: 20px;
 }
 
 .freelancerBox .skills button {

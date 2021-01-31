@@ -66,7 +66,7 @@
   <?php if($seller_status != "block-ban" AND $seller_vacation == "off"){ ?>
   <form id="insert-message-form">
   <p class="typing-status mb-1 invisible">Dummy Text</p>
-  <textarea class="form-control mb-2 text" rows="2" id="message" placeholder="<?= $lang['placeholder']['type_message']; ?>"></textarea>
+  <textarea class="form-control mb-2 text" rows="5" id="message" placeholder="<?= $lang['placeholder']['type_message']; ?>"></textarea>
   <p class="mb-2 mt-2 d-none files"></p>
   <div class="custom-file float-left"><!--- custom-file float-left Starts --->
   <!-- <i class="fa fa-smile-o fa-lg text-muted"></i> -->    

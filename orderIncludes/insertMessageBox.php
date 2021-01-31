@@ -52,7 +52,7 @@
     </p>
   </div>
   <form id="insert-message-form" class="clearfix">
-    <textarea name="message" rows="5" placeholder="<?= $lang['placeholder']['type_message']; ?>" class="form-control mb-2" onkeyup="matchWords(this)"></textarea>
+    <textarea name="message" rows="7" placeholder="<?= $lang['placeholder']['type_message']; ?>" class="form-control mb-2" onkeyup="matchWords(this)"></textarea>
     <div class="float-left b-2">
       <p id="spamWords" class="mt-1 text-danger d-none"><i class="fa fa-warning"></i> You seem to have typed word(s) that are in violation of our policy. No direct payments or emails allowed.</p>
     </div>

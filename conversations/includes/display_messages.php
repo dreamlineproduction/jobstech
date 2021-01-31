@@ -90,7 +90,7 @@
 					<?php } ?>
 
 	      </h6>
-	      <?= make_url_link($message_desc); ?>
+	      <p> <?= $message_desc; ?>  </p>
 	      <?php if(!empty($message_file)){ ?>
 	      <?php if(in_array(pathinfo($message_file,PATHINFO_EXTENSION),$allowed)){ ?>
 	      <br>

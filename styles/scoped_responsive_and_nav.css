@@ -47,6 +47,11 @@
     font-stretch: normal;
 } */
 
+
+a:hover {
+    color: #4fba6f;
+    text-decoration: underline;
+}
 .gnav-header #search-query {
     position: absolute;
     width: 100%;
@@ -81,6 +86,28 @@
 
 .get-started-box .row {
     max-width: 830px;
+}
+
+.user-home-topbar-style .card-body {
+    border: 1px solid #eaeaea;
+    border-radius: .5rem;
+    padding: 14px;
+    background: #f9f9f9;
+}
+
+.user-home-topbar-style-col h5 {
+    margin-bottom: 0;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+
+.left-side-bar-user-home {
+    border: 1px solid #eaeaea;
+    border-radius: .5rem;
+    padding: 14px;
+    background: #f9f9f9;
 }
 
 .get-started-box {

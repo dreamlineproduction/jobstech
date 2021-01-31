@@ -18,12 +18,21 @@
 </style>
 <div class="container mt-3">
   <!-- Container starts -->
-  <div class="row">
-    <div class="col-md-3 <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
-      <?php require_once("includes/user_home_sidebar.php"); ?>
+<div class="row">
+<div class="col-md-12 user-home-topbar-style <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
+<?php require_once("includes/user_home_sidebar.php"); ?>
+</div>
+</div>
+
+
+  <div class="row  mt-5">
+  
+    <div class="col-md-3 left-side-bar-user-home <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
+      
+      <?php require_once("includes/user_home_sidebar_2.php"); ?>
     </div>
     <div class="col-md-9 <?=($lang_dir == "right" ? 'order-1 order-sm-2':'')?>">
-      <div id="demo3" class="carousel slide">
+      <!-- <div id="demo3" class="carousel slide">
         <ul class="carousel-indicators">
           <li data-target="#demo3" data-slide-to="0" class="active"></li>
           <?php
@@ -63,7 +72,7 @@
           </div>
           <?php } ?>
         </div>
-      </div>
+      </div> -->
       <div class="row mt-4 mb-3">
         <div class="col-md-12">
           <h2 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?>"><?= $lang['user_home']['featured_proposals']; ?></h2>

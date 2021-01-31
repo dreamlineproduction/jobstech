@@ -2,14 +2,16 @@
 <div class="card card-body mb-4 freelancerBox">
 	<figure class="wt-userlistingimg">
 		<?php if(!empty($seller_image)){ ?>
+			<a href="<?= $seller_user_name; ?>">
 		<img src="<?= $seller_image; ?>" width="100" class="rounded img-fluid">
+		</a>
 		<?php }else{ ?>
 		<img src="user_images/empty-image.png" width="100" class="rounded img-fluid">
 		<?php } ?>
-		<small class="text-muted mt-1">
+		<!-- <small class="text-muted mt-1">
 			<?= (check_status($seller_id) == "Online" ? "<i class='fa fa-circle online'></i>" : "<i class='fa fa-circle text-danger'></i>") ?>
 			<?= check_status($seller_id); ?>
-		</small>
+		</small> -->
 		<div class="wt-userdropdown wt-away template-content tipso_style wt-tipso">
 		 	<?php if($seller_level == 2){ ?>
 			  <img src="images/level_badge_1.png" class="level_badge">
@@ -19,13 +21,13 @@
 			  <img src="images/level_badge_3.png" class="level_badge">
 			<?php } ?>
 		</div>
-		<a id="chatBtn" data-toggle="tooltip" data-placement="top" title="Chat With Me" href="conversations/message.php?seller_id=<?= $seller_id; ?>" class="btn btn-success mt-4 text-white "><i class="fa fa-comments-o" aria-hidden="true"></i> Chat</a>
+		
   </figure>
 	<div class="request-description">
 		<div class="row">
 			<div class="col-lg-9 col-md-12">
 				<a href="<?= $seller_user_name; ?>">
-				<h6 class="font-weight-normal"><i class="fa fa-check-circle" style="color:#00cc8d;"></i> <?= $seller_user_name; ?> </h6>
+				<h6 class="font-weight-bold"> <?= $seller_user_name; ?> </h6>
 				<h5 class="text-success"> <?= $seller_headline; ?> </h5>
 				</a>
 				<ul class="tagline mb-2 p-0">
@@ -46,7 +48,14 @@
 					<li>
 						<a href="conversations/message.php?seller_id=<?= $seller_id; ?>"><i class="fa fa-comments-o"></i> <strong>Contact:</strong> <?= $seller_user_name; ?> </a>
 					</li>
+					<li>
+					<small class="text-muted mt-1">
+			<?= (check_status($seller_id) == "Online" ? "<i class='fa fa-circle online'></i>" : "<i class='fa fa-circle text-danger'></i>") ?>
+			<?= check_status($seller_id); ?>
+		</small>
+					</li>
 			  </ul>
+			  <a id="chatBtn" data-toggle="tooltip" data-placement="top" title="Chat With Me" href="conversations/message.php?seller_id=<?= $seller_id; ?>" class="btn btn-success mt-2 mb-3 text-white"><i class="fa fa-comments-o" aria-hidden="true"></i> Chat</a>
 			</div>
 			<div class="col-lg-3 col-md-12">
 				<div class="star-rating">
@@ -61,6 +70,8 @@
 				<h4 class="mb-1"><?php printf("%.1f", $average); ?>/<small class="text-muted font-weight-normal">5</small></h4>
 				<a>(<?= $count_reviews; ?> Reviews)</a>
 				</div>
+
+			
 			</div>
 		</div>
 		<p class="lead mb-2 mt-0"><?= $seller_about; ?></p>

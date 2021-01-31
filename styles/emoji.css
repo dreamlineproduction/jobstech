@@ -110,8 +110,8 @@
 .emojionearea .emojionearea-editor {
   display: block;
   height: auto;
-  min-height: 5.5em;
-  max-height:5.5em;
+  min-height: 11.5em;
+  max-height: 15.5em;
   overflow: auto;
   padding: 6px 24px 6px 12px;
   line-height: 1.42857143;
