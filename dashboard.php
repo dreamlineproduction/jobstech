@@ -89,158 +89,155 @@
 ?>
 <!DOCTYPE html>
 <html lang="en" class="ui-toolkit">
+
 <head>
-  <title><?= $site_name; ?> - <?= ucfirst($lang["titles"]["dashboard"]); ?></title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="<?= $site_desc; ?>">
-  <meta name="keywords" content="<?= $site_keywords; ?>">
-  <meta name="author" content="<?= $site_author; ?>">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
-  <link href="styles/bootstrap.css" rel="stylesheet">
-  <link href="styles/custom.css" rel="stylesheet">
-  <!-- Custom css code from modified in admin panel --->
-  <link href="styles/styles.css" rel="stylesheet">
-  <link href="styles/user_nav_styles.css" rel="stylesheet">
-  <link href="font_awesome/css/font-awesome.css" rel="stylesheet">
-  <link href="styles/owl.carousel.css" rel="stylesheet">
-  <link href="styles/owl.theme.default.css" rel="stylesheet">
-  <link href="styles/sweat_alert.css" rel="stylesheet">
-  <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
-  <script src="js/ie.js"></script>
-  <script type="text/javascript" src="js/sweat_alert.js"></script>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <?php if(!empty($site_favicon)){ ?>
-  <link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
-  <?php } ?>
+    <title><?= $site_name; ?> - <?= ucfirst($lang["titles"]["dashboard"]); ?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="<?= $site_desc; ?>">
+    <meta name="keywords" content="<?= $site_keywords; ?>">
+    <meta name="author" content="<?= $site_author; ?>">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
+    <link href="styles/bootstrap.css" rel="stylesheet">
+    <link href="styles/custom.css" rel="stylesheet">
+    <!-- Custom css code from modified in admin panel --->
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/user_nav_styles.css" rel="stylesheet">
+    <link href="font_awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="styles/owl.carousel.css" rel="stylesheet">
+    <link href="styles/owl.theme.default.css" rel="stylesheet">
+    <link href="styles/sweat_alert.css" rel="stylesheet">
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="js/ie.js"></script>
+    <script type="text/javascript" src="js/sweat_alert.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <?php if(!empty($site_favicon)){ ?>
+    <link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
+    <?php } ?>
 </head>
+
 <body class="is-responsive">
-<?php require_once("includes/user_header.php") ?>
-<div class="container mt-4 mb-5" style="max-width: 1200px !important;">
-<div class="row">
-  <div class="col-md-4 <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
-    <?php require_once("includes/dashboard_sidebar.php"); ?>
-  </div>
-  <div class="col-md-8">
-   <div class="card rounded-0">
-      <div class="card-body p-0">
-        <div class="row p-2">
-          <div class="col-lg-3 col-sm-12 text-center pt-2">
-            <?php if(!empty($login_seller_image)){ ?>
-            <img src="<?= $login_seller_image; ?>" class="rounded-circle img-thumbnail" width="130">
-            <?php }else{ ?>
-            <img src="user_images/empty-image.png" class="rounded-circle img-thumbnail" width="130">
-            <?php } ?>
-          </div>
-          <div class="col-lg-9 col-sm-12 text-lg-left text-center <?=($lang_dir == "right" ? 'order-1 order-sm-2':'')?>">
-            <div class="row mb-2">
-              <div class="col-6 col-lg-4 mt-3">
-                <h6><i class="fa fa-globe pr-1"></i> <?= $lang["dashboard"]['country']; ?></h6>
-                <h6><i class="fa fa-star pr-1"></i> <?= $lang["dashboard"]['positive_rating']; ?></h6>
-              </div>
-              <div class="col-6 col-lg-8 mt-3">
-                <h6 class="text-muted"><?= $login_seller_country; ?></h6>
-                <h6 class="text-muted"> <?= $login_seller_rating; ?>%</h6>
-              </div>
+    <?php require_once("includes/user_header.php") ?>
+    <div class="container mt-4 mb-5" style="max-width: 1200px !important;">
+        <div class="row">
+            <div class="col-md-4 left-side-bar-user-home <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
+                <?php require_once("includes/dashboard_sidebar.php"); ?>
             </div>
-            <div class="row">
-              <div class="col-6 col-sm-4">
-                <h6><i class="fa fa-truck pr-1"></i> <?= $lang["dashboard"]['recent_delivery']; ?></h6>
-                <h6><i class="fa fa-clock-o pr-1"></i> <?= $lang["dashboard"]['member_since']; ?></h6>
-              </div>
-              <div class="col-6 col-lg-8">
-                <h6 class="text-muted"><?= $login_seller_recent_delivery; ?></h6>
-                <h6 class="text-muted"><?= $login_seller_register_date; ?></h6>
-              </div>
-            </div>
-            <?php if(empty($payout_anyday)){ ?>
-            <div class="row mt-2">
-              <div class="col-6 col-sm-4">
-                <h6><i class="fa fa-money pr-1"></i> <?= $lang["dashboard"]['payout_date']; ?></h6>
-              </div>
-              <div class="col-6 col-lg-8">
-                <h6 class="text-muted"><?= $p_date; ?></h6>
-              </div>
-            </div>
-            <?php } ?>
-          </div>
-        </div>
-        <hr>
-        <div class="row pl-3 pr-3 pb-2 pt-2 mt-4">
-          <div class="col-md-4 text-center border-box">
-            <?php
+            <div class="col-md-8">
+                <div class="card rounded-0">
+                    <div class="card-body p-0">
+
+                        <div class="row pl-3 pr-3 pb-2 pt-2 mt-4">
+
+
+                            <div class="col-md-4 text-center shadow-box">
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <?php
               $count_orders = $db->count("orders",array("seller_id" => $login_seller_id, "order_status" => 'completed'));
               ?>
-              <img width="" src="images/comp/completed.png" alt="completed">
-            <h5 class="text-muted pt-2"> <?= $lang["dashboard"]['orders_completed']; ?></h5>
-            <h3 class="text-success"><?= $count_orders; ?></h3>
-          </div>
-          <div class="col-md-4 text-center border-box">
-            <?php $count_orders = $db->count("orders",array("seller_id"=>$login_seller_id,"order_status"=>'delivered')); ?>
-            <img width="" src="images/comp/box.png" alt="box">
-            <h5 class="text-muted pt-2"><?= $lang["dashboard"]['delivered_orders']; ?></h5>
-            <h3 class="text-success"><?= $count_orders; ?></h3>
-          </div>
-          <div class="col-md-4 text-center border-box">
-            <?php $count_orders = $db->count("orders",array("seller_id"=>$login_seller_id,"order_status"=>'cancelled'));?>
-            <img width="" src="images/comp/cancellation.png" alt="cancellation">
-            <h5 class="text-muted pt-2"><?= $lang["dashboard"]['orders_cancelled']; ?></h5>
-            <h3 class="text-success"><?= $count_orders; ?></h3>
-          </div>
-        </div>
-        <hr>
-        <div class="row pl-3 pr-3 pb-2 pt-2">
-          <div class="col-md-3 text-center border-box">
-            <?php
+                                        <!-- <img width="" src="images/comp/completed.png" alt="completed"> -->
+                                        <h5 class="text-muted pt-2"> <?= $lang["dashboard"]['orders_completed']; ?></h5>
+                                        <h3 class="text-success"><?= $count_orders; ?></h3>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 text-center shadow-box">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <?php $count_orders = $db->count("orders",array("seller_id"=>$login_seller_id,"order_status"=>'delivered')); ?>
+                                        <!-- <img width="" src="images/comp/box.png" alt="box"> -->
+                                        <h5 class="text-muted pt-2"><?= $lang["dashboard"]['delivered_orders']; ?></h5>
+                                        <h3 class="text-success"><?= $count_orders; ?></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center shadow-box">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <?php $count_orders = $db->count("orders",array("seller_id"=>$login_seller_id,"order_status"=>'cancelled'));?>
+                                        <!-- <img width="" src="images/comp/cancellation.png" alt="cancellation"> -->
+                                        <h5 class="text-muted pt-2"><?= $lang["dashboard"]['orders_cancelled']; ?></h5>
+                                        <h3 class="text-success"><?= $count_orders; ?></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row pl-3 pr-3 pb-2 pt-2">
+                            <div class="col-md-3 text-center shadow-box">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <?php
               $count_orders = $db->count("orders",array("seller_id" => $login_seller_id, "order_active" => 'yes'));
             ?>
-            <img width="" src="images/comp/debt.png" alt="debt">
-            <h5 class="text-muted pt-2"> <?= $lang["dashboard"]['sales_in_queue']; ?></h5>
-            <h3 class="text-success"><?= $count_orders; ?></h3>
-          </div>
-          <div class="col-md-3 text-center border-box">
-            <?php $count_orders = $db->count("orders",array("buyer_id" => $login_seller_id, "order_active" => 'yes')); ?>
-              <img width="" src="images/comp/shopping-bags.png" alt="shopping-bags">
-            <h5 class="text-muted pt-2"> <?= $lang["dashboard"]['open_purchases']; ?></h5>
-            <h3 class="text-success"><?= $count_orders; ?> </h3>
-          </div>
-          <div class="col-md-3 text-center border-box">
-            <img width="" src="images/comp/accounting.png" alt="accounting">
-            <h5 class="text-muted pt-2"> <?= $lang["dashboard"]['balance']; ?></h5>
-            <h3 class="text-success"><?= showPrice($current_balance); ?></h3>
-          </div>
-          <div class="col-md-3 text-center border-box">
-            <img width="" src="images/comp/financial.png" alt="financial">
-            <h5 class="text-muted pt-2"> <?= $lang["dashboard"]['earnings']; ?> </h5>
-            <h3 class="text-success"><?= showPrice($month_earnings); ?></h3>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card rounded-0 mt-3 bottom-tabs-dash">
-      <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs">
-          <li class="nav-item">
-            <?php $count_notifications = $db->count("notifications",array("receiver_id" => $login_seller_id));?>
-            <a href="#notifications" data-toggle="tab" class="nav-link make-black active">
-            <?= $lang['menu']['notifications']; ?> <span class="badge badge-success"><?= $count_notifications; ?> </span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <?php
+                                        <!-- <img width="" src="images/comp/debt.png" alt="debt"> -->
+                                        <h6 class="text-muted pt-2"> <?= $lang["dashboard"]['sales_in_queue']; ?></h6>
+                                        <h3 class="text-success"><?= $count_orders; ?></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-center shadow-box">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <?php $count_orders = $db->count("orders",array("buyer_id" => $login_seller_id, "order_active" => 'yes')); ?>
+                                        <!-- <img width="" src="images/comp/shopping-bags.png" alt="shopping-bags"> -->
+                                        <h6 class="text-muted pt-2"> <?= $lang["dashboard"]['open_purchases']; ?></h6>
+                                        <h3 class="text-success"><?= $count_orders; ?> </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-center shadow-box">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- <img width="" src="images/comp/accounting.png" alt="accounting"> -->
+                                        <h6 class="text-muted pt-2"> <?= $lang["dashboard"]['balance']; ?></h6>
+                                        <h3 class="text-success"><?= showPrice($current_balance); ?></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-center shadow-box">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- <img width="" src="images/comp/financial.png" alt="financial"> -->
+                                        <h6 class="text-muted pt-2"> <?= $lang["dashboard"]['earnings']; ?> </h6>
+                                        <h3 class="text-success"><?= showPrice($month_earnings); ?></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card rounded-0 mt-3 bottom-tabs-dash">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <?php $count_notifications = $db->count("notifications",array("receiver_id" => $login_seller_id));?>
+                                <a href="#notifications" data-toggle="tab" class="nav-link make-black active">
+                                    <?= $lang['menu']['notifications']; ?> <span
+                                        class="badge badge-success"><?= $count_notifications; ?> </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <?php
               $select_all_inbox_sellers = $db->query("select * from inbox_sellers where (receiver_id='$login_seller_id' or sender_id='$login_seller_id') AND NOT message_status='empty'");
               $count_all_inbox_sellers = $select_all_inbox_sellers->rowCount();
             ?>
-            <a href="#inbox" data-toggle="tab" class="nav-link make-black">
-            <?= $lang['menu']['messages']; ?> <span class="badge badge-success"><?= $count_all_inbox_sellers; ?></span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="card-body p-0">
-        <div class="tab-content dashboard">
-          <div id="notifications" class="tab-pane fade show active mt-3">
-            <?php
+                                <a href="#inbox" data-toggle="tab" class="nav-link make-black">
+                                    <?= $lang['menu']['messages']; ?> <span
+                                        class="badge badge-success"><?= $count_all_inbox_sellers; ?></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="tab-content dashboard">
+                            <div id="notifications" class="tab-pane fade show active mt-3">
+                                <?php
               if($count_notifications == 0){
                 echo "<h5 class='text-center mb-3'> {$lang["dashboard"]['no_notifications']} </h5>";
               }
@@ -268,36 +265,39 @@
               }
 
             ?>
-            <div class="<?php if($status == "unread"){ echo "header-message-div-unread"; }else{ echo "header-message-div"; } ?>">
-              <a href="dashboard?delete_notification=<?= $notification_id; ?>" class="float-right delete text-danger">
-              <i class="fa fa-times-circle fa-lg"></i>	
-              </a>
-              <a href="dashboard?n_id=<?= $notification_id; ?>">
-                <?php if(!empty($sender_image)){ ?>
-                <?php if(strpos($sender_id, "admin_") !== false){ ?>
-                  <img src="<?= $sender_image; ?>" width="50" height="50" class="rounded-circle">
-                <?php }else{ ?>
-                  <img src="<?= $sender_image; ?>" width="50" height="50" class="rounded-circle">
-                <?php } ?>
-                <?php }else{ ?>
-                <img src="user_images/empty-image.png" width="50" height="50" class="rounded-circle">
-                <?php } ?>
-                <strong class="heading"><?= $sender_user_name; ?></strong>
-                <p class="message"><?= include("includes/comp/notification_reasons.php"); ?></p>
-                <p class="date text-muted"> <?= $date; ?></p>
-              </a>
-            </div>
-            <?php } ?>
-            <?php if($count_notifications > 0){ ?>
-            <div class="p-3">
-              <a href="<?= $site_url; ?>/notifications" class="btn btn-success btn-block">
-              <?= $lang['see_all']; ?>
-              </a>
-            </div>
-            <?php } ?>
-          </div>
-          <div id="inbox" class="tab-pane fade mt-3">
-            <?php
+                                <div
+                                    class="<?php if($status == "unread"){ echo "header-message-div-unread"; }else{ echo "header-message-div"; } ?>">
+                                    <a href="dashboard?delete_notification=<?= $notification_id; ?>"
+                                        class="float-right delete text-danger">
+                                        <i class="fa fa-times-circle fa-lg"></i>
+                                    </a>
+                                    <a href="dashboard?n_id=<?= $notification_id; ?>">
+                                        <?php if(!empty($sender_image)){ ?>
+                                        <?php if(strpos($sender_id, "admin_") !== false){ ?>
+                                        <img src="<?= $sender_image; ?>" width="50" height="50" class="rounded-circle">
+                                        <?php }else{ ?>
+                                        <img src="<?= $sender_image; ?>" width="50" height="50" class="rounded-circle">
+                                        <?php } ?>
+                                        <?php }else{ ?>
+                                        <img src="user_images/empty-image.png" width="50" height="50"
+                                            class="rounded-circle">
+                                        <?php } ?>
+                                        <strong class="heading"><?= $sender_user_name; ?></strong>
+                                        <p class="message"><?= include("includes/comp/notification_reasons.php"); ?></p>
+                                        <p class="date text-muted"> <?= $date; ?></p>
+                                    </a>
+                                </div>
+                                <?php } ?>
+                                <?php if($count_notifications > 0){ ?>
+                                <div class="p-3">
+                                    <a href="<?= $site_url; ?>/notifications" class="btn btn-success btn-block">
+                                        <?= $lang['see_all']; ?>
+                                    </a>
+                                </div>
+                                <?php } ?>
+                            </div>
+                            <div id="inbox" class="tab-pane fade mt-3">
+                                <?php
             
             if($count_all_inbox_sellers == 0){
               echo "<h5 class='text-center mb-3'> {$lang["dashboard"]['no_messages']} </h5>";
@@ -346,33 +346,35 @@
             }
 
             ?>
-            <div class="<?= $msgClass; ?>"> 
-              <a href="conversations/inbox?single_message_id=<?= $message_group_id; ?>">
-                <?php if(!empty($sender_image)){ ?>
-                <img src="<?= $sender_image; ?>" width="50" height="50" class="rounded-circle">
-                <?php }else{ ?>
-                <img src="user_images/empty-image.png" width="50" height="50" class="rounded-circle">
-                <?php } ?>
-                <strong class="heading"><?= $sender_user_name; ?></strong>
-                <p class="message text-truncate"><?= $message_desc; ?></p>
-                <p class="text-muted date"><?= $message_date; ?></p>
-              </a>
+                                <div class="<?= $msgClass; ?>">
+                                    <a href="conversations/inbox?single_message_id=<?= $message_group_id; ?>">
+                                        <?php if(!empty($sender_image)){ ?>
+                                        <img src="<?= $sender_image; ?>" width="50" height="50" class="rounded-circle">
+                                        <?php }else{ ?>
+                                        <img src="user_images/empty-image.png" width="50" height="50"
+                                            class="rounded-circle">
+                                        <?php } ?>
+                                        <strong class="heading"><?= $sender_user_name; ?></strong>
+                                        <p class="message text-truncate"><?= $message_desc; ?></p>
+                                        <p class="text-muted date"><?= $message_date; ?></p>
+                                    </a>
+                                </div>
+                                <?php } ?>
+                                <?php if($count_all_inbox_sellers > 0){ ?>
+                                <div class="p-3">
+                                    <a href="<?= $site_url; ?>/conversations/inbox" class="btn btn-success btn-block">
+                                        <?= $lang['see_all']; ?>
+                                    </a>
+                                </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <?php } ?>
-            <?php if($count_all_inbox_sellers > 0){ ?>
-            <div class="p-3">
-              <a href="<?= $site_url; ?>/conversations/inbox" class="btn btn-success btn-block">
-              <?= $lang['see_all']; ?>
-              </a>
-            </div>
-            <?php } ?>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
-</div>
-<?php require_once("includes/footer.php"); ?>
+    <?php require_once("includes/footer.php"); ?>
 </body>
+
 </html>

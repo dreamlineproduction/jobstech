@@ -10,15 +10,16 @@
 
 <h5 class="mb-4"> <?= $lang['settings']['paypal_heading']; ?> </h5>
 <form method="post" class="clearfix mb-3">
-  <div class="form-group row">
-    <label class="col-md-4 col-form-label"> <?= $lang['label']['paypal_email']; ?> </label>
-    <div class="col-md-8">
-      <input type="email" name="seller_paypal_email" value="<?= $login_seller_paypal_email; ?>" placeholder="<?= $lang['placeholder']['paypal_email']; ?>" class="form-control" required/>
+    <div class="form-group row">
+        <label class="col-md-4 col-form-label"> <?= $lang['label']['paypal_email']; ?> </label>
+        <div class="col-md-8">
+            <input type="email" name="seller_paypal_email" value="<?= $login_seller_paypal_email; ?>"
+                placeholder="<?= $lang['placeholder']['paypal_email']; ?>" class="form-control" required />
+        </div>
     </div>
-  </div>
-  <button type="submit" name="submit_paypal_email" class="btn btn-success <?= $floatRight ?>">
-    <?= $lang['button']['change_paypal_email']; ?>
-  </button>
+    <button type="submit" name="submit_paypal_email" class="btn btn-success <?= $floatRight ?>">
+        <?= $lang['button']['change_paypal_email']; ?>
+    </button>
 </form>
 <?php
 
@@ -58,15 +59,16 @@ if($paymentGateway == 1){
 <hr>
 <h5 class="mb-4"> <?= $lang['settings']['payoneer_heading']; ?> </h5>
 <form method="post" class="clearfix mb-3">
-  <div class="form-group row">
-    <label class="col-md-4 col-form-label"> <?= $lang['label']['payoneer_email']; ?> </label>
-    <div class="col-md-8">
-      <input type="email" name="seller_payoneer_email" value="<?= $login_seller_payoneer_email; ?>" placeholder="Enter payoneer email" class="form-control" required >
+    <div class="form-group row">
+        <label class="col-md-4 col-form-label"> <?= $lang['label']['payoneer_email']; ?> </label>
+        <div class="col-md-8">
+            <input type="email" name="seller_payoneer_email" value="<?= $login_seller_payoneer_email; ?>"
+                placeholder="Enter payoneer email" class="form-control" required>
+        </div>
     </div>
-  </div>
-  <button type="submit" name="submit_payoneer_email"class="btn btn-success <?= $floatRight ?>">
-    <?= $lang['button']['change_payoneer_email']; ?>
-  </button>
+    <button type="submit" name="submit_payoneer_email" class="btn btn-success <?= $floatRight ?>">
+        <?= $lang['button']['change_payoneer_email']; ?>
+    </button>
 </form>
 <?php 
 if(isset($_POST['submit_payoneer_email'])){
@@ -96,21 +98,23 @@ if(isset($_POST['submit_payoneer_email'])){
 <hr>
 <h5 class="mb-4"> <?= $lang['settings']['mobile_money_heading']; ?> </h5>
 <form method="post" class="clearfix mb-3">
-  <div class="form-group row">
-    <label class="col-md-4 col-form-label"> <?= $lang['label']['account_number']; ?> </label>
-    <div class="col-md-8">
-      <input type="text" name="m_account_number" value="<?= $login_seller_account_number; ?>" placeholder="<?= $lang['placeholder']['account_number']; ?>" class="form-control" required>
+    <div class="form-group row">
+        <label class="col-md-4 col-form-label"> <?= $lang['label']['account_number']; ?> </label>
+        <div class="col-md-8">
+            <input type="text" name="m_account_number" value="<?= $login_seller_account_number; ?>"
+                placeholder="<?= $lang['placeholder']['account_number']; ?>" class="form-control" required>
+        </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-md-4 col-form-label"> <?= $lang['label']['account_owner']; ?> </label>
-    <div class="col-md-8">
-      <input type="text" name="m_account_name" value="<?= $login_seller_account_name; ?>" placeholder="<?= $lang['placeholder']['account_owner']; ?>" class="form-control" required>
+    <div class="form-group row">
+        <label class="col-md-4 col-form-label"> <?= $lang['label']['account_owner']; ?> </label>
+        <div class="col-md-8">
+            <input type="text" name="m_account_name" value="<?= $login_seller_account_name; ?>"
+                placeholder="<?= $lang['placeholder']['account_owner']; ?>" class="form-control" required>
+        </div>
     </div>
-  </div>
-  <button type="submit" name="update_mobile_money" class="btn btn-success <?= $floatRight ?>">
-    <?= $lang['button']['update_mobile_money']; ?>
-  </button>
+    <button type="submit" name="update_mobile_money" class="btn btn-success <?= $floatRight ?>">
+        <?= $lang['button']['update_mobile_money']; ?>
+    </button>
 </form>
 <?php 
   if(isset($_POST['update_mobile_money'])){
@@ -136,7 +140,7 @@ if(isset($_POST['submit_payoneer_email'])){
 }
 
 ?>
-<hr>
+<!-- <hr>
 <h5 class="mb-4"> <?= $lang['settings']['bitcoin_wallet_heading']; ?> </h5>
 <form method="post" class="clearfix mb-3">
   <div class="form-group row">
@@ -169,41 +173,41 @@ if(isset($_POST['submit_payoneer_email'])){
   </script>";
   }
   }
-  ?>
+  ?> -->
 <hr>
 <h5 class="mb-4"> <?= $lang['settings']['real_time_notifications']; ?> </h5>
 <form method="post" class="clearfix">
-  <div class="form-group row mb-3">
-    <label class="col-md-4 col-form-label"> <?= $lang['label']['enable_sound']; ?> </label>
-    <div class="col-md-8">
-      <select name="enable_sound" class="form-control">
-        <?php if($login_seller_enable_sound == "yes"){ ?>
-          <option value="yes"> Yes </option>
-          <option value="no"> No </option>
-        <?php }elseif($login_seller_enable_sound == "no"){ ?>
-          <option value="no"> No </option>
-          <option value="yes"> Yes </option>
-        <?php } ?>
-      </select>
+    <div class="form-group row mb-3">
+        <label class="col-md-4 col-form-label"> <?= $lang['label']['enable_sound']; ?> </label>
+        <div class="col-md-8">
+            <select name="enable_sound" class="form-control">
+                <?php if($login_seller_enable_sound == "yes"){ ?>
+                <option value="yes"> Yes </option>
+                <option value="no"> No </option>
+                <?php }elseif($login_seller_enable_sound == "no"){ ?>
+                <option value="no"> No </option>
+                <option value="yes"> Yes </option>
+                <?php } ?>
+            </select>
+        </div>
     </div>
-  </div>
-  <div class="form-group row mb-3">
-    <label class="col-md-4 col-form-label"> <?= $lang['label']['enable_notifications']; ?> </label>
-    <div class="col-md-8">
-      <select name="enable_notifications" class="form-control">
-        <?php if($login_seller_enable_notifications == "1"){ ?>
-          <option value="1"> Yes </option>
-          <option value="0"> No </option>
-        <?php }elseif($login_seller_enable_notifications == "0"){ ?>
-          <option value="0"> No </option>
-          <option value="1"> Yes </option>
-        <?php } ?>
-      </select>
+    <div class="form-group row mb-3">
+        <label class="col-md-4 col-form-label"> <?= $lang['label']['enable_notifications']; ?> </label>
+        <div class="col-md-8">
+            <select name="enable_notifications" class="form-control">
+                <?php if($login_seller_enable_notifications == "1"){ ?>
+                <option value="1"> Yes </option>
+                <option value="0"> No </option>
+                <?php }elseif($login_seller_enable_notifications == "0"){ ?>
+                <option value="0"> No </option>
+                <option value="1"> Yes </option>
+                <?php } ?>
+            </select>
+        </div>
     </div>
-  </div>
-  <button type="submit" name="update_sound" class="btn btn-success mt-1 <?= $floatRight ?>">
-    <?= $lang['button']['update_changes']; ?>
-  </button>
+    <button type="submit" name="update_sound" class="btn btn-success mt-1 <?= $floatRight ?>">
+        <?= $lang['button']['update_changes']; ?>
+    </button>
 </form>
 <?php 
   if(isset($_POST['update_sound'])){
@@ -233,36 +237,38 @@ if(isset($_POST['submit_payoneer_email'])){
   $form_data = Flash::render("form_data");
   if(is_array($form_errors)){
   ?>
-<div class="alert alert-danger"><!--- alert alert-danger Starts --->
-  <ul class="list-unstyled mb-0">
-    <?php $i = 0; foreach ($form_errors as $error) { $i++; ?>
-    <li class="list-unstyled-item"><?= $i ?>. <?= ucfirst($error); ?></li>
-    <?php } ?>
-  </ul>
-</div><!--- alert alert-danger Ends --->
+<div class="alert alert-danger">
+    <!--- alert alert-danger Starts --->
+    <ul class="list-unstyled mb-0">
+        <?php $i = 0; foreach ($form_errors as $error) { $i++; ?>
+        <li class="list-unstyled-item"><?= $i ?>. <?= ucfirst($error); ?></li>
+        <?php } ?>
+    </ul>
+</div>
+<!--- alert alert-danger Ends --->
 <?php } ?>
 <form method="post" class="clearfix mb-3">
-  <div class="form-group row">
-    <label class="col-md-4 col-form-label"> <?= $lang['label']['enter_old_pass']; ?> </label>
-    <div class="col-md-8">
-      <input type="text" name="old_pass" class="form-control" required=""/>
+    <div class="form-group row">
+        <label class="col-md-4 col-form-label"> <?= $lang['label']['enter_old_pass']; ?> </label>
+        <div class="col-md-8">
+            <input type="text" name="old_pass" class="form-control" required="" />
+        </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-md-4 col-form-label"> <?= $lang['label']['enter_new_pass']; ?> </label>
-    <div class="col-md-8">
-      <input type="text" name="new_pass" class="form-control" required=""/>
+    <div class="form-group row">
+        <label class="col-md-4 col-form-label"> <?= $lang['label']['enter_new_pass']; ?> </label>
+        <div class="col-md-8">
+            <input type="text" name="new_pass" class="form-control" required="" />
+        </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-md-4 col-form-label"> <?= $lang['label']['confirm_new_pass']; ?> </label>
-    <div class="col-md-8">
-      <input type="text" name="new_pass_again" class="form-control" required=""/>
+    <div class="form-group row">
+        <label class="col-md-4 col-form-label"> <?= $lang['label']['confirm_new_pass']; ?> </label>
+        <div class="col-md-8">
+            <input type="text" name="new_pass_again" class="form-control" required="" />
+        </div>
     </div>
-  </div>
-  <button type="submit" name="change_password" class="btn btn-success <?= $floatRight; ?>">
-    <?= $lang['button']['change_password']; ?>
-  </button>
+    <button type="submit" name="change_password" class="btn btn-success <?= $floatRight; ?>">
+        <?= $lang['button']['change_password']; ?>
+    </button>
 </form>
 <?php 
   if(isset($_POST['change_password'])){
@@ -319,43 +325,44 @@ if(isset($_POST['submit_payoneer_email'])){
 <hr>
 <h5 class="mb-1"> <?= $lang['settings']['account_deactivation']; ?> </h5>
 <ul class="list-unstyled <?= $floatRight ?>">
-  <li class="lead mb-2">
-    <strong> <?= $lang['settings']['what_happens']['title']; ?> </strong>
-  </li>
-  <li><i class="fa fa-hand-o-right"></i> <?= $lang['settings']['what_happens']['1']; ?> </li>
-  <li><i class="fa fa-hand-o-right"></i> <?= $lang['settings']['what_happens']['2']; ?> </li>
-  <li><i class="fa fa-hand-o-right"></i> <?= $lang['settings']['what_happens']['3']; ?> </li>
-  <li><i class="fa fa-hand-o-right"></i> <?= $lang['settings']['what_happens']['4']; ?> </li>
+    <li class="lead mb-2">
+        <strong> <?= $lang['settings']['what_happens']['title']; ?> </strong>
+    </li>
+    <li><i class="fa fa-hand-o-right"></i> <?= $lang['settings']['what_happens']['1']; ?> </li>
+    <li><i class="fa fa-hand-o-right"></i> <?= $lang['settings']['what_happens']['2']; ?> </li>
+    <li><i class="fa fa-hand-o-right"></i> <?= $lang['settings']['what_happens']['3']; ?> </li>
+    <li><i class="fa fa-hand-o-right"></i> <?= $lang['settings']['what_happens']['4']; ?> </li>
 </ul>
 <div class="clearfix"></div>
 <form method="post">
-  <?php if(!$current_balance == 0){ ?>
-  <div class="form-group"><!-- form-group Starts -->
-    <h5 class="pt-3 pb-3"> <?= $lang['settings']['please_withdraw']; ?> </h5>
-  </div><!-- form-group Ends -->
-  <button type="submit" name="deactivate_account" disabled class="btn btn-danger <?= $floatRight ?>">
-    <i class="fa fa-frown-o"></i> <?= $lang['button']['deactivate_account']; ?>
-  </button>
-  <?php }elseif($current_balance == 0){ ?>
-  <div class="form-group">
-    <label> Why Are You Leaving? </label>
-    <select name="deactivate_reason" class="form-control" required>
-      <option value=""> <?= $lang['settings']['reason']['1']; ?> </option>
-      <option> <?= $lang['settings']['reason']['2']; ?> </option>
-      <option> <?= $lang['settings']['reason']['3']; ?> </option>
-      <option> <?= $lang['settings']['reason']['4']; ?> </option>
-      <option> <?= $lang['settings']['reason']['5']; ?> </option>
-      <option> <?= $lang['settings']['reason']['6']; ?> </option>
-      <option> <?= $lang['settings']['reason']['7']; ?> </option>
-      <option> <?= $lang['settings']['reason']['8']; ?> </option>
-      <option> <?= $lang['settings']['reason']['9']; ?> </option>
-      <option> <?= $lang['settings']['reason']['10']; ?> </option>
-    </select>
-  </div>
-  <button type="submit" name="deactivate_account" class="btn btn-danger <?= $floatRight ?>">
-  <i class="fa fa-frown-o"></i> <?= $lang['button']['deactivate_account']; ?>
-  </button>
-  <?php } ?>   
+    <?php if(!$current_balance == 0){ ?>
+    <div class="form-group">
+        <!-- form-group Starts -->
+        <h5 class="pt-3 pb-3"> <?= $lang['settings']['please_withdraw']; ?> </h5>
+    </div><!-- form-group Ends -->
+    <button type="submit" name="deactivate_account" disabled class="btn btn-danger <?= $floatRight ?>">
+        <i class="fa fa-frown-o"></i> <?= $lang['button']['deactivate_account']; ?>
+    </button>
+    <?php }elseif($current_balance == 0){ ?>
+    <div class="form-group">
+        <label> Why Are You Leaving? </label>
+        <select name="deactivate_reason" class="form-control" required>
+            <option value=""> <?= $lang['settings']['reason']['1']; ?> </option>
+            <option> <?= $lang['settings']['reason']['2']; ?> </option>
+            <option> <?= $lang['settings']['reason']['3']; ?> </option>
+            <option> <?= $lang['settings']['reason']['4']; ?> </option>
+            <option> <?= $lang['settings']['reason']['5']; ?> </option>
+            <option> <?= $lang['settings']['reason']['6']; ?> </option>
+            <option> <?= $lang['settings']['reason']['7']; ?> </option>
+            <option> <?= $lang['settings']['reason']['8']; ?> </option>
+            <option> <?= $lang['settings']['reason']['9']; ?> </option>
+            <option> <?= $lang['settings']['reason']['10']; ?> </option>
+        </select>
+    </div>
+    <button type="submit" name="deactivate_account" class="btn btn-danger <?= $floatRight ?>">
+        <i class="fa fa-frown-o"></i> <?= $lang['button']['deactivate_account']; ?>
+    </button>
+    <?php } ?>
 </form>
 <?php
 if(isset($_POST['deactivate_account'])){

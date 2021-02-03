@@ -26,6 +26,15 @@ body {
     height: 50px;
 }
 
+.online-seller-fr-page label {
+    margin-top: 7px;
+}
+
+.user-home-topbar-style label {
+    display: inline-block;
+    margin-bottom: inherit;
+}
+
 .freelancerBox .request-description {
     margin-left: 120px;
     margin-top: -126px;
@@ -49,7 +58,7 @@ body {
 }
 
 .freelancerBox .tagline li {
-    display:inline-block;
+    display: inline-block;
     margin-right: 20px;
 }
 
