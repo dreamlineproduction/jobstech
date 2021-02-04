@@ -30,7 +30,7 @@ $slide_image = $row_slides->slide_image;
             <h5><?= $section_short_heading; ?></h5>
             <div class="row justify-content-left">
                 <div class="col-md-5 col-11">
-                    <form action="" method="post">
+                    <!-- <form action="" method="post">
                         <div class="input-group space20">
                             <input type="text" name="search_query" class="form-control"
                                 value="<?= @$_SESSION["search_query"]; ?>"
@@ -41,7 +41,7 @@ $slide_image = $row_slides->slide_image;
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>

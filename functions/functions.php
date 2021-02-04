@@ -420,7 +420,7 @@ function get_freelancers(){
 	if($sellersCount == 0){
 		echo"
 		<div class='col-md-12'>
-		<h1 class='text-center mt-4'><i class='fa fa-meh-o'></i> {$lang['freelancers']['no_results']} </h1>
+		<h6 class='text-center mt-4'><i class='fa fa-meh-o'></i> {$lang['freelancers']['no_results']} </h6>
 		</div>
 		";
 	}

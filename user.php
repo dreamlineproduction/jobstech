@@ -80,7 +80,7 @@ if($count_seller == 0){
       <div class="row">
         <div class="col-md-12">
           <div class="card mt-4 mb-4 rounded-0">
-            <div class="card-body pl-0">
+            <div class="card-body pl-0 text-center">
               <h4>
                 <?= str_replace('{user_name}',$get_seller_user_name,$lang['user_profile']['user_proposals']); ?>
               </h4>
@@ -108,10 +108,10 @@ if($count_seller == 0){
 
           </h3>
           <?php }else{ ?>
-            <h3 class="text-center mb-5 p-2">
+            <h6 class="text-center mb-5 p-2">
               <i class="fa fa-smile-o"></i> 
               <?= str_replace('{user_name}',$get_seller_user_name,$lang['user_profile']['no_proposals']); ?>
-            </h3>
+            </h6>
           <?php } ?>
         </div>
         <?php   

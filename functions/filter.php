@@ -248,7 +248,7 @@ function get_proposals($filter_type){
 
          echo"
          <div class='col-md-12'>
-            <h1 class='text-center mt-4'><i class='fa fa-meh-o'></i>{$lang['search']['no_results']}</h1>
+            <h6 class='text-center mt-4'><i class='fa fa-meh-o'></i>{$lang['search']['no_results']}</h6>
          </div>";
 
       }elseif ($filter_type == "category") {
@@ -256,7 +256,7 @@ function get_proposals($filter_type){
          if(isset($_SESSION['cat_id'])){
             echo "
             <div class='col-md-12'>
-            <h1 class='text-center mt-4'><i class='fa fa-meh-o'></i> {$lang['category']['no_results']} </h1>
+            <h6 class='text-center mt-4'><i class='fa fa-meh-o'></i> {$lang['category']['no_results']} </h6>
             </div>";
          }elseif(isset($_SESSION['cat_child_id'])){
             echo "
@@ -269,15 +269,15 @@ function get_proposals($filter_type){
          if(isset($_SESSION['tag'])){
          echo "
          <div class='col-md-12'>
-            <h1 class='text-center mt-4'><i class='fa fa-meh-o'></i> {$lang['tag_proposals']['no_results']} </h1>
+            <h6 class='text-center mt-4'><i class='fa fa-meh-o'></i> {$lang['tag_proposals']['no_results']} </h6>
          </div>";
          }
       }else{
          echo "
          <div class='col-md-12'>
-            <h1 class='text-center mt-4'>
+            <h6 class='text-center mt-4'>
                <i class='fa fa-meh-o'></i> {$lang['search']['no_results']}
-            </h1>
+            </h6>
          </div>";
       }
 

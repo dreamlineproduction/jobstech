@@ -108,14 +108,32 @@
         <p class="lead"><?= $child_desc; ?></p>
         <?php } ?>
       </center>
-      <hr class="mt-5 pt-2">
+
+
+      <?php require_once("../includes/category_sidebar.php"); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <hr class="mt-2 pt-2">
     </div>
   </div>
   <div class="row mt-3">
-    <div class="col-lg-3 col-md-4 col-sm-12 <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
-      <?php require_once("../includes/category_sidebar.php"); ?>
-    </div>
-    <div class="col-lg-9 col-md-8 col-sm-12 <?=($lang_dir == "right" ? 'order-1 order-sm-2':'')?>">
+ 
+    <div class="col-lg-12 col-md-12 col-sm-12 <?=($lang_dir == "right" ? 'order-1 order-sm-2':'')?>">
       <div class="row flex-wrap proposals <?=($lang_dir == "right" ? 'justify-content':'')?>" id="category_proposals">
         <?php get_category_proposals(); ?>
       </div>
