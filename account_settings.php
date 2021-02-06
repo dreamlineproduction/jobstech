@@ -95,6 +95,7 @@ if(isset($_POST['submit_payoneer_email'])){
 
 <?php if($enable_dusupay == "yes"){ ?>
 
+
 <hr>
 <h5 class="mb-4"> <?= $lang['settings']['mobile_money_heading']; ?> </h5>
 <form method="post" class="clearfix mb-3">
@@ -116,6 +117,7 @@ if(isset($_POST['submit_payoneer_email'])){
         <?= $lang['button']['update_mobile_money']; ?>
     </button>
 </form>
+
 <?php 
   if(isset($_POST['update_mobile_money'])){
     $m_account_number = strip_tags($input->post('m_account_number'));
@@ -174,6 +176,26 @@ if(isset($_POST['submit_payoneer_email'])){
   }
   }
   ?> -->
+
+<!-- Stripe account details -->
+
+<hr>
+<h5 class="mb-4"> <?= $lang['settings']['stripe_heading']; ?> </h5>
+<form method="post" class="clearfix mb-3">
+    <div class="form-group row">
+        <label class="col-md-4 col-form-label"> <?= $lang['label']['stripe_email']; ?> </label>
+        <div class="col-md-8">
+            <input type="email" name="seller_payoneer_email" value=""
+                placeholder=" <?= $lang['label']['stripe_email']; ?>" class="form-control" required>
+        </div>
+    </div>
+    <button type="submit" name="submit_payoneer_email" class="btn btn-success <?= $floatRight ?>">
+        <?= $lang['button']['change_stripe_email']; ?>
+    </button>
+</form>
+
+
+
 <hr>
 <h5 class="mb-4"> <?= $lang['settings']['real_time_notifications']; ?> </h5>
 <form method="post" class="clearfix">
