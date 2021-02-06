@@ -1734,20 +1734,21 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
     outline: auto 5px -webkit-focus-ring-color;
 }
 
-.ui-toolkit a:hover,
-.ui-toolkit a:focus,
-.ui-toolkit a:active,
-.ui-toolkit a.is-active,
-.ui-toolkit .text-link-primary:hover,
-.ui-toolkit .text-link-primary:focus,
-.ui-toolkit .text-link-primary:active,
-.ui-toolkit .text-link-primary.is-active {
+.ui-toolkit a:hover, .ui-toolkit a:focus, .ui-toolkit a:active, .ui-toolkit a.is-active, .ui-toolkit .text-link-primary:hover, .ui-toolkit .text-link-primary:focus, .ui-toolkit .text-link-primary:active, .ui-toolkit .text-link-primary.is-active {
     cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .ui-toolkit a.is-selected,
 .ui-toolkit .text-link-primary.is-selected {
     color: #222;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #303030;
 }
 
 .ui-toolkit a.is-selected:hover,
@@ -9554,7 +9555,7 @@ a.arrow-up::after {
     top: 22px;
     right: 50%;
     box-sizing: border-box;
-    border-radius: 2px;
+    border-radius: 50%;
 }
 
 .gnav-header .account-nav .count.display-none {
@@ -10161,6 +10162,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 .gnav-header .logged-in-link .menuItem {
     margin-right: 3px;
     border: 1px solid transparent;
+    font-weight: 600;
 }
 
 .gnav-header .register-link a {
