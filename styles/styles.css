@@ -787,14 +787,14 @@ header hr {
     font-size: 57px;
     font-weight: 700;
     color: #fff;
-    text-align: left;
+    text-align: center;
 }
 
 #demo1 h5 {
     font-size: 19px;
     color: #fff;
     font-family: 'Archivo', sans-serif;
-    text-align: left;
+    text-align: center;
     margin-top: 10px;
 }
 
