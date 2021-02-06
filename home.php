@@ -26,8 +26,8 @@ $slide_image = $row_slides->slide_image;
   </ul> -->
     <div class="carousel-inner">
         <div class="carousel-caption">
-            <h1><?= $section_heading; ?></h1>
-            <h5><?= $section_short_heading; ?></h5>
+            <h1><?= $lang['everything_is_possible']; ?></h1>
+            <h5><?= $lang['find_it_here']; ?></h5>
             <div class="row justify-content-left">
                 <div class="col-md-5 col-11">
                     <!-- <form action="" method="post">
