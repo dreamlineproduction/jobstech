@@ -191,7 +191,7 @@ $slide_image = $row_slides->slide_image;
 <!-- end market -->
 <!-- start timer -->
 
-<section>
+<!-- <section>
 
     <div class="get-started-box">
 
@@ -211,7 +211,7 @@ $slide_image = $row_slides->slide_image;
     </div>
 
 
-</section>
+</section> -->
 
 
 

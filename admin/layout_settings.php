@@ -281,7 +281,7 @@ if(isset($_POST['update_bar'])){
 
 ?>
 
-<div class="row"><!--- 4 row Starts --->
+<div class="row d-none"><!--- 4 row Starts --->
 <div class="col-lg-12"><!--- col-lg-12 Starts --->
 <div class="card"><!--- card Starts --->
 <div class="card-header"><!--- card-header Starts --->
@@ -381,7 +381,7 @@ $s_extension = pathinfo($slide_image, PATHINFO_EXTENSION);
 <div class="card mb-5"><!--- card mb-5 Starts --->
 <div class="card-header"><!--- card-header Starts --->
 <h4 class="h4">
-<i class="fa fa-cubes fa-fw"></i> View Cards
+<i class="fa fa-cubes fa-fw"></i> Popular Professional Services
 <small class="text-muted">
 These boxes are located on the landing page, just below slider.
 </small>
@@ -425,7 +425,7 @@ $card_desc = $row_cards->card_desc;
 </div><!--- card mb-5 Ends --->
 </div><!--- col-lg-12 Ends --->
 </div><!--- 4 row Ends --->
-<div class="row pt-3"><!--- 3 row Starts --->
+<div class="row pt-3 d-none"><!--- 3 row Starts --->
 <div class="col-lg-12"><!--- col-lg-12 Starts --->
 <div class="card mb-5"><!--- card mb-5 Starts --->
 <div class="card-header"><!--- card-header Starts --->
