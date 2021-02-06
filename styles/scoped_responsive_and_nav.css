@@ -1745,6 +1745,22 @@ screen and (orientation: landscape) and (min-device-height: 740px) {
     color: #222;
 }
 
+.single-proposal .carousel-control-prev {
+    background: #0000007a;
+}
+
+.single-proposal .carousel-control-prev:hover {
+    background: #000;
+}
+
+.single-proposal  .carousel-control-next {
+    background: #0000007a;
+}
+
+.single-proposal  .carousel-control-next:hover {
+    background: #000;
+}
+
 .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;

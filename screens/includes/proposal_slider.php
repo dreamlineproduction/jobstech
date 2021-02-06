@@ -34,9 +34,9 @@
 
 </style>
 
-<?php $jwplayer_code = ""; ?>
+<?php $jwplayer_code = "$jwplayer_code"; ?>
 
-<div id="myCarousel" class="carousel slide">
+<div id="myCarousel" class="carousel slide single-proposal">
   <ol class="carousel-indicators">
 		<?php if(!empty($proposal_video)){ ?>
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
