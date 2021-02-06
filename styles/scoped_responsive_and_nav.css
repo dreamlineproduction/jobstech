@@ -123,6 +123,32 @@ a:hover {
     display: flex;
 }
 
+.home-new-box-category .card {
+    -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+    background: #fff;
+    border-radius: 9px 9px 0px 0px im !important;
+    padding: 15px;
+}
+
+.home-new-box-category .card-body {
+    padding-bottom: 0;
+}
+
+.home-new-box-category .cate-img {
+    padding-bottom: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.home-new-box-category .card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+    min-height: 354px;
+}
+
 .shadow-box .card-body {
     background: #f9f9f9;
     border-radius: 6px;

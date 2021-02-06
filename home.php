@@ -85,8 +85,10 @@ $slide_image = $row_slides->slide_image;
             </h1>
             <p class="subHeading mb-5 <?=($lang_dir == "right" ? 'text-right':'')?>">
                 <?= $lang['home']['cards']['desc']; ?></p>
-            <div class="owl-carousel home-cards-carousel owl-theme">
-                <!--- owl-carousel home-cards-carousel Starts --->
+
+
+
+            <div class="row justify-content-md-center">
                 <?php
           $get_cards = $db->select("home_cards",array("language_id" => $siteLanguage));
           while($row_cards = $get_cards->fetch()){
@@ -96,21 +98,37 @@ $slide_image = $row_slides->slide_image;
           $card_image = getImageUrl("home_cards",$row_cards->card_image); 
           $card_link = $row_cards->card_link;
         ?>
-                <div class="card-box">
-                    <div>
+
+                <div class="col-md-3 home-new-box-category">
+                    <div class="card mb-5">
                         <a href="<?= $card_link; ?>" class="subcategory">
-                            <h4><small><?= $card_desc; ?></small><?= $card_title; ?></h4>
-                            <picture>
-                                <img src="<?= $card_image; ?>">
-                            </picture>
+                            <div class="img-box-padding">
+                                <picture>
+                                    <div class="cate-img card-img-top"
+                                        style="background-image: url(<?= $card_image; ?>);">
+
+                                    </div>
+                                    <!-- <img class="card-img-top" src="<?= $card_image; ?>" alt="Card image cap"> -->
+                                </picture>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $card_title; ?></h5>
+                                <h4><?= $card_desc; ?></h4>
                         </a>
                     </div>
                 </div>
-                <?php } ?>
             </div>
-            <!--- owl-carousel home-cards-carousel Ends --->
+
+
+
+
+
+            <?php } ?>
         </div>
+
+        <!--- owl-carousel home-cards-carousel Ends --->
     </div>
+</div>
 </div>
 <!-- start market -->
 <section class="market">
