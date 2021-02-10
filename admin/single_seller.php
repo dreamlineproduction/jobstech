@@ -46,7 +46,8 @@ echo "<script>window.open('login','_self');</script>";
 
 ?>
 
-<div class="breadcrumbs"><!--- breadcrumbs Starts --->
+<div class="breadcrumbs">
+    <!--- breadcrumbs Starts --->
     <div class="col-sm-4">
         <div class="page-header float-left">
             <div class="page-title">
@@ -63,117 +64,128 @@ echo "<script>window.open('login','_self');</script>";
             </div>
         </div>
     </div>
-</div><!--- breadcrumbs Ends --->
+</div>
+<!--- breadcrumbs Ends --->
 
-<div class="container"><!--- container Starts --->
+<div class="container">
+    <!--- container Starts --->
 
-<div class="row"><!--- 2 row Starts --->
+    <div class="row">
+        <!--- 2 row Starts --->
 
-<div class="col-lg-12"><!--- col-lg-12 Starts --->
-    
-<div class="card"><!--- card Starts --->
+        <div class="col-lg-12">
+            <!--- col-lg-12 Starts --->
 
-<div class="card-header"><!--- card-header Starts --->
+            <div class="card">
+                <!--- card Starts --->
 
-    <h4 class="h4">
+                <div class="card-header">
+                    <!--- card-header Starts --->
 
-        <i class="fa fa-info-circle text-success"></i>
-        <?= $seller_user_name; ?>'s Info
+                    <h4 class="h4">
 
-    </h4>
+                        <i class="fa fa-info-circle text-success"></i>
+                        <?= $seller_user_name; ?>'s Info
 
-</div><!--- card-header Ends --->
-
-    <div class="card-body row"><!--- card-body row Starts --->
-
-        <div class="col-md-4"><!--- col-md-4 Starts --->
-
-            <div class="seller-info mb-3">
-                <!--- seller-info mb-3 Starts --->
-
-                <?php if(!empty($seller_image)){ ?>
-
-                <img src="<?= $seller_image; ?>" class="rounded img-fluid">
-
-                <?php }else{ ?>
-
-                <img src="../user_images/empty-image.png" class="rounded img-fluid">
-
-                <?php } ?>
-
-                <div class="seller-info-title">
-                    <!--- seller-info-title Starts --->
-
-                    <span class="seller-info-inner text-capitalize"> <?= $seller_user_name; ?> </span>
-
-                    <span class="seller-info-type"> <?= $seller_country; ?> </span>
-
+                    </h4>
 
                 </div>
-                <!--- seller-info-title Ends --->
+                <!--- card-header Ends --->
 
-            </div>
-            <!--- seller-info mb-3 Ends --->
+                <div class="card-body row">
+                    <!--- card-body row Starts --->
 
-            <div class="mb-3">
-                <!--- mb-3 Starts --->
+                    <div class="col-md-4">
+                        <!--- col-md-4 Starts --->
 
-                <div class="widget-content-expanded">
-                    <!--- widget-content-expanded Starts --->
+                        <div class="seller-info mb-3">
+                            <!--- seller-info mb-3 Starts --->
 
-                    <p class="lead">
+                            <?php if(!empty($seller_image)){ ?>
 
-                        <span class="font-weight-bold"> Full Name : </span> <?= $seller_name; ?>
+                            <img src="<?= $seller_image; ?>" class="rounded img-fluid">
 
-                    </p>
+                            <?php }else{ ?>
 
+                            <img src="../user_images/empty-image.png" class="rounded img-fluid">
 
-                    <p class="lead">
+                            <?php } ?>
 
-                        <span class="font-weight-bold"> Username : </span> <?= $seller_user_name; ?>
+                            <div class="seller-info-title">
+                                <!--- seller-info-title Starts --->
 
-                    </p>
+                                <span class="seller-info-inner text-capitalize"> <?= $seller_user_name; ?> </span>
 
-                    <p class="lead">
-                        <span class="font-weight-bold"> Email : </span> <?= $seller_email; ?>
-                    </p>
-
-                    <?php if(!empty($seller_paypal_email)){ ?>
-                    <p class="lead">
-                        <span class="font-weight-bold"> Paypal Email : </span> <?= $seller_paypal_email; ?>
-                    </p>
-                    <?php } ?>
-
-                    <?php if(!empty($seller_payoneer_email)){ ?>
-                    <p class="lead">
-                        <span class="font-weight-bold"> Payoneer Email : </span> <?= $seller_payoneer_email; ?>
-                    </p>
-                    <?php } ?>
-
-                    <?php if(!empty($seller_phone)){ ?>
-                    <p class="lead">
-                        <span class="font-weight-bold"> Phone : </span> <?= $seller_phone; ?>
-                    </p>
-                    <?php } ?>
-
-                    <p class="lead">
-
-                        <span class="font-weight-bold"> Level : </span> <?= $level_title; ?>
-
-                    </p>
-
-                    <p class="lead">
-
-                        <span class="font-weight-bold">Main Conversational Language :</span><?= $language_title; ?>
-
-                    </p>
+                                <span class="seller-info-type"> <?= $seller_country; ?> </span>
 
 
-                    <p class="lead">
+                            </div>
+                            <!--- seller-info-title Ends --->
 
-                        <span class="font-weight-bold"> Email Verification : </span>
+                        </div>
+                        <!--- seller-info mb-3 Ends --->
 
-                        <?php
+                        <div class="mb-3">
+                            <!--- mb-3 Starts --->
+
+                            <div class="widget-content-expanded">
+                                <!--- widget-content-expanded Starts --->
+
+                                <p class="lead">
+
+                                    <span class="font-weight-bold"> Full Name : </span> <?= $seller_name; ?>
+
+                                </p>
+
+
+                                <p class="lead">
+
+                                    <span class="font-weight-bold"> Username : </span> <?= $seller_user_name; ?>
+
+                                </p>
+
+                                <p class="lead">
+                                    <span class="font-weight-bold"> Email : </span> <?= $seller_email; ?>
+                                </p>
+
+                                <?php if(!empty($seller_paypal_email)){ ?>
+                                <p class="lead">
+                                    <span class="font-weight-bold"> Paypal Email : </span> <?= $seller_paypal_email; ?>
+                                </p>
+                                <?php } ?>
+
+                                <?php if(!empty($seller_payoneer_email)){ ?>
+                                <p class="lead">
+                                    <span class="font-weight-bold"> Payoneer Email : </span>
+                                    <?= $seller_payoneer_email; ?>
+                                </p>
+                                <?php } ?>
+
+                                <?php if(!empty($seller_phone)){ ?>
+                                <p class="lead">
+                                    <span class="font-weight-bold"> Phone : </span> <?= $seller_phone; ?>
+                                </p>
+                                <?php } ?>
+
+                                <p class="lead">
+
+                                    <span class="font-weight-bold"> Level : </span> <?= $level_title; ?>
+
+                                </p>
+
+                                <p class="lead">
+
+                                    <span class="font-weight-bold">Main Conversational Language
+                                        :</span><?= $language_title; ?>
+
+                                </p>
+
+
+                                <p class="lead">
+
+                                    <span class="font-weight-bold"> Email Verification : </span>
+
+                                    <?php
 
                             if($seller_verification == "ok"){
 
@@ -187,208 +199,224 @@ echo "<script>window.open('login','_self');</script>";
 
                         ?>
 
-                    </p>
+                                </p>
 
 
-                    <p class="lead">
+                                <p class="lead">
 
-                        <span class="font-weight-bold"> Ip Address : </span> <?= $seller_ip; ?>
+                                    <span class="font-weight-bold"> Ip Address : </span> <?= $seller_ip; ?>
 
-                    </p>
-
-
-                    <p class="lead">
-
-                        <span class="font-weight-bold"> Country : </span> <?= $seller_country; ?>
-
-                    </p>
+                                </p>
 
 
-                    <p class="lead">
+                                <p class="lead">
 
-                        <span class="font-weight-bold"> Register Date : </span> <?= $seller_register_date; ?>
+                                    <span class="font-weight-bold"> Country : </span> <?= $seller_country; ?>
 
-                    </p>
+                                </p>
 
-                </div>
-                <!--- widget-content-expanded Ends --->
 
-                <hr class="dotted short">
+                                <p class="lead">
 
-                <h5 class="text-muted font-weight-bold"> Headline </h5>
+                                    <span class="font-weight-bold"> Register Date : </span>
+                                    <?= $seller_register_date; ?>
 
-                <p>
-                    <?= $seller_headline; ?>
-                </p>
+                                </p>
 
-            </div><!--- mb-3 Ends --->
+                            </div>
+                            <!--- widget-content-expanded Ends --->
 
-            <div class="mb-3"><!--- mb-3 Starts --->
+                            <hr class="dotted short">
 
-                <hr class="dotted">
+                            <h5 class="text-muted font-weight-bold"> Headline </h5>
 
-                <h5 class="text-muted font-weight-bold">About</h5>
+                            <p>
+                                <?= $seller_headline; ?>
+                            </p>
 
-                <p><?= $seller_about; ?></p>
+                        </div>
+                        <!--- mb-3 Ends --->
 
-            </div><!--- mb-3 Ends --->
+                        <div class="mb-3">
+                            <!--- mb-3 Starts --->
 
-        </div><!--- col-md-4 Ends --->
+                            <hr class="dotted">
 
-        <div class="col-md-8"><!--- col-md-8 Starts --->
+                            <h5 class="text-muted font-weight-bold">About</h5>
 
-            <h3 class="pb-1"><?= $seller_user_name; ?>'s Orders </h3>
+                            <p><?= $seller_about; ?></p>
 
-            <div class="row box">
-                <!--- row box Starts --->
+                        </div>
+                        <!--- mb-3 Ends --->
 
-                <div class="text-center border-box col-md-3">
-                    <!--- text-center border-box col-md-3 Starts --->
+                    </div>
+                    <!--- col-md-4 Ends --->
 
-                    <p> Canceled Orders </p>
+                    <div class="col-md-8">
+                        <!--- col-md-8 Starts --->
 
-                    <?php
+                        <h3 class="pb-1"><?= $seller_user_name; ?>'s Orders </h3>
+
+                        <div class="row box">
+                            <!--- row box Starts --->
+
+                            <div class="text-center border-box col-md-3">
+                                <!--- text-center border-box col-md-3 Starts --->
+
+                                <p> Canceled Orders </p>
+
+                                <?php
 
                     $count_orders = $db->count("orders",["seller_id"=>$seller_id,"order_status"=>'cancelled']);
 
                     ?>
 
-                    <h2><?= $count_orders; ?></h2>
+                                <h2><?= $count_orders; ?></h2>
 
-                </div><!--- text-center border-box col-md-3 Ends --->
+                            </div>
+                            <!--- text-center border-box col-md-3 Ends --->
 
 
-                <div class="text-center border-box col-md-3"><!--- text-center border-box col-md-3 Starts --->
+                            <div class="text-center border-box col-md-3">
+                                <!--- text-center border-box col-md-3 Starts --->
 
-                    <p> Delivered Orders </p>
+                                <p> Delivered Orders </p>
 
-                    <?php
+                                <?php
 
                     $count_orders = $db->count("orders",["seller_id"=>$seller_id,"order_status"=>'delivered']);
 
                     ?>
 
-                    <h2>
-                        <?= $count_orders; ?>
-                    </h2>
+                                <h2>
+                                    <?= $count_orders; ?>
+                                </h2>
 
-                </div>
-                <!--- text-center border-box col-md-3 Ends --->
+                            </div>
+                            <!--- text-center border-box col-md-3 Ends --->
 
 
-                <div class="text-center border-box col-md-3">
-                    <!--- text-center border-box col-md-3 Starts --->
+                            <div class="text-center border-box col-md-3">
+                                <!--- text-center border-box col-md-3 Starts --->
 
-                    <p> Completed Orders </p>
+                                <p> Completed Orders </p>
 
-                    <?php
+                                <?php
 
                         $count_orders = $db->count("orders",["seller_id"=>$seller_id,"order_status"=>'completed']);
 
                     ?>
 
-                    <h2>
-                        <?= $count_orders; ?>
-                    </h2>
+                                <h2>
+                                    <?= $count_orders; ?>
+                                </h2>
 
-                </div>
-                <!--- text-center border-box col-md-3 Ends --->
+                            </div>
+                            <!--- text-center border-box col-md-3 Ends --->
 
 
 
-                <div class="text-center border-box col-md-3">
-                    <!--- text-center border-box col-md-3 Starts --->
+                            <div class="text-center border-box col-md-3">
+                                <!--- text-center border-box col-md-3 Starts --->
 
-                    <p>Current Active Orders </p>
+                                <p>Current Active Orders </p>
 
-                    <?php
+                                <?php
 
                         $count_orders = $db->count("orders",["seller_id"=>$seller_id,"order_active"=>'yes']);
 
 
                     ?>
 
-                    <h2><?= $count_orders; ?></h2>
+                                <h2><?= $count_orders; ?></h2>
 
-                </div><!--- text-center border-box col-md-3 Ends --->
+                            </div>
+                            <!--- text-center border-box col-md-3 Ends --->
 
-            </div><!--- row box Ends --->
+                        </div>
+                        <!--- row box Ends --->
 
-            <h3 class="pb-1"><?=  $seller_user_name; ?>'s Earnings</h3>
+                        <h3 class="pb-1"><?=  $seller_user_name; ?>'s Earnings</h3>
 
-            <div class="row box"><!--- row box Starts --->
+                        <div class="row box">
+                            <!--- row box Starts --->
 
-                <div class="text-center border-box col-md-3"><!--- text-center border-box col-md-3 Starts --->
+                            <div class="text-center border-box col-md-3">
+                                <!--- text-center border-box col-md-3 Starts --->
 
-                    <p> Withdrawals </p>
+                                <p> Withdrawals </p>
 
-                    <h2><?= $withdrawn; ?></h2>
+                                <h2><?= $withdrawn; ?></h2>
 
-                </div><!--- text-center border-box col-md-3 Ends --->
+                            </div>
+                            <!--- text-center border-box col-md-3 Ends --->
 
-                <div class="text-center border-box col-md-3"><!--- text-center border-box col-md-3 Starts --->
+                            <div class="text-center border-box col-md-3">
+                                <!--- text-center border-box col-md-3 Starts --->
 
-                    <p> Used on Proposals</p>
+                                <p> Used on Proposals</p>
 
-                    <h2><?= $used_purchases; ?></h2>
+                                <h2><?= $used_purchases; ?></h2>
 
-                </div><!--- text-center border-box col-md-3 Ends --->
+                            </div>
+                            <!--- text-center border-box col-md-3 Ends --->
 
-                <div class="text-center border-box col-md-3">
-                    <!--- text-center border-box col-md-3 Starts --->
+                            <div class="text-center border-box col-md-3">
+                                <!--- text-center border-box col-md-3 Starts --->
 
-                    <p> Pending </p>
+                                <p> Pending </p>
 
-                    <h2><?= $pending_clearance; ?></h2>
+                                <h2><?= $pending_clearance; ?></h2>
 
-                </div>
-                <!--- text-center border-box col-md-3 Ends --->
+                            </div>
+                            <!--- text-center border-box col-md-3 Ends --->
 
 
-                <div class="text-center border-box col-md-3">
-                    <!--- text-center border-box col-md-3 Starts --->
+                            <div class="text-center border-box col-md-3">
+                                <!--- text-center border-box col-md-3 Starts --->
 
-                    <p> Availble Income </p>
+                                <p> Availble Income </p>
 
-                    <h2>
-                        <?= $current_balance; ?>
-                    </h2>
+                                <h2>
+                                    <?= $current_balance; ?>
+                                </h2>
 
-                </div>
-                <!--- text-center border-box col-md-3 Ends --->
+                            </div>
+                            <!--- text-center border-box col-md-3 Ends --->
 
-            </div><!--- row box Ends --->
+                        </div>
+                        <!--- row box Ends --->
 
-            <h2><?=  $seller_user_name; ?>'s Proposals/Services</h2>
+                        <h2><?=  $seller_user_name; ?>'s Proposals/Services</h2>
 
-            <div class="table-responsive pt-1">
-                <!--- table-responsive mt-4 Starts --->
+                        <div class="table-responsive pt-1">
+                            <!--- table-responsive mt-4 Starts --->
 
-                <table class="table table-bordered">
-                    <!--- table table-bordered table-hover Starts --->
+                            <table class="table table-bordered">
+                                <!--- table table-bordered table-hover Starts --->
 
-                    <thead>
-                        <!--- thead Starts --->
+                                <thead>
+                                    <!--- thead Starts --->
 
-                        <tr>
+                                    <tr>
 
-                            <th>Proposal's Title</th>
+                                        <th>Proposal's Title</th>
 
-                            <th>Proposal's Image</th>
+                                        <th>Proposal's Image</th>
 
-                            <th>Proposal's Price</th>
+                                        <th>Proposal's Price</th>
 
-                            <th>Proposal's Status</th>
+                                        <th>Proposal's Status</th>
 
-                        </tr>
+                                    </tr>
 
-                    </thead>
-                    <!--- thead Ends --->
+                                </thead>
+                                <!--- thead Ends --->
 
-                    <tbody>
-                        <!--- tbody Starts --->
+                                <tbody>
+                                    <!--- tbody Starts --->
 
-                        <?php
+                                    <?php
 
                             // $get_proposals = $db->select("proposals",array("proposal_seller_id" => $seller_id));
 
@@ -428,54 +456,63 @@ echo "<script>window.open('login','_self');</script>";
 
                         ?>
 
-                        <tr>
+                                    <tr>
 
-                            <td>
-                                <?= $proposal_title; ?>
-                            </td>
+                                        <td>
+                                            <?= $proposal_title; ?>
+                                        </td>
 
-                            <td>
+                                        <td>
 
-                                <img src="<?= $proposal_img1; ?>" width="60" height="60">
+                                            <img src="<?= $proposal_img1; ?>" width="60" height="60">
 
-                            </td>
+                                        </td>
 
-                            <td>
-                                <?= $proposal_price; ?>
-                            </td>
+                                        <td>
+                                            <?= $proposal_price; ?>
+                                        </td>
 
-                            <td>
-                                <?= ucfirst($proposal_status); ?>
-                            </td>
+                                        <td>
+                                            <?= ucfirst($proposal_status); ?>
+                                        </td>
 
-                        </tr>
+                                    </tr>
 
-                        <?php } ?>
+                                    <?php } ?>
 
-                    </tbody><!--- tbody Ends --->
+                                </tbody>
+                                <!--- tbody Ends --->
 
-                </table><!--- table table-bordered table-hover Ends --->
+                            </table>
+                            <!--- table table-bordered table-hover Ends --->
 
-            </div><!--- table-responsive mt-4 Ends --->
+                        </div>
+                        <!--- table-responsive mt-4 Ends --->
 
-            <?php 
+                        <?php 
 
               if($paymentGateway == 1){ 
                 include("../plugins/paymentGateway/admin/single_seller.php");
               }
 
             ?>
-        
-        </div><!--- col-md-8 Ends --->
 
-    </div><!--- card-body row Ends --->
+                    </div>
+                    <!--- col-md-8 Ends --->
 
-    </div><!--- card Ends --->
+                </div>
+                <!--- card-body row Ends --->
 
-    </div><!--- col-lg-12 Ends --->
+            </div>
+            <!--- card Ends --->
 
-    </div><!--- 2 row Ends --->
+        </div>
+        <!--- col-lg-12 Ends --->
 
-</div><!--- container Ends --->
+    </div>
+    <!--- 2 row Ends --->
+
+</div>
+<!--- container Ends --->
 
 <?php } ?>

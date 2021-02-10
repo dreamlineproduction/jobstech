@@ -88,10 +88,8 @@
       while($row_countries = $get_countries->fetch()){
         $id = $row_countries->id;
         $name = $row_countries->name;
-
-        $get_code = $db->select("country",['nicname'=>$name]);
-
-        echo "<option value='$name'".($name == $login_seller_country ? "selected" : "").">$name</option>";
+        $code = $row_countries->code;
+        echo "<option data-code='$code' value='$name'>$name</option>";
       }
       ?>
                         </select>

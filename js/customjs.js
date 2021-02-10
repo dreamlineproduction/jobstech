@@ -435,4 +435,9 @@ $(document).ready(function(){
 		$("footer h3").removeAttr("data-toggle","data-target");
 	}
 
+	$("[name='seller_country']").change(function(){
+		var code = ($(this).children('option:selected').data('code'));
+		var setCode = "+"+code;
+		$("[name='country_code']").val(setCode);
+	});
 });

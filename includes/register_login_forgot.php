@@ -11,6 +11,7 @@ $signup_email = $row_general_settings->signup_email;
 $referral_money = $row_general_settings->referral_money;
 
 if(isset($_POST['register'])){
+	
 	$rules = array(
 	"name" => "required",
 	"u_name" => "required",
@@ -56,7 +57,9 @@ if(isset($_POST['register'])){
 		$con_pass = strip_tags($input->post('con_pass'));
 		$referral = strip_tags($input->post('referral'));
 		$geoplugin = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ip));
-		$country = $geoplugin['geoplugin_countryName'];
+		//$country = $geoplugin['geoplugin_countryName'];
+		$country = strip_tags($input->post('seller_country'));
+		
 		if(empty($country)){ $country = ""; }
 		$regsiter_date = date("F d, Y");
 		$date = date("F d, Y");
