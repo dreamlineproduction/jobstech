@@ -1,3 +1,24 @@
+<style>
+.dd .ddTitle .ddTitleText {
+    padding: 8px 36px 7px 8px !important;
+    font-size: 12px;
+}
+.ddChild.ddchild_.border.shadow {
+    width: 100%;
+    height: auto !important;
+    margin-left: 0%;
+    font-size: 12px;
+}
+.ddcommon {
+    position: relative;
+    display: -moz-inline-stack;
+    zoom: 1;
+    display: inline-block;
+    *display: inline;
+    cursor: default;
+    width: auto !important;
+}
+</style>
 <?php
 require_once("db.php");
 require_once("extra_script.php");
@@ -55,6 +76,7 @@ $site_border_color = $row_general_settings->site_border_color;
 ?>
 <link href="<?= $site_url; ?>/styles/scoped_responsive_and_nav.css" rel="stylesheet">
 <link href="<?= $site_url; ?>/styles/vesta_homepage.css" rel="stylesheet">
+
 
 <div id="gnav-header" class="gnav-header global-nav clear gnav-3">
     <header id="gnav-header-inner"
@@ -120,12 +142,12 @@ $site_border_color = $row_general_settings->site_border_color;
                 <!-- <li class="register-link">
             <a href="<?= $site_url; ?>/freelancers"><?= $lang['freelancers_menu']; ?></a>
         </li> -->
-                <li class="sell-on-gigtodo-link d-none d-lg-block">
+                <!-- <li class="sell-on-gigtodo-link d-none d-lg-block">
                     <a href="#" data-toggle="modal" data-target="#register-modal">
                         <span class="sell-copy"><?= $lang['become_seller']; ?></span>
                         <span class="sell-copy short"><?= $lang['become_seller']; ?></span>
                     </a>
-                </li>
+                </li> -->
                 <li class="register-link">
                     <a href="#" data-toggle="modal" data-target="#login-modal"><?= $lang['sign_in']; ?></a>
                 </li>
@@ -135,6 +157,70 @@ $site_border_color = $row_general_settings->site_border_color;
                         <?php if ($deviceType == "phone") { echo $lang['mobile_join_now']; } else { echo $lang['join_now']; } ?>
                     </a>
                 </li>
+                <li class="register-link">
+                <a href="#" style="margin-top: 15px; margin-right: -10px;">
+    
+                    <?php if($language_switcher == 1){ ?>
+
+<select id="languageSelect" class="form-control">
+    <?php 
+    $get_languages = $db->select("languages");
+    while($row_languages = $get_languages->fetch()){
+    $id = $row_languages->id;
+    $title = $row_languages->title;
+    $image = getImageUrl("languages",$row_languages->image);              
+    ?>
+    <option data-image="<?= $image; ?>" data-url="<?= "$site_url/change_language?id=$id"; ?>"
+        <?php if($id == $_SESSION["siteLanguage"]){ echo "selected"; } ?>>
+        <?= $title; ?>
+    </option>
+    <?php } ?>
+</select>
+
+<?php } ?>
+
+<?php if($enable_google_translate == 1){ ?>
+<div id="google_translate_element" class="mt-2"></div>
+<?php } ?>
+  </a>
+                </li>
+                <li class="register-link">
+                <a href="#" style="margin-top: 15px; margin-right: 0;">
+    
+                <?php if($enable_converter == 1){ ?>
+
+
+
+<select id="currencySelect2" class="form-control">
+    <option data-url="<?= "$site_url/change_currency?id=0"; ?>">
+        <?= "$s_currency_name ($s_currency)"; ?>
+    </option>
+    <?php
+    $get_currencies = $db->select("site_currencies");
+    while($row = $get_currencies->fetch()){
+        
+        $id = $row->id;
+        $currency_id = $row->currency_id;
+        $position = $row->position;
+
+        $get_currency = $db->select("currencies",array("id" => $currency_id));
+        $row_currency = $get_currency->fetch();
+        $name = $row_currency->name;
+        $symbol = $row_currency->symbol;
+
+    ?>
+    <option data-url="<?= "$site_url/change_currency?id=$id"; ?>"
+        <?php if($id == @$_SESSION["siteCurrency"]){ echo "selected"; } ?>>
+        <?= $name; ?> (<?= $symbol ?>)
+    </option>
+    <?php } ?>
+</select>
+
+<?php } ?>
+</a>
+                </li>
+
+                
                 <?php 
         }else{
           require_once("comp/UserMenu.php");

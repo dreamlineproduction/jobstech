@@ -372,9 +372,16 @@
     </div>
 
 
+    <div class="seller-language-by-filter mr-2 mb-2  <?=($lang_dir == "right" ? 'text-right':'')?>">
+
+
 
 
 </div>
+
+</div>
+
+
 
 
 
@@ -496,7 +503,7 @@
     </div>
 </div> -->
 
-<?php include("$dir/includes/comp/currency_converter.php"); ?>
+
 
 <!-- <div class="card border-gray mb-3">
     <div class="card-header bg-white">

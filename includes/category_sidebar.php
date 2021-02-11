@@ -62,7 +62,7 @@
 ?>
 
 
-<?php include("$dir/includes/comp/currency_converter.php"); ?>
+<!-- <?php include("$dir/includes/comp/currency_converter.php"); ?> -->
 
 
 <div class="row justify-content-center">

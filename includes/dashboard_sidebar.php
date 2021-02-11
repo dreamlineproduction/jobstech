@@ -93,7 +93,7 @@
 </div>
 
 
-<div class="card rounded-0 sticky-start mb-3 card_user  ">
+<div class="card rounded-0  mb-3 card_user  ">
     <div class="card-body">
         <?php if(!empty($login_seller_image)){ ?>
         <img src="<?= $login_seller_image; ?>" class="rounded-circle img-thumbnail" width="130">
@@ -146,7 +146,7 @@
 
 
 
-<div class="card rounded-0 sticky-start mb-3 card_user mt-4 ">
+<div class="card rounded-0  mb-3 card_user mt-4 ">
     <div class="card-body">
         <img src="images/sales.png" class="img-fluid center-block" alt="none">
         <h4><?= $lang['sidebar']['start_selling']['title']; ?></h4>
