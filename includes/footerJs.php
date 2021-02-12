@@ -56,3 +56,4 @@ data-disable-messages="<?= (isset($disable_messages))?$disable_messages:'0'; ?>"
 <script type="text/javascript" src="<?= $site_url; ?>/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="<?= $site_url; ?>/js/bootstrap.js"></script>
 <script type="text/javascript" src="<?= $site_url; ?>/js/summernote.js"></script>
+

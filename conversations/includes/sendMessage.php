@@ -50,6 +50,7 @@
 }
 </style>
 
+
 <div class="sendMessage pl-3 pr-3 pb-3">
   <p class="bg-danger p-2 text-white mv-0 d-none"><i class="fa fa-warning"></i> You seem to have typed word(s) that are in violation of our policy. No direct payments or emails allowed.</p>
   <?php if($seller_vacation == "on" AND $seller_status != "block-ban"){ ?>
@@ -67,8 +68,7 @@
   <?php if($seller_status != "block-ban" AND $seller_vacation == "off"){ ?>
   <form id="insert-message-form">
   <p class="typing-status mb-1 invisible">Dummy Text</p>
-  <!-- <textarea class="form-control mb-2 text" name="myTextArea" placeholder="<?= $lang['placeholder']['type_message']; ?>" id="myTextArea" cols="50" rows="20">Hello Worlb. This Examplee shows JavaScript Spellcheck "as-you-type" and also spellchecking window functionallity on the smae paage.... this time implemented using jQuery and the $() selector. </textarea> -->
-	<!-- <input type="button" value="Spell Check" onclick="$('#myTextArea').spellCheckInDialog({popUpStyle:'fancybox',theme:'clean'})"> -->
+ 
   <textarea class="form-control mb-2 text" rows="5" id="message" placeholder="<?= $lang['placeholder']['type_message']; ?>"></textarea>
   <p class="mb-2 mt-2 d-none files"></p>
   <div class="custom-file float-left"><!--- custom-file float-left Starts --->

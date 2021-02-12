@@ -1,15 +1,16 @@
 <?php
-header('Content-type: text/html; charset=ISO-8859-1');
+header('Content-Type: text/html; charset=ISO-8859-1');
+
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 //  Freeing up memory where available improoves performance on huge dictionary searches.
 try{ini_set("memory_limit","255M");}catch(Exception $e){}
-require "php/engine.php";
+include "php/engine.php";
 $script = false;
 $SaveToCentralDictionary = false;
 
- 
+  error_reporting(0);
 if(!isset($_GET["command"])){die("no command");}
 if(isset($_GET["lan"]) &&  strlen($_GET["lan"])>0){$lang  = $_GET["lan"];}else{$lang = "English (International)" ;}
 if(isset($_GET["note"]) &&  strlen($_GET["lan"])>0){$note  = $_GET["note"];}else{$note = "" ;}
@@ -21,10 +22,10 @@ $settingsfile = $_GET["settingsfile"] ;
 
 $RequestedLangs = explode(",",$lang);
 
+$ISOArgs =  utf8_decode("".$_GET["args"]);
 
 
-
-require ("settings/$settingsfile.php");
+include ("settings/$settingsfile.php");
 if(  strtoupper($_GET["command"])=="SAVEWORD" ){
 
 	/*SAVE CENTRAL DICTIONARY ON USER ADD*/
@@ -33,7 +34,7 @@ if(  strtoupper($_GET["command"])=="SAVEWORD" ){
 		echo		$sender ;
 		echo        chr(5);
 		if($SaveToCentralDictionary){	
- 	$wordToSave = stripcslashes($_GET["args"]);
+ 	$wordToSave = stripcslashes($ISOArgs);
 	$filePath = $spellcheckObject->DictionaryPath.$spellcheckObject->SaveToCentralDictionary;
 	if (is_writable($filePath)) {
 		$handle = fopen($filePath, 'a');
@@ -54,7 +55,7 @@ if(  strtoupper($_GET["command"])=="SAVEWORD" ){
 
 if( strtoupper($_GET["command"])=="WINSETUP" ){
 	
-	$words = explode(chr(1),stripcslashes($_GET["args"]));
+	$words = explode(chr(1),stripcslashes($ISOArgs));
 	
 
 	$suggestcountinit = 5;
@@ -106,7 +107,7 @@ if( strtoupper($_GET["command"])=="WINSETUP" ){
 	
 	if( strtoupper($_GET["command"])=="WINSUGGEST" ){
 	
-	$words = explode(chr(1),stripcslashes($_GET["args"]));
+	$words = explode(chr(1),stripcslashes($ISOArgs));
 	$suggest_words 		= array();
 	
 	
@@ -131,11 +132,11 @@ if( strtoupper($_GET["command"])=="WINSETUP" ){
 	
 	if( strtoupper($_GET["command"])=="CTXSPELL"){
 	
-	$word = stripcslashes($_GET["args"]);
+	$word = stripcslashes($ISOArgs);
 	
 	
 	
-	$words = explode(chr(1),stripcslashes($_GET["args"]));
+	$words = explode(chr(1),stripcslashes($ISOArgs));
 	$error_type_words  	= array();
 	$spell_check_words 	= array();
 	$suggest_words 		= array();
@@ -168,7 +169,7 @@ if( strtoupper($_GET["command"])=="WINSETUP" ){
 		
 	elseif( strtoupper($_GET["command"])=="CTXSUGGEST"){
 	
-	$word = stripcslashes($_GET["args"]);
+	$word = stripcslashes($ISOArgs);
 	
 		echo		"CTXSUGGEST";
 		echo        chr(5);
@@ -184,7 +185,7 @@ if( strtoupper($_GET["command"])=="WINSETUP" ){
 	}
 	elseif( strtoupper($_GET["command"])=="RAWSPELL"){
 	
-	$word = stripcslashes($_GET["args"]);
+	$word = stripcslashes($ISOArgs);
 	$ok = $spellcheckObject -> SpellCheckWord($word);
 		echo		"RAWSPELL";
 		echo        chr(5);
@@ -209,7 +210,7 @@ if( strtoupper($_GET["command"])=="WINSETUP" ){
 	
 	if( strtoupper($_GET["command"])=="APISPELL"  ||strtoupper($_GET["command"])=="APISPELLARRAY"   ){
 	
-	$words = explode(chr(1),stripcslashes($_GET["args"]));
+	$words = explode(chr(1),stripcslashes($ISOArgs));
 	
 	$doSuggest  = ($note!=="NOSUGGEST");
 	
@@ -255,7 +256,7 @@ if( strtoupper($_GET["command"])=="WINSETUP" ){
 	}
 	
 	if( strtoupper($_GET["command"])=="LISTDICTS"     ){
-		$in = stripcslashes($_GET["args"]);
+		$in = stripcslashes($ISOArgs);
 		echo		"LISTDICTS";
 		echo        chr(5);
 		echo		$sender ;
@@ -266,7 +267,7 @@ if( strtoupper($_GET["command"])=="WINSETUP" ){
 		}
 	
 	if( strtoupper($_GET["command"])=="APIDYM"     ){
-		$in = stripcslashes($_GET["args"]);
+		$in = stripcslashes($ISOArgs);
 		echo		strtoupper("APIDYM");
 		echo        chr(5);
 		echo		$sender ;
@@ -280,7 +281,7 @@ if( strtoupper($_GET["command"])=="WINSETUP" ){
 		}
 		
 		if( strtoupper($_GET["command"])=="APIVALIDATE"){
-			$words = explode(chr(1),stripcslashes($_GET["args"]));
+			$words = explode(chr(1),stripcslashes($ISOArgs));
 			$spellcheckObject -> CaseSensitive = ($note=="CASESENSITVE");
 			$error_type_words  	= array();
 			$spell_check_words 	= array();
@@ -314,5 +315,5 @@ if( strtoupper($_GET["command"])=="WINSETUP" ){
 			echo        chr(5);
 			echo        $valid?"T":"F";
 }
-if($script){echo '<script type="text/javascript">window.parent.livespell.ajax.pickupIframe(document.body.innerHTML); </script>';};
+if($script){echo '<script type="text/javascript">window.parent.livespell.ajax.pickupIframe(document.body.innerHTML)</script>';};
 ?>

@@ -1,24 +1,3 @@
-<style>
-.dd .ddTitle .ddTitleText {
-    padding: 8px 36px 7px 8px !important;
-    font-size: 12px;
-}
-.ddChild.ddchild_.border.shadow {
-    width: 100%;
-    height: auto !important;
-    margin-left: 0%;
-    font-size: 12px;
-}
-.ddcommon {
-    position: relative;
-    display: -moz-inline-stack;
-    zoom: 1;
-    display: inline-block;
-    *display: inline;
-    cursor: default;
-    width: auto !important;
-}
-</style>
 <?php
 require_once("db.php");
 require_once("extra_script.php");
@@ -76,6 +55,7 @@ $site_border_color = $row_general_settings->site_border_color;
 ?>
 <link href="<?= $site_url; ?>/styles/scoped_responsive_and_nav.css" rel="stylesheet">
 <link href="<?= $site_url; ?>/styles/vesta_homepage.css" rel="stylesheet">
+<link href="<?= $site_url; ?>/styles/header.css" rel="stylesheet">
 
 
 <div id="gnav-header" class="gnav-header global-nav clear gnav-3">
@@ -157,7 +137,7 @@ $site_border_color = $row_general_settings->site_border_color;
                         <?php if ($deviceType == "phone") { echo $lang['mobile_join_now']; } else { echo $lang['join_now']; } ?>
                     </a>
                 </li>
-                <li class="register-link">
+                <li class="register-link mobile-hide">
                 <a href="#" style="margin-top: 15px; margin-right: -10px;">
     
                     <?php if($language_switcher == 1){ ?>
@@ -184,7 +164,7 @@ $site_border_color = $row_general_settings->site_border_color;
 <?php } ?>
   </a>
                 </li>
-                <li class="register-link">
+                <li class="register-link  mobile-hide">
                 <a href="#" style="margin-top: 15px; margin-right: 0;">
     
                 <?php if($enable_converter == 1){ ?>
@@ -218,6 +198,10 @@ $site_border_color = $row_general_settings->site_border_color;
 
 <?php } ?>
 </a>
+                </li>
+
+                <li class="register-link desktop-hide">
+                    <a href="#" data-toggle="modal" data-target="#change-language"><i class="fa fa-cog" aria-hidden="true"></i></a>
                 </li>
 
                 
@@ -285,3 +269,79 @@ $(document).ready(function() {
 <?php require_once("register_login_forgot_modals.php"); ?>
 <?php require_once("register_login_forgot.php"); ?>
 <?php require_once("external_stylesheet.php"); ?>
+
+<!-- Modal -->
+<div class="modal fade" id="change-language" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <a href="#" style="margin-top: 15px; margin-right: -10px;">
+    
+    <?php if($language_switcher == 1){ ?>
+        <label for="change-language"><?= $lang['change_language']; ?></label>
+<select id="languageSelect2" class="form-control">
+<?php 
+$get_languages = $db->select("languages");
+while($row_languages = $get_languages->fetch()){
+$id = $row_languages->id;
+$title = $row_languages->title;
+$image = getImageUrl("languages",$row_languages->image);              
+?>
+<option data-image="<?= $image; ?>" data-url="<?= "$site_url/change_language?id=$id"; ?>"
+<?php if($id == $_SESSION["siteLanguage"]){ echo "selected"; } ?>>
+<?= $title; ?>
+</option>
+<?php } ?>
+</select>
+
+<?php } ?>
+
+<?php if($enable_google_translate == 1){ ?>
+<div id="google_translate_element2" class="mt-2"></div>
+<?php } ?>
+</a>
+
+<a href="#" style="margin-top: 15px; margin-right: 0;">
+    
+    <?php if($enable_converter == 1){ ?>
+
+
+<label for="change-language"><?= $lang["sidebar"]["change_currency"]; ?></label>
+<select id="currencySelect3" class="form-control">
+<option data-url="<?= "$site_url/change_currency?id=0"; ?>">
+<?= "$s_currency_name ($s_currency)"; ?>
+</option>
+<?php
+$get_currencies = $db->select("site_currencies");
+while($row = $get_currencies->fetch()){
+
+$id = $row->id;
+$currency_id = $row->currency_id;
+$position = $row->position;
+
+$get_currency = $db->select("currencies",array("id" => $currency_id));
+$row_currency = $get_currency->fetch();
+$name = $row_currency->name;
+$symbol = $row_currency->symbol;
+
+?>
+<option data-url="<?= "$site_url/change_currency?id=$id"; ?>"
+<?php if($id == @$_SESSION["siteCurrency"]){ echo "selected"; } ?>>
+<?= $name; ?> (<?= $symbol ?>)
+</option>
+<?php } ?>
+</select>
+
+<?php } ?>
+</a>
+      </div>
+     
+    </div>
+  </div>
+</div>

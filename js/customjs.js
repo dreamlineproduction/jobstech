@@ -10,6 +10,10 @@ $(document).ready(function(){
    	var url = $("#languageSelect option:selected").data("url");
    	window.location.href = url;
   	});
+	$("#languageSelect2").change(function(){
+   	var url = $("#languageSelect2 option:selected").data("url");
+   	window.location.href = url;
+  	});
   	$("#currencySelect").change(function(){
    	var url = $("#currencySelect option:selected").data("url");
    	window.location.href = url;
@@ -18,9 +22,15 @@ $(document).ready(function(){
    	var url = $("#currencySelect2 option:selected").data("url");
    	window.location.href = url;
   	});
+  	$("#currencySelect3").change(function(){
+   	var url = $("#currencySelect3 option:selected").data("url");
+   	window.location.href = url;
+  	});
   	$("#languageSelect").msDropdown({visibleRows:4});
+  	$("#languageSelect2").msDropdown({visibleRows:4});
   	$("#currencySelect").msDropdown({visibleRows:4});
   	$("#currencySelect2").msDropdown({visibleRows:4});
+  	$("#currencySelect3").msDropdown({visibleRows:4});
 
   	/// Announcement Bar
 

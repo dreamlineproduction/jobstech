@@ -1,0 +1,43 @@
+.dd .ddTitle .ddTitleText {
+  padding: 8px 36px 7px 8px !important;
+  font-size: 12px;
+}
+.ddChild.ddchild_.border.shadow {
+  width: 100%;
+  height: auto !important;
+  margin-left: 0%;
+  font-size: 12px;
+}
+.ddcommon {
+  position: relative;
+  display: -moz-inline-stack;
+  zoom: 1;
+  display: inline-block;
+  *display: inline;
+  cursor: default;
+  width: auto !important;
+}
+
+.desktop-hide {
+  display: none;
+}
+
+@media only screen and (max-width: 992px) {
+  .mobile-hide {
+    display: none;
+  }
+  .desktop-hide {
+    display: block;
+  }
+  .ddcommon {
+    position: relative;
+    display: -moz-inline-stack;
+    zoom: 1;
+    display: inline-block;
+    *: ;
+    display: inline;
+    width: 100% !important;
+    width: 1 !important;
+    margin-bottom: 10px;
+  }
+}

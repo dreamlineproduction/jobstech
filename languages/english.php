@@ -9,6 +9,9 @@ $lang["sign_in"] = "Sign In";
 $lang["join_now"] = "Join Now";
 $lang["mobile_join_now"] = "Join";
 $lang['no_results'] = "No Results Found.";
+$lang['everything_is_possible'] = "Everything is Possible & Accessible";
+$lang['find_it_here'] = "Find it Here.";
+$lang['change_language'] = "Change Language";
 
 $lang['more'] = "More";
 
@@ -108,7 +111,7 @@ $lang["sidebar"]["no_buy_it_again"] = "Nothing purchased yet.";
 $lang["sidebar"]["recently_viewed"] = "Recently Viewed";
 $lang["sidebar"]["no_recently_viewed"] = "Nothing viewed yet.";
 $lang["sidebar"]["start_selling"]["title"] = "Start Selling";
-$lang["sidebar"]["start_selling"]["desc"] = "Sell your services to millions of people all over the world.";
+$lang["sidebar"]["start_selling"]["desc"] = "Sell your services to people all over the world.";
 $lang["sidebar"]["start_selling"]["button"] = "GET STARTED";
 
 /// User Logged Out Home Headings & Descriptions
@@ -118,6 +121,9 @@ $lang["home"]["categories"]["title"] = "Explore the Marketplace";
 $lang["home"]["categories"]["desc"] = "Get inspired to build your business";
 $lang["home"]["proposals"]["title"] = "Top Featured Proposals/Services";
 $lang["home"]["proposals"]["desc"] = "Practical advice for every stage of doing";
+$lang["findtalent"] = "Find the talent needed to get your business growing.";
+$lang["findtalentbtn"] = "Join Now";
+
 
 /// User Logged In Home Headings 
 $lang["user_home"]['add_proposal'] = "Add A Proposal";
@@ -143,8 +149,8 @@ $lang['proposals']['instant_delivery'] = "Instant Delivery After Order.";
 
 
 /// Filter Sidebar
-$lang["sidebar"]["instant_delivery"] = "Show Instant Delivery Proposals";
-$lang["sidebar"]["online_sellers"] = "Show Online Sellers";
+$lang["sidebar"]["instant_delivery"] = "Instant Delivery";
+$lang["sidebar"]["online_sellers"] = "Online Sellers";
 
 $lang["sidebar"]["sort_by"]["title"] = "Sort By";
 $lang["sidebar"]["sort_by"]["new"] = "New";
@@ -218,7 +224,7 @@ $lang["how_it_works"]['sellers']['column_4'] = "<h3>4) Precise delivery dates</h
 ///  Start Selling Page
 
 $lang["start_selling"]['title'] = "Become A Seller On Our Platform";
-$lang["start_selling"]['desc'] = "You bring the skill. We'll make earnings as easy as 1,2,3";
+$lang["start_selling"]['desc'] = "Offer your knowledge and skills to reach more users who can search for just that.";
 
 $lang["start_selling"]['title2'] = "How Does This Work?";
 
@@ -226,22 +232,22 @@ $lang["start_selling"]['create_proposal'] = "Create A Proposal";
 $lang["start_selling"]['create_account'] = "Create An Account";
 
 $lang["start_selling"]['column_1']['title'] = "Create a Proposal";
-$lang["start_selling"]['column_1']['desc'] = "Once you create an account, all you have to do to become a seller is to create a proposal/service. Make sure you proposal is as captivating as possible. Potential customers actually read through your content.";
+$lang["start_selling"]['column_1']['desc'] = "Once you create an account, all you have to do to become a seller is to create a proposal/service. Make sure you proposal is as detailed as possible. Potential customers actually read through your content.";
 
 $lang["start_selling"]['column_2']['title'] = "Submit Proposal";
-$lang["start_selling"]['column_2']['desc'] = "After you've created your amazing proposal/service, submit it so the admin can make sure everything looks good. Admins rarely decline proposals, however, make sure everything looks good before submitting.";
+$lang["start_selling"]['column_2']['desc'] = "After you've created your proposal/service, submit it so the admin can make sure everything looks good. Admins rarely decline proposals, however, make sure everything looks good before submitting.";
 
 $lang["start_selling"]['column_3']['title'] = "Get Orders. Worldwide.";
-$lang["start_selling"]['column_3']['desc'] = "Yay! so your proposal/service was approved by the admin. Now's the good part, start receiving a ton of orders from customer from all over the world. Just perform your very best on every single order.";
+$lang["start_selling"]['column_3']['desc'] = "Yay! so your proposal/service was approved by the admin. Now's the good part, start receiving a orders from customer from all over the world. Just perform your very best on every single order.";
 
 $lang["start_selling"]['column_4']['title'] = "Deliver Masterpieces";
 $lang["start_selling"]['column_4']['desc'] = "Once you've received orders, try your very best to satisfy your customers. This is very important for return customers and amazing reviews. Communication is key, make sure you are in touch with your customer.";
 
 $lang["start_selling"]['column_5']['title'] = "Rate Your Customers";
-$lang["start_selling"]['column_5']['desc'] = "A lot of customers do check their own ratings. It is important to rate customers based on their behavior during the order process. This is important for other sellers, and for the admins. Most sellers give 5 stars.";
+$lang["start_selling"]['column_5']['desc'] = "A lot of customers do check their own ratings. It is important to rate customers based on their behavior during the order process. This is important for other sellers, and for the admins.";
 
 $lang["start_selling"]['column_6']['title'] = "Get Paid. On Time.";
-$lang["start_selling"]['column_6']['desc'] = "Get paid on time, every time. After the clearance period, payment is transferred to you. Our system lets you transfer funds from our system to your PayPal, Mobile Money, Payoneer or Crypto account.";
+$lang["start_selling"]['column_6']['desc'] = "Get paid on time, every time. After the clearance period, payment is transferred to you. Our system lets you transfer funds from our system to your account.";
 
 /// Dashboard Page
 $lang["dashboard"]['my_contacts'] = "My Contacts";
@@ -372,7 +378,7 @@ $lang["titles"]["revenue"] = "Revenue Earned";
 $lang["titles"]["buying_orders"] = "Manage Proposals/Services Ordered";
 $lang["titles"]["purchases"] = "Purchases";
 $lang["titles"]["favorites"]["title"] = "Favorites";
-$lang["titles"]["favorites"]["desc"] = "This page contains all your favorite proposals/services. You can either remove a proposal/service from this page by clicking on the heart icon, or add all your favorite items to your cart. Cheers!";
+$lang["titles"]["favorites"]["desc"] = "This page contains all your favorite proposals/services. You can either remove a proposal/service from this page by clicking on the heart icon, or add all your favorite items to your cart.";
 $lang["titles"]["manage_requests"] = "Manage Requests";
 $lang["titles"]["post_request"] = "Post A New Request";
 $lang["titles"]["manage_contacts"] = "Manage Contacts";
@@ -419,7 +425,7 @@ $lang['proposals']['remove_video'] = "Remove Video";
 $lang["pages"] = "PAGES";
 
 // Blog 2.0
-$lang["blog"]['title'] = "Blog";
+$lang["blog"]['title'] = "Ideas and Suggestions";
 $lang["blog"]['desc'] = "Secure, innovative and user friendly platform for buying and selling online services/proposals.";
 
 /// Input Labels
@@ -460,6 +466,7 @@ $lang['label']['max'] = "Max";
 
 $lang['label']['paypal_email'] = "Enter Paypal Email";
 $lang['label']['payoneer_email'] = "Enter Payoneer Email";
+$lang['label']['stripe_email'] = "Enter Stripe Email";
 $lang['label']['account_number'] = "";
 $lang['label']['account_owner'] = "";
 $lang['label']['wallet_address'] = "Wallet Address";
@@ -508,7 +515,7 @@ $lang['placeholder']['request_title'] = "Request Title";
 $lang['placeholder']['request_desc'] = "Request Description";
 $lang['placeholder']['select_category'] = "Select A Category";
 $lang['placeholder']['select_sub_category'] = "Select A Sub Category";
-$lang['placeholder']['5_minimum'] = "5 Minimum";
+$lang['placeholder']['5_minimum'] = "10 Minimum";
 
 $lang['placeholder']['city'] = "Enter Your City Name Here";
 $lang['placeholder']['description'] = "Tell us something about yourself...";
@@ -578,6 +585,7 @@ $lang['button']['save_continue'] = "Save & Continue";
 
 $lang['button']['change_paypal_email'] = "Change Paypal Email";
 $lang['button']['change_payoneer_email'] = "Change Payoneer Email";
+$lang['button']['change_stripe_email'] = "Change Stripe Email";
 $lang['button']['update_mobile_money'] = "Update Mobile Money";
 $lang['button']['update_wallet_address'] = "Update Wallet Address";
 $lang['button']['update_changes'] = "Update Changes";
@@ -725,6 +733,7 @@ $lang['user_profile']['reviews'] = "{user_name}'s Reviews";
 
 $lang['settings']['paypal_heading'] = "PayPal For Withdrawing Revenue";
 $lang['settings']['payoneer_heading'] = "Payoneer For Withdrawing Revenue";
+$lang['settings']['stripe_heading'] = "Stripe For Withdrawing Revenue";
 $lang['settings']['mobile_money_heading'] = "Mobile Money For Withdrawing Revenue";
 $lang['settings']['bitcoin_wallet_heading'] = "Bitcoin Wallet For Withdrawing Revenue";
 $lang['settings']['real_time_notifications'] = "REAL-TIME NOTIFICATIONS";
@@ -733,7 +742,7 @@ $lang['settings']['account_deactivation'] = "ACCOUNT DEACTIVATION";
 $lang['settings']['please_withdraw'] = "Please withdraw your revenues before deactivating your account.";
 
 $lang['settings']['what_happens']['title'] = "What happens when you deactivate your account?";
-$lang['settings']['what_happens']['1'] = "Your profile and services won't be shown on Gigtodo anymore.";
+$lang['settings']['what_happens']['1'] = "Your profile and services won't be shown on Jobsteh anymore.";
 $lang['settings']['what_happens']['2'] = "Any open orders will be canceled and refunded.";
 $lang['settings']['what_happens']['3'] = "You won't be able to re-activate your proposals/services.";
 $lang['settings']['what_happens']['4'] = "You won't be able to restore your account.";
@@ -933,7 +942,7 @@ $lang['post_request']['column_4']['desc'] = "Enter an amount you are willing to 
 
 /// Knowledge Bank Page
 
-$lang['knowledge_bank']['title'] = "KNOWLEDGE BANK FOR GIGTODO";
+$lang['knowledge_bank']['title'] = "KNOWLEDGE BANK FOR Jobsteh";
 $lang['knowledge_bank']['desc'] = "Everything you need to know";
 
 /// Single Article Page
