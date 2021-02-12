@@ -85,6 +85,8 @@ class ParticipantList extends ListResource {
             'JitterBufferSize' => $options['jitterBufferSize'],
             'Byoc' => $options['byoc'],
             'CallerId' => $options['callerId'],
+            'CallReason' => $options['callReason'],
+            'RecordingTrack' => $options['recordingTrack'],
         ]);
 
         $payload = $this->version->create('POST', $this->uri, [], $data);
