@@ -19,7 +19,7 @@
 <div class="container mt-3">
   <!-- Container starts -->
 <div class="row">
-<div class="col-md-12 user-home-topbar-style <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
+<div class="col-md-12 user-home-topbar-style p-0 <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
 <?php require_once("includes/user_home_sidebar.php"); ?>
 </div>
 </div>

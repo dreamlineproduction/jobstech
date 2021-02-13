@@ -1454,7 +1454,7 @@ document = window.document || {};
                 initAutocomplete();
             } else {
                 $.ajax({
-                    url: "https://cdn.rawgit.com/yuku-t/jquery-textcomplete/v1.3.4/dist/jquery.textcomplete.js",
+                    url: "https://cdnjs.cloudflare.com/ajax/libs/jquery.textcomplete/1.8.5/jquery.textcomplete.js",
                     dataType: "script",
                     cache: true,
                     success: initAutocomplete

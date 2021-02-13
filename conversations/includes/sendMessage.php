@@ -86,10 +86,9 @@
 
         <textarea class="form-control mb-2 myTextArea" rows="5" name="myTextArea" id="message"
             placeholder="<?= $lang['placeholder']['type_message']; ?>"
-            onclick="$Spelling.SpellCheckInWindow('myTextArea')"></textarea>
-
-        <input type="button" class="btn btn-outline-success float-right" value="Check Spelling"
-            onclick="$Spelling.SpellCheckInWindow('message')" />
+></textarea>
+            <input type="button" class="btn btn-outline-success float-right" value="Spell Check" onclick="$Spelling.SpellCheckInWindow('message')">
+       
         <p class="mb-2 mt-2 d-none files"></p>
         <div class="custom-file float-left">
             <!--- custom-file float-left Starts --->
@@ -211,11 +210,5 @@ $(document).ready(function() {
             }
         }
     });
-});
-</script>
-
-<script>
-$(document).ready(function() {
-    // $('#message').spellCheckInDialog()
 });
 </script>

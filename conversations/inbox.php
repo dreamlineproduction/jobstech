@@ -32,7 +32,8 @@ require("includes/inboxFunctions.php");
     <link href="../styles/emoji.css" rel="stylesheet">
     <script type="text/javascript" src="../js/sweat_alert.js"></script>
     <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="<?= $site_url; ?>/SpellCheck/include.js"></script>
+    <script type='text/javascript' src='../SpellCheck/include.js' ></script>
+    
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <script src="../js/emoji.js<?= '?v='.mt_rand(); ?>"></script>
     <?php if(!empty($site_favicon)){ ?>
@@ -60,6 +61,8 @@ require("includes/inboxFunctions.php");
     <div id="send-offer-div"></div>
     <?php require_once("includes/javascript.php"); ?>
     <?php require_once("../includes/footerInbox.php"); ?>
+    
+   
 </body>
 
 </html>
