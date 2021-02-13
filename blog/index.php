@@ -31,6 +31,7 @@
 <link href="../styles/owl.theme.default.css" rel="stylesheet">
 <link href="../styles/sweat_alert.css" rel="stylesheet">
 <link href="../styles/animate.css" rel="stylesheet">
+<link href="../styles/new-post-style.css" rel="stylesheet">
 <?php if(!empty($site_favicon)){ ?>
 	<link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
 <?php } ?>
@@ -59,13 +60,13 @@
 <div class="container mb-5"><!--- container Starts --->
   <div class="row"><!--- row Starts --->
     
-    <div class="col-md-8 mb-4 <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>"><!--- col-md-8 Starts --->
+    <div class="col-md-12 mb-4 <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>"><!--- col-md-8 Starts --->
+    <div class="row">
       <?php include("includes/posts.php"); ?>
+      </div>
     </div><!--- col-md-8 Ends --->
 
-    <div class="col-md-4 <?=($lang_dir == "right" ? 'order-1 order-sm-2':'')?>"><!--- col-md-4 Starts --->
-      <?php include("includes/sidebar.php"); ?>
-    </div><!--- col-md-4 Ends --->
+  
 
   </div><!--- row Ends --->
 </div><!--- container Ends --->

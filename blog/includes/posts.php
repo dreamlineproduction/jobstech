@@ -1,6 +1,6 @@
 <?php
 
-$per_page = 5;
+$per_page = 6;
 if(isset($_GET['page'])){
 	$page = $input->get('page');
 	if($page == 0){ $page = 1; }
@@ -39,7 +39,7 @@ while($post = $posts->fetch()){
 $post_meta = $db->select('posts_meta', ['post_id' => $post->id, 'language_id' => $siteLanguage])->fetch();
 
 $url = preg_replace('#[ -]+#','-', $post_meta->title);
-$content = substr(strip_tags($post_meta->content),0,250);
+$content = substr(strip_tags($post_meta->content),0,150);
 
 /// Get Category Details
 
@@ -49,27 +49,31 @@ $cat_name = !empty($row_cat->cat_name) ? $row_cat->cat_name:'' ;
 
 ?>
 
-<div class="card mb-4"><!--- card Starts --->
-	<div class="card-body row">
-		<div class="col-lg-4 col-md-12 <?=($lang_dir == "right" ? 'order-lg-2 order-md-1':'')?>">
+<div class="col-md-4">
+<div class="card mb-4 post-new-card"><!--- card Starts --->
+	<div class="card-body">
+		<div class="1 <?=($lang_dir == "right" ? 'order-lg-2 order-md-1':'')?>">
 			<a href="<?= $post->id; ?>/<?= $url; ?>">
 				<img src="<?= getImageUrl("posts",$post->image); ?>" class="img-fluid mb-3"/>
 		   </a>
 		</div>
-	   <div class="col-lg-8 col-md-12 <?=($lang_dir == "right" ? 'order-lg-1 order-md-2':'')?>">
-		   <h5 class="mt-0 mb-2 <?= $textRight; ?>"><?= $post_meta->title; ?></h5>
+	   <div class="1 <?=($lang_dir == "right" ? 'order-lg-1 order-md-2':'')?>">
+	   <a href="<?= $post->id; ?>/<?= $url; ?>">	   
+	   <h5 class="mt-0 mb-2 <?= $textRight; ?>"><?= $post_meta->title; ?></h5>
+</a>
 		   <p class="small mb-1 <?= $textRight; ?>">
 		   	<span class="text-muted">Published on:</span> <?= $post->date_time; ?> | 
-		   	<span class="text-muted">Category:</span> 
-		   	<a href="index?cat_id=<?= $post->cat_id; ?>"><?= $cat_name; ?></a> | 
+		   	<!-- <span class="text-muted">Category: </span> 
+		   	<a href="index?cat_id=<?= $post->cat_id; ?>"><?= $cat_name; ?></a> |  -->
 		   	<span class="text-muted">Author:</span> 
 		   	<a href="#"><?= $post_meta->author; ?></a> 
 		   </p>
 		   <p class="post-content <?= $textRight; ?>"><?= $content; ?>...</p>
-		   <a href="<?= $post->id; ?>/<?= $url; ?>" class="btn btn-success float-right">Read More</a>
+		   <a href="<?= $post->id; ?>/<?= $url; ?>" class="btn btn-success post-dtls">Read More</a>
 	   </div>
 	</div>
 </div><!--- card Ends --->
+</div>
 
 <?php } ?>
 
