@@ -1,6 +1,6 @@
 <?php
 /*   __________________________________________________
-    |    (C) PHPSpellCheck http://phpspellcheck.com    |
+    |    Copyright  http://JavaScriptSpellCheck.com    |
     |         2004 to 2016-12-05 08:20:19              |
     |                All Rights Reseved                |
     |__________________________________________________|

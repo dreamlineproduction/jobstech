@@ -12,43 +12,43 @@ if(isset($_SESSION['seller_user_name'])){
 <div id="wait"></div>
 
 <?php if(!empty($google_analytics)){ ?>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=<?= $google_analytics; ?>"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '<?= $google_analytics; ?>');
-  </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?= $google_analytics; ?>"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config', '<?= $google_analytics; ?>');
+</script>
 <?php } ?>
 <script src="<?= $site_url; ?>/js/msdropdown.js"></script>
 <script type="text/javascript" src="<?= $site_url; ?>/js/jquery.sticky.js"></script>
 
-<script 
-type="text/javascript" 
-id="custom-js" 
-src="<?= $site_url; ?>/js/customjs.js" 
-data-logged-id="<?= (isset($_SESSION['seller_user_name']))?$login_seller_id:''; ?>" 
-data-base-url="<?= $site_url; ?>" 
-data-enable-sound="<?= (isset($_SESSION['seller_user_name']))?$login_seller_enable_sound:''; ?>"
-data-enable-notifications="<?= (isset($_SESSION['seller_user_name']))?$login_seller_enable_notifications:'0'; ?>"
-data-disable-messages="<?= (isset($disable_messages))?$disable_messages:'0'; ?>"
->
+<script type="text/javascript" id="custom-js" src="<?= $site_url; ?>/js/customjs.js"
+    data-logged-id="<?= (isset($_SESSION['seller_user_name']))?$login_seller_id:''; ?>"
+    data-base-url="<?= $site_url; ?>"
+    data-enable-sound="<?= (isset($_SESSION['seller_user_name']))?$login_seller_enable_sound:''; ?>"
+    data-enable-notifications="<?= (isset($_SESSION['seller_user_name']))?$login_seller_enable_notifications:'0'; ?>"
+    data-disable-messages="<?= (isset($disable_messages))?$disable_messages:'0'; ?>">
 </script>
 
 <?php if($enable_google_translate == 1){ ?>
 
-  <script>
-  function googleTranslateElementInit() {
+<script>
+function googleTranslateElementInit() {
     new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    },'google_translate_element');
-  }
-  </script>
- 
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  
+        pageLanguage: 'en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
 <?php } ?>
 
 <script type="text/javascript" src="<?= $site_url; ?>/js/categoriesProposal.js"></script>
@@ -56,4 +56,3 @@ data-disable-messages="<?= (isset($disable_messages))?$disable_messages:'0'; ?>"
 <script type="text/javascript" src="<?= $site_url; ?>/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="<?= $site_url; ?>/js/bootstrap.js"></script>
 <script type="text/javascript" src="<?= $site_url; ?>/js/summernote.js"></script>
-

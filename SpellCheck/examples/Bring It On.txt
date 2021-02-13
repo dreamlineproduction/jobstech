@@ -1,3 +1,0 @@
-If you've got great examples and ideas for how to use PHP Spell Check - brag about it ;)
-
-Post it up on our wiki at www.phpspellcheck.com

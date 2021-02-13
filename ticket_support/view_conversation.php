@@ -66,97 +66,103 @@ $allowed = array('jpeg','jpg','gif','png');
 ?>
 <!DOCTYPE html>
 <html lang="en" class="ui-toolkit">
+
 <head>
-  <title><?= $site_name; ?> - <?= $lang["titles"]["customer_support"]; ?></title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="<?= $site_desc; ?>">
-  <meta name="keywords" content="<?= $site_keywords; ?>">
-  <meta name="author" content="<?= $site_author; ?>">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
-  <link href="styles/bootstrap.css" rel="stylesheet">
-  <link href="styles/custom.css" rel="stylesheet">
-  <!-- Custom css code from modified in admin panel --->
-  <link href="styles/styles.css" rel="stylesheet">
-  <link href="styles/categories_nav_styles.css" rel="stylesheet">
-  <link href="font_awesome/css/font-awesome.css" rel="stylesheet">
-  <link href="styles/sweat_alert.css" rel="stylesheet">
-  <script type="text/javascript" src="js/ie.js"></script>
-  <script type="text/javascript" src="js/sweat_alert.js"></script>
-  <script src='https://www.google.com/recaptcha/api.js'></script>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/sweat_alert.js"></script>
-  <?php if(!empty($site_favicon)){ ?>
+    <title><?= $site_name; ?> - <?= $lang["titles"]["customer_support"]; ?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="<?= $site_desc; ?>">
+    <meta name="keywords" content="<?= $site_keywords; ?>">
+    <meta name="author" content="<?= $site_author; ?>">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
+    <link href="styles/bootstrap.css" rel="stylesheet">
+    <link href="styles/custom.css" rel="stylesheet">
+    <!-- Custom css code from modified in admin panel --->
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/categories_nav_styles.css" rel="stylesheet">
+    <link href="font_awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="styles/sweat_alert.css" rel="stylesheet">
+    <script type="text/javascript" src="js/ie.js"></script>
+    <script type="text/javascript" src="js/sweat_alert.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/sweat_alert.js"></script>
+    <?php if(!empty($site_favicon)){ ?>
     <link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
-  <?php } ?>
+    <?php } ?>
 </head>
+
 <body class="is-responsive">
 
-  <?php require_once("includes/header.php"); ?>
+    <?php require_once("includes/header.php"); ?>
 
-  <div class="container pb-4"><!-- Container starts -->
+    <div class="container pb-4">
+        <!-- Container starts -->
 
-    <div class="row customer-support mt-4" style="<?=($lang_dir == "right" ? 'direction: rtl;':'')?>">
+        <div class="row customer-support mt-4" style="<?=($lang_dir == "right" ? 'direction: rtl;':'')?>">
 
-      <div class="col-md-4"><!--- col-md-4 Starts --->
+            <div class="col-md-4">
+                <!--- col-md-4 Starts --->
 
-        <div class="card">
+                <div class="card">
 
-          <div class="card-header text-center make-white">
-            <h3><?= $lang['single_ticket']['ticket_details']; ?></h3>          
-          </div>
-          <div class="card-body">
-            <div class="widget-content-expanded">
+                    <div class="card-header text-center make-white">
+                        <h3><?= $lang['single_ticket']['ticket_details']; ?></h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="widget-content-expanded">
 
-                <p class="lead">
-                    <span class="font-weight-bold"> <?= $lang['single_ticket']['ticket_number']; ?> </span> 
-                    <small>#<?= $support_ticket->number; ?></small>
-                </p>
+                            <p class="lead">
+                                <span class="font-weight-bold"> <?= $lang['single_ticket']['ticket_number']; ?> </span>
+                                <small>#<?= $support_ticket->number; ?></small>
+                            </p>
 
-                <p class="lead">
-                    <span class="font-weight-bold"> <?= $lang['single_ticket']['subject']; ?> </span> 
-                    <small><?= $support_ticket->subject; ?></small>
-                </p>
+                            <p class="lead">
+                                <span class="font-weight-bold"> <?= $lang['single_ticket']['subject']; ?> </span>
+                                <small><?= $support_ticket->subject; ?></small>
+                            </p>
 
-                <p class="lead">
-                    <span class="font-weight-bold"> <?= $lang['single_ticket']['message']; ?> </span> 
-                    <small><?= $support_ticket->message; ?></small>
-                </p>
+                            <p class="lead">
+                                <span class="font-weight-bold"> <?= $lang['single_ticket']['message']; ?> </span>
+                                <small><?= $support_ticket->message; ?></small>
+                            </p>
 
-                <p class="lead">
-                    <span class="font-weight-bold"> <?= $lang['single_ticket']['order_number']; ?> </span> 
-                    #<small><?= $support_ticket->order_number; ?></small>
-                </p>
+                            <p class="lead">
+                                <span class="font-weight-bold"> <?= $lang['single_ticket']['order_number']; ?> </span>
+                                #<small><?= $support_ticket->order_number; ?></small>
+                            </p>
 
-                <p class="lead">
-                    <span class="font-weight-bold"> <?= $lang['single_ticket']['order_rule']; ?> </span> 
-                    <small><?= $support_ticket->order_rule; ?></small>
-                </p>
+                            <p class="lead">
+                                <span class="font-weight-bold"> <?= $lang['single_ticket']['order_rule']; ?> </span>
+                                <small><?= $support_ticket->order_rule; ?></small>
+                            </p>
 
-                <p class="lead">
-                    <span class="font-weight-bold"> <?= $lang['single_ticket']['status']; ?> </span> 
-                    <small style="font-weight: 900;"><?= ucfirst($support_ticket->status); ?></small>
-                </p>
+                            <p class="lead">
+                                <span class="font-weight-bold"> <?= $lang['single_ticket']['status']; ?> </span>
+                                <small style="font-weight: 900;"><?= ucfirst($support_ticket->status); ?></small>
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
+            <!--- col-md-4 Ends --->
 
-          </div>
-        </div>
+            <div class="col-md-8">
+                <!--- col-md-8 Starts --->
+                <div class="card">
+                    <div class="card-header text-center make-white">
+                        <h3><?= $lang['single_ticket']['all_conversation']; ?><?= $support_ticket->number; ?></h3>
+                    </div>
+                    <div class="card-body">
 
-      </div><!--- col-md-4 Ends --->
+                        <?php if(empty($support_conversations)){?>
+                        <center><?= $lang['single_ticket']['no_conversation']; ?></center>
+                        <?php } ?>
 
-      <div class="col-md-8"><!--- col-md-8 Starts --->
-        <div class="card">
-          <div class="card-header text-center make-white">
-            <h3><?= $lang['single_ticket']['all_conversation']; ?><?= $support_ticket->number; ?></h3>
-          </div>
-          <div class="card-body">
-
-            <?php if(empty($support_conversations)){?>
-                <center><?= $lang['single_ticket']['no_conversation']; ?></center>
-            <?php } ?>
-
-            <?php 
+                        <?php 
 
             foreach($support_conversations as $conversation){ 
 
@@ -172,66 +178,80 @@ $allowed = array('jpeg','jpg','gif','png');
                 }
 
             ?>
-                <div class="message-div mb-3">
-                    <img src="<?= $sender_image; ?>" class="message-image img-responsive img-rounded" width="70px" height="70px">                
-                    <h5 class="mb-1"><?= $sender_user_name; ?></h5>
-                    <p class="message-desc mb-2">
-                        <?= $conversation->message; ?>
-                    </p>
-                    <p class="message-desc">
+                        <div class="message-div mb-3">
+                            <img src="<?= $sender_image; ?>" class="message-image img-responsive img-rounded"
+                                width="70px" height="70px">
+                            <h5 class="mb-1"><?= $sender_user_name; ?></h5>
+                            <p class="message-desc mb-2">
+                                <?= $conversation->message; ?>
+                            </p>
+                            <p class="message-desc">
 
-                    <?php if(!empty($conversation->attachment)){ ?>
-                        
-                    <?php if(in_array(pathinfo($conversation->attachment,PATHINFO_EXTENSION),$allowed)){ ?>
-                        <img src="<?= getImageUrl("support_conversations",$conversation->attachment); ?>" class="img-thumbnail" width="100"/>
-                    <?php } ?>
+                                <?php if(!empty($conversation->attachment)){ ?>
 
-                    <a href="<?= getImageUrl("support_conversations",$conversation->attachment); ?>" target="_blank" class="d-block mt-2">
-                        <i class="fa fa-download"></i> <?= $conversation->attachment; ?>
-                    </a>
+                                <?php if(in_array(pathinfo($conversation->attachment,PATHINFO_EXTENSION),$allowed)){ ?>
+                                <img src="<?= getImageUrl("support_conversations",$conversation->attachment); ?>"
+                                    class="img-thumbnail" width="100" />
+                                <?php } ?>
 
-                    <?php } ?>
+                                <a href="<?= getImageUrl("support_conversations",$conversation->attachment); ?>"
+                                    target="_blank" class="d-block mt-2">
+                                    <i class="fa fa-download"></i> <?= $conversation->attachment; ?>
+                                </a>
 
-                    </p>
-                    <p class="text-muted text-right mb-0"><?= $conversation->date; ?></p>
+                                <?php } ?>
+
+                            </p>
+                            <p class="text-muted text-right mb-0"><?= $conversation->date; ?></p>
+                        </div>
+                        <?php } ?>
+                    </div>
+                    <!--- card-body Ends --->
                 </div>
-                <?php } ?>
-              </div><!--- card-body Ends --->
-            </div><!--- card Ends --->
+                <!--- card Ends --->
 
-            <?php if($support_ticket->status == 'open'){ ?>
-                <div class="card mt-3"><!--- card Starts --->            
-                    <div class="card-body"><!--- card-body Starts --->
+                <?php if($support_ticket->status == 'open'){ ?>
+                <div class="card mt-3">
+                    <!--- card Starts --->
+                    <div class="card-body">
+                        <!--- card-body Starts --->
                         <form id="new_message" method="post" enctype="multipart/form-data">
-                            <div class="form-group"><!--- form-group Starts --->                        
+                            <div class="form-group">
+                                <!--- form-group Starts --->
                                 <label class="col-form-label-lg">
-                                  <?= $lang['single_ticket']['reply_to_admin'] ?>
+                                    <?= $lang['single_ticket']['reply_to_admin'] ?>
                                 </label>
-                                <textarea placeholder="<?= $lang['placeholder']['enter_message']; ?>" class="form-control" name="new_message" id="new_message" rows="5"></textarea>
-                            </div><!--- form-group Ends --->                
+                                <textarea placeholder="<?= $lang['placeholder']['enter_message']; ?>"
+                                    class="form-control" name="new_message" id="new_message" rows="5"></textarea>
+                            </div>
+                            <!--- form-group Ends --->
                             <div class="form-group">
                                 <label class="<?= $floatRight ?>"><?= $lang['label']['upload_file']; ?></label>
                                 <input type="file" class="form-control" name="file">
                             </div>
-                            <input type="submit" name="submit" class="btn btn-success" value="<?= $lang['button']['submut']; ?>">
-                        </form>                 
+                            <input type="submit" name="submit" class="btn btn-success"
+                                value="<?= $lang['button']['submut']; ?>">
+                        </form>
                     </div>
                 </div>
-            <?php }else{ ?>
+                <?php }else{ ?>
                 <div class="card mt-3">
                     <div class="card-body">
-                        <?= $lang['single_ticket']["can't_send"]; ?>                     
+                        <?= $lang['single_ticket']["can't_send"]; ?>
                     </div>
                 </div>
-            <?php } ?>
+                <?php } ?>
 
-          </div><!--- col-md-8 Ends --->
+            </div>
+            <!--- col-md-8 Ends --->
 
-        </div><!--- row Ends -->
+        </div>
+        <!--- row Ends -->
 
     </div> <!-- container pb-4 Ends -->
-    
-<!-- Container ends -->
-<?php require_once("includes/footer.php"); ?>
+
+    <!-- Container ends -->
+    <?php require_once("includes/footer.php"); ?>
 </body>
+
 </html>
