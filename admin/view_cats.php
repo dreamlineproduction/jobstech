@@ -53,8 +53,8 @@ echo "<script>window.open('login','_self');</script>";
                 </div><!--- card-header Ends --->
 
                 <div class="card-body"><!--- card-body Starts --->
-
-                    <table class="table table-bordered"><!--- table table-bordered table-hover Starts --->
+               
+                <table id="main-category" class="table table-bordered"><!--- table table-bordered table-hover Starts --->
 
                         <thead>
 

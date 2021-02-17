@@ -152,7 +152,7 @@ echo "<script>window.open('login','_self');</script>";
 
     <div class="table-responsive"><!--- table-responsive Starts --->
 
-        <table class="table table-bordered"><!--- table table-bordered table-hover Starts --->
+        <table id="all-seller-table" class="table table-bordered"><!--- table table-bordered table-hover Starts --->
 
             <thead><!--- thead Starts --->
 

@@ -13,6 +13,7 @@
                       <img src="<?= img_url("key.png"); ?>" width="48" height="48" alt="" style="max-width: 48px;-ms-interpolation-mode: bicubic;vertical-align: middle;border: 0;line-height: 100%;height: auto;outline: none;text-decoration: none;">
                     </td>
                   </tr>
+                
                   <tr>
                     <td style="font-size: 24px; line-height: 24px; height: 24px;"> </td>
                   </tr>

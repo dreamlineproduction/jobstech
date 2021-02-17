@@ -6,7 +6,9 @@ echo "<script>window.open('login','_self');</script>";
 ?>
 
 <ul class="nav navbar-nav">
-
+<li class="pt-5">
+<a class="btn btn-light" href="<?= $site_url; ?>" role="button" target="_blank">View Site</a>
+  </li>
   <li class="pt-5">
     <a href="index?dashboard"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
   </li>

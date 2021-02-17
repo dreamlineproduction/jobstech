@@ -3,7 +3,7 @@
    <input type="hidden" name="file_name" value="admin_reset_pass.php">
 
    <div class="form-group">
-      <textarea name="content" class="form-control" rows="15"><?= get_file("admin_reset_pass.php"); ?></textarea>
+      <textarea name="content" class="form-control" id="admin_reset_pass" name="code" rows="45"><?= get_file("admin_reset_pass.php"); ?></textarea>
    </div>
 
    <div class="form-group mb-0">
@@ -16,3 +16,20 @@
    </div>
 
 </form><!--- form Ends --->
+
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("admin_reset_pass"), {
+   lineNumbers: true,
+   styleActiveLine: true,
+   theme : "dracula",
+	mode : "shell",
+	styleSelectedText : true,
+	matchBrackets : true,
+	styleActiveLine : true,
+	lineWrapping : true,
+	nonEmpty : true,
+   matchBrackets: true
+  
+  });
+ 
+</script>

@@ -50,8 +50,8 @@ echo "<script>window.open('login.php','_self');</script>";
 </div><!--- card-header Ends --->
 
 <div class="card-body"><!--- card-body Starts --->
-
-<table class="table table-bordered table-hover"><!--- table table-bordered table-hover Starts --->
+<table id="restricted-word" class="table table-bordered table-hover">
+<!--- table table-bordered table-hover Starts --->
 
 <thead>
 

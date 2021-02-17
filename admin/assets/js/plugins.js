@@ -407,3 +407,10 @@ Toggles.prototype.toggle = function(state, noAnimate, noEvent) {
 
 })(this);
 
+$(document).ready(function() {
+    $('#sub-category').DataTable();
+    $('#main-category').DataTable();
+    $('#bootstrap-data-table').DataTable();
+    $('#restricted-word').DataTable();
+    $('#all-seller-table').DataTable();
+} );

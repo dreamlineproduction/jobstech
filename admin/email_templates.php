@@ -24,6 +24,23 @@ echo "<script>window.open('login','_self');</script>";
    }
 ?>
 
+<link rel="stylesheet" href="assets/codeeditor/lib/codemirror.css">
+<link rel="stylesheet" href="assets/codeeditor/lib/monokai.css">
+<link rel="stylesheet" href="assets/codeeditor/lib/dracula.css">
+<script src="assets/codeeditor/lib/codemirror.js"></script>
+<script src="assets/codeeditor/mode/javascript/javascript.js"></script>
+<script src="assets/codeeditor/addon/selection/active-line.js"></script>
+<script src="https://codemirror.net/mode/shell/shell.js"></script>
+<script src="https://codemirror.net/addon/selection/active-line.js"></script>
+<script src="https://codemirror.net/addon/search/searchcursor.js"></script>
+<script src="https://codemirror.net/addon/selection/mark-selection.js"></script>
+<script src="assets/codeeditor/addon/edit/matchbrackets.js"></script>
+<script src="assets/codeeditor/addon/display/fullscreen.js"></script>
+<style>
+      .CodeMirror {border: 1px solid black; font-size:13px}
+    </style>
+
+
 <div class="breadcrumbs">
     <div class="col-sm-4">
         <div class="page-header float-left">
@@ -377,6 +394,9 @@ echo "<script>window.open('login','_self');</script>";
 
 </script>
 
+
+
+
 <?php
 
 if(isset($_POST['update'])){
@@ -395,3 +415,4 @@ if(isset($_POST['update'])){
 ?>
 
 <?php } ?>
+

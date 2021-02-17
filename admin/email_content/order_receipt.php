@@ -3,7 +3,7 @@
    <input type="hidden" name="file_name" value="order_receipt.php">
 
    <div class="form-group">
-      <textarea name="content" class="form-control" rows="15"><?= get_file("order_receipt.php"); ?></textarea>
+      <textarea name="content" class="form-control" id="order_receipt_template" name="code" rows="45"><?= get_file("order_receipt.php"); ?></textarea>
    </div>
 
    <div class="form-group mb-0">
@@ -16,3 +16,19 @@
    </div>
 
 </form><!--- form Ends --->
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("order_receipt_template"), {
+   lineNumbers: true,
+   styleActiveLine: true,
+   theme : "dracula",
+	mode : "shell",
+	styleSelectedText : true,
+	matchBrackets : true,
+	styleActiveLine : true,
+	lineWrapping : true,
+	nonEmpty : true,
+   matchBrackets: true
+  
+  });
+ 
+</script>

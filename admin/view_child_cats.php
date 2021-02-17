@@ -66,8 +66,8 @@ echo "<script>window.open('login','_self');</script>";
 
         <div class="table-responsive">
             <!--- table-responsive Starts --->
-
-            <table class="table table-bordered">
+            <table id="sub-category" class="table table-bordered">
+         
                 <!--- table table-bordered table-hover Starts --->
 
                 <thead>
@@ -95,7 +95,7 @@ echo "<script>window.open('login','_self');</script>";
 
                     <?php
 
-                        $per_page = 10;
+                        $per_page = 5000;
 
                         if(isset($_GET['view_child_cats'])){
                             
@@ -109,7 +109,7 @@ echo "<script>window.open('login','_self');</script>";
                             
                         }
 
-                        $i = ($page*$per_page)-10;
+                        $i = ($page*$per_page)-5000;
 
                         /// Page will start from 0 and multiply by per page
 
@@ -197,55 +197,7 @@ echo "<script>window.open('login','_self');</script>";
         </div>
         <!--- table-responsive Ends --->
 
-        <div class="d-flex justify-content-center">
-            <!--- d-flex justify-content-center Starts --->
-
-            <ul class="pagination">
-                <!--- pagination Starts --->
-
-                <?php
-
-                /// Now Select All Data From Table
-
-                $query = $db->query("select * from categories_children order by 1 DESC");
-
-                /// Count The Total Records 
-
-                $total_records = $query->rowCount();
-
-                /// Using ceil function to divide the total records on per page
-
-                $total_pages = ceil($total_records / $per_page);
-
-
-                echo "<li class='page-item'><a href='index?view_child_cats=1' class='page-link'>First Page</a></li>";
-
-                echo "<li class='page-item ".(1 == $page ? "active" : "")."'><a class='page-link' href='index?view_child_cats=1'>1</a></li>";
-                
-                $i = max(2, $page - 5);
-                
-                if ($i > 2)
-                
-                    echo "<li class='page-item' href='#'><a class='page-link'>...</a></li>";
-                
-                for (; $i < min($page + 6, $total_pages); $i++) {
-                            
-                    echo "<li class='page-item"; if($i == $page){ echo " active "; } echo "'><a href='index?view_child_cats=".$i."' class='page-link'>".$i."</a></li>";
-
-                }
-
-                if ($i != $total_pages and $total_pages > 1){echo "<li class='page-item' href='#'><a class='page-link'>...</a></li>";}
-
-                if($total_pages > 1){echo "<li class='page-item ".($total_pages == $page ? "active" : "")."'><a class='page-link' href='index?view_child_cats=$total_pages'>$total_pages</a></li>";}
-
-                echo "<li class='page-item'><a href='index?view_child_cats=$total_pages' class='page-link'>Last Page </a></li>";
-
-                ?>
-
-            </ul>
-            <!--- pagination Ends --->
-
-        </div>
+     
         <!--- d-flex justify-content-center Ends --->
 
 

@@ -117,6 +117,8 @@ if($notifierPlugin == 1){
 	<link rel="stylesheet" href="assets/css/flag-icon.min.css">
 	<link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
 	<link rel="stylesheet" href="assets/scss/style.css">
+	<link rel="stylesheet" href="assets/css/datatables.css">
+	
     <style>
         .d-none-on-backend-precessing{
         	display: table !important;
@@ -130,6 +132,7 @@ if($notifierPlugin == 1){
 	<script type="text/javascript" src="assets/js/ie.js"></script>
 	<script type="text/javascript" src="assets/js/sweat_alert.js"></script>
 	<script src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables.js"></script>
 	<script>
 	
 	function alert_error(text){

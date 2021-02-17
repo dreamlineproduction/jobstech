@@ -3,7 +3,7 @@
    <input type="hidden" name="file_name" value="parts/footer.php">
 
    <div class="form-group">
-      <textarea name="content" class="form-control" rows="15"><?= get_file("parts/footer.php"); ?></textarea>
+      <textarea name="content" class="form-control" id="footer_email" name="code" rows="45"><?= get_file("parts/footer.php"); ?></textarea>
    </div>
 
    <div class="form-group mb-0">
@@ -16,3 +16,19 @@
    </div>
 
 </form><!--- form Ends --->
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("footer_email"), {
+   lineNumbers: true,
+   styleActiveLine: true,
+   theme : "dracula",
+	mode : "shell",
+	styleSelectedText : true,
+	matchBrackets : true,
+	styleActiveLine : true,
+	lineWrapping : true,
+	nonEmpty : true,
+   matchBrackets: true
+  
+  });
+ 
+</script>
