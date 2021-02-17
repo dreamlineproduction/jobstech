@@ -184,8 +184,7 @@
         <!-- <h4 class="mt-0 mt-lg-2 <?=($lang_dir == "right"?'text-right':'')?>"><?= $lang["cookie_box"]['title']; ?></h4> -->
         <p class="mb-1 ">
 
-            Our site uses cookies: We use cookies to ensure you get the best experience. By using our website you agree
-            to our <a href="terms_and_conditions" class="text-white"> Privacy Policy.</a>
+        <?= $lang["cookie_box"]['desc']; ?></a>
 
             <!-- <?= $lang["cookie_box"]['title']; ?>:
             <?= str_replace('{link}',"$site_url/terms_and_conditions",$lang["cookie_box"]['desc']); ?> -->
