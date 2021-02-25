@@ -90,7 +90,8 @@
 					<?php } ?>
 
 	      </h6>
-	      <p> <?= $message_desc; ?>  </p>
+	      
+		<p> <?= $message_desc; ?>  </p>
 	      <?php if(!empty($message_file)){ ?>
 	      <?php if(in_array(pathinfo($message_file,PATHINFO_EXTENSION),$allowed)){ ?>
 	      <br>
