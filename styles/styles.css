@@ -90,7 +90,7 @@ body {
 }
 
 a:hover {
-  color: #4fba6f;
+  color: #9aafff;
   text-decoration: underline;
 }
 
@@ -2915,7 +2915,7 @@ _:-ms-fullscreen,
 }
 
 .cart-proposal hr {
-  border-top: 2px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
   margin-right: -18px;
   margin-left: -18px;
 }
@@ -2932,7 +2932,7 @@ _:-ms-fullscreen,
 .cart-order-details hr {
   margin-right: -18px;
   margin-left: -18px;
-  border-top: 2px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
 }
 
 .cart-order-details .coupon-response.applied,
@@ -3463,15 +3463,15 @@ input:checked + .slider:before {
 }
 
 .inbox-conversations .inbox-seller img {
-  width: 50px;
-  height: 50px;
-  margin-top: -5px;
-  margin-bottom: 10px;
+  width: 30px;
+  height: 30px;
+  margin-top: 1px;
+  margin-bottom: 0px;
 }
 
 .inbox-conversations .inbox-seller h6 {
-  margin-top: -55px;
-  margin-left: 60px;
+  margin-top: -23px;
+  margin-left: 41px;
 }
 
 /*** Insert Message Page Styles ***/
@@ -3769,7 +3769,7 @@ input:checked + .slider:before {
   border-bottom: none;
   font-size: 14px;
   color: #a7a9ac;
-  font-weight: 1000;
+  font-weight: 500;
 }
 
 #start_selling {

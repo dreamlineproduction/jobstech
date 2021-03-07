@@ -126,7 +126,7 @@ echo "<script>window.open('notifications','_self')</script>";
 			          <?php }else{ ?>
 			            <img src="user_images/empty-image.png" class="rounded-circle" >
 			          <?php } ?>
-					<h6 class="mb-4">
+					<h6 class="mb-1">
 					<a href="<?= $site_url; ?>/notifications?n_id=<?= $notification_id; ?>"><?= $sender_user_name; ?></a>
 					</h6>
 					</td>

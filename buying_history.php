@@ -65,7 +65,7 @@ $count_orders = $sel_orders->rowCount();
 
 ?>
 
-<div class="container-fluid mt-5">
+<div class="container mt-5">
 
 <div class="row">
 
@@ -138,7 +138,10 @@ $count_orders = $sel_orders->rowCount();
 				<td><?= $order_due; ?></td>
 				<td><?= showPrice($order_price); ?></td>
 				
-				<td><button class="btn btn-success"><?= ucwords($order_status); ?></button></td>
+				<td>
+				<a class="btn btn-success" href="order_details?order_id=<?= $order_id; ?>" role="button"><?= ucwords($order_status); ?></a>
+					
+				</td>
 
 			</tr>
             

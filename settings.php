@@ -117,7 +117,7 @@ if($lang_dir == "right"){
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="card">
+                <div class="card bg-white shadow-sm">
                     <div class="card-body">
                         <div class="tab-content">
                             <div id="profile_settings"

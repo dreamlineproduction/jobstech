@@ -68,8 +68,8 @@ if(isset($_GET['remove_proposal'])){
 <?php require_once("includes/header.php"); ?>
 <div class="container mt-5 mb-5">
 	<div class="row">
-		<div class="col-md-12">
-			<div class="card mb-3">
+		<div class="col-md-12 shadow-sm mb-4">
+			<div class="card">
 				<div class="card-body">
 					<h5 class="float-left mt-2"> <?= $lang['cart']['your_cart']; ?> (<?= $count_cart; ?>) </h5>
 					<h5 class="float-right"> 
@@ -81,7 +81,7 @@ if(isset($_GET['remove_proposal'])){
       </div>
 		</div>
 	</div>
-	<div class="row cart-add-sect" id="cart-show">
+	<div class="row shadow-sm cart-add-sect" id="cart-show">
 		<div class="col-md-7">
 			<div class="card mb-3">
 				<div class="card-body">
@@ -109,7 +109,7 @@ if(isset($_GET['remove_proposal'])){
 						<div class="row">
 							<div class="col-lg-3 mb-2">
 								<a href="proposals/<?= $proposal_seller_user_name; ?>/<?= $proposal_url; ?>">
-									<img src="<?= $proposal_img1; ?>" class="img-fluid">
+									<img src="<?= $proposal_img1; ?>" class="img-fluid img-thumbnail">
 								</a>
 							</div>
 							<div class="col-lg-9">

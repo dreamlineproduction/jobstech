@@ -116,7 +116,7 @@ $withdrawLimitText = "";
                 <?php } ?>
 
                 <div class="card mb-3 rounded-0">
-                    <div class="card-body">
+                    <div class="card-body shadow-sm">
                         <div class="row">
                             <div class="col-md-3 text-center border-box">
                                 <p> Withdrawals </p>
