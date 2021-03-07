@@ -19,8 +19,15 @@ if($approve_proposals == "yes"){
 
 ?>
 
-<h1><img style="position:relative; top:-5px;" src="../images/comp/winner.png">  Yay! You are almost done!</h1>
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
 
+<img style="position:relative; top:-5px; margin-bottom:15px;" src="../images/comp/all-done.svg" width="70px">
+
+<h3>Yay! You are almost done!</h3>
+
+<div class="all-done-desc">
 <h6 class="font-weight-normal line-height-normal">
   Congrats! you're almost done submitting this proposal. <br>
   You can go back and check if you entered all the details for this proposal correctly. If all looks good and you agree with 
@@ -30,14 +37,20 @@ if($approve_proposals == "yes"){
   </span>
 </h6>
 
+</div>
+
+
+
+<div class="make-ftr text-center mt-5">
+
 <form action="" method="post">
   <?php if($featured_proposal_while_creating == 1){ ?>
   <?php if($featured_proposal != "yes"){ ?>
-  <h1 class="h3">Make Proposal Featured (Optional)</h1>
+  <h3 class="h5">Make Proposal Featured (Optional)</h1>
   <h6 class="font-weight-normal line-height-normal">
-    Let your proposal appear on several places on <?= $site_name; ?><br>
-    Proposal will always be at the top section of search results <br>
-    WIth <?= $site_name; ?> feature, your proposal already has a 50% chance of getting ordered by potential buyers
+    Let your proposal appear on several places on <?= $site_name; ?>
+    Proposal will always be at the top section of search results 
+    With <?= $site_name; ?> feature, your proposal already has a 50% chance of getting ordered by our potential buyers
     <p class="ml-4 mt-3">
       <label for="checkid" style="word-wrap:break-word">
         <input type="checkbox" id="checkid" name="proposal_featured" value="1" style="vertical-align:middle;margin-left: -1.25rem;"> Make Proposal Featured
@@ -51,6 +64,15 @@ if($approve_proposals == "yes"){
     <a href="#" class="btn btn-success d-none" id="featured-button">Make Proposal Featured</a>
   </div><!--- form-group Starts --->
 </form>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+
 
 <script>
 $('.back-to-gallery').click(function(){

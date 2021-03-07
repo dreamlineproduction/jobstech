@@ -21,7 +21,8 @@ $site_title = $row_general_settings->site_title;
     <meta name="keywords" content="<?= $site_keywords; ?>">
     <meta name="author" content="<?= $site_author; ?>">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="styles/bootstrap.css" rel="stylesheet">
     <link href="styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
     <link href="styles/styles.css" rel="stylesheet">

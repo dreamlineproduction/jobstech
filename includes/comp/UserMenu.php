@@ -1,10 +1,10 @@
-<li class="logged-in-link d-none d-sm-block d-md-block d-lg-block">
+<!-- <li class="logged-in-link d-none d-sm-block d-md-block d-lg-block">
   <a class="menuItem" href="<?= $site_url; ?>/blog/" title="<?= $lang["blog"]['title']; ?>">
     <span class="gigtodo-icon nav-icon gigtodo-icon-relative">
       <i class="fa fa fa-rss fa-lg" style="font-size:1.4em;"></i>
     </span>
   </a>
-</li>
+</li> -->
 <li class="logged-in-link">
   <a class="menuItem" href="<?= $site_url; ?>/freelancers" title="<?= $lang["freelancers_menu"]; ?>">
     <span class="gigtodo-icon nav-icon gigtodo-icon-relative">
@@ -28,14 +28,14 @@
   <div class="dropdown-menu messages-dropdown">
   </div>
 </li>
-<li class="logged-in-link">
+<!-- <li class="logged-in-link">
   <a href="<?= $site_url; ?>/favorites" class="heart menuItem" title="<?= $lang["menu"]["favorites"]; ?>">
   <span class="gigtodo-icon nav-icon gigtodo-icon-relative"><?php include("{$dir}images/svg/heart.svg"); ?> </span>
   <span>
   <span class="total-user-count count c-favorites"></span>
   </span>
   </a>
-</li>
+</li> -->
 <li class="logged-in-link">
   <a class="menuItem" href="<?= $site_url; ?>/cart" title="<?= $lang["menu"]["cart"]; ?>">
   <span class="gigtodo-icon nav-icon gigtodo-icon-relative"><?php include("{$dir}images/svg/basket.svg"); ?></span>

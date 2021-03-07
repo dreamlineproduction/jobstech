@@ -67,8 +67,10 @@
 }
 
 .cat-nav .sub-nav-container {
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 8%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  border-left: 0px solid #e1e3df;
 }
 
 .cat-nav .sub-nav-container aside h4 {
@@ -88,7 +90,6 @@
   text-decoration: underline;
 }
 
-@charset "utf-8";
 @-webkit-keyframes pop {
   0% {
     opacity: 0.2;

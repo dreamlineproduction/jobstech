@@ -1,6 +1,6 @@
 <!-- Registration Modal starts -->
 <div class="modal fade" id="register-modal">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <!-- modal-header Starts -->

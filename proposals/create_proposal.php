@@ -72,7 +72,7 @@ if($seller_verification != "ok"){
 
 <div class="container mt-5 mb-5"><!--- container Starts --->
   <div class="row"><!--- row Starts --->
-    <div class="col-xl-8 col-lg-11 col-md-12"><!--- col-xl-8 Starts --->
+    <div class="col-xl-12 col-lg-11 col-md-12"><!--- col-xl-8 Starts --->
       <div class="tab-content card card-body"><!--- tab-content Starts --->
         <div class="tab-pane fade show active" id="overview">
           <?php include("sections/create/overview.php"); ?>

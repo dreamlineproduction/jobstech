@@ -83,7 +83,7 @@ body {
   background: #fff;
   height: 100%;
   width: 100%;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   color: #000;
   font-weight: 400;
   overflow-x: hidden;
@@ -118,7 +118,7 @@ html {
   border: 1px solid #ccc;
   position: fixed;
   font-weight: bold;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   letter-spacing: 2px;
   z-index: 9997;
   text-decoration: none;
@@ -318,7 +318,7 @@ audio::-webkit-media-controls-panel {
   margin-top: -7px;
   color: inherit;
   font-size: 15px;
-  background-color: #f7f7f7;
+  background-color: #fff;
   border-bottom: 1px solid #ebebeb;
 }
 
@@ -331,8 +331,28 @@ audio::-webkit-media-controls-panel {
    }*/
 
 header .dropdown-menu {
-  top: 94%;
-  border-radius: 0;
+  border-radius: 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 8%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  border-radius: 10px;
 }
 
 .list-inline-item .d-icon.dropdown-toggle::after {
@@ -358,7 +378,7 @@ header .dropdown-menu {
 .logo {
   color: #28a745;
   font-size: 31.18px;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   padding-top: 10px;
 }
 
@@ -652,7 +672,7 @@ header .input-group {
   margin-top: -7px;
   color: inherit;
   font-size: 15px;
-  background-color: #f7f7f7;
+  background-color: #fff;
   border-bottom: 1px solid #ebebeb;
 }
 
@@ -783,7 +803,7 @@ header hr {
 #demo1 h5 {
   font-size: 30px;
   color: #fff;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   text-align: center;
   margin-top: 10px;
 }
@@ -832,7 +852,6 @@ header hr {
   font-size: 13px;
 }
 
-.
 /*main .input-group-append{
    background: url(../img/srch.png) no-repeat;
 
@@ -904,23 +923,28 @@ border-bottom: 1px solid #ccc;
   font-size: 29.1px;
   color: #1a1e31;
   text-align: center;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .market h4,
 .top h4 {
   font-size: 16px;
   color: #6d6e71;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   text-align: center;
 }
 
 .market p {
   font-size: 14px;
   color: #414042;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   text-align: center;
   margin-top: 40px;
+  font-weight: 700;
+}
+
+.market p a:hover {
+  text-decoration: none;
 }
 
 .timer h5 {
@@ -1129,7 +1153,7 @@ border-bottom: 1px solid #ccc;
 .btn_view {
   font-size: 10.56px;
   color: #28a745;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   text-transform: uppercase;
   margin: 0 auto;
   display: block;
@@ -1781,7 +1805,7 @@ a.toggle-menu {
 
 #demo3 p {
   font-size: 19px;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .carousel-indicators {
@@ -3574,7 +3598,7 @@ input:checked + .slider:before {
 .tabs .tab-header {
   padding: 0.8rem 1.2rem;
   font-size: 17px;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .tabs .tab .tab-body {
@@ -3598,7 +3622,7 @@ input:checked + .slider:before {
 
 .faqs .tabs .tab .tab-header {
   font-size: 17px;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 400;
   display: block;
   padding: 15px 15px;
@@ -3665,7 +3689,7 @@ input:checked + .slider:before {
 /*** New Styles ***/
 
 .card_user {
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   border: 1px solid #d2d6da;
   text-align: center;
 }
@@ -3707,7 +3731,7 @@ input:checked + .slider:before {
 }
 
 .buy_head {
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 19px;
   color: #1a1e31;
   margin-bottom: 20px;
@@ -3741,7 +3765,7 @@ input:checked + .slider:before {
 }
 
 .table thead th {
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   border-bottom: none;
   font-size: 14px;
   color: #a7a9ac;
@@ -4053,13 +4077,13 @@ input:checked + .slider:before {
 footer h3 {
   color: #fff;
   font-size: 14px;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 footer ul li a {
   color: #bdbfc4;
   font-size: 13px;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 footer ul li {
@@ -4069,7 +4093,7 @@ footer ul li {
 footer h5 {
   color: #fff;
   font-size: 14px;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 footer a:hover {
@@ -4095,7 +4119,7 @@ footer a:hover {
   bottom: 0%;
   left: 0;
   margin: auto;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   z-index: 5000;
   width: 100%;
   background: #000000;
@@ -4188,7 +4212,7 @@ footer a:hover {
   margin: 20px;
   margin-top: 0px;
   border-radius: 4px;
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito", sans-serif;
   box-shadow: 1px 1px 2px 1px #ccc !important;
   border-bottom: 0px;
 }

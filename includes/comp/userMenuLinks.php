@@ -11,6 +11,9 @@
    <a class="dropdown-item" href="<?= $site_url; ?>/dashboard">
       <?= $lang["menu"]['dashboard']; ?>
    </a>
+   <a class="dropdown-item" href="<?= $site_url; ?>/favorites">
+      <?= $lang["menu"]['favorites']; ?>
+   </a>
    <a class="dropdown-item dropdown-toggle" href="#" data-toggle="collapse" data-target="#selling">
       <?= $lang["menu"]['selling']; ?>
    </a>
