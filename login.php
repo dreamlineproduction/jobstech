@@ -50,11 +50,11 @@ if(isset($_SESSION['seller_user_name'])){
 
 	<div class="row justify-content-center">
 
-		<div class="col-lg-5 col-md-7">
+		<div class="col-lg-7 col-md-7">
 
 			<h2 class="text-center"><?= str_replace('{site_name}',$site_name,$lang['login']['title']); ?></h2>
 
-			<div class="box-login mt-4">
+			<div class="box-login shadow-sm mt-4">
 
 				<h2 class="text-center mb-3 mt-3"><i class="fa fa-unlock-alt" ></i></h2>
 

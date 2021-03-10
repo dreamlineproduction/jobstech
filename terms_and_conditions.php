@@ -30,7 +30,7 @@
   </head>
   <body class="is-responsive">
     <?php require_once("includes/header.php"); ?>
-    <div class="container-fluid mt-5 mb-5">
+    <div class="container mt-5 mb-5">
       <div class="row mb-4">
         <div class="col-md-12 text-center">
           <h1>Our Policies</h1>
@@ -73,7 +73,7 @@
         </div>
         <div class="col-md-9">
           <div class="card">
-            <div class="card-body">
+            <div class="card-body shadow-sm">
               <div class="tab-content">
                 <?php
                   $get_terms = $db->query("select * from terms where language_id='$siteLanguage' LIMIT 0,1");

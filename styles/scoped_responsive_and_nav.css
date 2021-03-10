@@ -1820,7 +1820,8 @@ a:hover {
 .ui-toolkit .text-link-primary:active,
 .ui-toolkit .text-link-primary.is-active {
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
+  color: #484848;
 }
 
 .ui-toolkit a.is-selected,
@@ -10567,7 +10568,7 @@ body.is-global-nav #new-seller-header {
   }
   .gigtodo-logo-svg-logged-in .mobile {
     margin-top: 18px;
-    margin-left: -9px;
+    margin-left: 58px;
     display: unset !important;
   }
   .gigtodo-logo-svg-logged-in .mobile-full {

@@ -71,17 +71,17 @@ $seller_user_name = $row_seller->seller_user_name;
 
 		<div class="col-md-12 mt-5 mb-5">
 
-			<div class="card change-pass">
+			<div class="card shadow-sm change-pass">
 
 				<div class="card-header text-center make-white">
 
-               <h3><?= str_replace("{user_name}",$seller_user_name,$lang['change_password']['heading']); ?></h3>
+               <h5><?= str_replace("{user_name}",$seller_user_name,$lang['change_password']['heading']); ?></h5>
 
 				</div>
 
 				<div class="card-body d-flex justify-content-center">
 
-					<form class="col-md-8" method="post" action="">
+					<form class="col-md-6" method="post" action="">
 
 						<div class="form-group">
 
@@ -96,9 +96,9 @@ $seller_user_name = $row_seller->seller_user_name;
 
 								</span>
 
-								   <input type="password" name="new_pass" id="password" class="form-control" required>
+								   <input type="password" name="new_pass" id="password" class="form-control" placeholder="<?= $lang['label']['enter_new_pass']; ?>" required>
 
-								   <span class="input-group-addon">
+								   <span class="input-group-addon p-0">
 
 								   	<div id="meter_wrapper">
 
@@ -126,7 +126,7 @@ $seller_user_name = $row_seller->seller_user_name;
 
 								</span>
 
-								<input type="password" name="new_pass_again" id="confirm_password" class="form-control" required>
+								<input type="password" name="new_pass_again" id="confirm_password" class="form-control" placeholder="<?= $lang['label']['confirm_new_pass']; ?>" required>
 
 							</div>	
 
@@ -254,7 +254,7 @@ if(no==1){
 
 $("#meter").animate({width:'50px'},300);
 
-meter.style.backgroundColor="red";
+meter.style.backgroundColor="#FF4D4D";
 
 document.getElementById("pass_type").innerHTML="<span class='move-up-js'>Very Weak </span>";
 
@@ -264,7 +264,7 @@ if(no==2){
 
 $("#meter").animate({width:'100px'},300);
 
-meter.style.backgroundColor="#F5BCA9";
+meter.style.backgroundColor="rgb(255 100 49)";
 
 document.getElementById("pass_type").innerHTML="<span class='move-up-js'> Weak </span>";
 
@@ -275,7 +275,7 @@ if(no==3){
 
 $("#meter").animate({width:'150px'},300);
 
-meter.style.backgroundColor="#FF8000";
+meter.style.backgroundColor="#ff8007";
 
 document.getElementById("pass_type").innerHTML="<span class='move-up-js'> Good </span>";
 
@@ -286,7 +286,7 @@ if(no==4){
 
 $("#meter").animate({width:'200px'},300);
 
-meter.style.backgroundColor="#00FF40";
+meter.style.backgroundColor="#23d2b4";
 
 document.getElementById("pass_type").innerHTML="<span class='move-up-js'>Strong</span>";
 

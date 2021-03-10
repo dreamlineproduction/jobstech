@@ -34,7 +34,7 @@ echo "<script>window.open('login','_self');</script>";
 <?php if($a_plugins == 1){ ?>
 
   <li>
-    <a href="index?plugins"> <i class="menu-icon fa fa-plug" aria-hidden="true"></i> Plugins</a>
+    <a href="index?plugins"> <i class="menu-icon fa fa-plug" aria-hidden="true"></i> Module Management</a>
   </li>
 
 <?php } ?>

@@ -376,7 +376,7 @@ header .dropdown-menu {
 }
 
 .logo {
-  color: #28a745;
+  color: #9aafff;
   font-size: 31.18px;
   font-family: "Nunito", sans-serif;
   padding-top: 10px;
@@ -403,7 +403,7 @@ header .input-group {
 .btn_join {
   border-radius: 0px 3px 3px 0px;
   font-size: 13px;
-  background: #28a745;
+  background: #9aafff;
   color: #fff;
   transition: 0.4s;
   -o-transition: 0.4s;
@@ -416,8 +416,8 @@ header .input-group {
 .btn_search:hover,
 .btn_join:hover {
   background: #fff;
-  border: 1px solid #28a745;
-  color: #28a745;
+  border: 1px solid #9aafff;
+  color: #9aafff;
 }
 
 /*** Search Panel Styles Starts ***/
@@ -558,7 +558,7 @@ header .input-group {
     margin-left: 50px;
   }
   .swal2-popup .swal2-styled.swal2-confirm {
-    background-color: #28a745 !important;
+    background-color: #9aafff !important;
   }
   .mega-drop-down {
     display: none;
@@ -566,7 +566,7 @@ header .input-group {
 }
 
 .swal2-popup .swal2-styled.swal2-confirm {
-  background-color: #28a745 !important;
+  background-color: #9aafff !important;
 }
 
 .top_login_btn li:last-child {
@@ -599,7 +599,7 @@ header .input-group {
   left: 14px;
   top: 27px;
   font-size: 8px;
-  color: #28a745;
+  color: #9aafff;
 }
 
 .top_btn li {
@@ -862,7 +862,7 @@ header hr {
 }
 
 .input-group-append {
-  background: #28a745;
+  background: #9aafff;
   width: 54px;
   text-align: center;
   display: block;
@@ -948,7 +948,7 @@ border-bottom: 1px solid #ccc;
 }
 
 .timer h5 {
-  color: #28a745;
+  color: #9aafff;
   font-size: 14px;
 }
 
@@ -996,13 +996,13 @@ border-bottom: 1px solid #ccc;
 
 .top h3 span {
   font-size: 18.19px;
-  color: #28a745;
+  color: #9aafff;
   font-weight: 700;
 }
 
 .dil {
   cursor: pointer;
-  color: #28a745;
+  color: #9aafff;
 }
 
 .dil1 {
@@ -1092,7 +1092,7 @@ border-bottom: 1px solid #ccc;
 
 .proposal-unfavorite {
   cursor: pointer;
-  color: #28a745;
+  color: #9aafff;
 }
 
 .proposal-favorite {
@@ -1152,7 +1152,7 @@ border-bottom: 1px solid #ccc;
 
 .btn_view {
   font-size: 10.56px;
-  color: #28a745;
+  color: #9aafff;
   font-family: "Nunito", sans-serif;
   text-transform: uppercase;
   margin: 0 auto;
@@ -1160,7 +1160,7 @@ border-bottom: 1px solid #ccc;
   width: 112px;
   height: 40px;
   background: #fff;
-  border: 2px solid #28a745;
+  border: 2px solid #9aafff;
   border-radius: 5px;
   margin-top: 30px;
   transition: 0.4s;
@@ -1170,7 +1170,7 @@ border-bottom: 1px solid #ccc;
 }
 
 .btn_view:hover {
-  background: #28a745;
+  background: #9aafff;
   color: #fff;
 }
 
@@ -1710,11 +1710,11 @@ a.toggle-menu {
     display: none;
   }
   .navbar-light .navbar-brand {
-    color: #28a745;
+    color: #9aafff;
     margin: 10px 0;
   }
   .navbar-light .navbar-toggler {
-    border-color: #28a745;
+    border-color: #9aafff;
   }
   footer ul li a {
     font-size: 12px;
@@ -2458,7 +2458,7 @@ audio.embed-responsive {
 }
 
 .content-bar .user-is-online span.h6 {
-  color: #28a745 !important;
+  color: #9aafff !important;
 }
 
 .user-status {
@@ -2513,7 +2513,6 @@ audio.embed-responsive {
   padding: 8px 20px 20px 20px;
   margin-bottom: 40px;
   border-radius: 5px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 }
 
 .box-login .logo {
@@ -2536,35 +2535,35 @@ audio.embed-responsive {
 
 .box-login .text-center a {
   font-size: 15px;
-  color: #28a745;
+  color: #9aafff;
 }
 
 .box-login .fa.fa-unlock-alt {
-  color: #28a745;
+  color: #9aafff;
   font-size: 130%;
 }
 
 /*** Change Passowrd Styles ***/
 
 .change-pass #meter_wrapper {
-  border: 1px solid gray;
-  width: 202px;
-  height: 25px;
-  border-radius: 3px;
+  border: 0px solid gray;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
 }
 
 .change-pass #meter {
-  height: 23px;
+  height: 100%;
 }
 
 .change-pass #pass_type {
   font-size: 14px;
-  margin-top: 13px;
+  margin-top: 11px;
   position: absolute;
   top: -5px;
-  right: 86px;
+  right: 8px;
   font-weight: bold;
-  color: black;
+  color: white;
 }
 
 @media (max-width: 580px) {
@@ -2623,7 +2622,7 @@ audio.embed-responsive {
 }
 
 .user-home-sidebar-sec .card-body a:hover {
-  color: #28a745 !important;
+  color: #9aafff !important;
 }
 
 .user-home-sidebar-sec .text-dropping {
@@ -2819,11 +2818,11 @@ _:-ms-fullscreen,
 /** Dasboard sidebar styles **/
 
 .contacts-sidebar .active {
-  color: #28a745 !important;
+  color: #9aafff !important;
 }
 
 .bottom-tabs-dash .active {
-  color: #28a745 !important;
+  color: #9aafff !important;
 }
 
 .contact-title {
@@ -2922,7 +2921,7 @@ _:-ms-fullscreen,
 
 .cart-proposal a:hover,
 .cart-proposal h6:hover {
-  color: #28a745 !important;
+  color: #9aafff !important;
 }
 
 .cart-order-details p {
@@ -2937,7 +2936,7 @@ _:-ms-fullscreen,
 
 .cart-order-details .coupon-response.applied,
 .checkout-details .coupon-response.applied {
-  background-color: #28a745 !important;
+  background-color: #9aafff !important;
 }
 
 .cart-add-sect .remove-link:hover {
@@ -2999,7 +2998,7 @@ _:-ms-fullscreen,
 /***  Order Details Page Styles ***/
 
 .order-page .nav-link.active {
-  color: #28a745 !important;
+  color: #9aafff !important;
 }
 
 .order-page .order-icon {
@@ -3019,7 +3018,7 @@ _:-ms-fullscreen,
 }
 
 #order-status-bar.completed {
-  background-color: #28a745 !important;
+  background-color: #9aafff !important;
 }
 
 @media (max-width: 999px) {
@@ -3066,7 +3065,7 @@ _:-ms-fullscreen,
   border: 1px solid #e6e6e6;
   border-radius: 5px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  color: #28a745 !important;
+  color: #9aafff !important;
 }
 
 .order-page .countdown-box .countdown-title {
@@ -3182,7 +3181,7 @@ _:-ms-fullscreen,
 }
 
 input:checked + .slider {
-  background-color: #28a745;
+  background-color: #9aafff;
 }
 
 input:focus + .slider {
@@ -3199,7 +3198,7 @@ input:checked + .slider:before {
 /*** View Proposals Page Styles **/
 
 .view-proposals .btn-toggle.active {
-  background-color: #28a745 !important;
+  background-color: #9aafff !important;
 }
 
 .view-proposals .btn-toggle.btn-lg {
@@ -3253,7 +3252,7 @@ input:checked + .slider:before {
 
 .modal-body .order-details .request-div .price {
   font-size: 22px;
-  color: #28a745;
+  color: #9aafff;
 }
 
 .modal-body .order-details .request-div p {
@@ -3439,7 +3438,7 @@ input:checked + .slider:before {
 
 .modal-body .order-details .offer-div .price {
   font-size: 20px;
-  color: #28a745;
+  color: #9aafff;
 }
 
 /*** Manage Contacts Page Styles ***/
@@ -3536,7 +3535,7 @@ input:checked + .slider:before {
 
 #display-request .offer-div .price {
   font-size: 30px;
-  color: #28a745;
+  color: #9aafff;
 }
 
 #display-request .offer-div p {
@@ -3554,7 +3553,7 @@ input:checked + .slider:before {
 .message-div .message-offer .price,
 .message-div-hover .message-offer .price {
   font-size: 36px;
-  color: #28a745;
+  color: #9aafff;
 }
 
 .message-div .message-offer p,
@@ -3718,15 +3717,15 @@ input:checked + .slider:before {
   height: 51px;
   border-radius: 33px;
   background: transparent;
-  border: 1px solid #28a745;
-  color: #28a745;
+  border: 1px solid #9aafff;
+  color: #9aafff;
   text-align: center;
   font-weight: 500;
   margin: 10px 10px 10px 10px;
 }
 
 .card_user .get_btn:hover {
-  background: #28a745;
+  background: #9aafff;
   color: white;
 }
 
@@ -3851,7 +3850,7 @@ input:checked + .slider:before {
   position: relative;
   left: 135px;
   font-size: 50px;
-  color: #28a745;
+  color: #9aafff;
 }
 
 #start_selling_body .row-1 h3 {
@@ -3935,7 +3934,7 @@ input:checked + .slider:before {
   position: relative;
   left: 135px;
   font-size: 50px;
-  color: #28a745;
+  color: #9aafff;
 }
 
 .fa-adj {
@@ -4302,7 +4301,7 @@ footer a:hover {
 
 .navbar-brand:focus,
 .navbar-brand:hover {
-  color: #28a745;
+  color: #9aafff;
 }
 
 /* Media query for desktop viewport */

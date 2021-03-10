@@ -35,21 +35,22 @@ require_once("functions/functions.php");
 
 <?php require_once("includes/header.php"); ?>
 
-<div class="container-fluid mt-5"> <!-- Container start -->
+<div class="container mt-5"> <!-- Container start -->
   <div class="row">
     <div class="col-md-12">
       <center>
       <h1> <?= $lang['top_proposals']['title']; ?> </h1>
       <p class="lead"><?= $lang['top_proposals']['desc']; ?></p>
       </center>
+      <?php require_once("includes/top_sidebar.php"); ?>
       <hr class="mt-5 pt-2">
     </div>
   </div>
   <div class="row mt-3">
-    <div class="col-lg-3 col-md-4 col-sm-12 <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
+    <!-- <div class="col-lg-3 col-md-4 col-sm-12 <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
       <?php require_once("includes/top_sidebar.php"); ?>
-    </div>
-    <div class="col-lg-9 col-md-8 col-sm-12 <?=($lang_dir == "right" ? 'order-1 order-sm-2':'')?>">
+    </div> -->
+    <div class="col-lg-12 col-md-8 col-sm-12 <?=($lang_dir == "right" ? 'order-1 order-sm-2':'')?>">
       <div class="row flex-wrap proposals" id="top_proposals">
       <?php get_top_proposals(); ?>
       </div>
