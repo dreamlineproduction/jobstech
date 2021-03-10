@@ -1,4 +1,4 @@
-  <div class="card seller-bio mb-3 rounded-0">
+  <div class="card shadow-sm seller-bio mb-3 rounded-0">
   <div class="card-body <?=($lang_dir == "right" ? 'text-right':'')?>">
 
   <?php if(check_status($proposal_seller_id) == "Online"){ ?>

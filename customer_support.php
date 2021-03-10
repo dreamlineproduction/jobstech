@@ -85,9 +85,9 @@
             <h2><?= $contact_heading; ?></h2>
             <p class="text-muted pt-1"><?= $contact_desc; ?></p>
           </div>
-          <div class="card-body">
-            <center>
-              <form class="col-md-8 contact-form" action="" method="POST" enctype="multipart/form-data">
+          <div class="card-body shadow-sm mt-4 text-center">
+         
+              <form class="col-md-12 contact-form" action="" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                   <label class="<?= $floatRight ?>"><?= $lang['label']['select_enquiry']; ?></label>
                   <select name="enquiry_type" class="form-control select_tag" required>
@@ -139,12 +139,12 @@
                   <?php } ?>
                   <div class="text-center">
                     <button class="btn btn-success btn-lg" name="submit" type="submit">
-                    <i class="fa fa-paper-plane"> <?= $lang['button']['submit_request2']; ?></i>
+                    <i class="fa fa-paper-plane"></i> <?= $lang['button']['submit_request2']; ?>
                     </button>
                   </div>
                 <?php } ?>
               </form>
-            </center>
+           
           </div>
         </div>
       </div>

@@ -62,17 +62,42 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
 		<div class="modal-body p-0">
 			<div class="order-details">
 				<div class="request-div">
+
+<div class="text-center">
 					<h4 class="mb-3">
-					<b>FEATURE LISTING FEE & INFO:</b> <span class="price float-right d-none d-sm-block mb-3 font-weight-bold"><?= showPrice($featured_fee); ?></span>
+					<b>FEATURE LISTING FEE & INFO:</b>
+					
 					</h4>
-					<p>
+
+					<span class="badge badge-primary price"><?= showPrice($featured_fee); ?></span>
+					<small class="mt-4">
 						You are about to pay a feature listing fee for your proposal/service. This will make this proposal/service feature on our "Featured proposal/service" spots. The fee is <?= showPrice($featured_fee); ?> and the duration is <?= $featured_duration; ?> Days. Please use any of the following payment methods below to complete payment.
-					</p>
-					<h4><b>SUMMARY:</b></h4>
-					<p><b>Proposal Title:</b> <?= $proposal_title; ?></p>
-					<p><b>Feature Listing Fee:</b> <?= showPrice($featured_fee); ?></p>
-					<p class="processing-fee"><b>Processing Fee:</b> <?= showPrice($processing_fee); ?></p>
-					<p><b>Listing Duration:</b> <?= $featured_duration; ?> Days.</p>
+					</small>
+					</div>
+
+					<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Proposal Title:</th>
+      <th scope="col">Feature Listing Fee:</th>
+      <th scope="col">Processing Fee:</th>
+      <th scope="col">Listing Duration:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     
+      <td><?= $proposal_title; ?></td>
+      <td><?= showPrice($featured_fee); ?></td>
+      <td><?= showPrice($processing_fee); ?></td>
+      <td><?= $featured_duration; ?> Days.</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+				
+					
 				</div>
 			</div>
 			<div class="payment-options-list">
@@ -80,10 +105,8 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
 				<div class="payment-options mb-2">
 					<input type="radio" name="payment_option" id="shopping-balance" class="radio-custom" checked>
 					<label for="shopping-balance" class="radio-custom-label" ></label>
-					<span class="lead font-weight-bold"> Shopping Balance </span>
-					<p class="lead ml-5">
-					Personal Balance - <?= $login_seller_user_name; ?> <span class="text-success font-weight-bold"> <?= showPrice($current_balance); ?> </span>
-					</p>
+					<span class="font-weight-bold">Personal Balance - <?= $login_seller_user_name; ?> <span class="text-success font-weight-bold"> <?= showPrice($current_balance); ?> </span> </span>
+				
 				</div>
                 <?php if($enable_paypal == "yes" or $enable_stripe == "yes" or $enable_mercadopago == "1" or $enable_coinpayments == "yes" or $enable_dusupay == "yes"){ ?>
 				<hr>
@@ -105,7 +128,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
                 <?php if($enable_paypal == "yes"){ ?>
 				<hr>
                 <?php } ?>
-				<div class="payment-option">
+				<div class="payment-option small-mg">
 					<input type="radio" name="payment_option" id="credit-card" class="radio-custom"
                            <?php
                                 if($current_balance < $featured_fee){
@@ -115,7 +138,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
                                 }
                             ?>>
 					<label for="credit-card" class="radio-custom-label"></label>
-					<img src="../images/credit_cards.jpg" class="img-fluid">
+					<img src="../images/credit_cards.jpg" class="img-fluid stripe-img">
 				</div>
             	<?php } ?>
 				<?php 

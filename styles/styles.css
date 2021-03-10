@@ -3267,7 +3267,7 @@ input:checked + .slider:before {
 
 .modal-body .payment-options-list .payment-option img {
   border-radius: 2%;
-  height: 60px !important;
+  height: 40px !important;
 }
 
 .modal-body .payment-options-list hr {

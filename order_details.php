@@ -121,18 +121,48 @@ function watermarkImage($image,$data){
   <script src="https://checkout.stripe.com/checkout.js"></script>
   <link href="styles/sweat_alert.css" rel="stylesheet">
   <link href="styles/animate.css" rel="stylesheet">
+  <link href="styles/jquery.datetimepicker.css" rel="stylesheet">
   <script type="text/javascript" src="js/ie.js"></script>
   <script type="text/javascript" src="js/sweat_alert.js"></script>
   <script type="text/javascript" src="js/jquery.barrating.min.js"></script>
   <script type="text/javascript" src="js/jquery.sticky.js"></script>
+  <script type="text/javascript" src="js/moment.min.js"></script>
+  <script type="text/javascript" src="js/jquery.datetimepicker.js"></script>
   <?php if(!empty($site_favicon)){ ?>
     <link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
   <?php } ?>
 
   <!-- Include the PayPal JavaScript SDK -->
   <script src="https://www.paypal.com/sdk/js?client-id=<?= $paypal_client_id; ?>&disable-funding=credit,card&currency=<?= $paypal_currency_code; ?>"></script>
-
   <script>
+    function parseTime(s) {
+        var c = s.split(':');
+        return parseInt(c[0]) * 60 + parseInt(c[1]);
+    }
+
+    function convertHours(mins) {
+        var hour = Math.floor(mins / 60);
+        var mins = mins % 60;
+        var converted = pad(hour, 2) + ':' + pad(mins, 2);
+        return converted;
+    }
+
+    function pad(str, max) {
+        str = str.toString();
+        return str.length < max ? pad("0" + str, max) : str;
+    }
+
+    function calculate_time_slot(start_time, end_time, interval = "30") {
+        var i, formatted_time;
+        var time_slots = new Array();
+        for (var i = start_time; i <= end_time; i = i + interval) {
+            formatted_time = convertHours(i);
+            time_slots.push(formatted_time);
+        }
+        return time_slots;
+    }
+
+    
     function alert_success(text,url){
       swal({
         type: 'success',
@@ -146,9 +176,8 @@ function watermarkImage($image,$data){
           window.open(url,'_self');
         }
       });
-    }
+    }   
   </script>
-
 </head>
 
 <body class="is-responsive">

@@ -48,8 +48,28 @@
 } */
 
 a:hover {
-  color: #9AAFFF;
+  color: #9aafff;
   text-decoration: underline;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td:hover,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div:hover {
+  color: #fff !important;
+  background: #000000 !important;
+  box-shadow: none !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+.xdsoft_datetimepicker
+  .xdsoft_timepicker
+  .xdsoft_time_box
+  > div
+  > div.xdsoft_current {
+  background: #9aafff;
+  box-shadow: #9aafff 0 1px 3px 0 inset;
+  color: #fff;
+  font-weight: 700;
 }
 
 .gnav-header #search-query {
@@ -73,6 +93,15 @@ a:hover {
 
 .count {
   background: #ef5350 !important;
+}
+
+.request-div small {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.stripe-img {
+  height: 50px;
 }
 
 .ui-toolkit .animated {

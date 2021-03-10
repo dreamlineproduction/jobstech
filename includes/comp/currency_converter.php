@@ -1,11 +1,7 @@
 <?php if($enable_converter == 1){ ?>
-<div class="card border-success mb-3">
-  <div class="card-header bg-success">
-    <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> h5 text-white"><?= $lang['sidebar']['change_currency']; ?></h3>
-  </div>
-  <div class="card-body">
-
-    <select id="currencySelect" class="form-control">
+<div class="online-seller mr-2 mb-2 mb-2 <?=($lang_dir == "right" ? 'text-right':'')?>">
+<div class="dropdown">
+<select id="currencySelect" class="form-control">
       <option data-url="<?= "$site_url/change_currency?id=0"; ?>">
         <?= "$s_currency_name ($s_currency)"; ?>
       </option>
@@ -26,7 +22,7 @@
       </option>
       <?php } ?>
     </select>
-
-  </div>
 </div>
+    </div>
+
 <?php } ?>

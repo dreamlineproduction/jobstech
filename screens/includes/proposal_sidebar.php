@@ -1,4 +1,4 @@
-<div class="card mb-5 rounded-0">
+<div class="card mb-5 shadow-sm rounded-0">
     <?php if($enableVideo == 0 and $proposal_price == 0){ include("sidebar/proposal_packages.php"); } ?>
     <div class="card-body order-box tab-content">
         <!--- card-body Starts --->

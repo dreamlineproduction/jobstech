@@ -37,7 +37,7 @@ require_once("functions/functions.php");
 
 <body class="bg-white is-responsive">
     <?php require_once("includes/header.php"); ?>
-    <div class="container-fluid mt-5">
+    <div class="container mt-5">
         <!-- Container start -->
         <div class="row">
             <div class="col-md-12">
@@ -45,14 +45,16 @@ require_once("functions/functions.php");
                     <h1> <?= $lang['featured_proposals']['title']; ?> </h1>
                     <p class="lead"><?= $lang['featured_proposals']['desc']; ?></p>
                 </center>
+
+                <?php require_once("includes/featured_sidebar.php"); ?>
                 <hr class="mt-5 pt-2">
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-lg-3 col-md-4 col-sm-12 <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
+            <!-- <div class="col-lg-3 col-md-4 col-sm-12 <?=($lang_dir == "right" ? 'order-2 order-sm-1':'')?>">
                 <?php require_once("includes/featured_sidebar.php"); ?>
-            </div>
-            <div class="col-lg-9 col-md-8 col-sm-12 <?=($lang_dir == "right" ? 'order-1 order-sm-2':'')?>">
+            </div> -->
+            <div class="col-lg-12 col-md-8 col-sm-12 <?=($lang_dir == "right" ? 'order-1 order-sm-2':'')?>">
                 <div class="row flex-wrap proposals" id="featured_proposals">
                     <?php get_featured_proposals(); ?>
                 </div>

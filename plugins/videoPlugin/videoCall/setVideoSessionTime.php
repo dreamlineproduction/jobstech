@@ -67,17 +67,26 @@ $receiver_timezone = $db->select("sellers",array("seller_id"=>$receiver_id))->fe
 
 <?php }else{ ?>
 
-<div class="card mb-3 mt-3"><!--- card mb-3 mt-3 Starts --->
+<div class="card shadow-sm mb-3 mt-3"><!--- card mb-3 mt-3 Starts --->
   <div class="card-header"><h5 class="mb-0"><?= $lang['Set_A_Time_For_Video_Session']; ?></h5></div>
   <div class="card-body">
-    <h5 class="font-weight-normal"> <strong><?= $login_seller_user_name; ?>,</strong> <?= $lang['When_are_you_available_for_a_video_session']; ?></h5>
-    <p><?= $lang['You_can_only_choose_a_day_within']; ?> <?php echo $schedule_duration; ?> <?= $lang['days_from']; ?> <?php echo date("m/d/Y"); ?></p>
+    <h5 class="font-weight-normal mt-4 mb-4 text-center"> <strong><?= $login_seller_user_name; ?>,</strong> <?= $lang['When_are_you_available_for_a_video_session']; ?></h5>
+    <p class=" mt-4 mb-4 text-center"><?= $lang['You_can_only_choose_a_day_within']; ?> <?php echo $schedule_duration; ?> <?= $lang['days_from']; ?> <?php echo date("m/d/Y"); ?></p>
     <form method="post">
-      <div class="form-group">
-        <label class="">+ <?= $lang['Set_A_Date_Time']; ?></label>
-        <input type="datetime-local" name="time" min="<?= $minVideoSessionTime; ?>" max="<?= $maxVideoSessionTime; ?>T00:00" class="form-control" required>
+    <div class="form-row">
+    <div class="col-md-10">
+    <div class="form-group">
+        <!-- <label class="">+ <?= $lang['Set_A_Date_Time']; ?></label> -->
+        <!-- <input type="datetime-local" name="time" min="<?= $minVideoSessionTime; ?>" max="<?= $maxVideoSessionTime; ?>T00:00" class="form-control" required> -->
+        <input id="time" name="time" type="text" class="form-control" required placeholder="<?= $lang['Set_A_Date_Time']; ?>">
       </div>
-      <button type="submit" name="setTime" class="btn btn-primary"><?= $lang['Submit']; ?></button>
+    </div>
+    <div class="col-md-2">
+    <button type="submit" name="setTime" class="btn btn-primary btn-block"><?= $lang['Submit']; ?></button>
+    </div>
+  </div>
+      
+      
     </form>
   </div>
 </div><!--- card mb-3 mt-3 Ends --->
@@ -87,6 +96,8 @@ $receiver_timezone = $db->select("sellers",array("seller_id"=>$receiver_id))->fe
 <?php 
 if(isset($_POST['setTime'])){
   $time = $input->post('time');
+  $dateTimeSel = explode(' ',$time);
+  $time = $dateTimeSel[0].'T'.$dateTimeSel[1];
   $data = array("order_id"=>$order_id,"sender_id"=>$login_seller_id,"time"=>$time,"timezone"=>$login_seller_timezone,"status"=>"pending");
   $insertOrderSchedule = $db->insert("order_schedules",$data);
   if($insertOrderSchedule){
@@ -156,7 +167,7 @@ if(isset($_POST['setTime'])){
         <label class=""><?= $lang['Chose_Another_Schedule']; ?></label>
         <input id="anotherScheduleTime" type="datetime-local" name="time" min="<?= $minVideoSessionTime; ?>" max="<?= $maxVideoSessionTime; ?>T00:00" class="form-control">
       </div>
-     
+
       <button type="submit" id="proposeAnotherSchedule" name="propose_another_schedule" class="btn btn-success"><?= $lang['Propose_Another_Schedule']; ?></button>
     </form>
     <?php
@@ -195,3 +206,46 @@ if(isset($_POST['setTime'])){
 <?php } ?>
 
 <?php } ?>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var min_now = moment().format("mm");
+    if(min_now <= 30) {
+        var start_time = parseTime(moment().format('H:30'));        
+    } else if(min_now > 30){
+        var start_time = parseTime(moment().add(1,'hour').format('H:00'));        
+    }    
+
+    //var start_time = parseTime(moment().format('HH:00'));
+    var end_time = parseTime('23:30');
+    var interval = 30;
+    var currentTimeArray = calculate_time_slot(start_time, end_time, interval);
+
+    //console.log(currentTimeArray);
+
+    $.datetimepicker.setDateFormatter('moment');
+    $('#time').datetimepicker({
+        format: 'YYYY-MM-DD HH:mm',
+        allowTimes: currentTimeArray,        
+        minDate: 0,
+        maxDate: moment().add('<?php echo $schedule_duration?>','day'),
+        onSelectDate: function(ct) {
+            var dtp = this;
+            var start_time_n = parseTime(moment().format('00:00'));
+            var end_time_new = parseTime('23:30');
+            var interval = 30;
+            var newTimeArray = calculate_time_slot(start_time_n, end_time_new, interval);
+            if (moment(ct).format("DD") == moment().format("DD")) {
+                var res = currentTimeArray;
+            } else {
+                var res = newTimeArray;
+            }
+
+            dtp.setOptions({
+                allowTimes: res,
+                format: 'YYYY-MM-DD HH:mm',
+            })
+        }
+    });
+});
+</script>
