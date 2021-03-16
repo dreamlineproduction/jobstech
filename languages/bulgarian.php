@@ -1,5 +1,32 @@
 <?php
 
+// Video lesson tests
+$lang["enable_video_Lessons"] = "Активирайте Видео уроците";
+$lang["price_per_minute"] = "Цена за минута";
+$lang["Days_within_which_a_video_session_can_be_scheduled"] = "Дни, в които може да бъде насрочена видео сесия.";
+$lang["You_Must_Need_To_Fill_Out_All_Fields_Before_Updating_The_Details."] = "You Must Need To Fill Out All Fields Before Updating The Details.";
+$lang["Video_Session_Time"] = "Video Session Time";
+$lang["have_accepted_the_video_session_time"] = "have accepted the video session time";
+$lang["You_have_set_the_video_session_time_to"] = "You have set the video session time to";
+$lang["You_have_proposed_the_video_session_time_to"] = "You have proposed the video session time to";
+$lang["has_set_the_video_session_time_to"] = "has set the video session time to";
+$lang["have_proposed_the_video_session_time_to"] = "have proposed the video session time to";
+$lang["Chose_Another_Schedule"] = "Chose Another Schedule";
+$lang["accept"] = "Accept";
+$lang["schedule"] = "Schedule";
+$lang["Propose_Another_Schedule"] = "Propose Another Schedule";
+$lang["Please_Select_Your_Time_Zone_First_By_Going_To"] = "Please Select Your Time Zone First By Going To";
+$lang["Profile_Settings"] = "Profile Settings";
+$lang["And_Then_You_Can_Set_A_Time_For_Video_Session"] = "And Then You Can Set A Time For Video Session.";
+$lang["Open_Profile_Settings"] = "Open Profile Settings";
+$lang["Set_A_Time_For_Video_Session"] = "Set A Time For Video Session";
+$lang["When_are_you_available_for_a_video_session"] = "When are you available for a video session?";
+$lang["You_can_only_choose_a_day_within"] = "You can only choose a day within";
+$lang["days_from"] = "days from";
+$lang["Set_A_Date_Time"] = "Set A Date & Time";
+$lang["Submit"] = "Submit";
+
+
 $lang["welcome"] = "Здравейте!";
 
 // User Logged Out Menu Items
@@ -7,6 +34,7 @@ $lang["freelancers_menu"] = "Потребители";
 $lang["become_seller"] = "Станете продавач";
 $lang["sign_in"] = "Вход";
 $lang["join_now"] = "Регистрирай се";
+$lang["mobile_join_now"] = "Join";
 $lang["mobile_join_now"] = "Регистрирай се";
 $lang['no_results'] = "Няма намерени резултати";
 $lang['everything_is_possible'] = "Всичко е възможно и достъпно";

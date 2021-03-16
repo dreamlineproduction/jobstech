@@ -72,6 +72,14 @@ a:hover {
   font-weight: 700;
 }
 
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #000000;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgb(0 0 0 / 0%);
+}
+
 .gnav-header #search-query {
   position: absolute;
   width: 100%;
@@ -278,7 +286,7 @@ a:hover {
 
 .ui-toolkit body {
   color: #222;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
 }
@@ -286,13 +294,13 @@ a:hover {
 @media screen and (orientation: portrait) and (min-device-width: 740px),
   screen and (orientation: landscape) and (min-device-height: 740px) {
   .ui-toolkit body {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
 .ui-toolkit .text-hero {
   font-size: 84px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -302,14 +310,14 @@ a:hover {
 @media screen and (orientation: portrait) and (min-device-width: 740px),
   screen and (orientation: landscape) and (min-device-height: 740px) {
   .ui-toolkit .text-hero {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
 .ui-toolkit .text-headline-larger,
 .ui-toolkit .text-editorial-nova h1 {
   font-size: 68px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 600;
   font-weight: 300;
   line-height: 1.2;
@@ -325,7 +333,7 @@ a:hover {
 
 .ui-toolkit .text-headline {
   font-size: 52px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 600;
   font-weight: 300;
   line-height: 1.2;
@@ -342,7 +350,7 @@ a:hover {
 .ui-toolkit .text-editorial-nova h2,
 .ui-toolkit .text-editorial-nova blockquote {
   font-size: 42px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 600;
   font-weight: 300;
   line-height: 1.2;
@@ -367,7 +375,7 @@ a:hover {
 .ui-toolkit .text-title-larger,
 .ui-toolkit .text-editorial-nova h3 {
   font-size: 32px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 500;
   line-height: 1.4;
 }
@@ -376,14 +384,14 @@ a:hover {
   screen and (orientation: landscape) and (min-device-height: 740px) {
   .ui-toolkit .text-title-larger,
   .ui-toolkit .text-editorial-nova h3 {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
 .ui-toolkit .text-title,
 .ui-toolkit .text-editorial-nova h4 {
   font-size: 26px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 500;
   line-height: 1.4;
 }
@@ -392,14 +400,14 @@ a:hover {
   screen and (orientation: landscape) and (min-device-height: 740px) {
   .ui-toolkit .text-title,
   .ui-toolkit .text-editorial-nova h4 {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
 .ui-toolkit .text-title-smaller,
 .ui-toolkit .text-editorial-nova h5 {
   font-size: 20px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 500;
   line-height: 1.2;
   text-transform: none;
@@ -409,7 +417,7 @@ a:hover {
   screen and (orientation: landscape) and (min-device-height: 740px) {
   .ui-toolkit .text-title-smaller,
   .ui-toolkit .text-editorial-nova h5 {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
@@ -420,7 +428,7 @@ a:hover {
 .ui-toolkit .text-body-largest,
 .ui-toolkit .text-editorial-nova h6 {
   font-size: 18px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 300;
   line-height: 1.6;
 }
@@ -429,7 +437,7 @@ a:hover {
   screen and (orientation: landscape) and (min-device-height: 740px) {
   .ui-toolkit .text-body-largest,
   .ui-toolkit .text-editorial-nova h6 {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
@@ -441,7 +449,7 @@ a:hover {
 
 .ui-toolkit .text-body-larger {
   font-size: 16px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 300;
   line-height: 1.6;
 }
@@ -449,13 +457,13 @@ a:hover {
 @media screen and (orientation: portrait) and (min-device-width: 740px),
   screen and (orientation: landscape) and (min-device-height: 740px) {
   .ui-toolkit .text-body-larger {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
 .ui-toolkit .text-body {
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 300;
   line-height: 1.6;
 }
@@ -463,13 +471,13 @@ a:hover {
 @media screen and (orientation: portrait) and (min-device-width: 740px),
   screen and (orientation: landscape) and (min-device-height: 740px) {
   .ui-toolkit .text-body {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
 .ui-toolkit .text-body-smaller {
   font-size: 12px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 300;
   line-height: 1.6;
 }
@@ -477,13 +485,13 @@ a:hover {
 @media screen and (orientation: portrait) and (min-device-width: 740px),
   screen and (orientation: landscape) and (min-device-height: 740px) {
   .ui-toolkit .text-body-smaller {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
 .ui-toolkit .text-category-label {
   font-size: 12px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -493,7 +501,7 @@ a:hover {
 @media screen and (orientation: portrait) and (min-device-width: 740px),
   screen and (orientation: landscape) and (min-device-height: 740px) {
   .ui-toolkit .text-category-label {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
@@ -1800,7 +1808,7 @@ a:hover {
   height: inherit;
   text-align: left;
   color: #222;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
 }
@@ -2701,14 +2709,14 @@ a:hover {
 
 .ui-toolkit #gnav-header #search-query,
 .ui-toolkit #gnav-header .btn-primary {
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 @media screen and (orientation: portrait) and (min-device-width: 740px),
   screen and (orientation: landscape) and (min-device-height: 740px) {
   .ui-toolkit #gnav-header #search-query,
   .ui-toolkit #gnav-header .btn-primary {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
@@ -8017,7 +8025,7 @@ a:hover {
   border-radius: 3px;
   color: #fff;
   text-decoration: none;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
@@ -8068,7 +8076,7 @@ a:hover {
   .ui-toolkit #notification-overlay .btn-fb,
   .ui-toolkit #notification-overlay .btn-google,
   .ui-toolkit #notification-overlay .btn-link {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
@@ -8287,7 +8295,7 @@ a:hover {
   background-color: #f56400;
   border-color: rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
@@ -8302,7 +8310,7 @@ a:hover {
     #conversation-overlay.overlay
     .canned-response-new-form
     .canned-response-new-save {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
@@ -8411,7 +8419,7 @@ html.ui-toolkit {
 
 .ui-toolkit {
   color: #222;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   text-align: left;
@@ -8420,7 +8428,7 @@ html.ui-toolkit {
 @media screen and (orientation: portrait) and (min-device-width: 740px),
   screen and (orientation: landscape) and (min-device-height: 740px) {
   .ui-toolkit {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 }
 
@@ -9624,7 +9632,7 @@ a.arrow-up::after {
   width: 100%;
   top: 50%;
   margin-top: -17px;
-  height: 34px;
+  
 }
 
 .gnav-header .gnav-search-inner.search-mobile {
