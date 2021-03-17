@@ -234,7 +234,7 @@
     </div>
     <?php } ?>
 
-    <div class="card rounded-0 mb-5 <?=($lang_dir == "right" ? 'text-right':'')?>" id="details">
+    <div class="card rounded-0 mb-5 shadow-sm <?=($lang_dir == "right" ? 'text-right':'')?>" id="details">
       <div class="card-header"><h4>About This Proposal</h4></div>
       <div class="card-body proposal-desc"><?= $proposal_desc; ?></div>
     </div>
@@ -253,10 +253,10 @@
       $content = $row_faq->content;
       ?>
       <div class="tab"><!-- tab rounded Starts -->
-      <div class="tab-header" data-toggle="collapse" href="#tab-<?= $id; ?>">
+      <div class="tab-header shadow-sm mb-1" data-toggle="collapse" href="#tab-<?= $id; ?>">
       <?= $title; ?>
       </div>
-      <div class="tab-body p-3 collapse" id="tab-<?= $id; ?>"><?= $content; ?></div>
+      <div class="tab-body shadow-sm p-3 collapse" id="tab-<?= $id; ?>"><?= $content; ?></div>
       </div><!-- tab rounded Ends -->
       <?php } ?>
       <div class="clearfix"></div>
@@ -264,7 +264,7 @@
     </div><!-- card mb-3 Ends -->
     <?php } ?>
 
-    <div class="card proposal-reviews rounded-0 mb-5" id="reviews">
+    <div class="card proposal-reviews shadow-sm rounded-0 mb-5" id="reviews">
       <div class="card-header">
         <h4 class="mb-0 <?=($lang_dir == "right" ? 'text-right':'')?>">
         <div class="float-left">
