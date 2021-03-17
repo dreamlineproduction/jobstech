@@ -144,9 +144,10 @@ echo "<script>window.open('$site_url/revenue','_self')</script>";
 	
 }catch(Exception $ex){
 
-// echo "<pre>";
-// 	print_r($ex);
-// echo "</pre>";
+echo "<pre>";
+	print_r($ex);
+echo "</pre>";
+exit();
 
 echo "<script>
 	alert('Sorry An error occurred During Sending Your Money To Your Paypal Account.');
