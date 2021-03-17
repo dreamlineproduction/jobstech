@@ -23,7 +23,6 @@ if (isset($_GET['approve_payout'])) {
     // Fetch selected payout info
     $get = $db->select("payouts", array('id' => $id));
     $row = $get->fetch();
-    echo '<pre>' . print_r($row, true) . '</pre>';
 
     $seller_id = $row->seller_id;
     $method = $row->method;
@@ -33,7 +32,6 @@ if (isset($_GET['approve_payout'])) {
     $get_seller = $db->select("sellers", array("seller_id" => $seller_id));
     $row_seller = $get_seller->fetch();
     $seller_email = $row_seller->seller_paypal_email;
-    die('<pre>' . print_r($row_seller, true) . '</pre>');
 
     // Fetch payment settings
     $get_payment_settings = $db->select("payment_settings");
