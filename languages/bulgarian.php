@@ -1,5 +1,4 @@
 <?php
-
 // Video lesson tests
 $lang["enable_video_Lessons"] = "Активирайте Видео уроците";
 $lang["price_per_minute"] = "Цена за минута";
@@ -27,6 +26,7 @@ $lang["Set_A_Date_Time"] = "Set A Date & Time";
 $lang["Submit"] = "Submit";
 
 
+
 $lang["welcome"] = "Здравейте!";
 
 // User Logged Out Menu Items
@@ -34,7 +34,6 @@ $lang["freelancers_menu"] = "Потребители";
 $lang["become_seller"] = "Станете продавач";
 $lang["sign_in"] = "Вход";
 $lang["join_now"] = "Регистрирай се";
-$lang["mobile_join_now"] = "Join";
 $lang["mobile_join_now"] = "Регистрирай се";
 $lang['no_results'] = "Няма намерени резултати";
 $lang['everything_is_possible'] = "Всичко е възможно и достъпно";

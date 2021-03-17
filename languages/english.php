@@ -1,6 +1,5 @@
 <?php
 
-
 // Video lesson tests
 $lang["enable_video_Lessons"] = "Enable  Video Lessons";
 $lang["price_per_minute"] = "Price Per minute";
@@ -27,10 +26,6 @@ $lang["days_from"] = "days from";
 $lang["Set_A_Date_Time"] = "Set A Date & Time";
 $lang["Submit"] = "Submit";
 $lang["You_and_your"] = "You and your";
-
-
-
-
 
 
 $lang["welcome"] = "Welcome";
