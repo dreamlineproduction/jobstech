@@ -1,34 +1,35 @@
 <?php
 session_start();
-require_once("../includes/db.php");
-if(!isset($_SESSION['seller_user_name'])){
-echo "<script>window.open('../login','_self')</script>";
+require_once "../includes/db.php";
+if (!isset($_SESSION["seller_user_name"])) {
+    echo "<script>window.open('../login','_self')</script>";
 }
-$login_seller_user_name = $_SESSION['seller_user_name'];
-$select_login_seller = $db->select("sellers",array("seller_user_name" => $login_seller_user_name));
+$login_seller_user_name = $_SESSION["seller_user_name"];
+$select_login_seller = $db->select("sellers", [
+    "seller_user_name" => $login_seller_user_name,
+]);
 $row_login_seller = $select_login_seller->fetch();
 $login_seller_id = $row_login_seller->seller_id;
 $login_seller_level = $row_login_seller->seller_level;
 $login_seller_language = $row_login_seller->seller_language;
 
 $enable_unlimited_revisions = $row_general_settings->enable_unlimited_revisions;
-$revisions = array(0,1,2,3,4,5,6,7,8,9,10);
+$revisions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-if($enable_unlimited_revisions == 1){
-  $revisions['unlimited'] = "Unlimited Revisions";
+if ($enable_unlimited_revisions == 1) {
+    $revisions["unlimited"] = "Unlimited Revisions";
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en" class="ui-toolkit">
 <head>
-<title><?= $site_name; ?> - <?= $lang["titles"]["create_proposal"]; ?></title>
+<title><?= $site_name ?> - <?= $lang["titles"]["create_proposal"] ?></title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="<?= $site_desc; ?>">
-<meta name="keywords" content="<?= $site_keywords; ?>">
-<meta name="author" content="<?= $site_author; ?>">
+<meta name="description" content="<?= $site_desc ?>">
+<meta name="keywords" content="<?= $site_keywords ?>">
+<meta name="author" content="<?= $site_author ?>">
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
 <link href="../styles/bootstrap.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-bs4.min.css" rel="stylesheet">
@@ -43,31 +44,29 @@ if($enable_unlimited_revisions == 1){
 <link href="../styles/croppie.css" rel="stylesheet">
 <link href="../styles/create-proposal.css" rel="stylesheet">
 <link href="../styles/create-course.css" rel="stylesheet">
+<link href="../styles/uppy.css" rel="stylesheet">
 <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
 <script src="../js/ie.js"></script>
 <script type="text/javascript" src="../js/sweat_alert.js"></script>
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/croppie.js"></script>
 <script src="https://checkout.stripe.com/checkout.js"></script>
-<?php if(!empty($site_favicon)){ ?>
-<link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
+<?php if (!empty($site_favicon)) { ?>
+<link rel="shortcut icon" href="<?= $site_favicon ?>" type="image/x-icon">
 <?php } ?>
 </head>
 <body class="is-responsive">
-<?php 
-require_once("../includes/user_header.php");
+<?php
+require_once "../includes/user_header.php";
 
-if($seller_verification != "ok"){
-
-  echo "
+if ($seller_verification != "ok") {
+    echo "
     <div class='alert alert-danger rounded-0 mt-0 text-center'>
       Please confirm your email to use this feature.
     </div>
   ";
-
-}else{
-
-?>
+} else {
+     ?>
 
 
 
@@ -76,7 +75,7 @@ if($seller_verification != "ok"){
     <div class="col-xl-12 col-lg-11 col-md-12"><!--- col-xl-8 Starts --->
       <div class="tab-content card card-body"><!--- tab-content Starts --->
         <div class="tab-pane fade show active" id="overview">
-          <?php include("sections/create/course-section.php"); ?>
+          <?php include "sections/create/course-section.php"; ?>
         </div>
       </div><!--- tab-content Ends --->
     </div><!--- col-xl-8 Ends --->
@@ -88,7 +87,7 @@ if($seller_verification != "ok"){
 
 $(document).ready(function(){
   $('.proposal_referral_money').hide();
-  <?php if(@$form_data['proposal_enable_referrals'] == "yes"){ ?>
+  <?php if (@$form_data["proposal_enable_referrals"] == "yes") { ?>
   $('.proposal_referral_money').show();
   <?php } ?>
 
@@ -103,9 +102,9 @@ $(document).ready(function(){
     }
   });
 
-  <?php if(@$form_data['proposal_child_id']){ ?>
+  <?php if (@$form_data["proposal_child_id"]) { ?>
 
-  <?php }else{ ?>
+  <?php } else { ?>
 
   $("#sub-category").hide();	
 
@@ -202,10 +201,13 @@ $(document).ready(function(){
 </script>
 
 
-<?php } ?>
+<?php
+}
+?>
 
-<?php require_once("../includes/footer.php"); ?>
+<?php require_once "../includes/footer.php"; ?>
 <script src="../js/tagsinput.js"></script>
+
 
 
 </body>
