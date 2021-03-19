@@ -221,43 +221,47 @@ $show_img1 = getImageUrl2("proposals","proposal_img1",$proposal_img1);
 ?>
 <!DOCTYPE html>
 <html lang="en" class="ui-toolkit">
+
 <head>
-<title><?= $site_name; ?> - <?= $proposal_title; ?></title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="<?= $proposal_short_desc; ?>">
-<meta name="keywords" content="<?= $proposal_tags; ?>">
-<meta name="author" content="<?= $proposal_seller_user_name; ?>">
-<meta property="og:image" content="<?= $show_img1; ?>"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
-<link href="../../styles/bootstrap.css" rel="stylesheet">
-<link href="../../styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
-<link href="../../styles/styles.css" rel="stylesheet">
-<link href="../../styles/proposalStyles.css" rel="stylesheet">
-<?php 
+    <title><?= $site_name; ?> - <?= $proposal_title; ?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="<?= $proposal_short_desc; ?>">
+    <meta name="keywords" content="<?= $proposal_tags; ?>">
+    <meta name="author" content="<?= $proposal_seller_user_name; ?>">
+    <meta property="og:image" content="<?= $show_img1; ?>" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
+    <link href="../../styles/bootstrap.css" rel="stylesheet">
+    <link href="../../styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
+    <link href="../../styles/styles.css" rel="stylesheet">
+    <link href="../../styles/proposalStyles.css" rel="stylesheet">
+    <?php 
 if($deviceType == "phone"){
 echo '<link href="../../styles/mobile_proposals.css" rel="stylesheet">'; 
 }else{
 echo '<link href="../../styles/desktop_proposals.css" rel="stylesheet">'; 
 }
 ?>
-<link href="../../styles/categories_nav_styles.css" rel="stylesheet">
-<link href="../../font_awesome/css/font-awesome.css" rel="stylesheet">
-<link href="../../styles/owl.carousel.css" rel="stylesheet">
-<link href="../../styles/owl.theme.default.css" rel="stylesheet">
-<link href="../../styles/sweat_alert.css" rel="stylesheet">
-<link href="../../styles/green-audio-player.css" rel="stylesheet">
-<script type="text/javascript" src="../../js/sweat_alert.js"></script>
-<script type="text/javascript" src="../../js/jquery.min.js"></script>
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a39d50ac9681a6c"></script>
-<?php if(!empty($site_favicon)){ ?>
-<link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
-<?php } ?>
+    <link href="../../styles/categories_nav_styles.css" rel="stylesheet">
+    <link href="../../font_awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../styles/owl.carousel.css" rel="stylesheet">
+    <link href="../../styles/owl.theme.default.css" rel="stylesheet">
+    <link href="../../styles/sweat_alert.css" rel="stylesheet">
+    <link href="../../styles/green-audio-player.css" rel="stylesheet">
+    <script type="text/javascript" src="../../js/sweat_alert.js"></script>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a39d50ac9681a6c"></script>
+    <?php if(!empty($site_favicon)){ ?>
+    <link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
+    <?php } ?>
 </head>
+
 <body class="is-responsive">
-<script src="//platform-api.sharethis.com/js/sharethis.js#property=5c812224d11c6a0011c485fd&product=inline-share-buttons"></script>
-<?php
+    <script
+        src="//platform-api.sharethis.com/js/sharethis.js#property=5c812224d11c6a0011c485fd&product=inline-share-buttons">
+    </script>
+    <?php
 
 	require_once("../includes/header.php");
 
@@ -279,50 +283,65 @@ echo '<link href="../../styles/desktop_proposals.css" rel="stylesheet">';
 
 ?>
 
-<div id="image-modal" class="modal fade"><!-- report-modal modal fade Starts -->
-	<div class="modal-dialog" style="max-width:800px;"><!-- modal-dialog Starts -->
-		<div class="modal-content"><!-- modal-content Starts -->
-			<div class="modal-header"><!-- modal-header Starts -->
-				Proposal Image <button class="close" data-dismiss="modal"><span>&times;</span></button>
-			</div><!-- modal-header Ends -->
-			<div class="modal-body text-center"><!-- modal-body p-0 Starts -->
-				
-				<img src="<?= $show_img1; ?>" class='img-fluid'>
+    <div id="image-modal" class="modal fade">
+        <!-- report-modal modal fade Starts -->
+        <div class="modal-dialog" style="max-width:800px;">
+            <!-- modal-dialog Starts -->
+            <div class="modal-content">
+                <!-- modal-content Starts -->
+                <div class="modal-header">
+                    <!-- modal-header Starts -->
+                    Proposal Image <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div><!-- modal-header Ends -->
+                <div class="modal-body text-center">
+                    <!-- modal-body p-0 Starts -->
 
-			</div><!-- modal-body p-0 Ends -->
-		</div><!-- modal-content Ends -->
-	</div><!-- modal-dialog Ends -->
-</div><!-- report-modal modal fade Ends -->
+                    <img src="<?= $show_img1; ?>" class='img-fluid'>
 
-<div id="report-modal" class="modal fade"><!-- report-modal modal fade Starts -->
-	<div class="modal-dialog"><!-- modal-dialog Starts -->
-	<div class="modal-content"><!-- modal-content Starts -->
-		<div class="modal-header p-2 pl-3 pr-3"><!-- modal-header Starts -->
-			Report This Proposal <button class="close" data-dismiss="modal"><span>&times;</span></button>
-		</div><!-- modal-header Ends -->
-		<div class="modal-body"><!-- modal-body p-0 Starts -->
-			<h6>Let us know why you would like to report this Proposal.</h6>
-			<form action="" method="post">
-			<div class="form-group mt-3"><!--- form-group Starts --->
-			<select class="form-control float-right" name="reason" required="">
-			<option value="">Select</option>
-			<option>Non Original Content</option>
-			<option>Inappropriate Proposal</option>
-			<option>Trademark Violation</option>
-			<option>Copyrights Violation</option>
-			</select>
-			</div><!--- form-group Ends --->
-			<br>
-			<br>
-			<div class="form-group mt-1 mb-3"><!--- form-group Starts --->
-				<label> Additional Information </label>
-				<textarea name="additional_information" rows="3" class="form-control" required=""></textarea>
-			</div><!--- form-group Ends --->
-				<button type="submit" name="submit_report" class="float-right btn btn-sm btn-success">
-					Submit Report
-				</button>
-			</form>
-			<?php 
+                </div><!-- modal-body p-0 Ends -->
+            </div><!-- modal-content Ends -->
+        </div><!-- modal-dialog Ends -->
+    </div><!-- report-modal modal fade Ends -->
+
+    <div id="report-modal" class="modal fade">
+        <!-- report-modal modal fade Starts -->
+        <div class="modal-dialog">
+            <!-- modal-dialog Starts -->
+            <div class="modal-content">
+                <!-- modal-content Starts -->
+                <div class="modal-header p-2 pl-3 pr-3">
+                    <!-- modal-header Starts -->
+                    Report This Proposal <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div><!-- modal-header Ends -->
+                <div class="modal-body">
+                    <!-- modal-body p-0 Starts -->
+                    <h6>Let us know why you would like to report this Proposal.</h6>
+                    <form action="" method="post">
+                        <div class="form-group mt-3">
+                            <!--- form-group Starts --->
+                            <select class="form-control float-right" name="reason" required="">
+                                <option value="">Select</option>
+                                <option>Non Original Content</option>
+                                <option>Inappropriate Proposal</option>
+                                <option>Trademark Violation</option>
+                                <option>Copyrights Violation</option>
+                            </select>
+                        </div>
+                        <!--- form-group Ends --->
+                        <br>
+                        <br>
+                        <div class="form-group mt-1 mb-3">
+                            <!--- form-group Starts --->
+                            <label> Additional Information </label>
+                            <textarea name="additional_information" rows="3" class="form-control"
+                                required=""></textarea>
+                        </div>
+                        <!--- form-group Ends --->
+                        <button type="submit" name="submit_report" class="float-right btn btn-sm btn-success">
+                            Submit Report
+                        </button>
+                    </form>
+                    <?php 
 			if(isset($_POST['submit_report'])){
 
 				$reason = $input->post('reason');
@@ -340,124 +359,138 @@ echo '<link href="../../styles/desktop_proposals.css" rel="stylesheet">';
 				}
 			}
 			?>
-			</div><!-- modal-body p-0 Ends -->
-		</div><!-- modal-content Ends -->
-	</div><!-- modal-dialog Ends -->
-</div><!-- report-modal modal fade Ends -->
+                </div><!-- modal-body p-0 Ends -->
+            </div><!-- modal-content Ends -->
+        </div><!-- modal-dialog Ends -->
+    </div><!-- report-modal modal fade Ends -->
 
-<script type="text/javascript" src="../../js/green-audio-player.min.js"></script>
+    <script type="text/javascript" src="../../js/green-audio-player.min.js"></script>
 
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-   	new GreenAudioPlayer('.audio-player .player-1', { showTooltips: true, showDownloadButton: false, enableKeystrokes: true });
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        new GreenAudioPlayer('.audio-player .player-1', {
+            showTooltips: true,
+            showDownloadButton: false,
+            enableKeystrokes: true
+        });
 
-		<?php if(!empty($proposal_img3)){ ?>
-   	new GreenAudioPlayer('.audio-player .player-2', { showTooltips: true, showDownloadButton: false, enableKeystrokes: true });
-   	<?php } ?>
+        <?php if(!empty($proposal_img3)){ ?>
+        new GreenAudioPlayer('.audio-player .player-2', {
+            showTooltips: true,
+            showDownloadButton: false,
+            enableKeystrokes: true
+        });
+        <?php } ?>
 
-   	<?php if(!empty($proposal_img4)){ ?>
-   	new GreenAudioPlayer('.audio-player .player-3', { showTooltips: true, showDownloadButton: false, enableKeystrokes: true });
-   	<?php } ?>
+        <?php if(!empty($proposal_img4)){ ?>
+        new GreenAudioPlayer('.audio-player .player-3', {
+            showTooltips: true,
+            showDownloadButton: false,
+            enableKeystrokes: true
+        });
+        <?php } ?>
 
-	});
-</script>
+    });
+    </script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
+    $(document).ready(function() {
 
-$(document).ready(function(){
+        $(".carousel-item").mouseover(function() {
+            $(this).find(".slide-fullscreen").css('opacity', 1);
+        });
 
-	$(".carousel-item").mouseover(function(){
-		$(this).find(".slide-fullscreen").css('opacity',1);
-	});
+        $(".carousel-item").mouseleave(function() {
+            $(this).find(".slide-fullscreen").css('opacity', 0);
+        });
 
-	$(".carousel-item").mouseleave(function(){
-		$(this).find(".slide-fullscreen").css('opacity',0);
-	});
+        $(".slide-fullscreen").click(function() {
+            var action = $(this).data('action');
+            var img = $('#image-modal .modal-body img');
+            if (action == "img-1") {
+                img.attr("src", "<?= $show_img1; ?>");
+            } else if (action == "img-2") {
+                img.attr("src", "<?= $show_img2; ?>");
+            } else if (action == "img-3") {
+                img.attr("src", "<?= $show_img3; ?>");
+            } else if (action == "img-4") {
+                img.attr("src", "<?= $show_img4; ?>");
+            }
 
-	$(".slide-fullscreen").click(function(){
-		var action = $(this).data('action');
-		var img = $('#image-modal .modal-body img');
-		if(action == "img-1"){
-			img.attr("src", "<?= $show_img1; ?>");
-		}else if(action == "img-2"){
-			img.attr("src", "<?= $show_img2; ?>");
-		}else if(action == "img-3"){
-			img.attr("src", "<?= $show_img3; ?>");
-		}else if(action == "img-4"){
-			img.attr("src", "<?= $show_img4; ?>");
-		}
+            $("#image-modal").modal('show');
 
-		$("#image-modal").modal('show');
+        });
 
-	});
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+            var newForm = e.target.getAttribute("formid"); // newly activated tab
+            var prevForm = e.relatedTarget.getAttribute("formid"); // previous active tab
+            $("select[form=" + prevForm + "]").attr('form', newForm);
+            $("input[form=" + prevForm + "]").attr('form', newForm);
+        })
 
-	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
-	  var newForm = e.target.getAttribute("formid"); // newly activated tab
-	  var prevForm = e.relatedTarget.getAttribute("formid"); // previous active tab
-	  $("select[form="+prevForm+"]").attr('form',newForm);
-	  $("input[form="+prevForm+"]").attr('form',newForm);
-	})
+        function convert_price(amount, name) {
+            $.ajax({
+                method: "POST",
+                url: "../ajax/convert_price",
+                data: {
+                    amount: amount
+                },
+                success: function(data) {
+                    $(name).html(data);
+                    $('#wait').removeClass("loader");
+                }
+            });
+        }
 
-	function convert_price(amount,name){
-		$.ajax({
-		method: "POST",
-		url: "../ajax/convert_price",
-		data: { amount: amount },
-		success:function(data){
-			$(name).html(data);
-			$('#wait').removeClass("loader");
-		}
-		});
-	}
+        function changePrice(name, price, checked) {
 
-	function changePrice(name,price,checked){
-		
-		var value = $(name+'-num').first().text();
-		var num = parseFloat(value);
-		var calc = parseFloat(num)+parseFloat(price);
-		var calc_minus = parseFloat(num)-parseFloat(price);
-		if(checked){
-			amount = calc;
-			$(name+'-num').html(calc);
-		}else{
-			amount = calc_minus;
-			$(name+'-num').html(calc_minus);
-		}
+            var value = $(name + '-num').first().text();
+            var num = parseFloat(value);
+            var calc = parseFloat(num) + parseFloat(price);
+            var calc_minus = parseFloat(num) - parseFloat(price);
+            if (checked) {
+                amount = calc;
+                $(name + '-num').html(calc);
+            } else {
+                amount = calc_minus;
+                $(name + '-num').html(calc_minus);
+            }
 
-		convert_price(amount,name);
+            convert_price(amount, name);
 
-	}
+        }
 
-	$(".buyables li label input").click(function(event){
-		$('#wait').addClass("loader");
-		var id = $(this).data("packagenum");
-		var price = parseFloat($(this).parent().find(".num").text());
-		<?php if($proposal_price == 0){ ?>
-			changePrice('.total-price-'+id,price,this.checked);
-		<?php }else{ ?>
-			changePrice('.total-price',price,this.checked);
-		<?php } ?>
-	});
+        $(".buyables li label input").click(function(event) {
+            $('#wait').addClass("loader");
+            var id = $(this).data("packagenum");
+            var price = parseFloat($(this).parent().find(".num").text());
+            <?php if($proposal_price == 0){ ?>
+            changePrice('.total-price-' + id, price, this.checked);
+            <?php }else{ ?>
+            changePrice('.total-price', price, this.checked);
+            <?php } ?>
+        });
 
-	<?php if($enableVideo == 1){ ?>
-	$("form input[name='proposal_minutes']").keyup(function(event){
-		if($(this).val() != 0){
-			$('#wait').addClass("loader");
-			var quantity = $(this).val();
-			var price = <?= $proposal_price; ?>;
-			var calc = price*quantity;
-			convert_price(calc,".total-price");
-		}
-	});
-	<?php } ?>
-	
-	$('#good').hide();
-	$('#bad').hide();
-});
-</script>
-<?php 
+        <?php if($enableVideo == 1){ ?>
+        $("form input[name='proposal_minutes']").keyup(function(event) {
+            if ($(this).val() != 0) {
+                $('#wait').addClass("loader");
+                var quantity = $(this).val();
+                var price = <?= $proposal_price; ?>;
+                var calc = price * quantity;
+                convert_price(calc, ".total-price");
+            }
+        });
+        <?php } ?>
+
+        $('#good').hide();
+        $('#bad').hide();
+    });
+    </script>
+    <?php 
 	include("../screens/includes/proposal_footer.php");
 	include("../includes/footer.php");
 ?>
 </body>
+
 </html>

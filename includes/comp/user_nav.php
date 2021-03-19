@@ -1,281 +1,291 @@
 <div class="mp-box mp-box-white notop d-lg-block d-none">
 
-	<div class="container">
+    <div class="container">
 
-	<div class="box-row">
+        <div class="box-row">
 
-		<ul class="main-cat-list active">
+            <ul class="main-cat-list active">
 
-			<li class="<?=($lang_dir=="right"?'float-right':'')?>">
+                <li class="<?=($lang_dir=="right"?'float-right':'')?>">
 
-				<a href="<?= $site_url; ?>/dashboard"><?= $lang["menu"]['dashboard']; ?></a>
-				
-			</li>
+                    <a href="<?= $site_url; ?>/dashboard"><?= $lang["menu"]['dashboard']; ?></a>
 
-			<li class="<?=($lang_dir=="right"?'float-right':'')?>">
+                </li>
 
-				<a href="#"><?= $lang["menu"]['selling']; ?> <i class="fa fa-fw fa-caret-down"></i></a>
+                <li class="<?=($lang_dir=="right"?'float-right':'')?>">
 
-				<div class="menu-cont">
+                    <a href="#"><?= $lang["menu"]['selling']; ?> <i class="fa fa-fw fa-caret-down"></i></a>
 
-					<ul>
+                    <div class="menu-cont">
 
-						<?php if($count_active_proposals > 0){ ?>
+                        <ul>
 
-						<li>
-							<a href="<?= $site_url; ?>/selling_orders"><?= $lang["menu"]['orders']; ?></a>
-						</li>
-						
-						<?php } ?>
+                            <?php if($count_active_proposals > 0){ ?>
 
-						<li>
-							<a href="<?= $site_url; ?>/proposals/view_proposals"><?= $lang["menu"]['my_proposals']; ?></a>
-						</li>
+                            <li>
+                                <a href="<?= $site_url; ?>/selling_orders"><?= $lang["menu"]['orders']; ?></a>
+                            </li>
 
-						<li>
-							<a href="<?= $site_url; ?>/proposals/create_course">Create Courses</a>
-						</li>
-						<li>
-							<a href="<?= $site_url; ?>/proposals/create_coupon"><?= $lang["menu"]['create_coupon']; ?></a>
-						</li>
+                            <?php } ?>
 
-						<?php if($count_active_proposals > 0){ ?>
+                            <li>
+                                <a
+                                    href="<?= $site_url; ?>/proposals/view_proposals"><?= $lang["menu"]['my_proposals']; ?></a>
+                            </li>
 
-						<li>
-							<a href="<?= $site_url; ?>/requests/buyer_requests"><?= $lang["menu"]['buyer_requests']; ?></a>
-						</li>
+                            <li>
+                                <a href="<?= $site_url; ?>/proposals/view_courses">My Courses</a>
+                            </li>
+                            <li>
+                                <a href="<?= $site_url; ?>/proposals/create_course">Create Course</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="<?= $site_url; ?>/proposals/create_coupon"><?= $lang["menu"]['create_coupon']; ?></a>
+                            </li>
 
-						<?php } ?>
+                            <?php if($count_active_proposals > 0){ ?>
 
-						<li>
-							<a href="<?= $site_url; ?>/revenue"><?= $lang["menu"]['revenues']; ?></a>
-						</li>
+                            <li>
+                                <a
+                                    href="<?= $site_url; ?>/requests/buyer_requests"><?= $lang["menu"]['buyer_requests']; ?></a>
+                            </li>
 
-						<?php if($count_active_proposals > 0){ ?>
+                            <?php } ?>
 
-						<li>
-							<a href="<?= $site_url; ?>/withdrawal_requests"><?= $lang["menu"]['withdrawal_requests']; ?></a>
-						</li>
+                            <li>
+                                <a href="<?= $site_url; ?>/revenue"><?= $lang["menu"]['revenues']; ?></a>
+                            </li>
 
-						<?php } ?>
+                            <?php if($count_active_proposals > 0){ ?>
 
-					</ul>
-					
-				</div>
+                            <li>
+                                <a
+                                    href="<?= $site_url; ?>/withdrawal_requests"><?= $lang["menu"]['withdrawal_requests']; ?></a>
+                            </li>
 
-			</li>
+                            <?php } ?>
 
-			<li class="<?=($lang_dir=="right"?'float-right':'')?>">
+                        </ul>
 
-				<a href="#">
-					
-					<?= $lang["menu"]['buying']; ?> <i class="fa fa-fw fa-caret-down"></i>
+                    </div>
 
-				</a>
+                </li>
 
-				<div class="menu-cont">
+                <li class="<?=($lang_dir=="right"?'float-right':'')?>">
 
-					<ul>
+                    <a href="#">
 
-						<li>
-							
-							<a href="<?= $site_url; ?>/buying_orders"><?= $lang["menu"]['orders']; ?></a>
+                        <?= $lang["menu"]['buying']; ?> <i class="fa fa-fw fa-caret-down"></i>
 
-						</li>
-						
-						<li>
-							
-							<a href="<?= $site_url; ?>/purchases"><?= $lang["menu"]['purchases']; ?></a>
+                    </a>
 
-						</li>
+                    <div class="menu-cont">
 
-						<li>
-							
-							<a href="<?= $site_url; ?>/favorites"><?= $lang["menu"]['favorites']; ?></a>
+                        <ul>
 
-						</li>
+                            <li>
 
-					</ul>
+                                <a href="<?= $site_url; ?>/buying_orders"><?= $lang["menu"]['orders']; ?></a>
 
-				</div>
-				
-			</li>
+                            </li>
 
+                            <li>
 
+                                <a href="<?= $site_url; ?>/purchases"><?= $lang["menu"]['purchases']; ?></a>
 
-			<li class="<?=($lang_dir=="right"?'float-right':'')?>">
+                            </li>
 
-				<a href="#">
-					
-					<?= $lang["menu"]['requests']; ?> <i class="fa fa-fw fa-caret-down"></i>
+                            <li>
 
-				</a>
+                                <a href="<?= $site_url; ?>/favorites"><?= $lang["menu"]['favorites']; ?></a>
 
-				<div class="menu-cont">
+                            </li>
 
-					<ul>
+                        </ul>
 
-						<li>
-							
-							<a href="<?= $site_url; ?>/requests/manage_requests">
+                    </div>
 
-								<?= $lang["menu"]['manage_requests']; ?>
-								
+                </li>
 
-							</a>
 
 
-						</li>
-						
+                <li class="<?=($lang_dir=="right"?'float-right':'')?>">
 
-						<li>
-							
-							<a href="<?= $site_url; ?>/requests/post_request">
+                    <a href="#">
 
-								<?= $lang["menu"]['post_request']; ?>
+                        <?= $lang["menu"]['requests']; ?> <i class="fa fa-fw fa-caret-down"></i>
 
-							</a>
+                    </a>
 
+                    <div class="menu-cont">
 
-						</li>
+                        <ul>
 
-					</ul>
-					
-				</div>
-				
-			</li>
+                            <li>
 
+                                <a href="<?= $site_url; ?>/requests/manage_requests">
 
-			<li class="<?=($lang_dir=="right"?'float-right':'')?>">
+                                    <?= $lang["menu"]['manage_requests']; ?>
 
-				<a href="#">
-					
-					<?= $lang["menu"]['contacts']; ?> <i class="fa fa-fw fa-caret-down"></i>
 
-				</a>
+                                </a>
 
-				<div class="menu-cont">
 
-					<ul>
+                            </li>
 
-						<li>
-							
-							<a href="<?= $site_url; ?>/manage_contacts?my_buyers">
 
-								<?= $lang["menu"]['my_buyers']; ?>
+                            <li>
 
-							</a>
+                                <a href="<?= $site_url; ?>/requests/post_request">
 
-						</li>
-						
-						<li>
-							
-							<a href="<?= $site_url; ?>/manage_contacts?my_sellers">
+                                    <?= $lang["menu"]['post_request']; ?>
 
-								<?= $lang["menu"]['my_sellers']; ?>
+                                </a>
 
-							</a>
 
-						</li>
+                            </li>
 
-					</ul>
+                        </ul>
 
-				</div>
-				
-			</li>
-            
+                    </div>
 
-		<?php if($enable_referrals == "yes"){ ?>
+                </li>
 
-			<li class="<?=($lang_dir=="right"?'float-right':'')?>">
 
-				<a href="#"><?= $lang["menu"]['my_referrals']; ?> <i class="fa fa-fw fa-caret-down"></i></a>
+                <li class="<?=($lang_dir=="right"?'float-right':'')?>">
 
-				<div class="menu-cont">
+                    <a href="#">
 
-					<ul>
+                        <?= $lang["menu"]['contacts']; ?> <i class="fa fa-fw fa-caret-down"></i>
 
-						<li>
-							
-						<a href="<?= $site_url; ?>/my_referrals"><?= $lang["menu"]['user_referrals']; ?></a>
+                    </a>
 
-						</li>
-						
-						<li>
-							
-						<a href="<?= $site_url; ?>/proposal_referrals"><?= $lang["menu"]['proposal_referrals']; ?></a>
+                    <div class="menu-cont">
 
-						</li>
+                        <ul>
 
-					</ul>
+                            <li>
 
-				</div>
-				
-			</li>
+                                <a href="<?= $site_url; ?>/manage_contacts?my_buyers">
 
-		<?php } ?>
+                                    <?= $lang["menu"]['my_buyers']; ?>
 
+                                </a>
 
-			<li class="<?=($lang_dir=="right"?'float-right':'')?>">
+                            </li>
 
-				<a href="<?= $site_url; ?>/conversations/inbox"><?= $lang["menu"]['inbox_messages']; ?></a>
-				
-			</li>
+                            <li>
 
-			<li class="<?=($lang_dir=="right"?'float-right':'')?>">
+                                <a href="<?= $site_url; ?>/manage_contacts?my_sellers">
 
-				<a href="<?= $site_url; ?>/notifications"><?= $lang["menu"]['notifications']; ?></a>
-				
-			</li>
+                                    <?= $lang["menu"]['my_sellers']; ?>
 
+                                </a>
 
-			<li class="<?=($lang_dir=="right"?'float-right':'')?>">
+                            </li>
 
-				<a href="<?= $site_url; ?>/<?= $_SESSION['seller_user_name']; ?>">
+                        </ul>
 
-								<?= $lang["menu"]['my_profile']; ?>
-					
-				</a>
-				
+                    </div>
 
-			</li>
+                </li>
 
 
-			<li class="<?=($lang_dir=="right"?'float-right':'')?>">
+                <?php if($enable_referrals == "yes"){ ?>
 
-				<a href="<?= $site_url; ?>/settings">
+                <li class="<?=($lang_dir=="right"?'float-right':'')?>">
 
-					<?= $lang["menu"]['settings']; ?> <i class="fa fa-fw fa-caret-down"></i>
+                    <a href="#"><?= $lang["menu"]['my_referrals']; ?> <i class="fa fa-fw fa-caret-down"></i></a>
 
-				</a>
+                    <div class="menu-cont">
 
-					<div class="menu-cont">
+                        <ul>
 
-					<ul>
+                            <li>
 
-						<li>
-							
-						<a href="<?= $site_url; ?>/settings?profile_settings"><?= $lang["menu"]['profile_settings']; ?></a>
+                                <a href="<?= $site_url; ?>/my_referrals"><?= $lang["menu"]['user_referrals']; ?></a>
 
+                            </li>
 
-						</li>
-						
-						<li>
-							
-						<a href="<?= $site_url; ?>/settings?account_settings"><?= $lang["menu"]['account_settings']; ?></a>
+                            <li>
 
-						</li>
+                                <a
+                                    href="<?= $site_url; ?>/proposal_referrals"><?= $lang["menu"]['proposal_referrals']; ?></a>
 
-					</ul>
+                            </li>
 
-				</div>
-				
-			</li>
+                        </ul>
 
-		</ul>
+                    </div>
 
-	</div>
-	
-   </div>
+                </li>
+
+                <?php } ?>
+
+
+                <li class="<?=($lang_dir=="right"?'float-right':'')?>">
+
+                    <a href="<?= $site_url; ?>/conversations/inbox"><?= $lang["menu"]['inbox_messages']; ?></a>
+
+                </li>
+
+                <li class="<?=($lang_dir=="right"?'float-right':'')?>">
+
+                    <a href="<?= $site_url; ?>/notifications"><?= $lang["menu"]['notifications']; ?></a>
+
+                </li>
+
+
+                <li class="<?=($lang_dir=="right"?'float-right':'')?>">
+
+                    <a href="<?= $site_url; ?>/<?= $_SESSION['seller_user_name']; ?>">
+
+                        <?= $lang["menu"]['my_profile']; ?>
+
+                    </a>
+
+
+                </li>
+
+
+                <li class="<?=($lang_dir=="right"?'float-right':'')?>">
+
+                    <a href="<?= $site_url; ?>/settings">
+
+                        <?= $lang["menu"]['settings']; ?> <i class="fa fa-fw fa-caret-down"></i>
+
+                    </a>
+
+                    <div class="menu-cont">
+
+                        <ul>
+
+                            <li>
+
+                                <a
+                                    href="<?= $site_url; ?>/settings?profile_settings"><?= $lang["menu"]['profile_settings']; ?></a>
+
+
+                            </li>
+
+                            <li>
+
+                                <a
+                                    href="<?= $site_url; ?>/settings?account_settings"><?= $lang["menu"]['account_settings']; ?></a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
 
 </div>
