@@ -61,89 +61,97 @@
 	$allowed = array('jpeg','jpg','gif','png');
 
 	?>
-	
-	<li href="#" class="inboxMsg media inboxMsg">
-		
-		<a href="../<?= $sender_profile_link; ?>">
-			<?php if(!empty($sender_image)){ ?>
-		   	<img src="<?= $sender_image; ?>" class="rounded-circle mr-3" width="40">
-			<?php }else{ ?>
-				<img src="../user_images/empty-image.png"  class="rounded-circle mr-3" width="40">
-			<?php } ?>
-		</a>
 
-	    <div class="media-body">
-	      <h6 class="mt-0 mb-1">
-	      	
-	      	<a href="../<?= $sender_profile_link; ?>"><?= $sender_user_name; ?></a>
-	      	<!-- <?= $sender_user_name; ?> -->
+<li href="#" class="inboxMsg media inboxMsg">
 
-	      	<small class="text-muted"><?= $message_date; ?></small>
+    <a href="../<?= $sender_profile_link; ?>">
+        <?php if(!empty($sender_image)){ ?>
+        <img src="<?= $sender_image; ?>" class="rounded-circle mr-3" width="40">
+        <?php }else{ ?>
+        <img src="../user_images/empty-image.png" class="rounded-circle mr-3" width="40">
+        <?php } ?>
+    </a>
 
-	      	<?php if($login_seller_id != $message_sender){ ?>
-						<small>
-							|
-							<a href="#" data-toggle="modal" data-target="#report-modal" class="text-muted">
-								<small><i class="fa fa-flag"></i> Report</small>
-							</a> 
-						</small>
-					<?php } ?>
+    <div class="media-body">
+        <h6 class="mt-0 mb-1">
 
-	      </h6>
-	      
-		<p> <?= $message_desc; ?>  </p>
-	      <?php if(!empty($message_file)){ ?>
-	      <?php if(in_array(pathinfo($message_file,PATHINFO_EXTENSION),$allowed)){ ?>
-	      <br>
-	      <img src="<?= getImageUrl("inbox_messages",$message_file); ?>" class="img-thumbnail" width="100"/>
-	      <?php } ?>
-				<a href="<?= getImageUrl("inbox_messages",$message_file); ?>" download class="d-block mt-2 ml-1">
-					<i class="fa fa-download"></i> <?= $message_file; ?>
-				</a>
-				<?php } ?>
-				<?php if(!$message_offer_id == 0){ ?>
-				<div class="message-offer card mb-3"><!--- message-offer Starts --->
-				<div class="card-header p-2">
-			   <h6 class="mt-md-0 mt-2">
-				<?= $proposal_title; ?>
-				<span class="price float-right d-sm-block d-none"> <?= showPrice($amount); ?> </span>
-				</h6>
-			  </div>
-			<div class="card-body p-2"><!--- card-body Starts --->
-			<p> <?= $description; ?> </p>
-			<p class="d-block d-sm-none"> <b> Price / Amount : </b> <?= showPrice($amount); ?> </p>
-			<p> <b> <i class="fa fa-calendar"></i> Delivery Time : </b> <?= $delivery_time; ?> </p>
-			<?php if($offer_status == "active"){ ?>
-			<?php if($login_seller_id == $sender_id){ ?>
-			<?php }else{ ?>
-			<button id="accept-offer-<?= $message_offer_id; ?>" class="btn btn-success float-right">
-				<?= $lang['button']['accept_offer']; ?>
-			</button>
-			<script>
-			$("#accept-offer-<?= $message_offer_id; ?>").click(function(){
-				single_message_id = "<?= $message_group_id; ?>";
-				offer_id = "<?= $message_offer_id; ?>";
-				$.ajax({
-				method: "POST",
-				url: "accept_offer_modal",
-				data: {single_message_id: single_message_id, offer_id: offer_id}
-				}).done(function(data){
-					$("#accept-offer-div").html(data);
-				});
-			});
-			</script>
-			<?php } ?>
-			<?php }elseif($offer_status == "accepted"){ ?>
-			<button class="btn btn-success rounded-0 mt-2 float-right" disabled>
-				<?= $lang['button']['offer_accepted']; ?>
-			</button>
-			<a href="../order_details?order_id=<?= $order_id; ?>" target="_blank" class="mt-3 mr-3 float-right text-success">
-				<?= $lang['button']['view_order']; ?>
-			</a>
-			<?php } ?>
-			</div><!--- card-body Ends --->
-			</div><!--- message-offer Ends --->
-		<?php } ?>
-	  </div>
-  </li>
+            <a href="../<?= $sender_profile_link; ?>"><?= $sender_user_name; ?></a>
+            <!-- <?= $sender_user_name; ?> -->
+
+            <small class="text-muted"><?= $message_date; ?></small>
+
+            <?php if($login_seller_id != $message_sender){ ?>
+            <small>
+                |
+                <a href="#" data-toggle="modal" data-target="#report-modal" class="text-muted">
+                    <small><i class="fa fa-flag"></i> Report</small>
+                </a>
+            </small>
+            <?php } ?>
+
+        </h6>
+
+        <p> <?= $message_desc; ?> </p>
+        <?php if(!empty($message_file)){ ?>
+        <?php if(in_array(pathinfo($message_file,PATHINFO_EXTENSION),$allowed)){ ?>
+        <br>
+        <img src="<?= getImageUrl("inbox_messages",$message_file); ?>" class="img-thumbnail" width="100" />
+        <?php } ?>
+        <a href="<?= getImageUrl("inbox_messages",$message_file); ?>" download class="d-block mt-2 ml-1">
+            <i class="fa fa-download"></i> <?= $message_file; ?>
+        </a>
+        <?php } ?>
+        <?php if(!$message_offer_id == 0){ ?>
+        <div class="message-offer card mb-3">
+            <!--- message-offer Starts --->
+            <div class="card-header p-2">
+                <h6 class="mt-md-0 mt-2">
+                    <?= $proposal_title; ?>
+                    <span class="price float-right d-sm-block d-none"> <?= showPrice($amount); ?> </span>
+                </h6>
+            </div>
+            <div class="card-body p-2">
+                <!--- card-body Starts --->
+                <p> <?= $description; ?> </p>
+                <p class="d-block d-sm-none"> <b> Price / Amount : </b> <?= showPrice($amount); ?> </p>
+                <p> <b> <i class="fa fa-calendar"></i> Delivery Time : </b> <?= $delivery_time; ?> </p>
+                <?php if($offer_status == "active"){ ?>
+                <?php if($login_seller_id == $sender_id){ ?>
+                <?php }else{ ?>
+                <button id="accept-offer-<?= $message_offer_id; ?>" class="btn btn-success float-right">
+                    <?= $lang['button']['accept_offer']; ?>
+                </button>
+                <script>
+                $("#accept-offer-<?= $message_offer_id; ?>").click(function() {
+                    single_message_id = "<?= $message_group_id; ?>";
+                    offer_id = "<?= $message_offer_id; ?>";
+                    $.ajax({
+                        method: "POST",
+                        url: "accept_offer_modal",
+                        data: {
+                            single_message_id: single_message_id,
+                            offer_id: offer_id
+                        }
+                    }).done(function(data) {
+                        $("#accept-offer-div").html(data);
+                    });
+                });
+                </script>
+                <?php } ?>
+                <?php }elseif($offer_status == "accepted"){ ?>
+                <button class="btn btn-success rounded-0 mt-2 float-right" disabled>
+                    <?= $lang['button']['offer_accepted']; ?>
+                </button>
+                <a href="../order_details?order_id=<?= $order_id; ?>" target="_blank"
+                    class="mt-3 mr-3 float-right text-success">
+                    <?= $lang['button']['view_order']; ?>
+                </a>
+                <?php } ?>
+            </div>
+            <!--- card-body Ends --->
+        </div>
+        <!--- message-offer Ends --->
+        <?php } ?>
+    </div>
+</li>
 <?php } ?>
