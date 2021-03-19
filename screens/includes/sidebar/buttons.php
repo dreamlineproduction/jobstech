@@ -17,7 +17,7 @@
     <i class="fa fa-shopping-cart"></i> &nbsp;<strong>Already Added</strong>
 </button>
 <?php }else{ ?>
-<button type="submit" name="add_cart" value="1" class="btn btn-order bg-dark mb-3">
+<button type="submit" name="add_cart" value="1" class="btn btn-order mb-3">
     <i class="fa fa-shopping-cart"></i> &nbsp;<strong>Add to Cart</strong>
 </button>
 <?php } ?>

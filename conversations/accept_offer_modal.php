@@ -89,20 +89,52 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
 				<button type="button" class="close" data-dismiss="modal"> <span> &times; </span> </button>
 			</div>
 			<div class="modal-body p-0">
-				<div class="order-details">
-					<div class="request-div">
-						<h4 class="mb-3">
-							THIS ORDER IS RELATED TO THE FOLLOWING OFFER:
-							<span class="total-price float-right d-sm-block d-none"> <?= showPrice($amount); ?> </span>
-						</h4>
-						<p> "<?= $description; ?>" </p>
-						<p> <b> Proposal: </b> <?= $proposal_title; ?> </p>
-						<p> <b> Price: </b> <?= showPrice($amount); ?> </p>
-						<p class="processing-fee"> <b> Processing Fee: </b> <?= showPrice($processing_fee); ?> </p>
-						<p> <b> Delivery Time: </b> <?= $delivery_time; ?> </p>
+
+
+			<div class="order-details">
+				<div class="request-div">
+
+<div class="text-center">
+					<h4 class="mb-3">
+					<b>THIS ORDER IS RELATED TO THE FOLLOWING OFFER:</b>
+					
+					</h4>
+					<span class="badge badge-primary price"> <?= showPrice($amount); ?> </span>
+					
+					
 					</div>
+
+					<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Description</th>
+      <th scope="col">Proposal</th>
+      <th scope="col">Price</th>
+      <th scope="col">Delivery Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     
+      <td><?= $description; ?></td>
+      <td><?= $proposal_title; ?></td>
+      <td><?= showPrice($amount); ?></td>
+      <td><?= $delivery_time; ?></td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<small class="mt-4 text-center">
+You are about to pay for a Offer from a seller with the above information. Please discuss with seller before accepting the offer. if you have any further questions related to payment you can reach us with our support team and we will reply you as soon as possible.
+					</small>
+
+				
+					
 				</div>
-				<div class="payment-options-list">
+			</div>
+
+			<div class="payment-options-list">
                	
 		        <?php if($current_balance >= $amount){ ?>
 				<div class="payment-options mb-2">

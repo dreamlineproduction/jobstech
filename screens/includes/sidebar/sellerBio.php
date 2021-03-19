@@ -12,15 +12,15 @@
   <img src="../../user_images/empty-image.png" width="130" class="rounded-circle">
   <?php } ?>
   </center>
-  <h3 class="text-center h3">
+  <h3 class="text-center h6">
   <a class="text-success" href="../../<?= $proposal_seller_user_name; ?>" >
   <?= ucfirst($proposal_seller_user_name); ?>
-  </a> <span class="divider"> </span> <span class="text-muted"><?= $level_title; ?></span>
+  </a> <span class="divider"> </span> <span class="badge badge-dark text-white"><?= $level_title; ?></span>
   </h3>
   <?php if($proposal_seller_vacation == "on"){ ?>
   <a href="#" class="btn btn-lg btn-block btn-message rounded-0">Sorry I’m away</a>
   <?php }else{ ?>
-  <a href="../../conversations/message?seller_id=<?= $proposal_seller_id; ?>" class="btn btn-lg btn-block btn-success rounded-0">Message me</a>
+  <a href="../../conversations/message?seller_id=<?= $proposal_seller_id; ?>" class="btn btn-order primary"><i class="fa fa-comment" aria-hidden="true"></i> Message me</a>
   <?php } ?>
   <hr>
   <div class="row">

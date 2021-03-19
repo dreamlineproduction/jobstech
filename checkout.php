@@ -298,7 +298,7 @@ if(isset($_POST['code'])){
 			<div class="row">
       	<?php if($current_balance >= $sub_total){ ?>
 				<div class="col-md-12 mb-3">
-					<div class="card payment-options">
+					<div class="card shadow-sm payment-options">
 						<div class="card-header">
 							<h5><i class="fa fa-dollar"></i> Available Shopping Balance</h5>
 						</div>
@@ -319,7 +319,7 @@ if(isset($_POST['code'])){
 				</div>
         <?php } ?>
 				<div class="col-md-12 mb-3">
-					<div class="card payment-options">
+					<div class="card shadow-sm payment-options">
 						<div class="card-header">
 						<h5><i class="fa fa-credit-card"></i> Payment Options</h5>
 						</div>
@@ -351,7 +351,7 @@ if(isset($_POST['code'])){
 							?>>
 							</div>
 							<div class="col-11">
-							<img src="images/credit_cards.jpg" height="50" class="ml-2 width-xs-100">
+							<img src="images/credit_cards.jpg" height="30" class="ml-2 width-xs-100">
 							</div>
 							</div>
 							<?php } ?>
@@ -451,7 +451,7 @@ if(isset($_POST['code'])){
 			</div>
 		</div>
 		<div class="col-md-5">
-			<div class="card checkout-details">
+			<div class="card shadow-sm checkout-details">
 				<div class="card-header">
 					<h5> <i class="fa fa-file-text-o"></i> Order Summary </h5>
 				</div>

@@ -33,6 +33,9 @@
 						</li>
 
 						<li>
+							<a href="<?= $site_url; ?>/proposals/create_course">Create Courses</a>
+						</li>
+						<li>
 							<a href="<?= $site_url; ?>/proposals/create_coupon"><?= $lang["menu"]['create_coupon']; ?></a>
 						</li>
 
