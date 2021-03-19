@@ -103,17 +103,98 @@ if(!isset($_GET['paused']) and !isset($_GET['pending']) and !isset($_GET['modifi
         </nav>
     </div>
 
-
-    <div class="container-fluid bg-black-call">
+    
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-md-12">
-                asdad
+            <div class="col-md-8">
+            <p>Graphics & Design / Logo Design </p>
+            <h1>2021 Complete Python Bootcamp From Zero to Hero in Python</h1>
+            <p>Learn Python like a Professional Start from the basics and go all the way to creating your own applications and games</p>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="course-thumbnail shadow-sm mb-5">
+                <div class="card">
+  <div class="card-body">
+  <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
+</div>
+
+<div class="course-price mt-4">
+<h1>$250.00 USD</h1>
+</div>
+
+<div class="add-course-cart mt-4">
+<a href="#" class="btn btn-outline-primary btn-block p-3"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a>
+<a href="#" class="btn btn-success btn-block p-3"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Buy Now</a>
+
+</div>
+
+
+  </div>
+</div>
+            
+
+                </div>
+
+                <div class="card shadow-sm seller-bio mb-3 rounded-0">
+  <div class="card-body ">
+
+    <div class="is-online"> <i class="fa fa-circle"></i> Online </div>
+  
+  <center class="mb-4">
+    <img src="https://s3.us-east-1.amazonaws.com/storage.jobsteh/user_images/3_1611915611.png" width="130" class="rounded-circle">
+    </center>
+  <h3 class="text-center h6">
+  <a class="text-success" href="../../ayanloveme2006">
+  Ayanloveme2006  </a> <span class="divider"> </span> <span class="badge badge-dark text-white">New Seller</span>
+  </h3>
+    <a href="../../conversations/message?seller_id=1" class="btn btn-order primary"><i class="fa fa-comment" aria-hidden="true"></i> Message me</a>
+    <hr>
+  <div class="row">
+  <div class="col-md-6">
+  <p class="text-muted"><i class="fa fa-check pr-1"></i> From</p>
+  </div>
+  <div class="col-md-6">
+  <p> United States</p>
+  </div>
+  <div class="col-md-6">
+  <p class="text-muted"><i class="fa fa-check pr-1"></i>  Speaks</p>
+  </div>
+  <div class="col-md-6">
+  <p>
+    <span>English</span>
+    </p>
+  </div>
+  <div class="col-md-6">
+  <p class="text-muted"><i class="fa fa-check pr-1"></i>  Positive Reviews</p>
+  <p class="text-muted"><i class="fa fa-check pr-1"></i> Recent Delivery</p>
+  </div>
+  <div class="col-md-6">
+  <p> 100% </p>
+  <p> March 13, 2021 </p>
+  </div>
+  </div>
+  <hr>
+  <p class="text-left ">  </p>
+  <a href="../../ayanloveme2006" class="text-success"> Read More </a>
+</div>
+
+</div>
+
+
+
+
+                
             </div>
 
         </div>
 
 
     </div>
+
+
 
 
 
