@@ -73,7 +73,7 @@ if($videoPlugin == 1){
   $proposal_videosettings = $db->select("proposal_videosettings",array('proposal_id'=>$proposal_id));
   $count_videosettings = $proposal_videosettings->rowCount();
   if($count_videosettings == 0){
-    $db->insert("proposal_videosettings",array("proposal_id"=>$proposal_id,"enable"=>0));  
+    $db->insert("proposal_videosettings",array("proposal_id"=>$proposal_id,"enable"=>0, "maximum_subscribers" => 1));
   }
 
   require_once("$dir/plugins/videoPlugin/proposals/checkVideo2.php");
