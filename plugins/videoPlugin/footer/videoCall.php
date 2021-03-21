@@ -6,8 +6,10 @@ if(!function_exists("escape")){
 }
 ?>
 <link rel="stylesheet" href="<?= escape($site_url); ?>/plugins/videoPlugin/styles/video-call.css"/>
-<link rel="stylesheet" href="<?= escape($site_url); ?>/plugins/videoPlugin/styles/video-chat.css"/>
+<link rel="stylesheet" href="<?= escape($site_url); ?>/plugins/videoPlugin/styles/video-call.css"/>
+<!-- <link rel="stylesheet" href="<?= escape($site_url); ?>/plugins/videoPlugin/styles/vanilla-calendar.css"/> -->
 <script src="https://checkout.stripe.com/checkout.js"></script>
+<!-- <script src="<?= escape($site_url); ?>/plugins/videoPlugin/js/vanilla-calendar.js"></script> -->
 <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
 
 <div class="chat-modal"></div>
@@ -36,4 +38,5 @@ if(!function_exists("escape")){
 	data-date="<?= escape(date("F d, Y")); ?>"
 	data-admin-image="<?= $admin_image; ?>"
 	></script>
+	
 <?php } ?>

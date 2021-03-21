@@ -1846,6 +1846,21 @@ a:hover {
   outline: auto 2px Highlight;
   outline: auto 5px -webkit-focus-ring-color;
 }
+.btn_search,
+.btn_join,
+.gnav-header .search-button-wrapper .btn-primary,
+.input-group-append,
+.badge-success,
+.gnav-header .account-nav a.support-que,
+.hero .search-box.focus .search-magnifier,
+.proposal-reviews .active,
+.btn-order.primary,
+.bg-success,
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background: #303030 !important;
+  font-weight: 600;
+}
 
 .ui-toolkit a:hover,
 .ui-toolkit a:focus,

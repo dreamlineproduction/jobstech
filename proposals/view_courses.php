@@ -118,8 +118,23 @@ if(!isset($_GET['paused']) and !isset($_GET['pending']) and !isset($_GET['modifi
                 </a>
                 <div class="clearfix"></div>
             </div>
-            <div class="col-md-12 mt-4 mb-5">
-                <div class="row">
+
+
+<div class="col-md-12">
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="all-courses-tab" data-toggle="pill" href="#all-courses" role="tab" aria-controls="all-courses" aria-selected="true">All Courses</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="course-bookings-tab" data-toggle="pill" href="#course-bookings" role="tab" aria-controls="course-bookings" aria-selected="false">Bookings</a>
+  </li>
+
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="all-courses" role="tabpanel" aria-labelledby="all-courses-tab">
+  <div class="card mb-5">
+  <div class="card-body shadow-sm">
+  <div class="row">
                     <div class="col-md-3  course-cards mb-4">
                         <div class="card shadow-sm">
                             <img class="card-img-top"
@@ -198,7 +213,75 @@ if(!isset($_GET['paused']) and !isset($_GET['pending']) and !isset($_GET['modifi
                     </div>
 
                 </div>
-            </div>
+                </div>
+</div>
+  
+  
+  </div>
+  <div class="tab-pane fade" id="course-bookings" role="tabpanel" aria-labelledby="course-bookings-tab">
+  <div class="card mb-5">
+  <div class="card-body shadow-sm">
+  <div class="row">
+  <table class="table table-borderless">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Course ID</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Enrolled Students</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">#JB1255451</th>
+      <td>Graphic Design Masterclass - Learn GREAT Design</td>
+      <td>10/12</td>
+      <td>28-03-2021</td>
+      <td>12:30PM - 2:30PM</td>
+      <td><span class="badge badge-primary">Active</span></td>
+    </tr>
+    <tr>
+      <th scope="row">#JB1255451</th>
+      <td>Graphic Design Masterclass - Learn GREAT Design</td>
+      <td>10/12</td>
+      <td>28-03-2021</td>
+      <td>12:30PM - 2:30PM</td>
+      <td><span class="badge badge-primary">Active</span></td>
+    </tr>
+    <tr>
+      <th scope="row">#JB1255451</th>
+      <td>Graphic Design Masterclass - Learn GREAT Design</td>
+      <td>10/12</td>
+      <td>28-03-2021</td>
+      <td>12:30PM - 2:30PM</td>
+      <td><span class="badge badge-primary">Active</span></td>
+    </tr>
+    <tr>
+      <th scope="row">#JB1255451</th>
+      <td>Graphic Design Masterclass - Learn GREAT Design</td>
+      <td>10/12</td>
+      <td>28-03-2021</td>
+      <td>12:30PM - 2:30PM</td>
+      <td><span class="badge badge-primary">Active</span></td>
+    </tr>
+  </tbody>
+</table>
+
+                </div>
+                </div>
+</div>
+  
+  </div>
+  
+</div>
+</div>
+
+
+
+
+         
         </div>
     </div>
     <div id="featured-proposal-modal"></div>
