@@ -110,6 +110,32 @@ if(!isset($_GET['paused']) and !isset($_GET['pending']) and !isset($_GET['modifi
             <p>Graphics & Design / Logo Design </p>
             <h1>2021 Complete Python Bootcamp From Zero to Hero in Python</h1>
             <p>Learn Python like a Professional Start from the basics and go all the way to creating your own applications and games</p>
+
+            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur, erat vel auctor vehicula, diam turpis ultrices dui, quis pharetra est magna sed augue.</h5>
+
+            <p class="mt-3 font-weight-bold"><span class="badge badge-warning mr-2">Bestseller</span> <span class=" text-warning pt-2">4.5</span> 
+            <img class="" src="../images/user_rate_full.png">
+            <img class="" src="../images/user_rate_full.png">
+            <img class="" src="../images/user_rate_full.png">
+            <img class="" src="../images/user_rate_full.png">
+            <img class="" src="../images/user_rate_full.png">
+            (142,855 ratings)
+            <span>754,354 students</span> 
+            </p>
+
+            
+                <div class="">
+                    <span class="mr-3"><i class="fa fa-info-circle mr-1" aria-hidden="true"></i>Last updated 3/2021</span>
+                    <span><i class="fa fa-language mr-1" aria-hidden="true"></i>English</span>
+                </div>
+                <div class="mt-2">
+                    <span class=""><i class="fa fa-cc mr-1" aria-hidden="true"></i>English [Auto], French [Auto], German [Auto], Italian [Auto], Portuguese [Auto], Spanish [Auto]</span>
+                    
+                </div>
+                
+                   
+                
+            
             </div>
 
 
