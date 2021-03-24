@@ -27,6 +27,10 @@ NB: If changes don't apply, try adding "!important" For example:
     margin-bottom: 8px;
 }
 
+.description {
+    padding: 25px;
+}
+
 .course-content,
 .description {
     margin-top: 40px;
@@ -43,7 +47,7 @@ NB: If changes don't apply, try adding "!important" For example:
 
 .accordion .card h2 {
     background: url(../images/svg/caret-up-solid.svg) no-repeat calc(100% - 10px) center;
-    background-size: 20px;
+    background-size: 12px;
     cursor: pointer;
     font-size: 18px;
 }
