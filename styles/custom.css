@@ -10,4 +10,57 @@ NB: If changes don't apply, try adding "!important" For example:
 
 */
 
+
 /********** Start Writing Your Own Custom CSS Code Here ***********/
+
+.what-you-learn {
+    background-color: rgb(241, 241, 241);
+    padding: 25px;
+    border-radius: 2px;
+}
+
+.what-you-learn ul {
+    padding-left: 13px;
+}
+
+.what-you-learn ul li {
+    margin-bottom: 8px;
+}
+
+.description {
+    padding: 25px;
+}
+
+.course-content,
+.description {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.accordion {
+    margin-top: 5px;
+}
+
+.accordion .card {
+    border: 1px solid #ababab;
+}
+
+.accordion .card h2 {
+    background: url(../images/svg/caret-up-solid.svg) no-repeat calc(100% - 10px) center;
+    background-size: 12px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.accordion .card h2.collapsed {
+    background-image: url(../images/svg/caret-down-solid.svg);
+}
+
+.course-content .card-head {
+    padding: 20px;
+    background-color: rgb(241, 241, 241);
+}
+
+.course-content .card-body {
+    background-color: #f7f7f7;
+}
