@@ -28,6 +28,8 @@ while($row_cart = $select_cart->fetch()){
 	$sub_total = $proposal_price * $proposal_qty;
 	$total += $sub_total;
 
+	$class_date = $row_cart->class_date;
+	$class_time = $row_cart->class_time;
 }
 $processing_fee = processing_fee($total);
 
@@ -115,6 +117,7 @@ if(isset($_GET['remove_proposal'])){
 							<div class="col-lg-9">
 								<a href="proposals/<?= $proposal_seller_user_name; ?>/<?= $proposal_url; ?>">
 									<h6 class="text-success make-black"><?= $proposal_title; ?> </h6>
+                                    <small><?php echo date('F d, Y', strtotime($class_date)) ?> (<?php echo $class_time ?>)</small>
 									<ul class="ml-0 mb-2" style="list-style-type: circle;">
 			                    <?php
 			                  	while($extra = $cart_extras->fetch()){
@@ -135,7 +138,7 @@ if(isset($_GET['remove_proposal'])){
 						</div>
 						<hr>
 						<h6 class="clearfix">
-							<?= ($video == 1)?$lang['cart']['proposal_call_minutes']:$lang['cart']['proposal_qty']; ?>
+							<?= $lang['cart']['proposal_qty']; ?>
 							<strong class="float-right price ml-2 mt-2">
 								<?= showPrice($proposal_price*$proposal_qty); ?>
 							</strong>

@@ -2,6 +2,7 @@
 
 /// Single Proposal Checkout Order Code Starts ///
 if(isset($_SESSION['checkout_seller_id'])){
+
 	$buyer_id = $_SESSION['checkout_seller_id'];
 	$proposal_id = $_SESSION['proposal_id'];
 	$order_price = $_SESSION['proposal_price'];
@@ -61,6 +62,13 @@ if(isset($_SESSION['checkout_seller_id'])){
 	if($videoPlugin == 1){
 		if(isset($_SESSION['proposal_minutes'])){
 			$order_values['order_minutes'] = $_SESSION['proposal_minutes'].":00";
+		}
+		if(isset($_SESSION['c_class_time'])){
+			$order_values['class_date'] = $_SESSION['c_class_date'];
+			$order_values['class_time'] = $_SESSION['c_class_time'];
+
+            $remaining_seats_res = $db->select('class_remainingseats', array('proposal_id' => $proposal_id, 'class_date' => $order_values['class_date']))->fetch();
+            $db->update('class_remainingseats', array('remaining_seats' => $remaining_seats_res->remaining_seats - 1), array('id' => $remaining_seats_res->id));
 		}
 	}
 
@@ -161,6 +169,8 @@ if(isset($_SESSION['checkout_seller_id'])){
 		unset($_SESSION['proposal_revisions']);
 		unset($_SESSION['proposal_minutes']);
 		unset($_SESSION['method']);
+        unset($_SESSION['c_class_date']);
+        unset($_SESSION['c_class_time']);
 
 		echo "
 		<script>

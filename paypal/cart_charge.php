@@ -38,6 +38,8 @@
       if($videoPlugin == 1){
          if($video == 1){
             $o_data['video'] = 1;
+            $o_data['class_date'] = $row_cart->class_date;
+            $o_data['class_time'] = $row_cart->class_time;
          }
       }
 

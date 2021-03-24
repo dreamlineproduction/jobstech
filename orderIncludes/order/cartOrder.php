@@ -11,7 +11,7 @@ if(isset($_SESSION['cart_seller_id'])){
 	
 	$sel_cart = $db->select("temp_orders",array("buyer_id"=>$buyer_id,"reference_no"=>$reference_no,"type"=>"cart_item"));
 	while($row_cart = $sel_cart->fetch()){
-	
+
 		$item_id = $row_cart->id;
 		$proposal_id = $row_cart->content_id;
 		$proposal_price = $row_cart->price;
@@ -20,6 +20,8 @@ if(isset($_SESSION['cart_seller_id'])){
 		$revisions = $row_cart->revisions;
 		if($videoPlugin == 1){
 			$video = $row_cart->video;
+			$class_date = $row_cart->class_date;
+			$class_time = $row_cart->class_time;
 		}
 
 		$sub_total = $row_cart->total;
@@ -76,6 +78,12 @@ if(isset($_SESSION['cart_seller_id'])){
 			if($video == 1){
 				$order_values['order_minutes'] = $row_cart->qty.":00";
 				$order_values['order_qty'] = 1;
+
+                $order_values['class_date'] = $class_date;
+                $order_values['class_time'] = $class_time;
+
+                $remaining_seats_res = $db->select('class_remainingseats', array('proposal_id' => $proposal_id, 'class_date' => $order_values['class_date']))->fetch();
+                $db->update('class_remainingseats', array('remaining_seats' => $remaining_seats_res->remaining_seats - 1), array('id' => $remaining_seats_res->id));
 			}
 		}
 
@@ -181,7 +189,9 @@ if(isset($_SESSION['cart_seller_id'])){
 	unset($_SESSION['cart_seller_id']);
 	unset($_SESSION['reference_no']);
 	unset($_SESSION['method']);
-	
+	unset($_SESSION['c_class_date']);
+	unset($_SESSION['c_class_time']);
+
 	echo "<script>alert('Your order has been placed, Thank you.');</script>";
 	echo "<script>window.open('buying_orders','_self')</script>";
 

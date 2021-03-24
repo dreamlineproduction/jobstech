@@ -487,9 +487,10 @@ echo '<link href="../../styles/desktop_proposals.css" rel="stylesheet">';
         $('#bad').hide();
     });
     </script>
-    <?php 
+    <?php
+    $video_proposal_id = $proposal_id;
 	include("../screens/includes/proposal_footer.php");
-	include("../includes/footer.php");
+    include("../includes/footer.php");
 ?>
 </body>
 
