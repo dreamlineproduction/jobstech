@@ -1,4 +1,6 @@
+<?php if ($proposal_seller_user_name != @$_SESSION['seller_user_name']) : ?>
 <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px"></div>
+<?php endif; ?>
 
 <h3>
     Price:
@@ -7,7 +9,11 @@
         </span>
 </h3>
 
-<form method="post" action="../../checkout" id="checkoutForm" class="<?= ($lang_dir == "right" ? 'text-right' : '') ?> d-none">
+<div id="notAvailable" class="d-none">
+    <?php echo $lang['seat-not-available'] ?>
+</div>
+
+<form method="post" action="../../checkout" id="checkoutForm" class="<?= ($lang_dir == "right" ? 'text-right' : '') ?> <?= $proposal_seller_user_name != @$_SESSION['seller_user_name'] ? 'd-none' : '' ?>">
     <input type="hidden" name="proposal_id" value="<?= $proposal_id; ?>">
     <input type="hidden" name="proposal_qty" value="1">
     <input type="hidden" name="class_date" id="classDate" value="">

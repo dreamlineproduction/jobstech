@@ -73,8 +73,10 @@ foreach ($days as $day) {
                 success: function (data) {
                     if (data.available === true) {
                         $('#checkoutForm').removeClass('d-none');
+                        $('#notAvailable').addClass('d-none');
                     } else {
                         $('#checkoutForm').addClass('d-none');
+                        $('#notAvailable').removeClass('d-none');
                     }
                 }
             });

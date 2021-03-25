@@ -23,7 +23,14 @@ if(isset($_GET['cancel_order'])){
 		$buyer_id = $row_order->buyer_id;
 		$order_price = $row_order->order_price;
 		$order_number = $row_order->order_number;
-			
+
+		$proposal_id = $row_order->proposal_id;
+		$class_date = $row_order->class_date;
+
+		if (!empty($class_date)) {
+			$db->query("update class_remainingseats set remaining_seats=remaining_seats+1 where proposal_id = $proposal_id AND class_date = '$class_date'");
+		}
+
 		$message = "Order Cancelled By Customer Support";
 
 		date_default_timezone_set($site_timezone);

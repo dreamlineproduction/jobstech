@@ -3,9 +3,9 @@
 @session_start();
 require_once("../../../../includes/db.php");
 
-if(!isset($_SESSION['seller_user_name'])){
+/*if(!isset($_SESSION['seller_user_name'])){
 	echo "<script>window.open('$site_url/login','_self')</script>";
-}
+}*/
 
 $date = $input->post("course_date");
 $proposal_id = $input->post("proposal");
