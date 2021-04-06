@@ -5,23 +5,23 @@ require_once("includes/db.php");
 require_once("functions/email.php");
 require_once("functions/functions.php");
 
-if(!isset($_SESSION['seller_user_name'])){
-  echo "<script>window.open('login','_self')</script>";  
+if (!isset($_SESSION['seller_user_name'])) {
+    echo "<script>window.open('login','_self')</script>";
 }
 
 $login_seller_user_name = $_SESSION['seller_user_name'];
-$select_login_seller = $db->select("sellers",array("seller_user_name" => $login_seller_user_name));
+$select_login_seller = $db->select("sellers", array("seller_user_name" => $login_seller_user_name));
 $row_login_seller = $select_login_seller->fetch();
 $login_seller_id = $row_login_seller->seller_id;
 $login_seller_timezone = $row_login_seller->seller_timezone;
 
 $order_id = $input->get("order_id");
 
-$get_orders = $db->query("select * from orders where (seller_id=$login_seller_id or buyer_id=$login_seller_id) AND order_id=:o_id",array("o_id"=>$order_id));
+$get_orders = $db->query("select * from orders where (seller_id=$login_seller_id or buyer_id=$login_seller_id) AND order_id=:o_id", array("o_id" => $order_id));
 $count_orders = $get_orders->rowCount();
 
-if($count_orders == 0){
-  echo "<script>window.open('index.php?not_available','_self')</script>";
+if ($count_orders == 0) {
+    echo "<script>window.open('index.php?not_available','_self')</script>";
 }
 
 $row_orders = $get_orders->fetch();
@@ -33,62 +33,63 @@ $proposal_id = $row_orders->proposal_id;
 $order_status = $row_orders->order_status;
 $complete_time = $row_orders->complete_time;
 
-if($videoPlugin == 1){
-  require_once("plugins/videoPlugin/order_details.php");  
-}else{
-  $enableVideo = 0;
-  $count_schedule = 0;
+if ($videoPlugin == 1) {
+    require_once("plugins/videoPlugin/order_details.php");
+} else {
+    $enableVideo = 0;
+    $count_schedule = 0;
 }
 
 $get_site_logo_image = $row_general_settings->site_logo_image;
 $order_auto_complete = $row_general_settings->order_auto_complete;
 
-if($order_status == "delivered"){
-  $currentDate = new DateTime("now");
-  if(!empty($complete_time)){
-    $endDate = new DateTime($complete_time);
-    if($currentDate >= $endDate){
-      require_once("orderIncludes/orderComplete.php");
+if ($order_status == "delivered") {
+    $currentDate = new DateTime("now");
+    if (!empty($complete_time)) {
+        $endDate = new DateTime($complete_time);
+        if ($currentDate >= $endDate) {
+            require_once("orderIncludes/orderComplete.php");
+        }
     }
-  }
 }
 
-if($seller_id == $login_seller_id){
-  $receiver_id = $buyer_id;
-}else{
-  $receiver_id = $seller_id;
+if ($seller_id == $login_seller_id) {
+    $receiver_id = $buyer_id;
+} else {
+    $receiver_id = $seller_id;
 }
 
-function watermarkImage($image,$data){
-  
-  global $site_watermark;
+function watermarkImage($image, $data)
+{
 
-  $fileType = pathinfo($image,PATHINFO_EXTENSION);
-  if($fileType == "jpg" or $fileType == "jpeg" or $fileType == "png"){
+    global $site_watermark;
 
-    $to_image = imagecreatefromstring(file_get_contents($data));
-    $stamp = imagecreatefromstring(file_get_contents("images/$site_watermark"));
-    $spacing = 15;
-    $spacing_double = $spacing  * 2;
+    $fileType = pathinfo($image, PATHINFO_EXTENSION);
+    if ($fileType == "jpg" or $fileType == "jpeg" or $fileType == "png") {
 
-    list($width,$height) = getimagesize($data);
-    list($stamp_width,$stamp_height) = getimagesize("images/$site_watermark");
+        $to_image = imagecreatefromstring(file_get_contents($data));
+        $stamp = imagecreatefromstring(file_get_contents("images/$site_watermark"));
+        $spacing = 15;
+        $spacing_double = $spacing * 2;
 
-    $offsetX = ($width  - ($stamp_width + $spacing)) / 2;
-    $offsetY = ($height - ($stamp_height + $spacing)) / 2;
-    
-    imagecopy($to_image, $stamp, $offsetX, $offsetY, 0, 0, $stamp_width, $stamp_height);
+        list($width, $height) = getimagesize($data);
+        list($stamp_width, $stamp_height) = getimagesize("images/$site_watermark");
 
-    ob_start();
-    imagejpeg($to_image,null,100);
-    $image_contents = ob_get_clean();
-    imagedestroy($to_image);
+        $offsetX = ($width - ($stamp_width + $spacing)) / 2;
+        $offsetY = ($height - ($stamp_height + $spacing)) / 2;
 
-    uploadToS3("$image","",$image_contents);
+        imagecopy($to_image, $stamp, $offsetX, $offsetY, 0, 0, $stamp_width, $stamp_height);
 
-  }else{
-    uploadToS3("$image",$data);
-  }
+        ob_start();
+        imagejpeg($to_image, null, 100);
+        $image_contents = ob_get_clean();
+        imagedestroy($to_image);
+
+        uploadToS3("$image", "", $image_contents);
+
+    } else {
+        uploadToS3("$image", $data);
+    }
 
 }
 
@@ -100,84 +101,84 @@ function watermarkImage($image,$data){
 
 <head>
 
-  <title><?= $site_name; ?> - Order Management For: #<?= $order_number; ?></title>
-  
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="<?= $site_desc; ?>">
-  <meta name="keywords" content="<?= $site_keywords; ?>">
-  <meta name="author" content="<?= $site_author; ?>">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
-  <link href="styles/bootstrap.css" rel="stylesheet">
-  <link href="styles/fontawesome-stars.css" rel="stylesheet">
-  <link href="styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
-  <link href="styles/styles.css" rel="stylesheet">
-  <link href="styles/proposalStyles.css" rel="stylesheet">
-  <link href="styles/user_nav_styles.css" rel="stylesheet">
-  <link href="font_awesome/css/font-awesome.css" rel="stylesheet">
-  <link href="styles/owl.carousel.css" rel="stylesheet">
-  <link href="styles/owl.theme.default.css" rel="stylesheet">
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script src="https://checkout.stripe.com/checkout.js"></script>
-  <link href="styles/sweat_alert.css" rel="stylesheet">
-  <link href="styles/animate.css" rel="stylesheet">
-  <link href="styles/jquery.datetimepicker.css" rel="stylesheet">
-  <script type="text/javascript" src="js/ie.js"></script>
-  <script type="text/javascript" src="js/sweat_alert.js"></script>
-  <script type="text/javascript" src="js/jquery.barrating.min.js"></script>
-  <script type="text/javascript" src="js/jquery.sticky.js"></script>
-  <script type="text/javascript" src="js/moment.min.js"></script>
-  <script type="text/javascript" src="js/jquery.datetimepicker.js"></script>
-  <?php if(!empty($site_favicon)){ ?>
-    <link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
-  <?php } ?>
+    <title><?= $site_name; ?> - Order Management For: #<?= $order_number; ?></title>
 
-  <!-- Include the PayPal JavaScript SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=<?= $paypal_client_id; ?>&disable-funding=credit,card&currency=<?= $paypal_currency_code; ?>"></script>
-  <script>
-    function parseTime(s) {
-        var c = s.split(':');
-        return parseInt(c[0]) * 60 + parseInt(c[1]);
-    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="<?= $site_desc; ?>">
+    <meta name="keywords" content="<?= $site_keywords; ?>">
+    <meta name="author" content="<?= $site_author; ?>">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
+    <link href="styles/bootstrap.css" rel="stylesheet">
+    <link href="styles/fontawesome-stars.css" rel="stylesheet">
+    <link href="styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/proposalStyles.css" rel="stylesheet">
+    <link href="styles/user_nav_styles.css" rel="stylesheet">
+    <link href="font_awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="styles/owl.carousel.css" rel="stylesheet">
+    <link href="styles/owl.theme.default.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <link href="styles/sweat_alert.css" rel="stylesheet">
+    <link href="styles/animate.css" rel="stylesheet">
+    <link href="styles/jquery.datetimepicker.css" rel="stylesheet">
+    <script type="text/javascript" src="js/ie.js"></script>
+    <script type="text/javascript" src="js/sweat_alert.js"></script>
+    <script type="text/javascript" src="js/jquery.barrating.min.js"></script>
+    <script type="text/javascript" src="js/jquery.sticky.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/jquery.datetimepicker.js"></script>
+    <?php if (!empty($site_favicon)) { ?>
+        <link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
+    <?php } ?>
 
-    function convertHours(mins) {
-        var hour = Math.floor(mins / 60);
-        var mins = mins % 60;
-        var converted = pad(hour, 2) + ':' + pad(mins, 2);
-        return converted;
-    }
-
-    function pad(str, max) {
-        str = str.toString();
-        return str.length < max ? pad("0" + str, max) : str;
-    }
-
-    function calculate_time_slot(start_time, end_time, interval = "30") {
-        var i, formatted_time;
-        var time_slots = new Array();
-        for (var i = start_time; i <= end_time; i = i + interval) {
-            formatted_time = convertHours(i);
-            time_slots.push(formatted_time);
+    <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=<?= $paypal_client_id; ?>&disable-funding=credit,card&currency=<?= $paypal_currency_code; ?>"></script>
+    <script>
+        function parseTime(s) {
+            var c = s.split(':');
+            return parseInt(c[0]) * 60 + parseInt(c[1]);
         }
-        return time_slots;
-    }
 
-    
-    function alert_success(text,url){
-      swal({
-        type: 'success',
-        timer : 3000,
-        text: text,
-        onOpen: function(){
-          swal.showLoading()
+        function convertHours(mins) {
+            var hour = Math.floor(mins / 60);
+            var mins = mins % 60;
+            var converted = pad(hour, 2) + ':' + pad(mins, 2);
+            return converted;
         }
-      }).then(function(){
-        if(url != ""){
-          window.open(url,'_self');
+
+        function pad(str, max) {
+            str = str.toString();
+            return str.length < max ? pad("0" + str, max) : str;
         }
-      });
-    }   
-  </script>
+
+        function calculate_time_slot(start_time, end_time, interval = "30") {
+            var i, formatted_time;
+            var time_slots = new Array();
+            for (var i = start_time; i <= end_time; i = i + interval) {
+                formatted_time = convertHours(i);
+                time_slots.push(formatted_time);
+            }
+            return time_slots;
+        }
+
+
+        function alert_success(text, url) {
+            swal({
+                type: 'success',
+                timer: 3000,
+                text: text,
+                onOpen: function () {
+                    swal.showLoading()
+                }
+            }).then(function () {
+                if (url != "") {
+                    window.open(url, '_self');
+                }
+            });
+        }
+    </script>
 </head>
 
 <body class="is-responsive">
@@ -186,93 +187,97 @@ function watermarkImage($image,$data){
 <?php require_once("orderIncludes/orderStatusBar.php"); ?>
 
 <div class="container order-page mt-2">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-10 offset-md-1">
-          <ul class="nav nav-tabs mb-3 mt-3">
-            <li class="nav-item">
-              <a href="#order-activity" data-toggle="tab" class="nav-link active make-black ">Order Activity</a>
-            </li>
-            <?php if($order_status == "pending" or $order_status == "progress" or $order_status == "delivered" or $order_status == "revision requested"){ ?>
-            <li class="nav-item">
-              <a href="#resolution-center" data-toggle="tab" class="nav-link make-black">Resolution Center</a>
-            </li>
-            <?php } ?>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-12 tab-content mt-2 mb-4">
-      <div id="order-activity" class="tab-pane fade show active">
-        <div class="row">
-          <div class="col-md-10 offset-md-1">
-
-            <?php require_once("orderIncludes/orderDetailsCard.php"); ?>
-            <?php require_once("orderIncludes/orderTimeCounterBuyerInstruction.php"); ?>
-            <?php 
-              if($videoPlugin == 1){
-                require_once("plugins/videoPlugin/videoCall/setVideoSessionTime.php");
-              }
-
-            ?>
-            <div id="order-conversations" class="mt-3">
-              <?php require_once("orderIncludes/order_conversations.php"); ?>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <ul class="nav nav-tabs mb-3 mt-3">
+                        <li class="nav-item">
+                            <a href="#order-activity" data-toggle="tab" class="nav-link active make-black ">Order
+                                Activity</a>
+                        </li>
+                        <?php if ($order_status == "pending" or $order_status == "progress" or $order_status == "delivered" or $order_status == "revision requested") { ?>
+                            <li class="nav-item">
+                                <a href="#resolution-center" data-toggle="tab" class="nav-link make-black">Resolution
+                                    Center</a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
             </div>
-
-            <?php require_once("orderIncludes/orderDeliverButton.php"); ?>
-            
-            <div class="proposal_reviews mt-5">
-              <?php
-
-                if($order_status == "completed"){ 
-                 include("orderIncludes/orderReviews.php");
-                 if($count_buyer_reviews == 1 AND $login_seller_id == $buyer_id){
-                  include("orderIncludes/orderTip.php");
-                 }
-                } 
-              ?>
-            </div>
-          <?php require_once("orderIncludes/insertMessageBox.php"); ?>
-          </div>
         </div>
-      </div>
-      <div id="resolution-center" class="tab-pane fade">
-        <?php
-          if($order_status == "pending" or $order_status == "progress" or $order_status == "delivered" or $order_status == "revision requested"){ 
-            require_once("orderIncludes/resolutionCenter.php");
-          } 
-        ?>
-      </div>
+        <div class="col-md-12 tab-content mt-2 mb-4">
+            <div id="order-activity" class="tab-pane fade show active">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+
+                        <?php require_once("orderIncludes/orderDetailsCard.php"); ?>
+                        <?php require_once("orderIncludes/orderTimeCounterBuyerInstruction.php"); ?>
+                        <?php
+                        if ($videoPlugin == 1) {
+                            require_once("plugins/videoPlugin/videoCall/setVideoSessionTime.php");
+                        }
+
+                        ?>
+                        <div id="order-conversations" class="mt-3">
+                            <?php require_once("orderIncludes/order_conversations.php"); ?>
+                        </div>
+
+                        <?php require_once("orderIncludes/orderDeliverButton.php"); ?>
+
+                        <div class="proposal_reviews mt-5">
+                            <?php
+
+                            if ($order_status == "completed") {
+                                include("orderIncludes/orderReviews.php");
+                                if ($count_buyer_reviews == 1 and $login_seller_id == $buyer_id) {
+                                    include("orderIncludes/orderTip.php");
+                                }
+                            }
+                            ?>
+                        </div>
+                        <?php require_once("orderIncludes/insertMessageBox.php"); ?>
+                    </div>
+                </div>
+            </div>
+            <div id="resolution-center" class="tab-pane fade">
+                <?php
+                if ($order_status == "pending" or $order_status == "progress" or $order_status == "delivered" or $order_status == "revision requested") {
+                    require_once("orderIncludes/resolutionCenter.php");
+                }
+                ?>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <?php require_once("orderIncludes/modals/reportModal.php"); ?>
 
-<?php if($videoPlugin == 1){ require_once("plugins/videoPlugin/videoCall/videoCallModal.php"); } ?>
+<?php if ($videoPlugin == 1) {
+    require_once("plugins/videoPlugin/videoCall/videoCallModal.php");
+} ?>
 
 <?php require_once("orderIncludes/modals/deliverOrderRevisionRequestModal.php"); ?>
 <?php require_once("orderIncludes/javascript/orderjs.php"); ?>
 
-<?php if($videoPlugin == 1){ ?>
+<?php if ($videoPlugin == 1) { ?>
 
-<script type="text/javascript" src="plugins/videoPlugin/js/browser.js"></script>
-<script 
-  type="text/javascript" 
-  id="call-js"
-  src="plugins/videoPlugin/js/orderVideoCall.js"
-  data-base-url="<?= $site_url; ?>"
-  data-order-id="<?= $order_id; ?>"
-  data-proposal-id="<?= $proposal_id; ?>"
-  data-login-seller-id="<?= $login_seller_id; ?>"
-  data-seller-id="<?= $seller_id; ?>"
-  data-buyer-id="<?= $buyer_id; ?>"
-  data-start-call="<?= (isset($_GET['start_call']))?1:0; ?>" 
-  data-warning-message="<?= $warning_message; ?>" 
-  data-order-call-time="<?= (new DateTime() >= $orderCallTime)?1:0; ?>" 
-  data-video-session-time="<?= $videoSessionTime; ?>" 
-></script>
+    <script type="text/javascript" src="plugins/videoPlugin/js/browser.js"></script>
+    <script
+            type="text/javascript"
+            id="call-js"
+            src="plugins/videoPlugin/js/orderVideoCall.js"
+            data-base-url="<?= $site_url; ?>"
+            data-order-id="<?= $order_id; ?>"
+            data-proposal-id="<?= $proposal_id; ?>"
+            data-login-seller-id="<?= $login_seller_id; ?>"
+            data-seller-id="<?= $seller_id; ?>"
+            data-buyer-id="<?= $buyer_id; ?>"
+            data-start-call="<?= (isset($_GET['start_call'])) ? 1 : 0; ?>"
+            data-warning-message="<?= $warning_message; ?>"
+            data-order-call-time="<?= (new DateTime() >= $orderCallTime) ? 1 : 0; ?>"
+            data-video-session-time="<?= $videoSessionTime; ?>"
+    ></script>
 
 <?php } ?>
 
