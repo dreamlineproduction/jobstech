@@ -180,6 +180,12 @@ if(!isset($_GET['paused']) and !isset($_GET['pending']) and !isset($_GET['modifi
                                 class="badge badge-success"><?= $count_declined_proposals; ?></span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#video-proposals" data-toggle="tab"
+                            class="nav-link make-black <?= (isset($_GET['video_proposal']))?"active":""; ?>">
+                            Video Classes <span class="badge badge-success"><?= $count_declined_proposals; ?></span>
+                        </a>
+                    </li>
                 </ul>
                 <div class="tab-content">
                     <div id="active-proposals" class="tab-pane fade show <?= $active; ?>">
@@ -566,6 +572,49 @@ EOT;
                                         </td>
                                     </tr>
                                     <?php } ?>
+                                </tbody>
+                            </table>
+                            <?php
+                            if($count_proposals == 0){
+                                echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-smile-o'></i> You currently have no proposals/services declined.</h3></center>";
+                            }
+                       ?>
+                        </div>
+
+                    </div>
+
+                    <div id="video-proposals"
+                        class="tab-pane fade show <?= (isset($_GET['video_proposal']))?"active":""; ?>">
+                        <div class="table-responsive box-table mt-4">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th><?= $lang['th']['proposal_title']; ?></th>
+                                        <th><?= $lang['th']['proposal_price']; ?></th>
+                                        <th><?= $lang['th']['views']; ?></th>
+
+                                        <th><?= $lang['th']['actions']; ?></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td class="proposal-title"> <?= $proposal_title; ?> </td>
+                                        <td class="text-success"> <?= showPrice($proposal_price); ?> </td>
+                                        <td><?= $proposal_views; ?></td>
+
+                                        <td class="text-center">
+                                            <div class="dropdown">
+                                                <button class="btn btn-success dropdown-toggle"
+                                                    data-toggle="dropdown"></button>
+                                                <div class="dropdown-menu">
+                                                    <a href="delete_proposal?proposal_id=<?= $proposal_id; ?>"
+                                                        class="dropdown-item"> Delete </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
                                 </tbody>
                             </table>
                             <?php
