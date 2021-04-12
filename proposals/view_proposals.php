@@ -22,6 +22,9 @@ $count_draft_proposals = $db->count("proposals",array("proposal_seller_id"=>$log
 
 $count_declined_proposals = $db->count("proposals",array("proposal_seller_id" => $login_seller_id, "proposal_status" => 'declined'));
 
+$video_category_ids = $db->query('SELECT cat_id FROM categories WHERE video = 1')->fetchAll(PDO::FETCH_COLUMN);
+$count_video_proposals = $db->query('SELECT COUNT(proposal_id) FROM proposals WHERE proposal_seller_id = ' . $login_seller_id . ' AND proposal_cat_id IN (' . implode(',', $video_category_ids) . ')')->fetch(PDO::FETCH_COLUMN);
+
 ?>
 <!DOCTYPE html>
 <html lang="en" class="ui-toolkit">
@@ -183,7 +186,7 @@ if(!isset($_GET['paused']) and !isset($_GET['pending']) and !isset($_GET['modifi
                     <li class="nav-item">
                         <a href="#video-proposals" data-toggle="tab"
                             class="nav-link make-black <?= (isset($_GET['video_proposal']))?"active":""; ?>">
-                            Video Classes <span class="badge badge-success"><?= $count_declined_proposals; ?></span>
+                            Video Classes <span class="badge badge-success"><?= $count_video_proposals; ?></span>
                         </a>
                     </li>
                 </ul>
@@ -597,7 +600,23 @@ EOT;
                                     </tr>
                                 </thead>
                                 <tbody>
-
+                                <?php
+                                $select_proposals = $db->query('SELECT * FROM proposals WHERE proposal_seller_id = ' . $login_seller_id . ' AND proposal_cat_id IN (' . implode(',', $video_category_ids) . ')');
+                                $count_proposals = $select_proposals->rowCount();
+                                while($row_proposals = $select_proposals->fetch()){
+                                    $proposal_id = $row_proposals->proposal_id;
+                                    $proposal_title = $row_proposals->proposal_title;
+                                    $proposal_views = $row_proposals->proposal_views;
+                                    $proposal_price = $row_proposals->proposal_price;
+                                    if($proposal_price == 0){
+                                        $get_p = $db->select("proposal_packages",array("proposal_id" => $proposal_id,"package_name" => "Basic"));
+                                        $proposal_price = $get_p->fetch()->price;
+                                    }
+                                    $proposal_img1 = getImageUrl2("proposals","proposal_img1",$row_proposals->proposal_img1);
+                                    $proposal_url = $row_proposals->proposal_url;
+                                    $proposal_featured = $row_proposals->proposal_featured;
+                                    $count_orders = $db->count("orders",array("proposal_id"=>$proposal_id));
+                                ?>
                                     <tr>
                                         <td class="proposal-title"> <?= $proposal_title; ?> </td>
                                         <td class="text-success"> <?= showPrice($proposal_price); ?> </td>
@@ -614,7 +633,7 @@ EOT;
                                             </div>
                                         </td>
                                     </tr>
-
+                                <?php } ?>
                                 </tbody>
                             </table>
                             <?php
