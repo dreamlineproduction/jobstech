@@ -214,6 +214,97 @@ function watermarkImage($image, $data)
                         <div class="col-md-10 offset-md-1">
 
                             <?php require_once("orderIncludes/orderDetailsCard.php"); ?>
+
+                            <div class="total-enreolled mb-4">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <h4>Total Students Enrolled - 8/12</h4>
+                                    </div>
+
+                                    <div class="col-md-3 text-right">
+                                        <a class="btn btn-success" href="#" role="button"><i class="fa fa-share"
+                                                aria-hidden="true"></i> Send Invitation</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col"><span
+                                                class="font-weight-bold"><?= $lang['order_details']['buyer']; ?>:
+                                            </span></th>
+                                        <th scope="col"><span class="font-weight-bold ml-1">
+                                                <?= $lang['order_details']['status']; ?>: </span></th>
+                                        <th scope="col"><span class="font-weight-bold ml-1">
+                                                <?= $lang['order_details']['action']; ?>: </span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td><a href="<?= $buyer_user_name; ?>" target="_blank"
+                                                class="seller-buyer-name mr-1 text-success">
+                                                <?= ucfirst($buyer_user_name); ?>
+                                            </a></td>
+                                        <td>In <?= ucfirst($order_status); ?></td>
+                                        <td><a class="btn btn-success" href="#" role="button"><i class="fa fa-share"
+                                                    aria-hidden="true"></i> Share Class
+                                                Link</a> </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td><a href="<?= $buyer_user_name; ?>" target="_blank"
+                                                class="seller-buyer-name mr-1 text-success">
+                                                <?= ucfirst($buyer_user_name); ?>
+                                            </a></td>
+                                        <td>In <?= ucfirst($order_status); ?></td>
+                                        <td><a class="btn btn-success" href="#" role="button"><i class="fa fa-share"
+                                                    aria-hidden="true"></i> Share Class
+                                                Link</a> </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td><a href="<?= $buyer_user_name; ?>" target="_blank"
+                                                class="seller-buyer-name mr-1 text-success">
+                                                <?= ucfirst($buyer_user_name); ?>
+                                            </a></td>
+                                        <td>In <?= ucfirst($order_status); ?></td>
+                                        <td><a class="btn btn-success" href="#" role="button"><i class="fa fa-share"
+                                                    aria-hidden="true"></i> Share Class
+                                                Link</a> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="card bg-white shadow-sm mb-3 mt-3">
+                                <!--- card mb-3 mt-3 Starts --->
+                                <div class="card-header">
+                                    <h5 class="mb-0">Video Class Time</h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="font-weight-normal">
+                                        Your class timing is
+                                        <span class="badge badge-info schedule-badge p-3">(12:00 PM - 12:30PM).
+                                        </span>
+                                    </h5>
+                                    <!-- Video call button start -->
+
+                                    <div class="text-center mt-5 mb-5">
+                                        <button class="btn  call-button  accpt-schudle" type="button"
+                                            data-receiver_id="2" disabled>
+                                            <i class="fa fa-video-camera"></i> Start Video Lesson
+                                        </button>
+                                    </div>
+
+
+
+                                    <!-- Video call button end -->
+
+
+                                </div>
+                            </div>
+
                             <?php require_once("orderIncludes/orderTimeCounterBuyerInstruction.php"); ?>
                             <?php
                         if ($videoPlugin == 1) {
@@ -239,6 +330,8 @@ function watermarkImage($image, $data)
                             ?>
                             </div>
                             <?php require_once("orderIncludes/insertMessageBox.php"); ?>
+
+
                         </div>
                     </div>
                 </div>
