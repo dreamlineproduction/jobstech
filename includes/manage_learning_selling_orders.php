@@ -3,18 +3,14 @@
 session_start();
 require_once("../includes/db.php");
 
-if (!isset($_SESSION['seller_user_name'])) {
-    echo "<script>window.open('login','_self')</script>";
+if(!isset($_SESSION['seller_user_name'])){
+	echo "<script>window.open('login','_self')</script>";
 }
 
 $login_seller_user_name = $_SESSION['seller_user_name'];
-$select_login_seller = $db->select("sellers", array("seller_user_name" => $login_seller_user_name));
+$select_login_seller = $db->select("sellers",array("seller_user_name" => $login_seller_user_name));
 $row_login_seller = $select_login_seller->fetch();
 $login_seller_id = $row_login_seller->seller_id;
-
-$video_category_ids = $db->query('SELECT cat_id FROM categories WHERE video = 1')->fetchAll(PDO::FETCH_COLUMN);
-
-$video_proposals = $db->query('SELECT * FROM proposals WHERE proposal_cat_id IN (' . implode(',', $video_category_ids) . ')');
 
 ?>
 <!DOCTYPE html>
@@ -41,9 +37,9 @@ $video_proposals = $db->query('SELECT * FROM proposals WHERE proposal_cat_id IN 
     <link href="../styles/owl.theme.default.css" rel="stylesheet">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
 
-    <?php if (!empty($site_favicon)) { ?>
+    <?php if(!empty($site_favicon)){ ?>
 
-        <link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
 
     <?php } ?>
 
@@ -51,104 +47,100 @@ $video_proposals = $db->query('SELECT * FROM proposals WHERE proposal_cat_id IN 
 
 <body class="is-responsive">
 
-<?php require_once("../includes/user_header.php"); ?>
+    <?php require_once("../includes/user_header.php"); ?>
 
-<div class="container mt-5">
+    <div class="container mt-5">
 
-    <div class="row">
+        <div class="row">
 
-        <div class="col-md-10">
+            <div class="col-md-10">
 
-            <!-- <h1 class="<?= ($lang_dir == "right" ? 'text-right' : '') ?>"><?= $lang["titles"]["selling_orders"]; ?></h1> -->
-            <h1>Manage Online Learning Orders</h1>
+                <!-- <h1 class="<?=($lang_dir == "right" ? 'text-right':'')?>"><?= $lang["titles"]["selling_orders"]; ?></h1> -->
+                <h1>Manage Online Learning Orders</h1>
+
+            </div>
+            <div class="col-md-2 text-right">
+
+                <a class="btn btn-success" href="../selling_orders.php" role="button"><i class="fa fa-arrow-left"
+                        aria-hidden="true"></i>
+                    Go Back</a>
+
+            </div>
 
         </div>
-        <div class="col-md-2 text-right">
 
-            <a class="btn btn-success" href="../selling_orders.php" role="button"><i class="fa fa-arrow-left"
-                                                                                     aria-hidden="true"></i>
-                Go Back</a>
+        <div class="row">
 
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col-md-12 mt-5 mb-3">
+            <div class="col-md-12 mt-5 mb-3">
 
 
-            <div class="card">
-                <div class="card-body shadow-sm">
-                    <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px"></div>
+                <div class="card">
+                    <div class="card-body shadow-sm">
+                        <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px"></div>
 
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="video_orders">
-                            <thead>
-                            <tr>
-                                <th>Proposal Title</th>
-                                <th>Lesson Time</th>
-                                <th>Students Enrolled</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td colspan="4">
-                                    Please select a date first to view the orders.
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Proposal Title</th>
+                                        <th>Lesson Time</th>
+                                        <th>Students Enrolled</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="order_details?order_id=20" class="make-black">
+                                                <img class="order-proposal-image"
+                                                    src="https://s3.us-east-1.amazonaws.com/storage.jobsteh/proposal_files/toyota-fortuner-car-the-undisputed-leader-ad-times-of-india-mumbai-26-09-2018_1617727066.png">
+                                                <p class="order-proposal-title">Video call test</p>
+                                            </a>
+                                        </td>
+                                        <td>12:00PM - 13:00PM</td>
+                                        <td>8/12</td>
+                                        <td><a class="btn btn-success" href="../video-order-details.php"
+                                                role="button">Manage Order</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="order_details?order_id=20" class="make-black">
+                                                <img class="order-proposal-image"
+                                                    src="https://s3.us-east-1.amazonaws.com/storage.jobsteh/proposal_files/toyota-fortuner-car-the-undisputed-leader-ad-times-of-india-mumbai-26-09-2018_1617727066.png">
+                                                <p class="order-proposal-title">Video call test</p>
+                                            </a>
+                                        </td>
+                                        <td>12:00PM - 13:00PM</td>
+                                        <td>8/12</td>
+                                        <td><a class="btn btn-success" href="../video-order-details.php"
+                                                role="button">Manage Order</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="order_details?order_id=20" class="make-black">
+                                                <img class="order-proposal-image"
+                                                    src="https://s3.us-east-1.amazonaws.com/storage.jobsteh/proposal_files/toyota-fortuner-car-the-undisputed-leader-ad-times-of-india-mumbai-26-09-2018_1617727066.png">
+                                                <p class="order-proposal-title">Video call test</p>
+                                            </a>
+                                        </td>
+                                        <td>12:00PM - 13:00PM</td>
+                                        <td>8/12</td>
+                                        <td><a class="btn btn-success" href="../video-order-details.php"
+                                                role="button">Manage Order</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
     </div>
 
-</div>
-
-<?php require_once("../includes/footer.php"); ?>
-
-<script>
-    let calendar = new VanillaCalendar({
-        selector: "#myCalendar",
-        pastDates: false,
-        onSelect: (data, element) => {
-            const date = new Date(Date.parse(data.date));
-            const formattedDate = date.toDateString().slice(4, 15);
-            $.ajax({
-                url: "../plugins/videoPlugin/proposals/ajax/video_orders",
-                method: 'post',
-                data: {course_date: formattedDate},
-                dataType: 'json',
-                success: function (data) {
-                    let html = '';
-
-                    if (data.length > 0) {
-                        $.each(data, function (key, order) {
-                            html += '<tr>';
-                            html += '<td>' + order.proposal_title + '</td>' +
-                                '<td>' + order.class_time + '</td>' +
-                                '<td>' + order.students_enrolled + '/' + order.max_seats + '</td>' +
-                                '<td><a class="btn btn-success" href="../video-order-details.php?proposal='
-                                + order.proposal_id + '&date=' + encodeURIComponent(order.class_date) + '&order_id=19" ' +
-                                'role="button">Manage Order</a></td>';
-                            html += '</tr>';
-                        });
-                    } else {
-                        html += '<tr><td colspan="4">No orders are available for this date.</td></tr>';
-                    }
-
-                    $('#video_orders tbody').html(html);
-
-                }
-            });
-        }
-    });
-</script>
+    <?php require_once("../includes/footer.php"); ?>
 </body>
 
 </html>
