@@ -4,9 +4,12 @@ require_once("./includes/db.php");
 if (!isset($_SESSION['seller_user_name'])) {
     echo "<script>window.open('$site_url/login','_self')</script>";
 }
-if (!isset($_GET['call']) || empty($_GET['call'])) {
+
+if (!isset($_GET['class']) || empty($_GET['class'])) {
     echo "<script>window.open('$site_url','_self')</script>";
 }
+
+$class_slug = escape($_GET['class']);
 
 function escape($value)
 {
@@ -21,7 +24,7 @@ function getOpentokCredentials()
     global $opentok_api_key;
     global $opentok_api_secret;
 
-    require_once("../../../vendor/autoload.php");
+    require_once("vendor/autoload.php");
     $opentok = new OpenTok\OpenTok($opentok_api_key, $opentok_api_secret);
     $session = $opentok->createSession(array('mediaMode' => OpenTok\MediaMode::ROUTED));
     $sessionId = $session->getSessionId();
@@ -35,22 +38,50 @@ function generateToken($sessionId, $opentok = '')
         global $opentok_api_key;
         global $opentok_api_secret;
 
-        require_once("../../../vendor/autoload.php");
+        require_once("vendor/autoload.php");
         $opentok = new OpenTok\OpenTok($opentok_api_key, $opentok_api_secret);
     }
-    $token = $opentok->generateToken($sessionId, array('expireTime' => time() + (60 * 60)));
+    $token = $opentok->generateToken($sessionId, array('expireTime' => time() + (3 * 60 * 60)));
     return $token;
 }
 
 //$result = $input->post("data");
 
-$result = $db->select('video_call_links', ['slug' => $_GET['call']]);
+$result = $db->select('video_classes', ['slug' => $class_slug]);
 if ($result->rowCount() === 0) {
     echo "<script>window.open('$site_url','_self')</script>";
 }
-$links_info = $result->fetch();
-$login_seller_id = $links_info->seller_id;
-$where_array = ["order_id"=>$links_info->order_id,"seller_id"=> $login_seller_id];
+$class_info = $result->fetch();
+$seller_id = $class_info->seller_id;
+
+$res_seller = $db->select('sellers', ['seller_user_name' => $_SESSION['seller_user_name']])->fetch();
+$logged_in_user_id = $res_seller->seller_id;
+
+if ($logged_in_user_id == $seller_id) {
+    if (empty($class_info->call_token)) {
+        $OpentokCredentials = getOpentokCredentials();
+        $where_array["call_number"] = escape($OpentokCredentials["sessionId"]);
+        $where_array["call_token"] = escape($OpentokCredentials["token"]);
+        $where_array["status"] = "ongoing";
+        $db->update('video_classes', $where_array, ['slug' => $class_slug]);
+        $where_array["id"] = escape($db->lastInsertId());
+    } else {
+        $where_array["call_number"] = $class_info->call_number;
+        $where_array["call_token"] = $class_info->call_token;
+    }
+} else {
+    $res_class_buyers = $db->select('video_class_buyers', ['slug' => $class_slug, 'buyer_id' => $logged_in_user_id])->fetch();
+    if (empty($res_class_buyers)) {
+        echo "<script>window.open('$site_url','_self')</script>";
+    } else {
+        $where_array["call_number"] = $class_info->call_number;
+        $where_array["call_token"] = $class_info->call_token;
+    }
+}
+
+//$where_array = ["order_id"=>$links_info->order_id,"seller_id"=> $seller_id];
+//$get_orders = $db->select('orders', $where_array);
+//die('<pre>' . print_r($get_orders->fetchAll(), true) . '</pre>');
 
 /*$where_array = ["order_id"=>$result["order_id"],"sender_id"=>$result["sender_id"],"receiver_id"=>$result["receiver_id"]];
 $get_call_rooms = $db->select("video_calls",$where_array);

@@ -15,16 +15,17 @@ $row_login_seller = $select_login_seller->fetch();
 $login_seller_id = $row_login_seller->seller_id;
 $login_seller_timezone = $row_login_seller->seller_timezone;
 
-$order_id = $input->get("order_id");
+$proposal_id = $input->get('proposal');
+$class_date = $input->get('date');
 
-$get_orders = $db->query("select * from orders where (seller_id=$login_seller_id or buyer_id=$login_seller_id) AND order_id=:o_id", array("o_id" => $order_id));
+$get_orders = $db->query("select * from orders where (seller_id=$login_seller_id or buyer_id=$login_seller_id) AND proposal_id=:p_id AND class_date=:c_date", array("p_id" => $proposal_id, "c_date" => $class_date));
 $count_orders = $get_orders->rowCount();
 
 if ($count_orders == 0) {
     echo "<script>window.open('index.php?not_available','_self')</script>";
 }
 
-$row_orders = $get_orders->fetch();
+$orders = $get_orders->fetchAll();
 $seller_id = $row_orders->seller_id;
 $buyer_id = $row_orders->buyer_id;
 $order_price = $row_orders->order_price;
@@ -290,12 +291,23 @@ function watermarkImage($image, $data)
                                     </h5>
                                     <!-- Video call button start -->
 
+                                    <?php if($seller_id == $login_seller_id) { ?>
                                     <div class="text-center mt-5 mb-5">
                                         <button class="btn  call-button  accpt-schudle" type="button"
                                             data-receiver_id="2" disabled>
                                             <i class="fa fa-video-camera"></i> Start Video Lesson
                                         </button>
                                     </div>
+                                    <?php } ?>
+
+                                    <?php if($seller_id == $login_seller_id) { ?>
+                                        <div class="text-center mt-5 mb-5">
+                                            <button class="btn create-link accpt-schudle" type="button"
+                                                    data-receiver_id="<?= $receiver_id; ?>">
+                                                <i class="fa fa-video-camera"></i> Create Video Lesson Link
+                                            </button>
+                                        </div>
+                                    <?php } ?>
 
 
 
@@ -307,9 +319,9 @@ function watermarkImage($image, $data)
 
                             <?php require_once("orderIncludes/orderTimeCounterBuyerInstruction.php"); ?>
                             <?php
-                        if ($videoPlugin == 1) {
-                            require_once("plugins/videoPlugin/videoCall/setVideoSessionTime.php");
-                        }
+//                        if ($videoPlugin == 1) {
+//                            require_once("plugins/videoPlugin/videoCall/setVideoSessionTime.php");
+//                        }
 
                         ?>
                             <div id="order-conversations" class="mt-3">
