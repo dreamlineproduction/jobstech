@@ -44,12 +44,19 @@ if ($enable_unlimited_revisions == 1) {
 <link href="../styles/croppie.css" rel="stylesheet">
 <link href="../styles/create-proposal.css" rel="stylesheet">
 <link href="../styles/create-course.css" rel="stylesheet">
+<link href="../styles/dropzone.css" rel="stylesheet">
+
+<link href="../styles/file-upload.css" rel="stylesheet">
 <link href="../styles/uppy.css" rel="stylesheet">
 <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
-<script src="../js/ie.js"></script>
-<script type="text/javascript" src="../js/sweat_alert.js"></script>
+<!-- <script src="../js/ie.js"></script>
+ --><script type="text/javascript" src="../js/sweat_alert.js"></script>
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/croppie.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="../js/youtube-vimeo-url-parser.js"></script>
+<script type="text/javascript" src="../js/jquery.uploadfile.js"></script>
+<script type="text/javascript" src="../js/dropzone.js"></script>                                                
 <script src="https://checkout.stripe.com/checkout.js"></script>
 <?php if (!empty($site_favicon)) { ?>
 <link rel="shortcut icon" href="<?= $site_favicon ?>" type="image/x-icon">
@@ -70,6 +77,8 @@ if ($seller_verification != "ok") {
 
 
 
+
+        
 <div class="container mt-5 mb-5"><!--- container Starts --->
   <div class="row"><!--- row Starts --->
     <div class="col-xl-12 col-lg-11 col-md-12"><!--- col-xl-8 Starts --->

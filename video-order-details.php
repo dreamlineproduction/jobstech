@@ -15,17 +15,16 @@ $row_login_seller = $select_login_seller->fetch();
 $login_seller_id = $row_login_seller->seller_id;
 $login_seller_timezone = $row_login_seller->seller_timezone;
 
-$proposal_id = $input->get('proposal');
-$class_date = $input->get('date');
+$order_id = $input->get("order_id");
 
-$get_orders = $db->query("select * from orders where (seller_id=$login_seller_id or buyer_id=$login_seller_id) AND proposal_id=:p_id AND class_date=:c_date", array("p_id" => $proposal_id, "c_date" => $class_date));
+$get_orders = $db->query("select * from orders where (seller_id=$login_seller_id or buyer_id=$login_seller_id) AND order_id=:o_id", array("o_id" => $order_id));
 $count_orders = $get_orders->rowCount();
 
 if ($count_orders == 0) {
     echo "<script>window.open('index.php?not_available','_self')</script>";
 }
 
-$orders = $get_orders->fetchAll();
+$row_orders = $get_orders->fetch();
 $seller_id = $row_orders->seller_id;
 $buyer_id = $row_orders->buyer_id;
 $order_price = $row_orders->order_price;
@@ -215,113 +214,11 @@ function watermarkImage($image, $data)
                         <div class="col-md-10 offset-md-1">
 
                             <?php require_once("orderIncludes/orderDetailsCard.php"); ?>
-
-                            <div class="total-enreolled mb-4">
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <h4>Total Students Enrolled - 8/12</h4>
-                                    </div>
-
-                                    <div class="col-md-3 text-right">
-                                        <a class="btn btn-success" href="#" role="button"><i class="fa fa-share"
-                                                aria-hidden="true"></i> Send Invitation</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col"><span
-                                                class="font-weight-bold"><?= $lang['order_details']['buyer']; ?>:
-                                            </span></th>
-                                        <th scope="col"><span class="font-weight-bold ml-1">
-                                                <?= $lang['order_details']['status']; ?>: </span></th>
-                                        <th scope="col"><span class="font-weight-bold ml-1">
-                                                <?= $lang['order_details']['action']; ?>: </span></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td><a href="<?= $buyer_user_name; ?>" target="_blank"
-                                                class="seller-buyer-name mr-1 text-success">
-                                                <?= ucfirst($buyer_user_name); ?>
-                                            </a></td>
-                                        <td>In <?= ucfirst($order_status); ?></td>
-                                        <td><a class="btn btn-success" href="#" role="button"><i class="fa fa-share"
-                                                    aria-hidden="true"></i> Share Class
-                                                Link</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td><a href="<?= $buyer_user_name; ?>" target="_blank"
-                                                class="seller-buyer-name mr-1 text-success">
-                                                <?= ucfirst($buyer_user_name); ?>
-                                            </a></td>
-                                        <td>In <?= ucfirst($order_status); ?></td>
-                                        <td><a class="btn btn-success" href="#" role="button"><i class="fa fa-share"
-                                                    aria-hidden="true"></i> Share Class
-                                                Link</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td><a href="<?= $buyer_user_name; ?>" target="_blank"
-                                                class="seller-buyer-name mr-1 text-success">
-                                                <?= ucfirst($buyer_user_name); ?>
-                                            </a></td>
-                                        <td>In <?= ucfirst($order_status); ?></td>
-                                        <td><a class="btn btn-success" href="#" role="button"><i class="fa fa-share"
-                                                    aria-hidden="true"></i> Share Class
-                                                Link</a> </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="card bg-white shadow-sm mb-3 mt-3">
-                                <!--- card mb-3 mt-3 Starts --->
-                                <div class="card-header">
-                                    <h5 class="mb-0">Video Class Time</h5>
-                                </div>
-                                <div class="card-body text-center">
-                                    <h5 class="font-weight-normal">
-                                        Your class timing is
-                                        <span class="badge badge-info schedule-badge p-3">(12:00 PM - 12:30PM).
-                                        </span>
-                                    </h5>
-                                    <!-- Video call button start -->
-
-                                    <?php if($seller_id == $login_seller_id) { ?>
-                                    <div class="text-center mt-5 mb-5">
-                                        <button class="btn  call-button  accpt-schudle" type="button"
-                                            data-receiver_id="2" disabled>
-                                            <i class="fa fa-video-camera"></i> Start Video Lesson
-                                        </button>
-                                    </div>
-                                    <?php } ?>
-
-                                    <?php if($seller_id == $login_seller_id) { ?>
-                                        <div class="text-center mt-5 mb-5">
-                                            <button class="btn create-link accpt-schudle" type="button"
-                                                    data-receiver_id="<?= $receiver_id; ?>">
-                                                <i class="fa fa-video-camera"></i> Create Video Lesson Link
-                                            </button>
-                                        </div>
-                                    <?php } ?>
-
-
-
-                                    <!-- Video call button end -->
-
-
-                                </div>
-                            </div>
-
                             <?php require_once("orderIncludes/orderTimeCounterBuyerInstruction.php"); ?>
                             <?php
-//                        if ($videoPlugin == 1) {
-//                            require_once("plugins/videoPlugin/videoCall/setVideoSessionTime.php");
-//                        }
+                        if ($videoPlugin == 1) {
+                            require_once("plugins/videoPlugin/videoCall/setVideoSessionTime.php");
+                        }
 
                         ?>
                             <div id="order-conversations" class="mt-3">
@@ -342,8 +239,6 @@ function watermarkImage($image, $data)
                             ?>
                             </div>
                             <?php require_once("orderIncludes/insertMessageBox.php"); ?>
-
-
                         </div>
                     </div>
                 </div>
