@@ -21,175 +21,196 @@ $login_seller_id = $row_login_seller->seller_id;
 
 <head>
 
-	<title><?= $site_name; ?> - Proposals Ordered</title>
-	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="keywords" content="<?= $site_keywords; ?>">
-	<meta name="author" content="<?= $site_author; ?>">
+    <title><?= $site_name; ?> - Proposals Ordered</title>
 
-   	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
-	<link href="styles/bootstrap.css" rel="stylesheet">
-   	<link href="styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
-	<link href="styles/styles.css" rel="stylesheet">
-	<link href="styles/user_nav_styles.css" rel="stylesheet">
-	<link href="font_awesome/css/font-awesome.css" rel="stylesheet">
-	<link href="styles/owl.carousel.css" rel="stylesheet">
-	<link href="styles/owl.theme.default.css" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<?php if(!empty($site_favicon)){ ?>
-   		<link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
-	<?php } ?>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="<?= $site_keywords; ?>">
+    <meta name="author" content="<?= $site_author; ?>">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
+    <link href="styles/bootstrap.css" rel="stylesheet">
+    <link href="styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/user_nav_styles.css" rel="stylesheet">
+    <link href="font_awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="styles/owl.carousel.css" rel="stylesheet">
+    <link href="styles/owl.theme.default.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <?php if(!empty($site_favicon)){ ?>
+    <link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
+    <?php } ?>
 
 </head>
 
 <body class="is-responsive">
 
-<?php require_once("includes/user_header.php"); ?>
+    <?php require_once("includes/user_header.php"); ?>
 
-<div class="container mt-5">
+    <div class="container mt-5">
 
-	<div class="row">
+        <div class="row">
 
-		<div class="col-md-12">
+            <div class="col-md-12">
 
-			<h1 class="<?=($lang_dir == "right" ? 'text-right':'')?>"><?= $lang["titles"]["buying_orders"]; ?></h1>
+                <h1 class="<?=($lang_dir == "right" ? 'text-right':'')?>"><?= $lang["titles"]["buying_orders"]; ?></h1>
 
-		</div>
+            </div>
 
-	</div>
+        </div>
 
-	<div class="row">
+        <div class="row">
 
-		<div class="col-md-12 mt-5 mb-3">
+            <div class="col-md-12 mt-5 mb-3">
 
-			<ul class="nav nav-tabs flex-column flex-sm-row">
+                <ul class="nav nav-tabs flex-column flex-sm-row">
 
-				<li class="nav-item">
-                    
-                    <?php
+                    <li class="nav-item">
+
+                        <?php
 
                         $count_orders = $db->count("orders",array("buyer_id" => $login_seller_id, "order_active" => 'yes'));
 
                     ?>
 
-					<a href="#active" data-toggle="tab" class="nav-link active make-black">
+                        <a href="#active" data-toggle="tab" class="nav-link active make-black">
 
-						<?= $lang['tabs']['active']; ?> <span class="badge badge-success"> <?= $count_orders; ?></span>
-						
-					</a>
+                            <?= $lang['tabs']['active']; ?> <span class="badge badge-success">
+                                <?= $count_orders; ?></span>
 
-				</li>
+                        </a>
 
-				<li class="nav-item">
-                    
-                    <?php
+                    </li>
+
+                    <li class="nav-item">
+
+                        <?php
 
                         $count_orders = $db->count("orders",array("buyer_id" => $login_seller_id, "order_status" => 'delivered'));
 
                     ?>
 
-					<a href="#delivered" data-toggle="tab" class="nav-link make-black">
+                        <a href="#delivered" data-toggle="tab" class="nav-link make-black">
 
-						<?= $lang['tabs']['delivered']; ?> <span class="badge badge-success"><?= $count_orders; ?> </span>
+                            <?= $lang['tabs']['delivered']; ?> <span class="badge badge-success"><?= $count_orders; ?>
+                            </span>
 
-					</a>
+                        </a>
 
-				</li>
+                    </li>
 
-				<li class="nav-item">
-                    
-                    <?php
+                    <li class="nav-item">
+
+                        <?php
 
                         $count_orders = $db->count("orders",array("buyer_id" => $login_seller_id, "order_status" => 'completed'));
 
                     ?>
 
-					<a href="#completed" data-toggle="tab" class="nav-link make-black">
+                        <a href="#completed" data-toggle="tab" class="nav-link make-black">
 
-						<?= $lang['tabs']['completed']; ?> <span class="badge badge-success"><?= $count_orders; ?></span>
-					
-					</a>
-					
-				</li>
+                            <?= $lang['tabs']['completed']; ?> <span
+                                class="badge badge-success"><?= $count_orders; ?></span>
 
-				<li class="nav-item">
-                    
-                    <?php
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <?php
 
                         $count_orders = $db->count("orders",array("buyer_id" => $login_seller_id, "order_status" => 'cancelled'));
 
                     ?>
 
-					<a href="#cancelled" data-toggle="tab" class="nav-link make-black">
+                        <a href="#cancelled" data-toggle="tab" class="nav-link make-black">
 
-						<?= $lang['tabs']['cancelled']; ?> <span class="badge badge-success"><?= $count_orders; ?> </span>
-					
-					</a>
+                            <?= $lang['tabs']['cancelled']; ?> <span class="badge badge-success"><?= $count_orders; ?>
+                            </span>
 
-				</li>
+                        </a>
 
-				<li class="nav-item">
-                    
-                    <?php
+                    </li>
+
+                    <li class="nav-item">
+
+                        <?php
 
 						$count_orders = $db->count("orders",array("buyer_id" => $login_seller_id));
 
                     ?>
 
-					<a href="#all" data-toggle="tab" class="nav-link make-black">
+                        <a href="#all" data-toggle="tab" class="nav-link make-black">
 
-						<?= $lang['tabs']['all']; ?> <span class="badge badge-success"><?= $count_orders; ?></span>
-				
-					</a>
-									
-				</li>
+                            <?= $lang['tabs']['all']; ?> <span class="badge badge-success"><?= $count_orders; ?></span>
 
-			</ul>
+                        </a>
 
-			<div class="tab-content">
+                    </li>
 
-				<div class="tab-pane fade show active" id="active">
-
-					<?php require_once("manage_orders/order_active_buying.php") ?>
-
-				</div>
+                    <li class="nav-item">
 
 
-				<div class="tab-pane" id="delivered">
 
-					<?php require_once("manage_orders/order_delivered_buying.php") ?>
+                        <a href="#mycourses" data-toggle="tab" class="nav-link make-black">
 
-				</div>
+                            My Courses <span class="badge badge-success"><?= $count_orders; ?></span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+                <div class="tab-content">
+
+                    <div class="tab-pane fade show active" id="active">
+
+                        <?php require_once("manage_orders/order_active_buying.php") ?>
+
+                    </div>
 
 
-				<div class="tab-pane" id="completed">
+                    <div class="tab-pane" id="delivered">
 
-					<?php require_once("manage_orders/order_completed_buying.php") ?>
+                        <?php require_once("manage_orders/order_delivered_buying.php") ?>
 
-				</div>
+                    </div>
 
-				<div class="tab-pane" id="cancelled">
 
-					<?php require_once("manage_orders/order_cancelled_buying.php") ?>
+                    <div class="tab-pane" id="completed">
 
-				</div>
+                        <?php require_once("manage_orders/order_completed_buying.php") ?>
 
-				<div class="tab-pane" id="all">
+                    </div>
 
-					<?php require_once("manage_orders/order_all_buying.php") ?>
+                    <div class="tab-pane" id="cancelled">
 
-				</div>
+                        <?php require_once("manage_orders/order_cancelled_buying.php") ?>
 
-			</div>
+                    </div>
 
-		</div>
+                    <div class="tab-pane" id="all">
 
-	</div>
+                        <?php require_once("manage_orders/order_all_buying.php") ?>
 
-</div>
+                    </div>
+                    <div class="tab-pane" id="mycourses">
 
-<?php require_once("includes/footer.php"); ?>
+                        <?php require_once("manage_orders/order_course_buying.php") ?>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <?php require_once("includes/footer.php"); ?>
 
 </body>
 
