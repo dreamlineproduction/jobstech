@@ -46,6 +46,10 @@ $site_border_color = $row_general_settings->site_border_color;
     <script type="text/javascript" src="<?= $site_url; ?>/js/jquery.min.js"></script>
     <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+    <link href="<?= $site_url; ?>/styles/star-rating.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="<?= $site_url; ?>/styles/themes/krajee-fas/theme.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="<?= $site_url; ?>/js/star-rating.js" type="text/javascript"></script>
+    <script src="<?= $site_url; ?>/styles/themes/krajee-fas/theme.js"></script>
 
     <?php if(!empty($site_favicon)){ ?>
     <link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
@@ -54,9 +58,9 @@ $site_border_color = $row_general_settings->site_border_color;
 </head>
 
 <body class="is-responsive">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light course-navbar ">
         <a class="navbar-brand" href="#">
+
             <div id="gigtodo-logo"
                 class="apply-nav-height gigtodo-logo-svg gigtodo-logo-svg-logged-in <?php if(isset($_SESSION["seller_user_name"])){echo"loggedInLogo";} ?>">
                 <a href="<?= $site_url; ?>">
@@ -70,17 +74,40 @@ $site_border_color = $row_general_settings->site_border_color;
                     <?php } ?>
                 </a>
             </div>
+
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="height: 70px;">
-            <div class="navbar-nav ml-5">
-                <h4>Javascript Essentials</h4>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarText" style="height: 70px;">
+            <ul class="navbar-nav mr-auto ml-5">
+                <li class="nav-item active">
+                    <h4>Javascript Essentials</h4>
+                </li>
+
+
+            </ul>
+            <span class="navbar-text pr-5 hori-nav">
+                <p class="leave-rating" data-toggle="modal" data-target="#leave-rating">Leave a rating</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">25%</div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-link dropdown-toggle text-dark" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Your Progress
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">7 of 39 complete</a>
+
+                    </div>
+                </div>
+            </span>
         </div>
     </nav>
+
 
     <div class="container-fluid mt-5 mb-5">
 
@@ -535,6 +562,42 @@ $site_border_color = $row_general_settings->site_border_color;
 
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="leave-rating" tabindex="-1" role="dialog" aria-labelledby="leave-ratingLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="leave-ratingLabel">Leave a rating?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <h2>Why did you leave this rating?</h2>
+
+
+                    <div class="star-rating mt-4">
+                        <input id="input-93" class="rating-loading">
+
+
+
+                    </div>
+
+                    <div class="form-group mt-4">
+
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                            placeholder="Tell us about your own personal experience taking this course. Was it a good match for you?"></textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-dark">Save & Continue</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <?php require_once("../includes/footer.php"); ?>
 </body>
 
@@ -552,5 +615,17 @@ $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
         .prev()
         .find("i:last-child")
         .toggleClass("fa-minus fa-plus");
+});
+</script>
+
+<script>
+$(document).ready(function() {
+
+
+    $('#input-93').rating({
+
+    });
+
+
 });
 </script>

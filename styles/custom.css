@@ -121,3 +121,50 @@ NB: If changes don't apply, try adding "!important" For example:
 .course-ul-content small {
     margin-top: 3px;
 }
+
+.course-navbar .collapse.navbar-collapse {
+    overflow-x: inherit;
+    overflow-y: inherit;
+}
+
+.hori-nav {
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.hori-nav .progress {
+    width: 100px;
+}
+
+.hori-nav .leave-rating {
+    margin-right: 20px;
+    vertical-align: middle;
+    font-weight: 600;
+    color: #000;
+    margin-top: 13px;
+    cursor: pointer;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    color: #ccc;
+    cursor: pointer;
+    font-size: 42px;
+    margin-right: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.star-rating :checked~label {
+    color: #f90;
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: #fc0;
+}
