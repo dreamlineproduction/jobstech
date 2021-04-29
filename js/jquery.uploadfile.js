@@ -9,7 +9,7 @@
     
     if($.fn.ajaxForm == undefined) {
         if(window.location.hostname == "localhost") {
-            $.getScript(("https:" == document.location.protocol ? "https://" : "http://") + "localhost/jobs/jobstech/js/jquery.form.js");    
+            $.getScript(("https:" == document.location.protocol ? "https://" : "http://") + "localhost/jobstech/js/jquery.form.js");
         } else{
             $.getScript(("https:" == document.location.protocol ? "https://" : "http://") + window.location.hostname+"/jobstech/js/jquery.form.js");    
         }          

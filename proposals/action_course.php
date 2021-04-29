@@ -60,7 +60,7 @@ if (!empty($_POST['action']) && $_POST['action'] == 'add_chapter') {
             $_SESSION['course_details']['chapters'][$index] = array('chapter' => $name);
         } else {
             $_SESSION['course_details']['chapters'][$index] = array('chapter' => $name);
-        }       
+        }
         
         $response["html"] = get_chapters();
     }
@@ -600,6 +600,114 @@ if (!empty($_POST['action']) && $_POST['action'] == 'save_course_details') {
         exit;
     }
 
+    if (!empty($_POST['step']) && $_POST['step'] == 'six') {
+//        $_SESSION['course_details']['overview'] = $_POST;
+//        $response["status"] = 1;
+//        echo json_encode($response);
+
+        $course_overview_provider_code = [
+            'youtube' => 0,
+            'vimeo' => 1,
+            'upload' => 2
+        ];
+
+        $insert_array = [
+            'seller_id' => $login_seller_id,
+            'title' => $_SESSION['course_details']['general_details']['course_title'],
+            'short_description' => $_SESSION['course_details']['general_details']['short_descrption'],
+            'description' => $_SESSION['course_details']['general_details']['description'],
+            'category' => $_SESSION['course_details']['general_details']['cat_id'],
+            'sub_category' => $_SESSION['course_details']['general_details']['sub_category'],
+            'level' => $_SESSION['course_details']['general_details']['level'],
+            'language' => $_SESSION['course_details']['general_details']['language'],
+            'requirement_1' => $_SESSION['course_details']['requirements']['requirement1'],
+            'requirement_2' => $_SESSION['course_details']['requirements']['requirement2'],
+            'requirement_3' => $_SESSION['course_details']['requirements']['requirement3'],
+            'requirement_4' => $_SESSION['course_details']['requirements']['requirement4'],
+            'requirement_5' => $_SESSION['course_details']['requirements']['requirement5'],
+            'outcomes_1' => $_SESSION['course_details']['outcomes']['Outcomes1'],
+            'outcomes_2' => $_SESSION['course_details']['outcomes']['Outcomes2'],
+            'outcomes_3' => $_SESSION['course_details']['outcomes']['Outcomes3'],
+            'outcomes_4' => $_SESSION['course_details']['outcomes']['Outcomes4'],
+            'outcomes_5' => $_SESSION['course_details']['outcomes']['Outcomes5'],
+            'price' => $_SESSION['course_details']['pricing']['price'],
+            'discounted_price' => $_SESSION['course_details']['pricing']['discounted_price'],
+            'course_overview_provider' => $course_overview_provider_code[strtolower($_SESSION['course_details']['overview']['course_overview_provider'])],
+            'course_preview_video_url' => $_SESSION['course_details']['overview']['video_url'],
+        ];
+
+        $db->insert('courses', $insert_array);
+
+        $course_id = $db->lastInsertId();
+
+        foreach ($_SESSION['course_details']['chapters'] as $chapter) {
+            $now = date('Y-m-d H:i:s');
+            $db->insert('course_chapters', [
+                'course_id' => $course_id,
+                'title' => $chapter['chapter'],
+                'created_at' => $now,
+                'updated_at' => $now,
+            ]);
+
+            $chapter_id = $db->lastInsertId();
+
+            foreach ($chapter['lesson'] as $lesson) {
+                $lesson_file = false;
+                if ($lesson['lesson_type'] == 'youtube' || $lesson['lesson_type'] == 'vimeo') {
+                    $url = $lesson[$lesson['lesson_type'] . '_url'];
+                } elseif ($lesson['lesson_type'] == 'video_url') {
+                    $url = $lesson[$lesson['lesson_type']];
+                } else {
+                    $lesson_file = true;
+                    $url = NULL;
+                }
+
+                $now = date('Y-m-d H:i:s');
+                $insert_array = [
+                    'chapter_id' => $chapter_id,
+                    'type' => $lesson['lesson_type'],
+                    'title' => $lesson['lesson_title'],
+                    'url' => $url,
+                    'duration' => $lesson['lessonduration'],
+                    'summary' => $lesson['lessonsummary'],
+                    'created_at' => $now,
+                    'updated_at' => $now,
+                ];
+
+                $db->insert('course_lessons', $insert_array);
+                $lesson_id = $db->lastInsertId();
+
+                if ($lesson_file) {
+                    if ($lesson['lesson_type'] == 'video_file') {
+                        $file_id = $lesson['video_id'];
+                    } elseif ($lesson['lesson_type'] == 'document') {
+                        $file_id = $lesson['document_id'];
+                    } else {
+                        $file_id = $lesson['image_id'];
+                    }
+
+                    $video = $db->select('temp_files', ['id' => $file_id])->fetch();
+
+                    if (!empty($video)) {
+                        $filename_parts = explode('.', $video->name);
+                        $ext = end($filename_parts);
+                        $new_filename = $lesson_id . '.' . $ext;
+
+                        rename('../temp_images/' . $video->name, '../lesson_files/' . $new_filename);
+//                        uploadToS3('lesson_files/' . $new_filename, '../temp_images/' . $video->name);
+
+                        $url = $new_filename;
+                        $db->update('course_lessons', ['url' => $url], ['id' => $lesson_id]);
+                    }
+                }
+            }
+        }
+
+        $response["status"] = 1;
+        echo json_encode($response);
+        exit;
+    }
+
 }
 
 
@@ -864,8 +972,8 @@ function get_chapters() {
                         $html .= "<div class=\"dropdown chapter-dropdown\">";             
                             $html .= "<i class=\"fa fa-ellipsis-h\" aria-hidden=\"true\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"></i>";
                             $html .= "<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">";
-                                $html .= "<a class=\"dropdown-item\" href=\"javascript:void(0)\" onclick=\"edit_chapter(".$key.")\">Edit</a>";
-                                $html .= "<a class=\"dropdown-item\" data-id=".$key." onclick='delete_chapter('".$key."')' href=\"javascript:void(0);\">Delete</a>";        
+                                $html .= "<a class=\"dropdown-item\" href=\"javascript:void(0)\" onclick=\"edit_chapter('".$key."')\">Edit</a>";
+                                $html .= "<a class=\"dropdown-item\" data-id=".$key." onclick=\"delete_chapter('".$key."')\" href=\"javascript:void(0);\">Delete</a>";
                             $html .= "</div>";
                         $html .= "</div>";                                
                     $html .= "</div>";
@@ -980,7 +1088,7 @@ if(isset($_FILES["document_file_lesson"])){
 
         $url = $site_url.'/temp_images/'.$newFileName;
 
-        $html = "<a href='".$url."'>Download</a>";
+        $html = "<i class='fas " . ($extension == "pdf" ? "fa-file-pdf" : "fa-file-word") . "'></i><a href='".$url."'>Download</a>";
         
         // Update Filename after insert
         $update_request = $db->update("temp_files",array("name" => $newFileName),array("id" => $id));
@@ -1034,6 +1142,6 @@ if(isset($_FILES["lesson_image"]))
 }
 
 
-
+file_put_contents('../log123.txt', '<pre>' . print_r($_SESSION, true) . '</pre>', FILE_APPEND);
 
 ?>

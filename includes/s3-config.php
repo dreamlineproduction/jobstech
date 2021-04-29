@@ -117,7 +117,9 @@ function getFolderName($table){
 		return "article_images";
 	}elseif($table == "posts"){
 		return "post_images";
-	}
+	}elseif($table == "course_lessons") {
+        return "lesson_files";
+    }
 
 }
 
