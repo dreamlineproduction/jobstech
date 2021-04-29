@@ -1,25 +1,25 @@
 <div class="table-responsive box-table mt-3">
 
-	<table class="table table-bordered">
+    <table class="table table-bordered">
 
-		<thead>
-			
-			<tr> 
+        <thead>
 
-				<th><?= $lang['th']['order_summary']; ?></th>
-				<th><?= $lang['th']['order_date']; ?></th>
-				<th><?= $lang['th']['due_on']; ?></th>
-				<th><?= $lang['th']['total']; ?></th>
-				<th><?= $lang['th']['status2']; ?></th>
+            <tr>
 
-			</tr>
+                <th><?= $lang['th']['order_summary']; ?></th>
+                <th><?= $lang['th']['order_date']; ?></th>
+                <th><?= $lang['th']['due_on']; ?></th>
+                <th><?= $lang['th']['total']; ?></th>
+                <th><?= $lang['th']['status2']; ?></th>
 
-		</thead>
+            </tr>
 
-		<tbody>
+        </thead>
 
-			<tr>
-                
+        <tbody>
+
+            <tr>
+
                 <?php
 
                 $sel_orders = $db->select("orders",array("buyer_id" => $login_seller_id),"DESC");
@@ -56,29 +56,29 @@
 
                ?>
 
-				<td>
+                <td>
 
-					<a href="order_details?order_id=<?= $order_id; ?>" class="make-black">
-						<img class="order-proposal-image " src="<?= $proposal_img1; ?>">
-						<p class="order-proposal-title"><?= $proposal_title; ?></p>
-					</a>
-					
-				</td>
+                    <a href="order_details?order_id=<?= $order_id; ?>" class="make-black">
+                        <img class="order-proposal-image " src="<?= $proposal_img1; ?>">
+                        <p class="order-proposal-title"><?= $proposal_title; ?></p>
+                    </a>
 
-				<td><?= $order_date; ?></td>
-				<td><?= $order_due; ?></td>
-				<td><?= showPrice($order_price); ?></td>
-				<td><button class="btn btn-success"><?= ucwords($order_status); ?></button></td>
+                </td>
 
-			</tr>
-            
-         <?php } ?>	
+                <td><?= $order_date; ?></td>
+                <td><?= $order_due; ?></td>
+                <td><?= showPrice($order_price); ?></td>
+                <td><button class="btn btn-success"><?= ucwords($order_status); ?></button></td>
 
-		</tbody>
-		
-   </table>
-    
-<?php
+            </tr>
+
+            <?php } ?>
+
+        </tbody>
+
+    </table>
+
+    <?php
          
    if($count_orders == 0){             
       echo "<center>
