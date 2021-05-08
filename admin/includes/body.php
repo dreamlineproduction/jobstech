@@ -757,3 +757,7 @@
 	if(isset($_GET['user_profile'])){
 		include("user_profile.php");
 	}
+
+	if (isset($_GET['view_courses'])) {
+	    include("view_courses.php");
+    }

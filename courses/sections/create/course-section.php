@@ -141,9 +141,9 @@ if (empty($form_data)) {
                                         <div class="form-group">
                                             <label for="Level">Level</label>
                                             <select class="form-control" id="level" name="level">
-                                                <option value="0" <?= @$_SESSION['course_details']['general_details']['level'] == "0" ? "selected" : "" ?>>Beginner</option>
-                                                <option value="1" <?= @$_SESSION['course_details']['general_details']['level'] == "1" ? "selected" : "" ?>>Intermediate</option>
-                                                <option value="2" <?= @$_SESSION['course_details']['general_details']['level'] == "2" ? "selected" : "" ?>>Advanced</option>
+                                                <option value="Beginner" <?= @$_SESSION['course_details']['general_details']['level'] == "Beginner" ? "selected" : "" ?>>Beginner</option>
+                                                <option value="Advanced" <?= @$_SESSION['course_details']['general_details']['level'] == "Advanced" ? "selected" : "" ?>>Advanced</option>
+                                                <option value="Intermediate" <?= @$_SESSION['course_details']['general_details']['level'] == "Intermediate" ? "selected" : "" ?>>Intermediate</option>
                                             </select>
                                         </div>
                                     </div>
@@ -301,13 +301,13 @@ if (empty($form_data)) {
                                             <label for="course-provider-source">Course overview provider</label>
                                             <select class="form-control" id="course_overview_provider"
                                                     name="course_overview_provider">
-                                                <option value="0" <?php echo @($_SESSION['course_details']['overview']['course_overview_provider'] == 0) ? 'selected' : ''; ?>>
+                                                <option value="youtube" <?php echo @($_SESSION['course_details']['overview']['course_overview_provider'] == 'youtube') ? 'selected' : ''; ?>>
                                                     Youtube
                                                 </option>
-                                                <option value="1" <?php echo @($_SESSION['course_details']['overview']['course_overview_provider'] == 1) ? 'selected' : ''; ?>>
+                                                <option value="vimeo" <?php echo @($_SESSION['course_details']['overview']['course_overview_provider'] == 'vimeo') ? 'selected' : ''; ?>>
                                                     Vimeo
                                                 </option>
-                                                <option value="2" <?php echo @($_SESSION['course_details']['overview']['course_overview_provider'] == 2) ? 'selected' : ''; ?>>
+                                                <option value="direct_upload" <?php echo @($_SESSION['course_details']['overview']['course_overview_provider'] == 'direct_upload') ? 'selected' : ''; ?>>
                                                     Upload from your system
                                                 </option>
                                             </select>
